@@ -345,6 +345,7 @@ export function page({
   bodyMain,
   extraScripts = [],
   jsonLd = [],
+  robots = "index, follow",
 }) {
   const scripts = extraScripts.map((s) => `<script src="${s}"></script>`).join("\n");
   const metaDescription = description || DEFAULT_DESCRIPTION;
@@ -358,12 +359,14 @@ export function page({
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title}</title>
 <meta name="description" content="${escapeAttr(metaDescription)}">
+<meta name="robots" content="${robots}">
 ${canonical ? `<link rel="canonical" href="${canonical}">` : ""}
 <link rel="icon" href="/assets/favicon/favicon-32x32.png" sizes="32x32">
 <link rel="icon" href="/assets/favicon/favicon-192x192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
 <meta name="theme-color" content="#123f40">
 <meta property="og:site_name" content="Dolphin House">
+<meta property="og:locale" content="vi_VN">
 <meta property="og:type" content="${type}">
 <meta property="og:title" content="${escapeAttr(title)}">
 <meta property="og:description" content="${escapeAttr(metaDescription)}">

@@ -734,6 +734,7 @@ function buildCartPage() {
       bodyMain,
       extraScripts: ["/js/site.js"],
       jsonLd: [breadcrumbLd([{ name: "Trang chủ", url: "/" }, { name: "Giỏ hàng", url: "/gio-hang/" }])],
+      robots: "noindex, follow",
     })
   );
 }
@@ -898,6 +899,7 @@ function buildCheckoutPage() {
       bodyMain,
       extraScripts: ["/js/site.js", "/js/vn-address.js", "/js/checkout.js"],
       jsonLd: [breadcrumbLd([{ name: "Trang chủ", url: "/" }, { name: "Thanh toán", url: "/thanh-toan/" }])],
+      robots: "noindex, follow",
     })
   );
 }
@@ -913,11 +915,17 @@ function clean() {
 // build (see `write()`) — pagination pages beyond page 1 are excluded (Google
 // treats them as fine to crawl via in-page links; keeping them out of the
 // sitemap avoids diluting it with near-duplicate listing pages).
+// Cart/checkout carry no unique indexable content (client-only, personalized,
+// empty by default) — marked noindex in their own page() call, kept out of
+// the sitemap here too so we don't ask Google to index a page we told it not to.
+const NOINDEX_PATHS = ["/gio-hang/", "/thanh-toan/"];
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
+
 function buildRobotsAndSitemap() {
   const urls = generatedPaths
-    .filter((p) => !p.includes("/page/"))
+    .filter((p) => !p.includes("/page/") && !NOINDEX_PATHS.includes(p))
     .sort()
-    .map((p) => `  <url><loc>${absUrl(p)}</loc></url>`)
+    .map((p) => `  <url><loc>${absUrl(p)}</loc><lastmod>${BUILD_DATE}</lastmod></url>`)
     .join("\n");
   writeFileSync(join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
   writeFileSync(join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
@@ -943,6 +951,7 @@ function build404() {
       categories: CATEGORIES,
       bodyMain,
       extraScripts: ["/js/site.js"],
+      robots: "noindex, nofollow",
     })
   );
 }
@@ -1143,4 +1152,4 @@ const BRAND_COUNT = getBrands().length;
 console.log(
   `Built: 1 home + shop (+pagination) + ${CATEGORIES.length} categories (+pagination) + 1 brand-index + ${BRAND_COUNT} brands (+pagination) + ${PRODUCTS.length} products + tin-tuc (+${BLOG_POSTS.length} posts + 4 danh-muc-tin-tuc + 3 tag) + gioi-thieu + lien-he + videos (+2) + 8 policy pages + sitemap.xml + robots.txt + 404.html`
 );
-console.log(`Sitemap: ${generatedPaths.filter((p) => !p.includes("/page/")).length} URLs`);
+console.log(`Sitemap: ${generatedPaths.filter((p) => !p.includes("/page/") && !NOINDEX_PATHS.includes(p)).length} URLs`);
