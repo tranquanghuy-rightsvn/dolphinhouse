@@ -211,8 +211,11 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
 #cart-page-root.is-empty .cart-page-items, #cart-page-root.is-empty .cart-page-summary { display: none; }
 #cart-page-root.is-empty .cart-page-empty { display: block; }
 @media (max-width: 640px) {
-  .cart-page-item { flex-wrap: wrap; }
-  .cart-page-item-subtotal { width: auto; margin-left: auto; }
+  .cart-page-item { flex-wrap: wrap; position: relative; padding-right: 30px; }
+  .cart-page-item-body { flex: 1 1 calc(100% - 88px); }
+  .cart-page-item-qty { flex: 0 0 auto; width: calc(100% - 88px); margin-left: 88px; margin-top: 6px; }
+  .cart-page-item-subtotal { flex: 0 0 auto; width: calc(100% - 88px); margin-left: 88px; margin-top: 6px; text-align: left; }
+  .cart-page-item-remove { position: absolute; top: 16px; right: 0; }
 }
 
 /* ---------- Checkout page (/thanh-toan/) ---------- */
@@ -821,7 +824,7 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
 }
 
 /* ---------- Blog / Về Dolphin House / Liên hệ / Videos ---------- */
-.blog-page { padding: 24px 0 60px; }
+.blog-page { padding-top: 24px; padding-bottom: 60px; }
 .blog-hero {
   background: linear-gradient(120deg, var(--teal-navy), #1c5c56 80%);
   color: var(--white); border-radius: var(--radius-lg); padding: 36px 40px; margin-bottom: 24px;
