@@ -157,7 +157,12 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
   opacity: 0; visibility: hidden; transform: translateY(8px);
   transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
 }
-.cart-link:hover .cart-dropdown, .cart-link:focus-within .cart-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+/* Gated to real hover-capable pointers only — on touch devices there's no
+   hover, so :focus-within would otherwise flash the preview open right as
+   the tap's navigation to /gio-hang/ fires, looking like a glitch. */
+@media (hover: hover) and (pointer: fine) {
+  .cart-link:hover .cart-dropdown, .cart-link:focus-within .cart-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+}
 .cart-dropdown-items { max-height: 340px; overflow-y: auto; }
 .cart-dropdown-item { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; border-bottom: 1px dashed var(--border); }
 .cart-dropdown-item:first-child { padding-top: 0; }
