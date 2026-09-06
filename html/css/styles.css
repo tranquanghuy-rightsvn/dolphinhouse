@@ -998,6 +998,12 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
   .footer-grid { grid-template-columns: 1fr; }
   .section-head { flex-direction: column; align-items: flex-start; }
 }
+@media (max-width: 370px) {
+  /* Below this width there isn't room for "Giỏ hàng của bạn" next to the
+     logo without crowding/wrapping — drop to icon-only so the header stays
+     evenly balanced left (logo) / right (cart icon). */
+  .cart-text { display: none; }
+}
 @media (max-width: 480px) {
   .product-grid, .section_cvp_content ul.products { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .hero { padding: 30px 0 40px; }
