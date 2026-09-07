@@ -739,59 +739,15 @@ function buildCartPage() {
   );
 }
 
-// Deterministic mock QR code (no real payload, no external QR-gen API/image —
-// just a seeded checkerboard with the 3 classic QR finder squares so it
-// *reads* as a QR code visually). "seed" keeps it stable across rebuilds.
-function mockQrSvg(seed) {
-  const n = 17;
-  const cell = 8;
-  let s = seed;
-  const rand = () => {
-    s = (s * 1103515245 + 12345) & 0x7fffffff;
-    return s / 0x7fffffff;
-  };
-  const isFinder = (x, y) => {
-    const corners = [
-      [0, 0],
-      [n - 7, 0],
-      [0, n - 7],
-    ];
-    return corners.some(([cx, cy]) => x >= cx && x < cx + 7 && y >= cy && y < cy + 7);
-  };
-  const finderCell = (x, y, cx, cy) => {
-    const lx = x - cx;
-    const ly = y - cy;
-    if (lx === 0 || lx === 6 || ly === 0 || ly === 6) return true;
-    if (lx >= 2 && lx <= 4 && ly >= 2 && ly <= 4) return true;
-    return false;
-  };
-  let rects = "";
-  for (let y = 0; y < n; y++) {
-    for (let x = 0; x < n; x++) {
-      let on;
-      const corners = [
-        [0, 0],
-        [n - 7, 0],
-        [0, n - 7],
-      ];
-      const inFinder = corners.find(([cx, cy]) => x >= cx && x < cx + 7 && y >= cy && y < cy + 7);
-      if (inFinder) on = finderCell(x, y, inFinder[0], inFinder[1]);
-      else on = rand() > 0.55;
-      if (on) rects += `<rect x="${x * cell}" y="${y * cell}" width="${cell}" height="${cell}"/>`;
-    }
-  }
-  const size = n * cell;
-  return `<svg viewBox="0 0 ${size} ${size}" width="128" height="128" role="img" aria-label="Mã QR chuyển khoản minh hoạ"><rect width="${size}" height="${size}" fill="#fff"/><g fill="#173e40">${rects}</g></svg>`;
-}
-
 // /thanh-toan/ — content cloned from the live WooCommerce checkout
 // (dolphinhouse.vn/thanh-toan/): coupon toggle, billing form with tỉnh/phường
 // cascading select (js/vn-address.js + assets/area/), order summary + payment
 // method, "Đặt hàng". The "Giao hàng đến một địa chỉ khác?" toggle from the
 // original is intentionally omitted. The bank-transfer description was
-// replaced (per request) with mock account-holder info + a simulated QR
-// (no real bank/payment integration — this is a static demo). Header/footer
-// are unchanged (page()).
+// replaced (per request) with real account-holder info + the site's QR
+// image (assets/images/site/qr.png) — no real payment integration, the
+// transfer content just carries a client-generated order code (js/checkout.js).
+// Header/footer are unchanged (page()).
 function buildCheckoutPage() {
   const bodyMain = `
 <main class="container listing-page">
@@ -801,6 +757,7 @@ function buildCheckoutPage() {
   <div id="checkout-success" class="checkout-success" hidden>
     <p class="checkout-success-title">✓ Đặt hàng thành công!</p>
     <p>Cảm ơn bạn đã đặt hàng tại Dolphin House. Chúng tôi sẽ gọi điện xác nhận đơn hàng trong thời gian sớm nhất.</p>
+    <p>Mã đơn hàng của bạn: <strong id="checkout-order-code"></strong></p>
     <a class="link-arrow" href="/cua-hang/">Tiếp tục mua sắm →</a>
   </div>
 
@@ -866,17 +823,19 @@ function buildCheckoutPage() {
           <input type="radio" name="payment_method" value="bank" checked>
           <span>Chuyển khoản ngân hàng</span>
         </label>
-        <div class="checkout-payment-desc checkout-bank">
-          <div class="checkout-bank-info">
-            <div><span>Ngân hàng</span><strong>Vietcombank – CN Hà Nội</strong></div>
-            <div><span>Chủ tài khoản</span><strong>CONG TY TNHH DOLPHIN HOUSE</strong></div>
-            <div><span>Số tài khoản</span><strong>0866 393 892</strong></div>
-            <div><span>Nội dung CK</span><strong>Thanh toan don hang Dolphin House</strong></div>
-            <p class="checkout-bank-note">Vui lòng chuyển đúng số tiền và ghi rõ nội dung để đơn hàng được xác nhận nhanh nhất. Đơn hàng sẽ được giao sau khi tiền đã chuyển.</p>
-          </div>
-          <div class="checkout-bank-qr">
-            ${mockQrSvg(866393892)}
-            <small>Mã QR minh hoạ</small>
+        <div id="checkout-bank-collapse" class="checkout-bank-collapse">
+          <div class="checkout-payment-desc checkout-bank">
+            <div class="checkout-bank-info">
+              <div><span>Ngân hàng</span><strong>TPBank</strong></div>
+              <div><span>Chủ tài khoản</span><strong>PHAN ANH HAO</strong></div>
+              <div><span>Số tài khoản</span><strong>0448 5808 601</strong></div>
+              <div><span>Nội dung CK</span><strong class="checkout-transfer-note">Ma don hang: <span id="checkout-transfer-code"></span></strong></div>
+              <p class="checkout-bank-note">Lưu ý khi thanh toán nhớ điền đúng mã đơn hàng. Đơn hàng sẽ được giao sau khi thanh toán được xác nhận.</p>
+            </div>
+            <div class="checkout-bank-qr">
+              <img src="/assets/images/site/qr.png" alt="Mã QR chuyển khoản TPBank" width="128" height="128">
+              <small>Quét mã để chuyển khoản</small>
+            </div>
           </div>
         </div>
         <label class="checkout-payment-option">

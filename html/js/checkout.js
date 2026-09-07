@@ -28,6 +28,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Payment method toggle — slide the bank transfer info open/closed
+  // depending on whether "Chuyển khoản ngân hàng" or "COD" is selected.
+  const bankCollapse = document.getElementById("checkout-bank-collapse");
+  const paymentRadios = document.querySelectorAll('input[name="payment_method"]');
+  function setBankInfoOpen(open) {
+    if (!bankCollapse) return;
+    if (open) {
+      bankCollapse.style.maxHeight = bankCollapse.scrollHeight + "px";
+      bankCollapse.addEventListener(
+        "transitionend",
+        function onOpen(e) {
+          if (e.propertyName === "max-height") {
+            bankCollapse.style.maxHeight = "none";
+            bankCollapse.removeEventListener("transitionend", onOpen);
+          }
+        }
+      );
+    } else {
+      bankCollapse.style.maxHeight = bankCollapse.scrollHeight + "px";
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          bankCollapse.style.maxHeight = "0px";
+        });
+      });
+    }
+  }
+  if (bankCollapse) {
+    const initialBank = document.querySelector('input[name="payment_method"][value="bank"]');
+    bankCollapse.style.maxHeight = initialBank && initialBank.checked ? "none" : "0px";
+    paymentRadios.forEach((radio) => {
+      radio.addEventListener("change", () => {
+        if (radio.checked) setBankInfoOpen(radio.value === "bank");
+      });
+    });
+  }
+
   // Order summary — same cart data as the header dropdown / giỏ hàng
   function renderOrderSummary() {
     const cart = window.DHCart;
@@ -56,11 +92,55 @@ document.addEventListener("DOMContentLoaded", () => {
   renderOrderSummary();
   if (window.DHCart) window.DHCart.onChange(renderOrderSummary);
 
+  // 6-char order code, e.g. "BQOMXA" — stays the same across page reloads
+  // as long as the cart's contents are unchanged, and is regenerated only
+  // when the cart changes (item added/removed/qty changed). Kept in
+  // localStorage alongside a signature of the cart it was generated for.
+  const ORDER_CODE_KEY = "dh_checkout_order_code";
+  function generateOrderCode() {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let code = "";
+    for (let i = 0; i < 6; i++) {
+      code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return code;
+  }
+  function cartSignature(items) {
+    return items
+      .map((it) => `${it.slug}x${it.qty}`)
+      .sort()
+      .join(",");
+  }
+  function getOrderCode(items) {
+    const sig = cartSignature(items);
+    let stored = null;
+    try {
+      stored = JSON.parse(localStorage.getItem(ORDER_CODE_KEY) || "null");
+    } catch {
+      stored = null;
+    }
+    if (stored && stored.sig === sig) return stored.code;
+    const code = generateOrderCode();
+    localStorage.setItem(ORDER_CODE_KEY, JSON.stringify({ code, sig }));
+    return code;
+  }
+
+  const transferCodeEl = document.getElementById("checkout-transfer-code");
+  function renderOrderCode() {
+    if (!window.DHCart || !transferCodeEl) return;
+    transferCodeEl.textContent = getOrderCode(window.DHCart.read());
+  }
+  renderOrderCode();
+  if (window.DHCart) window.DHCart.onChange(renderOrderCode);
+
   // Demo "place order" — no real payment/order backend on this static site.
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!window.DHCart || window.DHCart.read().length === 0) return;
+    const orderCode = transferCodeEl ? transferCodeEl.textContent : "";
     window.DHCart.clear();
+    const orderCodeEl = document.getElementById("checkout-order-code");
+    if (orderCodeEl) orderCodeEl.textContent = orderCode;
     document.getElementById("checkout-form-section").hidden = true;
     document.getElementById("checkout-order-section").hidden = true;
     document.getElementById("checkout-success").hidden = false;

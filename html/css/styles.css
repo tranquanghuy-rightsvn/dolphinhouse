@@ -259,14 +259,17 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
 }
 .checkout-payment-option { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; cursor: pointer; padding: 6px 0; }
 .checkout-payment-desc { font-size: 13px; color: var(--ink-soft); background: var(--white); border-radius: var(--radius-sm); padding: 12px 14px; margin: 4px 0 4px 24px; }
+.checkout-bank-collapse { overflow: hidden; transition: max-height 0.35s ease; }
 .checkout-bank { display: flex; gap: 18px; align-items: flex-start; }
 .checkout-bank-info { flex: 1; min-width: 0; }
 .checkout-bank-info div { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px dashed var(--border); font-size: 13px; }
 .checkout-bank-info div span { color: var(--ink-soft); }
 .checkout-bank-info div strong { color: var(--teal-dark); text-align: right; }
+.checkout-bank-info div strong.checkout-transfer-note { color: var(--price-red); }
+.checkout-bank-info div strong.checkout-transfer-note span { color: var(--price-red); }
 .checkout-bank-note { font-size: 12px; color: var(--ink-faint); margin-top: 10px; }
 .checkout-bank-qr { flex-shrink: 0; text-align: center; }
-.checkout-bank-qr svg { display: block; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+.checkout-bank-qr img { display: block; border: 1px solid var(--border); border-radius: var(--radius-sm); }
 .checkout-bank-qr small { display: block; margin-top: 6px; color: var(--ink-faint); font-size: 11px; }
 @media (max-width: 480px) {
   .checkout-bank { flex-direction: column; align-items: center; text-align: center; }
@@ -276,6 +279,7 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
 .checkout-success { text-align: center; padding: 60px 20px; }
 .checkout-success-title { font-size: 22px; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px; }
 .checkout-success p { margin-bottom: 12px; color: var(--ink-soft); }
+.checkout-success #checkout-order-code { color: var(--price-red); }
 @media (max-width: 768px) {
   .checkout-grid, .form-row--split { grid-template-columns: 1fr; }
 }
