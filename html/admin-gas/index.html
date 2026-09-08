@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Quản trị Dolphin House</title>
+<link rel="icon" href="/assets/images/site/favicon.png">
+<style>
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         font-family: Tahoma, Arial, sans-serif; background: #f3f5f7; color: #263238; text-align: center; padding: 24px; }
+  h1 { font-size: 18px; margin: 0 0 8px; }
+  p { color: #6b7280; margin: 0 0 16px; }
+  a { display: inline-block; background: #4f1c78; color: #fff; text-decoration: none; font-weight: 700; padding: 10px 18px; border-radius: 10px; }
+</style>
+</head>
+<body>
+<div>
+  <h1>Đang chuyển tới trang quản trị…</h1>
+  <p>Nếu trình duyệt không tự chuyển, hãy bấm nút bên dưới.</p>
+  <a id="go" href="#" rel="nofollow noreferrer">Mở trang quản trị</a>
+</div>
+<script src="/js/cms-config.js"></script>
+<script>
+  (function () {
+    var url = window.DH_CMS_URL || "";
+    if (url.indexOf("http") !== 0) {
+      document.querySelector("h1").textContent = "Chưa cấu hình trang quản trị";
+      document.querySelector("p").textContent = "Địa chỉ dịch vụ quản trị chưa được điền trong /js/cms-config.js.";
+      document.getElementById("go").hidden = true;
+      return;
+    }
+    document.getElementById("go").href = url;
+    location.replace(url);
+  })();
+</script>
+</body>
+</html>

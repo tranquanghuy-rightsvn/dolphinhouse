@@ -1041,3 +1041,8 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
   .faq-question { padding: 14px; font-size: 14px; }
   .faq-answer-inner { padding: 0 14px 14px; }
 }
+
+/* Bot trap for the checkout form — must stay hidden; js/checkout.js sends its
+   value and the server silently drops any submission that filled it in. */
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.checkout-error { color: var(--red); margin: 10px 0 0; font-weight: 700; }

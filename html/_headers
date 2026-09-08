@@ -1,0 +1,16 @@
+# Admin entry points must never surface in search results. This header is the
+# strong layer (it does not depend on a crawler parsing the HTML) and covers
+# every file under both paths. robots.txt deliberately says nothing about them:
+# that file is public, and listing the paths there would advertise them.
+/admin
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+/admin/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+/admin-gas
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+/admin-gas/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+
+/assets/tinymce/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *

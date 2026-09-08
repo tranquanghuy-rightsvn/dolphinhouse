@@ -1,0 +1,52 @@
+name: Build site from data
+
+# Only the index files are listed on purpose: saving one record in the admin
+# writes several files in a row (images → detail → index), and the index is
+# always the LAST write of the operation. Triggering on `data/**` would start a
+# build halfway through and publish a half-updated site.
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'data/products.json'
+      - 'data/product-categories.json'
+      - 'data/news.json'
+      - 'data/news-categories.json'
+      - 'data/videos.json'
+      - 'html/scripts/**'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: build-site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build static pages
+        working-directory: html
+        run: node scripts/build.mjs
+
+      - name: Commit generated pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add html
+          if git diff --cached --quiet; then
+            echo "No page changes."
+            exit 0
+          fi
+          git commit -m "CI: build html from data"
+          # The admin may have committed while this build ran; rebase keeps both.
+          git pull --rebase origin master
+          git push origin HEAD:master

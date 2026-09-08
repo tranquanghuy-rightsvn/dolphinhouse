@@ -5,23 +5,26 @@ import { readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { page, absUrl, stripHtml, truncate, breadcrumbLd, formatVnd, faqLd, faqSectionHtml } from "./partials.mjs";
-import { loadDataFile } from "./load-data.mjs";
+import { loadCms } from "./cms-data.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
+// Hand-written page bodies (gioi thieu, policy pages) — not CMS content.
 const DATA_DIR = join(ROOT, "scripts/data");
 
-const { BLOG_POSTS, BLOG_CATEGORIES_WIDGET, BLOG_TAGS_WIDGET, VIDEOS } = loadDataFile(
-  join(ROOT, "js/data/blog.data.js")
-);
-const { PRODUCTS } = loadDataFile(join(ROOT, "js/data/products.data.js"));
+const { BLOG_POSTS, BLOG_CATEGORIES_WIDGET, BLOG_TAGS_WIDGET, VIDEOS, PRODUCTS } = loadCms();
 
 // No real order/sales data exists in this static export, so "bán chạy" is a
 // random 6-product sample — picked once per build, same set on every blog
 // sidebar (listing, post detail, category/tag archives) within that build.
-function shuffled(arr) {
+// Seeded (not Math.random) so two builds of the same data produce byte-identical
+// HTML — the CI commits its output, and a per-build reshuffle would touch every
+// blog page on every build.
+function shuffled(arr, seed = 20260908) {
   const a = arr.slice();
+  let s = seed;
+  const rand = () => ((s = (s * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
   for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(rand() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
@@ -174,7 +177,7 @@ export function buildBlogPosts(write, categories) {
     const prev = BLOG_POSTS[i + 1];
     const next = BLOG_POSTS[i - 1];
     const path = `/${p.slug}/`;
-    const description = truncate(p.excerpt || stripHtml(readBody(p.bodyFile)), 160);
+    const description = truncate(p.excerpt || stripHtml(p.body), 160);
     const bodyMain = `
 <main class="container blog-page">
   <nav class="breadcrumb"><a href="/">Trang chủ</a> / <a href="/tin-tuc/">Tin Tức</a> / ${p.title}</nav>
@@ -185,7 +188,7 @@ export function buildBlogPosts(write, categories) {
         <div class="post-info"><span>${p.date}</span><span>${p.views}</span></div>
         ${taxonomyBadgesHtml(p)}
       </header>
-      <div class="tinymce">${readBody(p.bodyFile)}</div>
+      <div class="tinymce">${p.body}</div>
       <nav class="post-navigation">
         ${prev ? `<a class="nav-prev" href="/${prev.slug}/"><small>Bài trước</small>${prev.title}</a>` : "<span></span>"}
         ${next ? `<a class="nav-next" href="/${next.slug}/"><small>Bài tiếp</small>${next.title}</a>` : ""}
@@ -460,7 +463,8 @@ export function buildVideos(write, categories) {
     const v = VIDEOS[i];
     const other = VIDEOS[(i + 1) % VIDEOS.length];
     const path = `/videos/${v.slug}/`;
-    const description = `${v.title} — video Dolphin House.`;
+    // The CMS description doubles as the page/meta description when present.
+    const description = v.description ? truncate(stripHtml(v.description), 160) : `${v.title} — video Dolphin House.`;
     const videoLd = {
       "@context": "https://schema.org",
       "@type": "VideoObject",
@@ -489,7 +493,7 @@ export function buildVideos(write, categories) {
         <h1>${v.title}</h1>
         <div class="post-info"><span>${v.date}</span><span>${v.views}</span></div>
       </header>
-      <div class="tinymce"><div class="video-embed"><iframe src="https://www.youtube.com/embed/${v.youtube}" title="${v.title}" frameborder="0" allowfullscreen></iframe></div></div>
+      <div class="tinymce"><div class="video-embed"><iframe src="https://www.youtube.com/embed/${v.youtube}" title="${v.title}" frameborder="0" allowfullscreen></iframe></div>${v.description ? `<p>${v.description}</p>` : ""}</div>
       <nav class="post-navigation">
         <a class="nav-next" href="/videos/${other.slug}/"><small>Video khác</small>${other.title}</a>
       </nav>

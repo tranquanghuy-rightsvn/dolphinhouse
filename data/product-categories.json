@@ -1,0 +1,101 @@
+[
+  {
+    "id": 42,
+    "name": "Bếp thông minh & dụng cụ nấu ăn",
+    "slug": "do-dung-nha-bep",
+    "parent": 0,
+    "banner": "/assets/images/categories/do-dung-nha-bep-hero.webp",
+    "description": "<p>Danh mục <strong>Bếp thông minh &amp; dụng cụ nấu ăn</strong> của Dolphin House quy tụ những sản phẩm nâng tầm gian bếp hiện đại: nồi chảo cao cấp, thớt gỗ teak, dụng cụ chế biến và thiết bị bếp tiện ích. Tất cả được chọn lọc từ các thương hiệu uy tín như GKÖCH, Letek, Tefal, Kaiyo… với chất liệu an toàn cho sức khỏe (inox 316, gỗ tự nhiên) và độ bền theo thời gian.</p><p>Dù bạn đang hoàn thiện căn bếp mới hay nâng cấp dụng cụ nấu ăn hằng ngày, đây là nơi tìm được những món vừa đẹp – vừa bền – vừa tiện. Dolphin House tư vấn tận tâm và giao hàng toàn quốc.</p>",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 11,
+    "name": "Chăm sóc gia đình & phòng ngủ",
+    "slug": "chan-ga-goi-dem",
+    "parent": 0,
+    "banner": "/assets/images/categories/chan-ga-goi-dem-hero.webp",
+    "description": "",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 8,
+    "name": "Điện gia dụng",
+    "slug": "dien-gia-dung",
+    "parent": 0,
+    "banner": "/assets/images/categories/dien-gia-dung-hero.webp",
+    "description": "<p>Điện gia dụng gồm các thiết bị nhà bếp và chăm sóc gia đình từ những thương hiệu uy tín, giúp tiết kiệm thời gian và nâng cao tiện nghi mỗi ngày. Khi lựa chọn, bạn nên ưu tiên công suất phù hợp, độ bền, tính an toàn và khả năng tiết kiệm điện.</p>",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 171,
+    "name": "Ghế ô tô trẻ em",
+    "slug": "ghe-o-to-tre-em",
+    "parent": 0,
+    "banner": "/assets/images/categories/ghe-o-to-tre-em-hero.webp",
+    "description": "",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 172,
+    "name": "Gia dụng châu Âu",
+    "slug": "gia-dung-chau-au",
+    "parent": 0,
+    "banner": "/assets/images/categories/gia-dung-chau-au-hero.webp",
+    "description": "",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 95,
+    "name": "Gia dụng tiện ích",
+    "slug": "gia-dung-tien-ich",
+    "parent": 0,
+    "banner": "/assets/images/categories/gia-dung-tien-ich-hero.webp",
+    "description": "",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 41,
+    "name": "Không gian sống & decor tiện ích",
+    "slug": "san-pham-deco",
+    "parent": 0,
+    "banner": "/assets/images/categories/san-pham-deco-hero.webp",
+    "description": "",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 99,
+    "name": "Nồi & xửng hấp",
+    "slug": "xong-noi",
+    "parent": 42,
+    "banner": "/assets/images/categories/xong-noi-hero.webp",
+    "description": "",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 100,
+    "name": "Nồi chảo cao cấp",
+    "slug": "chao",
+    "parent": 42,
+    "banner": "/assets/images/categories/chao-hero.webp",
+    "description": "",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 51,
+    "name": "Thiết bị gia dụng thông minh",
+    "slug": "san-pham-thong-minh",
+    "parent": 0,
+    "banner": "/assets/images/categories/san-pham-thong-minh-hero.webp",
+    "description": "",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 101,
+    "name": "Vệ sinh nhà cửa thông minh",
+    "slug": "ve-sinh-nha-cua",
+    "parent": 95,
+    "banner": "/assets/images/categories/ve-sinh-nha-cua-hero.webp",
+    "description": "",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  }
+]

@@ -133,17 +133,82 @@ document.addEventListener("DOMContentLoaded", () => {
   renderOrderCode();
   if (window.DHCart) window.DHCart.onChange(renderOrderCode);
 
-  // Demo "place order" — no real payment/order backend on this static site.
-  form.addEventListener("submit", (e) => {
+  // Real order submission. The order is posted to the content service, which
+  // stores it for the admin screen; `text/plain` keeps this a "simple request"
+  // so the browser never sends a CORS preflight the service cannot answer.
+  const errorEl = document.getElementById("checkout-error");
+  function showError(message) {
+    if (!errorEl) return;
+    errorEl.textContent = message;
+    errorEl.hidden = false;
+  }
+
+  function selectedText(select) {
+    if (!select || select.selectedIndex < 0) return "";
+    const opt = select.options[select.selectedIndex];
+    return opt ? opt.textContent.trim() : "";
+  }
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!window.DHCart || window.DHCart.read().length === 0) return;
-    const orderCode = transferCodeEl ? transferCodeEl.textContent : "";
-    window.DHCart.clear();
-    const orderCodeEl = document.getElementById("checkout-order-code");
-    if (orderCodeEl) orderCodeEl.textContent = orderCode;
-    document.getElementById("checkout-form-section").hidden = true;
-    document.getElementById("checkout-order-section").hidden = true;
-    document.getElementById("checkout-success").hidden = false;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    const items = window.DHCart.read();
+    const total = window.DHCart.total(items);
+    const orderCode = transferCodeEl ? transferCodeEl.textContent.trim() : "";
+    const payment = document.querySelector('input[name="payment_method"]:checked');
+    const btn = document.getElementById("place-order-btn");
+    const label = btn ? btn.textContent : "";
+
+    if (errorEl) errorEl.hidden = true;
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = "Đang gửi đơn hàng…";
+    }
+
+    const payload = {
+      action: "order",
+      code: orderCode,
+      _hp: (document.getElementById("checkout-hp") || {}).value || "",
+      name: (document.getElementById("billing-name") || {}).value || "",
+      phone: (document.getElementById("billing-phone") || {}).value || "",
+      email: (document.getElementById("billing-email") || {}).value || "",
+      province: selectedText(provinceSelect),
+      ward: selectedText(wardSelect),
+      address: (document.getElementById("billing-address") || {}).value || "",
+      note: (document.getElementById("billing-note") || {}).value || "",
+      payment_method: payment ? payment.value : "cod",
+      items: items.map((it) => ({ slug: it.slug, name: it.name, price: it.price, qty: it.qty })),
+      subtotal: total,
+      shipping: 0,
+      total,
+    };
+
+    try {
+      if (!window.DH_CMS_URL || window.DH_CMS_URL.indexOf("http") !== 0) {
+        throw new Error("Hệ thống đặt hàng chưa sẵn sàng. Vui lòng gọi hotline 086 639 3892.");
+      }
+      const res = await fetch(window.DH_CMS_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || "Không gửi được đơn hàng, vui lòng thử lại.");
+
+      window.DHCart.clear();
+      const orderCodeEl = document.getElementById("checkout-order-code");
+      if (orderCodeEl) orderCodeEl.textContent = data.code || orderCode;
+      document.getElementById("checkout-form-section").hidden = true;
+      document.getElementById("checkout-order-section").hidden = true;
+      document.getElementById("checkout-success").hidden = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      showError(err.message || "Không gửi được đơn hàng, vui lòng thử lại.");
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = label;
+      }
+    }
   });
 });

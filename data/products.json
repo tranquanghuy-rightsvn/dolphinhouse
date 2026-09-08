@@ -1,0 +1,2820 @@
+[
+  {
+    "id": 2917,
+    "name": "Tủ sấy GUME GM-8222 – Sấy khô quần áo gọn gàng",
+    "slug": "tu-say-gume-gm-8222-say-kho-quan-ao-gon-gang",
+    "sku": "MTS880",
+    "brand_names": [
+      "Gume"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "1180000",
+      "regular_price": "1180000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/gume-gm8222-1.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2916,
+    "name": "Thố pha lê hình cây thông Noel Tree Bohemia – Đường kính 16,5cm",
+    "slug": "tho-pha-le-hinh-cay-thong-noel-tree-bohemia-duong-kinh-165cm",
+    "sku": "MT1340",
+    "brand_names": [
+      "Bohemia"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "1690000",
+      "regular_price": "1690000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bohemia-tree-bowl-1-1.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2915,
+    "name": "Nồi cơm điện cao tần áp suất Cuckoo CRP-HWF1000F – 1,8L",
+    "slug": "noi-com-dien-cao-tan-ap-suat-cuckoo-crp-hwf1000f-18l",
+    "sku": "MNC4650",
+    "brand_names": [
+      "Cuckoo"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "5150000",
+      "regular_price": "5150000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/cuckoo-crp-hwf1000f-1.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2914,
+    "name": "Máy vắt cam CASO CP 330 PRO – Công suất 160W",
+    "slug": "may-vat-cam-caso-cp-330-pro-cong-suat-160w",
+    "sku": "MVC1099",
+    "brand_names": [
+      "CASO"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "1850000",
+      "regular_price": "1850000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/caso-cp330-pro-1-2.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2919,
+    "name": "Máy lọc không khí LG ALPHA PET 2 tầng AS10GDBY0 – Lọc bụi và mùi thú cưng",
+    "slug": "may-loc-khong-khi-lg-alpha-pet-2-tang-as10gdby0-loc-bui-va-mui-thu-cung",
+    "sku": "MLG20200",
+    "brand_names": [],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "22200000",
+      "regular_price": "22200000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/lg-alpha-pet-as10gdby0-1.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2912,
+    "name": "Máy hút ẩm Lumias D6S-30L – Hút ẩm 30L mỗi ngày",
+    "slug": "may-hut-am-lumias-d6s-30l-hut-am-30l-moi-ngay",
+    "sku": "MMHA5300",
+    "brand_names": [
+      "Lumias"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "5990000",
+      "regular_price": "5990000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/lumias-d6s-30l-1-1.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2918,
+    "name": "Robot lọc không khí ECOVACS AIRBOT ANDY PRO – Lọc khí tự di chuyển",
+    "slug": "robot-loc-khong-khi-ecovacs-airbot-andy-pro-loc-khi-tu-di-chuyen",
+    "sku": "MEC7350",
+    "brand_names": [
+      "ECOVACS"
+    ],
+    "categories": [
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "7990000",
+      "regular_price": "7990000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/ecovacs-airbot-andy-pro-1.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2911,
+    "name": "Giá đựng bát đĩa Joseph Joseph 851690 – Mở rộng không gian bếp",
+    "slug": "gia-dung-bat-dia-joseph-joseph-851690-mo-rong-khong-gian-bep",
+    "sku": "MG1950",
+    "brand_names": [
+      "Joseph Joseph"
+    ],
+    "categories": [],
+    "prices": {
+      "price": "2290000",
+      "regular_price": "2290000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/joseph-rack-851690-1-2.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2913,
+    "name": "Máy pha cà phê Bosch TKA3M133 – Bình 1,4L, công suất 1200W",
+    "slug": "may-pha-ca-phe-bosch-tka3m133-binh-14l-cong-suat-1200w",
+    "sku": "MPC1830",
+    "brand_names": [
+      "Bosch"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "2170000",
+      "regular_price": "2170000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bosch-tka3m133-1.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2902,
+    "name": "Bàn là cây Philips STE3160/30 – Công suất 2000W",
+    "slug": "ban-la-cay-philips-ste3160-30-cong-suat-2000w",
+    "sku": "MBL2280",
+    "brand_names": [
+      "Philips"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "2750000",
+      "regular_price": "2750000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/philips-ste3160-1.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2834,
+    "name": "Set 5 Đôi Đũa Inox 316 Chockmen CKM JYCS5P – Chống Trơn Không Mốc",
+    "slug": "set-5-doi-dua-inox-316-chockmen-ckm-jycs5p",
+    "sku": "DI125",
+    "brand_names": [
+      "Chockmen"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "190000",
+      "regular_price": "260000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/set-5-doi-dua-inox-316-chockmen-ckm-jycs5p-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2828,
+    "name": "Set 5 Đôi Đũa Nhật Kháng Khuẩn Shikisai Hoa Anh Đào – Chịu Nhiệt 200°C",
+    "slug": "set-5-doi-dua-nhat-khang-khuan-shikisai",
+    "sku": "MDN90",
+    "brand_names": [
+      "Shikisai"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "140000",
+      "regular_price": "190000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/set-5-doi-dua-nhat-khang-khuan-shikisai-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2823,
+    "name": "Set 3 Thớt Kháng Khuẩn Joseph Joseph 60146 Kèm Hộp Đứng Thông Thoáng",
+    "slug": "set-3-thot-khang-khuan-joseph-joseph-60146",
+    "sku": "MTK1170",
+    "brand_names": [
+      "Joseph Joseph"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1490000",
+      "regular_price": "1890000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/set-3-thot-khang-khuan-joseph-joseph-60146-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2817,
+    "name": "Nồi Cơm Áp Suất Habibullet PHB-8386 – 2 Lòng Nồi Nấu Cơm Hầm Súp",
+    "slug": "noi-com-ap-suat-habibullet-phb-8386-2-long-noi",
+    "sku": "MA2150",
+    "brand_names": [
+      "Habibullet"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      },
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "2590000",
+      "regular_price": "3290000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/noi-com-ap-suat-habibullet-phb-8386-2-long-noi-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2810,
+    "name": "Máy Bắt Muỗi Sinh Học GKÖCH YG-M006 – Tia UV 360° Không Tiếng Ồn",
+    "slug": "may-bat-muoi-sinh-hoc-gkoch-yg-m006",
+    "sku": "MBM240",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "350000",
+      "regular_price": "490000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/may-bat-muoi-sinh-hoc-gkoch-yg-m006-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2803,
+    "name": "Kéo Nhà Bếp Đa Năng WMF – Thép Cromargan Không Gỉ Chuẩn Đức",
+    "slug": "keo-nha-bep-da-nang-wmf",
+    "sku": "MKN265",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "399000",
+      "regular_price": "550000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/keo-nha-bep-da-nang-wmf-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2798,
+    "name": "Kéo Cắt Gà Scanpan Classic – Thép Đức Đúc Liền Khối Đan Mạch",
+    "slug": "keo-cat-ga-scanpan-classic",
+    "sku": "MKC810",
+    "brand_names": [
+      "Scanpan"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1150000",
+      "regular_price": "1450000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/keo-cat-ga-scanpan-classic-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2793,
+    "name": "Bộ Dụng Cụ Nhà Bếp 7 Món Joseph Joseph 101188 Kèm Giá Treo Xoay",
+    "slug": "bo-dung-cu-nha-bep-7-mon-joseph-joseph-101188",
+    "sku": "MDB1690",
+    "brand_names": [
+      "Joseph Joseph"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1999000",
+      "regular_price": "2490000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/bo-dung-cu-nha-bep-7-mon-joseph-joseph-101188-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2786,
+    "name": "Bộ Dao 6 Món GKÖCH Kèm Đốc Gỗ – Đẳng Cấp Chef Đức Tại Gia",
+    "slug": "bo-dao-6-mon-gkoch-kem-doc-go",
+    "sku": "MDG2380",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "2790000",
+      "regular_price": "3450000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/bo-dao-6-mon-gkoch-kem-doc-go-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2782,
+    "name": "Bộ Dao 4 Món Cao Cấp Gume Korea GMK-23 – Thép Không Gỉ Sắc Bén",
+    "slug": "bo-dao-4-mon-gume-korea-gmk-23",
+    "sku": "MD385",
+    "brand_names": [
+      "Gume"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "590000",
+      "regular_price": "790000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/bo-dao-4-mon-gume-korea-gmk-23-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2775,
+    "name": "Quạt Tháp Cao Cấp UNOLD Super Air Smart 360 – Xoay 360 Độ Công Nghệ Đức",
+    "slug": "quat-thap-unold-super-air-smart-360",
+    "sku": "MQS2450",
+    "brand_names": [
+      "UNOLD"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      },
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "2890000",
+      "regular_price": "3650000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/unold-super-air-smart-360-gallery-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2765,
+    "name": "Set Thìa Dĩa WMF Miami 12 Món – Thép Cromargan 18/10 Hoàn Thiện Mờ Satin Chuẩn Đức",
+    "slug": "set-thia-dia-wmf-miami-12-mon",
+    "sku": "MTD790",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "1150000",
+      "regular_price": "1550000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/wmf-miami-12mon-gallery-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2757,
+    "name": "Nồi Hấp Điện 3 Tầng Tefal VC2048 (9L) – Xếp Chồng Gọn Gàng Công Suất 800W",
+    "slug": "noi-hap-3-tang-tefal-vc2048",
+    "sku": "MNH750",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "1050000",
+      "regular_price": "1450000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/tefal-vc2048-gallery-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2748,
+    "name": "Nồi Luộc Gà Scanpan Impact 28cm (12L) – Inox 18/10 Đáy 3 Lớp Dày 6.4mm",
+    "slug": "noi-luoc-ga-scanpan-impact-28cm-12l",
+    "sku": "MLG1650",
+    "brand_names": [
+      "Scanpan"
+    ],
+    "categories": [],
+    "prices": {
+      "price": "1950000",
+      "regular_price": "2650000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/scanpan-impact-28cm-gallery-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2740,
+    "name": "Nồi Cơm Điện Cơ Cuckoo CR-1095/WHVNCV 1.8L – Men Daikin Công Nghệ Nhiệt 3D",
+    "slug": "noi-com-co-cuckoo-cr-1095whvncv-1-8l",
+    "sku": "MNC920",
+    "brand_names": [
+      "Cuckoo"
+    ],
+    "categories": [
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "1250000",
+      "regular_price": "1650000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/cuckoo-cr1095-gallery-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2728,
+    "name": "Máy Sấy Hoa Quả Thực Phẩm CASO DH 450 Chuẩn Đức – 5 Khay Sấy Hẹn Giờ 48H",
+    "slug": "may-say-hoa-qua-thuc-pham-caso-dh-450",
+    "sku": "MSH2750",
+    "brand_names": [
+      "CASO"
+    ],
+    "categories": [
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "3150000",
+      "regular_price": "3990000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/caso-dh450-gallery-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2722,
+    "name": "Máy Vắt Cam Tự Động Hurom CJB03FWH – Phiên Bản Mới Nhất Ép Chậm 170W",
+    "slug": "may-vat-cam-tu-dong-hurom-cjb03fwh",
+    "sku": "MVC1090",
+    "brand_names": [
+      "Hurom"
+    ],
+    "categories": [
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "1390000",
+      "regular_price": "1850000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/hurom-cjb03fwh-gallery-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2712,
+    "name": "Đèn Bàn Học Chống Cận Wilit U20E Model 2026 – 3 Chế Độ Sáng, 5 Mức Độ Cảm Ứng",
+    "slug": "den-ban-hoc-chong-can-wilit-u20e-model-2026",
+    "sku": "MDC490",
+    "brand_names": [
+      "Wilit"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      },
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "690000",
+      "regular_price": "950000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/wilit-u20e-gallery-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2677,
+    "name": "Chảo 3 Ngăn Chiên Trứng 2Lock Hàn Quốc – Phủ Sứ Gốm Cao Cấp Đáy Từ",
+    "slug": "chao-3-ngan-chien-trung-2lock-han-quoc",
+    "sku": "MCT550",
+    "brand_names": [
+      "2LOCK"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "690000",
+      "regular_price": "890000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/chao-3-trung-2lock-fullframe-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2643,
+    "name": "Bộ Nồi Nhôm Đúc Chống Dính GKÖCH 4 Món Cao Cấp",
+    "slug": "bo-noi-nhom-duc-chong-dinh-gkoch-4-mon",
+    "sku": "MBN1680",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 99,
+        "name": "Nồi & xửng hấp",
+        "slug": "xong-noi"
+      },
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "2090000",
+      "regular_price": "2690000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/gkoch-fullframe-gallery-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2615,
+    "name": "Tineco FLOOR ONE i7 Steam",
+    "slug": "may-lau-san-tineco-i7",
+    "sku": "M7590",
+    "brand_names": [
+      "Tineco"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "8400000",
+      "regular_price": "8400000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/gallery-01-8.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2606,
+    "name": "Tineco FLOOR ONE S7 Stretch Steam",
+    "slug": "may-lau-san-tineco-s7",
+    "sku": "M9600",
+    "brand_names": [
+      "Tineco"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "10600000",
+      "regular_price": "10600000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/gallery-01-7.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2595,
+    "name": "Máy Ép Chậm Hurom H400 Series 3",
+    "slug": "may-ep-hurom-h400",
+    "sku": "M6600",
+    "brand_names": [
+      "Hurom"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "7100000",
+      "regular_price": "7100000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/gallery-01-6.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2585,
+    "name": "Máy Sấy Tóc Plasma Habibullet H6 ProLux",
+    "slug": "may-say-habibullet-h6-prolux",
+    "sku": "MH1350",
+    "brand_names": [
+      "Habibullet"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "1690000",
+      "regular_price": "1690000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/gallery-01-5.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2572,
+    "name": "Máy xay sinh tố mini Hurom BL-C01FCR",
+    "slug": "may-xay-hurom-bl-c01fcr",
+    "sku": "MMX900",
+    "brand_names": [
+      "Hurom"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "1170000",
+      "regular_price": "1170000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/gallery-01-4.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2563,
+    "name": "Máy xay cầm tay SMEG HBF03",
+    "slug": "may-xay-smeg-hbf03",
+    "sku": "MSM3350",
+    "brand_names": [
+      "SMEG"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "3790000",
+      "regular_price": "3790000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/gallery-01-3.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2553,
+    "name": "Bếp nướng WMF LONO Master-Grill",
+    "slug": "bep-nuong-wmf-lono",
+    "sku": "MW3050",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "3550000",
+      "regular_price": "3550000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/gallery-01-2.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2536,
+    "name": "Bàn là hơi nước Philips Series 5000 STH5030",
+    "slug": "ban-la-philips-sth5030",
+    "sku": "MPL1300",
+    "brand_names": [
+      "Philips"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "1650000",
+      "regular_price": "1650000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/gallery-01.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2504,
+    "name": "Set 2 bình pha lê Killarney đựng dầu giấm 200ml",
+    "slug": "binh-pha-le-killarney-200ml",
+    "sku": "M630",
+    "brand_names": [
+      "Killarney"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "950000",
+      "regular_price": "950000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/binh-pha-le-killarney-200ml-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2497,
+    "name": "Máy tăm nước 2LOCK WP24-1111C 200ml",
+    "slug": "2lock-wp24-1111c",
+    "sku": "MT690",
+    "brand_names": [
+      "2LOCK"
+    ],
+    "categories": [],
+    "prices": {
+      "price": "950000",
+      "regular_price": "950000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/2lock-wp24-1111c-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2490,
+    "name": "Quạt tích điện ULTTY ELNI 16 nguồn kép",
+    "slug": "ultty-elni-16",
+    "sku": "M1999",
+    "brand_names": [
+      "ULTTY"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "2350000",
+      "regular_price": "2350000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/ultty-elni-16-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2483,
+    "name": "Quánh Scanpan Mini 12cm 0,6L có nắp",
+    "slug": "quanh-scanpan-mini-12cm",
+    "sku": "MQ570",
+    "brand_names": [
+      "Scanpan"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "780000",
+      "regular_price": "780000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/quanh-scanpan-mini-12cm-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2476,
+    "name": "Nồi lẩu điện đa năng Lumias LM-PM606",
+    "slug": "lumias-lm-pm606",
+    "sku": "M390",
+    "brand_names": [
+      "Lumias"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "590000",
+      "regular_price": "590000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/lumias-lm-pm606-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2469,
+    "name": "Nồi Tefal Duetto Plus 28cm 10,4L luộc gà",
+    "slug": "tefal-duetto-plus-28cm-10-4l",
+    "sku": "ML690K",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 99,
+        "name": "Nồi & xửng hấp",
+        "slug": "xong-noi"
+      }
+    ],
+    "prices": {
+      "price": "950000",
+      "regular_price": "950000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/tefal-duetto-plus-28cm-10-4l-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2462,
+    "name": "Máy trộn cầm tay Braun MultiMix 2 HM2110 500W",
+    "slug": "braun-hm2110",
+    "sku": "MC850",
+    "brand_names": [
+      "Braun"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "1090000",
+      "regular_price": "1090000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/braun-hm2110-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2455,
+    "name": "Robot hút bụi lau nhà Dreame D20 Ultra 13.000Pa",
+    "slug": "dreame-d20-ultra",
+    "sku": "M6690",
+    "brand_names": [
+      "Dreame"
+    ],
+    "categories": [
+      {
+        "id": 101,
+        "name": "Vệ sinh nhà cửa thông minh",
+        "slug": "ve-sinh-nha-cua"
+      }
+    ],
+    "prices": {
+      "price": "7690000",
+      "regular_price": "7690000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/dreame-d20-ultra-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2448,
+    "name": "Bộ 6 dao LA CÔTE kèm đốc gỗ Pakka",
+    "slug": "bo-dao-la-cote-6-mon",
+    "sku": "DA1590",
+    "brand_names": [
+      "La CÔTE"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1990000",
+      "regular_price": "1990000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bo-dao-la-cote-6-mon-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 2443,
+    "name": "Bếp từ đơn Rommelsbacher CT 2100/IN 2100W",
+    "slug": "bep-tu-don-rommelsbacher-ct-2100-in",
+    "sku": "MB1550",
+    "brand_names": [
+      "Rommelsbacher"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1950000",
+      "regular_price": "1950000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bep-tu-on-rommelsbacher-ct-2100-in-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1930,
+    "name": "Nồi Hầm Dưỡng Sinh Bear DDG-D20N5 2.0L – Lòng Gốm Sứ, 175W",
+    "slug": "noi-ham-duong-sinh-bear-ddg-d20n5-2l-long-gom-su",
+    "sku": "MBEAR-D20N5",
+    "brand_names": [
+      "Bear"
+    ],
+    "categories": [],
+    "prices": {
+      "price": "690000",
+      "regular_price": "690000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bear_lifestyle_compressed-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1854,
+    "name": "Chiếu Mây Ngải Cứu Nicolas – Đế 5D Chống Trượt, Kháng Khuẩn",
+    "slug": "chieu-may-ngai-cuu-nicolas-sieu-cap",
+    "sku": "",
+    "brand_names": [
+      "Nicolas"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "270000",
+      "regular_price": "350000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/chieu-may-ngai-cuu-nicolas-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1851,
+    "name": "Nồi Cơm Cao Tần Cuckoo CRP-NHTR0610 1.08L – IH Áp Suất",
+    "slug": "noi-com-cao-tan-cuckoo-crp-nhtr0610-1-08l",
+    "sku": "M8100",
+    "brand_names": [
+      "Cuckoo"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "9200000",
+      "regular_price": "12900000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/noi-com-cao-tan-cuckoo-crp-nhtr0610-7.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1850,
+    "name": "Nồi Chiên Ngập Dầu Silvercrest SEF3 4L – 3 Giỏ, 2000W",
+    "slug": "noi-chien-ngap-dau-silvercrest-sef3-4l-3-gio-chien-gion-rum-het-mui-dau",
+    "sku": "M2100",
+    "brand_names": [
+      "Silvercrest"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "2590000",
+      "regular_price": "3490000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/noi-chien-ngap-dau-silvercrest-sef3-4l-3-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1842,
+    "name": "Nồi Lẩu Hấp Điện Joyoung JFS-556 – 2in1 Lẩu 4.5L + Hấp 16L",
+    "slug": "noi-lau-hap-dien-joyoung-jfs-556-da-nang-tien-loi-nau-gi-cung-ngon",
+    "sku": "M1400",
+    "brand_names": [
+      "Joyoung"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1790000",
+      "regular_price": "2490000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/noi-lau-hap-Aien-joyoung-jfs-556-Aa-nang-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1833,
+    "name": "Nồi Áp Suất Inox Tefal Secure Trendy 4L – P2580400",
+    "slug": "noi-ap-suat-inox-4l-tefal-secure-trendy-p2580400-sieu-xin-sieu-nhanh-sieu-tien",
+    "sku": "M779",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "999000",
+      "regular_price": "1490000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/noi-ap-suat-inox-4l-tefal-secure-trendy-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1827,
+    "name": "Nồi Nấu Chậm 2Lock Korea 3L – 2 Nắp Sứ, Hầm Ninh Đậm Vị",
+    "slug": "noi-nau-cham-2lock-korea-3l-ham-ninh-giu-tron-duong-chat-cong-nghe-khoa-nap-kep",
+    "sku": "M1230",
+    "brand_names": [
+      "2LOCK"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1590000",
+      "regular_price": "2490000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/noi-nau-cham-2lock-korea-3l-ham-ninh-giy-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1820,
+    "name": "Nồi chiên không dầu Philips NA230/00 6,2 lít",
+    "slug": "noi-chien-khong-dau-philips-na230-00",
+    "sku": "MK1950",
+    "brand_names": [
+      "Philips"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "2290000",
+      "regular_price": "2940000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/philips-na230-00-hero-gallery-v4.2.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1809,
+    "name": "Máy Tạo Kiểu Tóc Habibullet H17 – 8 Đầu, Ion Plasma",
+    "slug": "habibullet-h17-premium-pink-bo-tao-kieu-toc-8-dau-plasma-ion-he-thong-cam-bien-chong-bong",
+    "sku": "MH4450",
+    "brand_names": [
+      "Habibullet"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "5990000",
+      "regular_price": "7990000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/habibullet-h17-gallery_1-cropped-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1801,
+    "name": "Khay Pha Lê 3 Tầng Godinger Dublin – Sang Trọng, Đa Năng",
+    "slug": "khay-pha-le-3-tang-godinger-dublin-dang-cap-tinh-te",
+    "sku": "M990",
+    "brand_names": [
+      "Godinger"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "1490000",
+      "regular_price": "1990000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/khay-pha-le-3-tang-godinger-dublin-Aeng-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1792,
+    "name": "Gối Lông Vũ Moncler 48x74cm – Bộ 2 Chiếc, Chuẩn Âu",
+    "slug": "goi-moncler-am-ap-em-mem-sang-trong-chuan-au-bo-2-chiec",
+    "sku": "MH450",
+    "brand_names": [
+      "Moncler"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "650000",
+      "regular_price": "890000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1792-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1785,
+    "name": "Cạo Vệ Sinh Bếp Từ WMF – Thép 18/10, Sạch Mặt Kính Bếp",
+    "slug": "cao-ve-sinh-bep-tu-wmf-dung-cu-ve-sinh-dinh-cao-cho-mat-kinh-bep",
+    "sku": "MC290",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [],
+    "prices": {
+      "price": "450000",
+      "regular_price": "690000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/cao-ve-sinh-bep-tu-wmf-dung-cu-ve-sinh-A-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1779,
+    "name": "Bàn Là Hơi Nước Mini Tefal Pure Pop DT202 – 700g, Du Lịch",
+    "slug": "ban-la-mini-du-lich-tefal-pure-pop-dt202-nho-gon-ui-phang-diet-khuan-99-9",
+    "sku": "MB790",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "1050000",
+      "regular_price": "1390000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/gallery-01-1.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1769,
+    "name": "Thố Pha Lê New Haven 12cm – Decor Sang Trọng, Quà Tặng",
+    "slug": "tho-pha-le-new-haven-sang-trong-tinh-te-mon-qua-hoan-hao",
+    "sku": "M7300",
+    "brand_names": [
+      "Dolphin House"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "7300000",
+      "regular_price": "9500000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/tho-pha-le-new-haven-sang-trong-tinh-te-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1763,
+    "name": "Bàn Là Hơi Nước Đứng Tefal IXEO QT1510 – 2980W, 3 Tư Thế",
+    "slug": "ban-la-cay-tefal-ixeo-all-in-one-qt1510",
+    "sku": "M3350",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "3850000",
+      "regular_price": "5290000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/ban-la-cay-hoi-nuoc-tefal-ixeo-all-in-on-hinh-1-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1616,
+    "name": "Thùng Rác Bàn Đạp Joseph Joseph 30152 10L – Nắp Đóng Chậm",
+    "slug": "thung-rac-ban-dap-joseph-joseph-30152-10l",
+    "sku": "M1450",
+    "brand_names": [
+      "Joseph Joseph"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "1750000",
+      "regular_price": "2490000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/thung-rac-ban-Aap-joseph-joseph-30152-10-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1604,
+    "name": "Thùng Rác Inox Chạm Khắc Hoa Văn 12L – Nắp Giảm Chấn Êm",
+    "slug": "thung-rac-inox-cao-cap-hoa-van-12l",
+    "sku": "M410",
+    "brand_names": [
+      "Dolphin House"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "590000",
+      "regular_price": "890000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/thung-rac-inox-cao-cap-cham-khac-hoa-van-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1599,
+    "name": "Súng Massage Cầm Tay Fman M1 – 5 Đầu, 60W, Pin 2000mAh",
+    "slug": "sung-massage-cam-tay-fman-m1",
+    "sku": "M550",
+    "brand_names": [
+      "Fman"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "850000",
+      "regular_price": "1850000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/sung-massage-cam-tay-fman-m1-5-Aau-massa-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1592,
+    "name": "Rổ Quay Rau & Thái Lát Joseph Joseph Multi-Prep 4in1",
+    "slug": "ro-quay-rau-joseph-joseph-multi-prep-4in1",
+    "sku": "M1140",
+    "brand_names": [
+      "Joseph Joseph"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1450000",
+      "regular_price": "1950000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/ro-quay-rau-thai-lat-Aa-nang-joseph-jose-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1582,
+    "name": "Bàn Ủi Hơi Nước Đứng Philips PerfectCare Elite Plus AIS8540/80",
+    "slug": "ban-ui-hoi-nuoc-philips-perfectcare-elite-plus-ais8540",
+    "sku": "M6250",
+    "brand_names": [
+      "Philips"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "6950000",
+      "regular_price": "8900000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/ban-ui-hoi-nuoc-Aung-philips-perfectcare-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1575,
+    "name": "Nồi Chảo Gang Đúc Tráng Men GKÖCH 25cm – Dùng Mọi Bếp",
+    "slug": "noi-chao-gang-gkoch-25cm",
+    "sku": "MG490",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "750000",
+      "regular_price": "750000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/noi-chao-gang-Auc-trang-men-gkch-25cm-g-hinh-1-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1560,
+    "name": "Máy Ép Chậm CASO JuiceFit Pro – Cửa Nạp Nguyên Quả 130mm",
+    "slug": "may-ep-cham-caso-juicefit-pro",
+    "sku": "M3590",
+    "brand_names": [
+      "CASO"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "4090000",
+      "regular_price": "5200000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/may-ep-cham-caso-juicefit-pro-cua-nap-ng-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1554,
+    "name": "Máy Pha Cà Phê Nhỏ Giọt Bosch TKA3M133 – 1.4L, 1200W",
+    "slug": "may-pha-ca-phe-bosch-tka3m133",
+    "sku": "M1950",
+    "brand_names": [
+      "Bosch"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "2390000",
+      "regular_price": "2990000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/may-pha-ca-phe-nho-giot-bosch-tka3m133-d-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1545,
+    "name": "Máy Xay Thịt & Rau Củ Tefal DPA130 – 1000W, Nhập Khẩu Pháp",
+    "slug": "may-xay-thit-tefal-dpa130-made-in-france",
+    "sku": "M1370",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1690000",
+      "regular_price": "2300000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/may-xay-thit-rau-cu-tefal-dpa130-cong-su-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1537,
+    "name": "Máy Hút Bụi Cầm Tay Không Dây GKÖCH A-081 – 2 Chiều, Type-C",
+    "slug": "may-hut-bui-cam-tay-gkoch-a-081",
+    "sku": "MG730",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "950000",
+      "regular_price": "1450000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/may-hut-bui-cam-tay-khong-day-gkch-a-08-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1528,
+    "name": "Dụng Cụ Nạo Rau Củ Ritter Đức – Lưỡi Thép Siêu Bén",
+    "slug": "dung-cu-nao-rau-cu-ritter-duc",
+    "sku": "M160",
+    "brand_names": [
+      "Ritter"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "280000",
+      "regular_price": "450000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/dung-cu-nao-rau-cu-ritter-Auc-luui-thep-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1522,
+    "name": "Chảo Xào Keller Wok Pan 32cm – Inox 316, Kèm Vung Kính",
+    "slug": "chao-xao-da-nang-keller-wok-pan-32cm",
+    "sku": "M730",
+    "brand_names": [
+      "Dolphin House"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "950000",
+      "regular_price": "2300000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/chao-xao-Aa-nang-keller-wok-pan-32cm-ino-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1516,
+    "name": "Bộ 6 Cốc Pha Lê Bohemia Diamond 230ml – Tiệp Khắc",
+    "slug": "bo-6-coc-pha-le-bohemia-diamond-230ml",
+    "sku": "M670",
+    "brand_names": [
+      "Bohemia"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "890000",
+      "regular_price": "1200000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/bo-6-coc-pha-le-bohemia-diamond-230ml-ti-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1509,
+    "name": "Bóng Giặt Sấy Trockner Ball Đan Mạch – Chống Nhăn Quần Áo",
+    "slug": "bong-giat-trockner-ball-chong-nhan",
+    "sku": "M215",
+    "brand_names": [
+      "Trockner"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "330000",
+      "regular_price": "550000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/bong-giat-say-trockner-ball-Aan-mach-cho-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1486,
+    "name": "Vỉ Chắn Dầu Inox 304 GKÖCH – Chắn Mỡ 99%, Cách Nhiệt",
+    "slug": "vi-chan-dau-inox-gkoch",
+    "sku": "M100",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "190000",
+      "regular_price": "290000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/vo-chan-dau-inox-304-gkch-luoi-sieu-khi-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1480,
+    "name": "Set 2 Chảo Chống Dính Silit Talis 20-24cm – Đáy Từ Silitherm",
+    "slug": "set-chao-silit-talis-20-24cm",
+    "sku": "MS2050",
+    "brand_names": [
+      "Dolphin House"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "2050000",
+      "regular_price": "2990000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1480-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1472,
+    "name": "Quạt Đứng Kim Loại GKÖCH W-FGS1808 18″ – Động Cơ Đồng 60W",
+    "slug": "quat-dung-kim-loai-gkoch-18-inch",
+    "sku": "MQ1550",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "1950000",
+      "regular_price": "1950000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/quat-dung-kim-loai-gkoch-w-fgs1808-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1470,
+    "name": "Nồi Nấu Chậm Russel Hobbs 2L Compact Home – Chuẩn Đức",
+    "slug": "noi-nau-cham-russel-hobbs-2l",
+    "sku": "M1550",
+    "brand_names": [
+      "Russel Hobbs"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1890000",
+      "regular_price": "2490000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/noi-nau-cham-russel-hobbs-2l-compact-hom-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1462,
+    "name": "Nồi Gang Tráng Men Hình Cà Chua Moos – Men Đỏ Cao Cấp",
+    "slug": "noi-gang-ca-chua-moos",
+    "sku": "M1150",
+    "brand_names": [
+      "Moos"
+    ],
+    "categories": [
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      },
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "1590000",
+      "regular_price": "2200000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1462-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1452,
+    "name": "Máy Sấy Tóc Ion Âm Kaiyo KHD – 1600W, 2 Chiều, Gấp Gọn",
+    "slug": "may-say-toc-ion-am-kaiyo-khd",
+    "sku": "M315",
+    "brand_names": [
+      "Kaiyo"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "490000",
+      "regular_price": "790000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1452-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1432,
+    "name": "Chảo Tefal So Chef 21cm – Đỏ Bordeaux, Thermo-Spot Báo Nhiệt",
+    "slug": "chao-tefal-so-chef-21cm-do",
+    "sku": "M235",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "430000",
+      "regular_price": "650000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1432-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1426,
+    "name": "Chảo Inox 18/10 Blackcube Gume 28cm – Chống Dính Tổ Ong",
+    "slug": "chao-inox-blackcube-gume-28cm",
+    "sku": "MG560",
+    "brand_names": [
+      "Gume"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "790000",
+      "regular_price": "1250000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1426-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1416,
+    "name": "Bếp Từ Đôi Lumias LK225 Plus – 3500W, 10 Mức Nhiệt",
+    "slug": "bep-tu-doi-lumias-lk225-plus",
+    "sku": "M1290",
+    "brand_names": [
+      "Lumias"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1790000",
+      "regular_price": "2490000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1416-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1397,
+    "name": "Ô Tewa Japan – Tự Động Mở/Đóng, Chống UV, Gọn Nhẹ Cho Mọi Ngày",
+    "slug": "o-tewa-japan-tu-dong-mo-dong-chong-uv-gon-nhe-cho-moi-ngay",
+    "sku": "M210",
+    "brand_names": [
+      "Tewa"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "320000",
+      "regular_price": "450000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1397-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1381,
+    "name": "Kính Du Lịch Chống UV400 – Phân Cực, Gọn Nhẹ",
+    "slug": "kinh-xin-du-lich-chong-uv400-phan-cuc-gon-nhe-cho-moi-chuyen-di",
+    "sku": "M490",
+    "brand_names": [
+      "Dolphin House"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "620000",
+      "regular_price": "620000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/p1381-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1373,
+    "name": "Gối Tựa Butterfly Magrace – Chống Đau Vai Gáy",
+    "slug": "goi-tua-butterfly-magrace-em-ai-chong-dau-vai-gay-thiet-ke-phong-cach",
+    "sku": "M370",
+    "brand_names": [
+      "Butterfly Magrace"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "480000",
+      "regular_price": "650000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1373-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1362,
+    "name": "Siêu Phẩm Chăn Lụa Tencel – Sang Trọng Như Khách Sạn 5 Sao",
+    "slug": "sieu-pham-chan-lua-tencel-sang-trong-nhu-khach-san-5-sao",
+    "sku": "M520",
+    "brand_names": [
+      "Dolphin House"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "1850000",
+      "regular_price": "2500000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1362-gallery-01-600x800-3.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1353,
+    "name": "Chăn Hè Yuki Tencel – Mát Tự Nhiên, Ngủ Ngon Cả Đêm",
+    "slug": "chan-he-yuki-tencel-mat-tu-nhien-ngu-ngon-ca-dem",
+    "sku": "MY690",
+    "brand_names": [
+      "Yuki"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "890000",
+      "regular_price": "1200000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1353-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1332,
+    "name": "Quạt Đứng Tefal VH689690 – Smart Fan Pháp, Remote, Dual Cooling",
+    "slug": "quat-dung-tefal-vh689690-smart-fan",
+    "sku": "M125",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "1990000",
+      "regular_price": "2500000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/quat-Aung-tefal-vh689690-smart-fan-phap-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1326,
+    "name": "Quạt Cây Đứng Toshiba F-LSA20(H)VN – Êm Ái, Remote, LED",
+    "slug": "quat-cay-dung-toshiba-f-lsa20h-vn",
+    "sku": "M114",
+    "brand_names": [
+      "Toshiba"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "1750000",
+      "regular_price": "2200000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/quat-cay-Aung-toshiba-f-lsa20hvn-em-ai-r-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1319,
+    "name": "Rổ Quay Rau Cao Cấp ULTTY – Rau Giòn Sạch Như Nhà Hàng",
+    "slug": "ro-quay-rau-cao-cap-ultty",
+    "sku": "M760",
+    "brand_names": [
+      "ULTTY"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "249000",
+      "regular_price": "350000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/ro-quay-rau-cao-cap-ultty-rau-gion-sach-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1312,
+    "name": "Bình Đựng Thức Ăn Giữ Nhiệt GUME GM-F11",
+    "slug": "binh-dung-thuc-an-giu-nhiet-gume-gm-f11",
+    "sku": "M270",
+    "brand_names": [
+      "Gume"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "320000",
+      "regular_price": "450000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/binh-Aung-thuc-an-giy-nhiet-gume-gm-f11-hinh-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1303,
+    "name": "Máy Xay Thịt Mini Bosch MMRP1000 – Nhỏ Gọn, Lưỡi Bén Đức",
+    "slug": "may-xay-thit-mini-bosch-mmrp1000-nho-gon-ben-luoi-duc-de-ve-sinh",
+    "sku": "M105",
+    "brand_names": [
+      "Bosch"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "890000",
+      "regular_price": "1200000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1303-gallery-01-600x800-2.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1280,
+    "name": "Muôi Canh WMF NouVa Chính Hãng – Inox Cromargan 18/10 Đức",
+    "slug": "muoi-canh-wmf-nouva-chinh-hang-inox-cromargan-18-10-duc",
+    "sku": "M360",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "320000",
+      "regular_price": "450000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1280-gallery-01-600x800-2.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1277,
+    "name": "Bộ Nồi GKÖCH 4 Món – Đáy Từ, Chống Dính PTFE, Hàng Đức",
+    "slug": "bo-noi-gkoch-4-mon-cao-cap-thuong-hieu-duc-day-tu-chong-dinh-ptfe",
+    "sku": "M168",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "1350000",
+      "regular_price": "1800000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1277-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1276,
+    "name": "Thớt Nhật Bản Cao Cấp – Kháng Khuẩn, Chống Mốc, Siêu Bền",
+    "slug": "thot-nhat-ban-cao-cap-khang-khuan-chong-moc-sieu-ben",
+    "sku": "M230",
+    "brand_names": [
+      "Dolphin House"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "620000",
+      "regular_price": "850000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1276-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1266,
+    "name": "Máy Xay Đa Năng Bosch MCM3100W – 800W, Đa Chức Năng",
+    "slug": "may-xay-da-nang-bosch-mcm3100w",
+    "sku": "M254",
+    "brand_names": [
+      "Bosch"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "2990000",
+      "regular_price": "3800000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1266-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1234,
+    "name": "Máy Xay Thịt GKÖCH – Motor Đồng 350–500W, Cối Thủy Tinh 2L",
+    "slug": "may-xay-thit-gkoch-cong-nghe-duc-motor-dong-350w-500w-coi-thuy-tinh-2l",
+    "sku": "MG510",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "650000",
+      "regular_price": "950000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1234-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1223,
+    "name": "Chảo Chống Dính Steiger TitanPro – Công Nghệ Titan Đức",
+    "slug": "chao-chong-dinh-steiger-titanpro-cong-nghe-titan-duc",
+    "sku": "M470",
+    "brand_names": [
+      "Steiger"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "890000",
+      "regular_price": "1200000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1223-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1214,
+    "name": "Bộ Nồi WMF Inspiration 6 Món – Đẳng Cấp Bếp Đức",
+    "slug": "bo-noi-wmf-inspiration-6-mon-dang-cap-bep-duc",
+    "sku": "M355",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "3800000",
+      "regular_price": "4500000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1214-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1199,
+    "name": "Bình Đun Siêu Tốc Tefal KO140 1.5L – An Toàn, Bền Đẹp",
+    "slug": "binh-dun-sieu-toc-tefal-ko140-1-5l-an-toan-ben-dep",
+    "sku": "M510",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "780000",
+      "regular_price": "890000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1199-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1187,
+    "name": "Máy Vắt Cam Elegant 160W – Nhập Khẩu Đức, Bảo Hành 12 Tháng",
+    "slug": "sale-nga-cay-may-vat-cam-elegant-xin-xo-tu-duc",
+    "sku": "M690",
+    "brand_names": [
+      "Dolphin House"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "950000",
+      "regular_price": "1450000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1187-gallery-01-600x800-2.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1061,
+    "name": "Thố Pha Lê Vesse Size Đại BA109 – Đựng Mứt, Canh, Trái Cây",
+    "slug": "tho-mut-hoang-gia-vesse-size-dai-sang-trong",
+    "sku": "M790",
+    "brand_names": [
+      "Vesse"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "790000",
+      "regular_price": "890000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1061-gallery-01-600x800-2.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1048,
+    "name": "Ghế ngồi ô tô cho bé Babyro I-WING G308A",
+    "slug": "ghe-ngoi-o-to-cho-be-babyro-i-wing-g308a",
+    "sku": "M3740",
+    "brand_names": [
+      "Babyro"
+    ],
+    "categories": [
+      {
+        "id": 171,
+        "name": "Ghế ô tô trẻ em",
+        "slug": "ghe-o-to-tre-em"
+      }
+    ],
+    "prices": {
+      "price": "3740000",
+      "regular_price": "3950000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1048-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1043,
+    "name": "Ghế ô tô I-SPINSAFE (0–12 tuổi) &#8211; G412I0T",
+    "slug": "ghe-o-to-i-spinsafe-0-12-tuoi-g412i0t",
+    "sku": "M4950",
+    "brand_names": [
+      "Dolphin House"
+    ],
+    "categories": [
+      {
+        "id": 171,
+        "name": "Ghế ô tô trẻ em",
+        "slug": "ghe-o-to-tre-em"
+      }
+    ],
+    "prices": {
+      "price": "4950000",
+      "regular_price": "5250000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/ghe-ngoi-o-to-SPINSAFE-0%E2%80%9312-tuoi%E2%80%93Ma-G412I0T-3.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1034,
+    "name": "Ghế ô tô trẻ em Babyro I-SPINSAFE PRO G412IS0",
+    "slug": "ghe-o-to-tre-em-babyro-i-spinsafe-pro-g412is0",
+    "sku": "M6190",
+    "brand_names": [
+      "Babyro"
+    ],
+    "categories": [
+      {
+        "id": 171,
+        "name": "Ghế ô tô trẻ em",
+        "slug": "ghe-o-to-tre-em"
+      }
+    ],
+    "prices": {
+      "price": "6190000",
+      "regular_price": "6350000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1034-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1027,
+    "name": "Thùng rác đạp chân Letek LP",
+    "slug": "thung-rac-dap-chan-letek-lp",
+    "sku": "ML690",
+    "brand_names": [
+      "Letek"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "690000",
+      "regular_price": "750000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/thung-rac-dap-chan-Letek-LP-3.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1021,
+    "name": "Xô Đá Giữ Lạnh Amerigo 3L – Thép Không Gỉ, Kèm Kẹp & Muôi",
+    "slug": "xo-da-giu-lanh-amerigo-dung-tich-3l",
+    "sku": "M1350",
+    "brand_names": [
+      "Amerigo"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "1350000",
+      "regular_price": "1590000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/xo-dung-da-AMERIGO-3L.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1012,
+    "name": "Robot Hút Bụi Lau Nhà Medion S05 SW",
+    "slug": "robot-hut-bui-lau-nha-medion-s05-sw",
+    "sku": "M2990",
+    "brand_names": [
+      "Medion"
+    ],
+    "categories": [
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "2990000",
+      "regular_price": "3499999"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/robot-hut-bui-MEDION-S05-SW-1-optimized.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 1000,
+    "name": "Bộ Dụng Cụ Sửa Chữa 155 Món Mannesmann – Thép Không Gỉ",
+    "slug": "bo-cong-cu-155-mon-mannesmann-danh-cho-phai-manh",
+    "sku": "M3690",
+    "brand_names": [
+      "Mannesmann"
+    ],
+    "categories": [],
+    "prices": {
+      "price": "3690000",
+      "regular_price": "4000000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p1000-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 998,
+    "name": "Bộ thớt gỗ teak Kaiyo DC04 tối ưu việc chế biến",
+    "slug": "bo-thot-go-teak-kaiyo-dc04-toi-uu-viec-che-bien",
+    "sku": "MK381",
+    "brand_names": [
+      "Kaiyo"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "381000",
+      "regular_price": "489000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/thot-go-teak-Kaiyo1-optimized.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 997,
+    "name": "Bộ thớt gỗ teak Kaiyo DC02 bề mặt rộng",
+    "slug": "bo-thot-go-teak-kaiyo-dc02",
+    "sku": "MK350",
+    "brand_names": [
+      "Kaiyo"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "350000",
+      "regular_price": "420000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/thot-go-teak-Kaiyo-optimized.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 992,
+    "name": "Bộ thớt gỗ teak Kaiyo DC01 Đẹp &#038; Bền cho gian bếp",
+    "slug": "bo-thot-go-teak-kaiyo-dc01-dep-ben-cho-gian-bep",
+    "sku": "MK270",
+    "brand_names": [
+      "Kaiyo"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "270000",
+      "regular_price": "320000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/thot-go-teak-Kaiyo2-optimized.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 983,
+    "name": "Nồi Hấp Điện 3 Tầng Unie UE560",
+    "slug": "noi-hap-dien-3-tangunie-ue560",
+    "sku": "M850",
+    "brand_names": [
+      "Unie"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "850000",
+      "regular_price": "950000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/noi-hap-3-tang-UE560-2-optimized.webp",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 977,
+    "name": "Thớt Wood Fiber G37",
+    "slug": "thot-wood-fiber-g37",
+    "sku": "M590",
+    "brand_names": [
+      "Wood Fiber"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "590000",
+      "regular_price": "790000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p977-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 974,
+    "name": "Chảo Inox 316 Vân Lục Giác Letek Golf 26cm – Chống Dính Tự Nhiên",
+    "slug": "chao-van-luc-giac-letek-golf-size-26cm",
+    "sku": "ML950",
+    "brand_names": [
+      "Letek"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "950000",
+      "regular_price": "1490000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p974-gallery-01-600x800-2.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 973,
+    "name": "Chảo Inox 316 Vân Lục Giác Letek Golf 24cm – Chống Dính Tự Nhiên",
+    "slug": "chao-van-luc-giac-letek-golf-size-24cm",
+    "sku": "ML850",
+    "brand_names": [
+      "Letek"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "850000",
+      "regular_price": "1290000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p973-gallery-01-600x800-1.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 965,
+    "name": "Chảo Inox 316 Vân Lục Giác Letek Golf 20cm – Chống Dính Tự Nhiên",
+    "slug": "chao-van-luc-giac-letek-golf-20cm",
+    "sku": "ML750",
+    "brand_names": [
+      "Letek"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "750000",
+      "regular_price": "1190000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/p965-gallery-01-600x800-2.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 950,
+    "name": "Thùng Rác Thông Minh Treo Tủ Letek LC05 – 5 Lít, Inox",
+    "slug": "thung-rac-thong-minh-letek-lc05",
+    "sku": "ML660",
+    "brand_names": [
+      "Letek"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "660000",
+      "regular_price": "990000"
+    },
+    "on_sale": true,
+    "image": "/assets/images/products/Letek-LC05.3.jpg",
+    "updated_at": "2026-09-08T12:04:03.264Z"
+  }
+]

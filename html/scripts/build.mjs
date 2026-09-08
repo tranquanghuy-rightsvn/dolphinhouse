@@ -2,10 +2,11 @@
 // Replaces runtime JS templating (js/common.js, js/shop.js, js/product.js) with
 // real static HTML written at build time, using clean (extensionless, trailing-slash)
 // URLs that mirror dolphinhouse.vn's actual permalink structure.
-import { mkdirSync, writeFileSync, rmSync, existsSync } from "node:fs";
+import { mkdirSync, writeFileSync, rmSync, existsSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadDataFile } from "./lib/load-data.mjs";
+import { loadCms } from "./lib/cms-data.mjs";
 import {
   page,
   productCardHtml,
@@ -46,12 +47,10 @@ const OUT_DIRS = [
   "gio-hang",
   "thanh-toan",
 ]; // regenerated fresh every build
-const { BLOG_POSTS } = loadDataFile(join(ROOT, "js/data/blog.data.js"));
-
-const { PRODUCTS } = loadDataFile(join(ROOT, "js/data/products.data.js"));
-const { CATEGORIES } = loadDataFile(join(ROOT, "js/data/categories.data.js"));
+// Products, categories, news and videos are CMS-managed (../data/**.json).
+const { PRODUCTS, CATEGORIES, CATEGORY_META, BLOG_POSTS } = loadCms();
+// The homepage curation blocks stay hand-maintained in the repo (not in the CMS).
 const { HOME_HERO_MENU, HOME_BRANDS, HOME_BLOCKS } = loadDataFile(join(ROOT, "js/data/home-new.data.js"));
-const { CATEGORY_META } = loadDataFile(join(ROOT, "js/data/category-meta.data.js"));
 
 const PER_PAGE = 16;
 
@@ -773,17 +772,17 @@ function buildCheckoutPage() {
     <div id="checkout-form-section" class="checkout-billing">
       <h3>Thông tin thanh toán</h3>
       <div class="form-row">
-        <label>Họ và tên <span class="required">*</span></label>
-        <input type="text" required>
+        <label for="billing-name">Họ và tên <span class="required">*</span></label>
+        <input type="text" id="billing-name" name="name" autocomplete="name" required>
       </div>
       <div class="form-row form-row--split">
         <div>
-          <label>Số điện thoại <span class="required">*</span></label>
-          <input type="tel" required>
+          <label for="billing-phone">Số điện thoại <span class="required">*</span></label>
+          <input type="tel" id="billing-phone" name="phone" autocomplete="tel" required>
         </div>
         <div>
-          <label>Địa chỉ email <span class="required">*</span></label>
-          <input type="email" required>
+          <label for="billing-email">Địa chỉ email <span class="required">*</span></label>
+          <input type="email" id="billing-email" name="email" autocomplete="email" required>
         </div>
       </div>
       <div class="form-row form-row--split">
@@ -797,13 +796,15 @@ function buildCheckoutPage() {
         </div>
       </div>
       <div class="form-row">
-        <label>Địa chỉ <span class="required">*</span></label>
-        <input type="text" required>
+        <label for="billing-address">Địa chỉ <span class="required">*</span></label>
+        <input type="text" id="billing-address" name="address" autocomplete="street-address" required>
       </div>
       <div class="form-row">
-        <label>Ghi chú đơn hàng (tuỳ chọn)</label>
-        <textarea rows="4" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
+        <label for="billing-note">Ghi chú đơn hàng (tuỳ chọn)</label>
+        <textarea id="billing-note" name="note" rows="4" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
       </div>
+      <!-- Bot trap: hidden by .hp-field in css/styles.css and left empty by humans. -->
+      <div class="hp-field"><label>Đừng điền ô này<input type="text" id="checkout-hp" name="_hp" tabindex="-1" autocomplete="off"></label></div>
     </div>
 
     <div id="checkout-order-section" class="checkout-order">
@@ -845,6 +846,7 @@ function buildCheckoutPage() {
       </div>
 
       <button type="submit" id="place-order-btn" class="btn-purple checkout-place-order">Đặt hàng</button>
+      <p id="checkout-error" class="checkout-error" hidden></p>
     </div>
   </form>
 </main>`;
@@ -856,17 +858,35 @@ function buildCheckoutPage() {
       path: "/thanh-toan/",
       categories: CATEGORIES,
       bodyMain,
-      extraScripts: ["/js/site.js", "/js/vn-address.js", "/js/checkout.js"],
+      extraScripts: ["/js/site.js", "/js/vn-address.js", "/js/cms-config.js", "/js/checkout.js"],
       jsonLd: [breadcrumbLd([{ name: "Trang chủ", url: "/" }, { name: "Thanh toán", url: "/thanh-toan/" }])],
       robots: "noindex, follow",
     })
   );
 }
 
+// Root-level directories that are NOT build output (never touched by clean()).
+const NON_BUILD_DIRS = new Set(["assets", "css", "js", "docs", "scripts", "admin", "admin-gas"]);
+
 function clean() {
   for (const d of [...OUT_DIRS, ...BLOG_POSTS.map((p) => p.slug)]) {
     const full = join(ROOT, d);
     if (existsSync(full)) rmSync(full, { recursive: true, force: true });
+  }
+  pruneOrphanPostDirs();
+}
+
+// Blog posts live at the site root (`/<slug>/`), so deleting one in the CMS would
+// otherwise leave its page online — and indexable — forever: clean() above only
+// knows about posts that still exist. Anything at the root holding an index.html
+// that is neither build output nor a current post is a leftover of a deleted post.
+function pruneOrphanPostDirs() {
+  const keep = new Set([...OUT_DIRS, ...BLOG_POSTS.map((p) => p.slug), ...NON_BUILD_DIRS]);
+  for (const entry of readdirSync(ROOT, { withFileTypes: true })) {
+    if (!entry.isDirectory() || entry.name.startsWith(".") || keep.has(entry.name)) continue;
+    if (!existsSync(join(ROOT, entry.name, "index.html"))) continue;
+    rmSync(join(ROOT, entry.name), { recursive: true, force: true });
+    console.log(`Removed page of a deleted post: /${entry.name}/`);
   }
 }
 
