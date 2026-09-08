@@ -21,6 +21,7 @@ Admin (dolphinhouse.vn/admin)  →  dịch vụ quản trị (web app)  →  dat
 | `html/admin/`, `html/admin-gas/` | 2 trang quản trị trên domain khách. |
 | `html/js/cms-config.js` | **Nơi duy nhất** khai địa chỉ dịch vụ quản trị. |
 | `html/assets/tinymce/` | Thư viện soạn thảo tự host (Admin nạp lại từ đây). |
+| `html/scripts/make-responsive-images.mjs` | Tạo bản ảnh nhỏ (`-mobile` 900px, `-tablet` 1100px) cho ảnh banner. Chạy tay khi đổi ảnh banner: `cd html && node scripts/make-responsive-images.mjs`; kết quả commit vào repo nên CI không cần công cụ ảnh. |
 | `.github/workflows/build.yml` | CI build + commit `html/`. |
 | `gas/` | Mã nguồn dịch vụ quản trị. **Không nằm trong git** (`.gitignore`) — deploy bằng clasp. |
 

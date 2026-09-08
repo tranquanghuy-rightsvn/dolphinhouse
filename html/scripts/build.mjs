@@ -7,6 +7,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadDataFile } from "./lib/load-data.mjs";
 import { loadCms } from "./lib/cms-data.mjs";
+import { bannerPicture } from "./lib/responsive-images.mjs";
 import {
   page,
   productCardHtml,
@@ -250,7 +251,14 @@ function buildHome() {
       </div>
       <div class="dh-home-retail-hero">
         <div class="dh-home-retail-hero-media">
-          <img src="/assets/images/products/joseph-rack-851690-grounded.webp" alt="Góc bếp gọn gàng với đồ gia dụng Dolphin House" loading="eager">
+          ${bannerPicture({
+            src: "/assets/images/products/joseph-rack-851690-grounded.webp",
+            alt: "Góc bếp gọn gàng với đồ gia dụng Dolphin House",
+            loading: "eager",
+            fetchpriority: "high",
+            width: 1400,
+            height: 933,
+          })}
         </div>
         <div class="dh-home-retail-hero-copy">
           <small>Góc chọn đồ của Dolphin House</small>
