@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .map(
           (it) => `
         <tr>
-          <td>${it.name} <strong>× ${it.qty}</strong></td>
+          <td>${cart.itemName ? cart.itemName(it) : it.name} <strong>× ${it.qty}</strong></td>
           <td>${cart.formatVnd(it.price * it.qty)}</td>
         </tr>`
         )
@@ -178,7 +178,14 @@ document.addEventListener("DOMContentLoaded", () => {
       address: (document.getElementById("billing-address") || {}).value || "",
       note: (document.getElementById("billing-note") || {}).value || "",
       payment_method: payment ? payment.value : "cod",
-      items: items.map((it) => ({ slug: it.slug, name: it.name, price: it.price, qty: it.qty })),
+      items: items.map((it) => ({
+        slug: it.slug,
+        // Name as shown in the cart, so the order record reads "… (size S)".
+        name: window.DHCart.itemName ? window.DHCart.itemName(it) : it.name,
+        size: it.size || "",
+        price: it.price,
+        qty: it.qty,
+      })),
       subtotal: total,
       shipping: 0,
       total,

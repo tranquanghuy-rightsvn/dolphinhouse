@@ -47,6 +47,20 @@ export function loadCms() {
   const productIndex = readJson("products.json");
   const PRODUCTS = productIndex.map((p) => {
     const rec = readJson(`products/${p.slug}.json`);
+    // Sizes are optional. When a product has them, the FIRST size is its
+    // canonical price everywhere except the product page's own size picker —
+    // cards, sorting, search, JSON-LD. Deriving it here (rather than in each
+    // generator) keeps that rule in one place.
+    const sizes = (rec.sizes || [])
+      .filter((s) => s && String(s.name).trim())
+      .map((s) => ({
+        name: escText(String(s.name).trim()),
+        price: String(s.price || "0"),
+        regular_price: String(s.regular_price || s.price || "0"),
+      }));
+    const prices = sizes.length
+      ? { ...rec.prices, price: sizes[0].price, regular_price: sizes[0].regular_price, sale_price: sizes[0].price }
+      : rec.prices;
     return {
       ...rec,
       name: escText(rec.name),
@@ -54,6 +68,9 @@ export function loadCms() {
       brand_names: (rec.brand_names || []).map(escText),
       categories: (rec.categories || []).map((c) => ({ ...c, name: escText(c.name) })),
       images: (rec.images || []).map((img) => ({ ...img, alt: escText(img.alt) })),
+      sizes: sizes,
+      prices: prices,
+      on_sale: sizes.length ? Number(prices.price) < Number(prices.regular_price) : !!rec.on_sale,
     };
   });
 

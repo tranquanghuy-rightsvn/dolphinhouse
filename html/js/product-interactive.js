@@ -32,22 +32,48 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Size picker: switching size rewrites the displayed price and the data the
+  // add-to-cart button carries, so the cart can never disagree with the page.
+  const priceBlock = document.getElementById("price-block");
+  const sizeRow = document.getElementById("size-row");
   const addToCartBtn = document.getElementById("add-to-cart-btn");
+  if (sizeRow && priceBlock && addToCartBtn) {
+    const options = [...sizeRow.querySelectorAll(".size-option")];
+    const formatVnd = (window.DHCart && window.DHCart.formatVnd) ||
+      ((n) => Math.round(Number(n) || 0).toLocaleString("vi-VN") + " ₫");
+
+    const selectSize = (option) => {
+      options.forEach((o) => {
+        const active = o === option;
+        o.classList.toggle("is-active", active);
+        o.setAttribute("aria-pressed", String(active));
+      });
+      const price = option.dataset.price || "0";
+      const regular = option.dataset.regular || price;
+      priceBlock.innerHTML =
+        Number(price) < Number(regular)
+          ? `<span class="price-old">${formatVnd(regular)}</span> ${formatVnd(price)}`
+          : formatVnd(price);
+      addToCartBtn.dataset.price = price;
+      addToCartBtn.dataset.size = option.dataset.size || "";
+    };
+
+    options.forEach((option) => option.addEventListener("click", () => selectSize(option)));
+  }
+
   if (addToCartBtn) {
     addToCartBtn.addEventListener("click", () => {
       const qty = Math.max(1, parseInt((qtyValue && qtyValue.value) || "1", 10));
-      if (window.DHCart) {
-        window.DHCart.add(
-          {
-            slug: addToCartBtn.dataset.slug || "",
-            name: addToCartBtn.dataset.name || "",
-            price: addToCartBtn.dataset.price || 0,
-            image: addToCartBtn.dataset.image || "",
-          },
-          qty
-        );
-      }
-      if (window.showAddToCartToast) window.showAddToCartToast(addToCartBtn.dataset.name || "");
+      const item = {
+        slug: addToCartBtn.dataset.slug || "",
+        name: addToCartBtn.dataset.name || "",
+        size: addToCartBtn.dataset.size || "",
+        price: addToCartBtn.dataset.price || 0,
+        image: addToCartBtn.dataset.image || "",
+      };
+      if (window.DHCart) window.DHCart.add(item, qty);
+      const label = window.DHCart && window.DHCart.itemName ? window.DHCart.itemName(item) : item.name;
+      if (window.showAddToCartToast) window.showAddToCartToast(label);
     });
   }
 

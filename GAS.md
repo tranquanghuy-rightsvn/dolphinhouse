@@ -62,6 +62,20 @@ giờ đẩy lên GitHub** — repo là public.
    - `categories` — chọn nhiều, từ `data/product-categories.json`. Lưu `[{id, name, slug}]`
      (giữ nguyên hình dạng dữ liệu WooCommerce cũ để `build.mjs` không phải đổi).
    - `prices.regular_price` (giá gốc) + `prices.price` (giá bán) — nhập số nguyên VND.
+     **Bị khoá (disable) khi sản phẩm đã có kích cỡ** — xem `sizes` ngay dưới.
+   - `sizes` — **danh sách kích cỡ, KHÔNG bắt buộc**. Mỗi dòng: `name` (text tự do, ví dụ
+     `S`, `M`, `28cm`), `price`, `regular_price`. Quy tắc chốt:
+     - Không có kích cỡ → sản phẩm dùng đúng 2 ô giá ở trên (như trước).
+     - Có kích cỡ → **kích cỡ ĐẦU TIÊN là giá của sản phẩm** ở mọi nơi ngoài trang chi tiết
+       (trang chủ, danh mục, tìm kiếm, sắp xếp theo giá, structured data). Vì vậy thứ tự có ý
+       nghĩa: Admin đổi thứ tự bằng nút ↑ ↓.
+     - Trang chi tiết hiện bộ chọn kích cỡ; đổi kích cỡ thì giá đổi theo.
+     - Thêm vào giỏ: tên hiển thị là `<tên sản phẩm> (size <tên kích cỡ>)`. Mỗi kích cỡ là
+       **một dòng riêng** trong giỏ (giỏ định danh dòng bằng `slug|size`).
+     - Thêm từ thẻ sản phẩm ở trang chủ/danh mục → lấy **kích cỡ đầu tiên**, đúng bằng giá
+       đang hiển thị trên thẻ đó.
+     - Server chặn: kích cỡ không có giá bán, trùng tên kích cỡ; ký tự `|` trong tên bị bỏ
+       (vì giỏ hàng dùng nó làm dấu phân cách khoá dòng).
    - `short_description` — TinyMCE rút gọn (1 đoạn mô tả ngắn).
    - `description` — TinyMCE đầy đủ (nội dung chi tiết, có chèn ảnh).
    - `images` — thư viện ảnh riêng của sản phẩm: upload nhiều ảnh, xoá từng ảnh, ảnh đầu tiên
@@ -73,6 +87,9 @@ giờ đẩy lên GitHub** — repo là public.
    - `prices.sale_price` = `price`; các field tiền tệ khác giữ hằng số VND như dữ liệu hiện có.
    - `price_html` = markup giá theo đúng mẫu WooCommerce đang dùng.
    - `average_rating` = `"0"`, `review_count` = `0` cho sản phẩm mới.
+   - Khi có `sizes`: `prices.price`/`prices.regular_price`/`on_sale` **tự lấy theo kích cỡ đầu
+     tiên** (server ghi vào bản ghi, và `html/scripts/lib/cms-data.mjs` cũng suy lại lúc build
+     để dữ liệu sửa tay vẫn nhất quán).
    - `alt` của mỗi ảnh gallery = tên sản phẩm nếu để trống.
    - `updated_at` (ISO) — dùng làm version cho cache client (mục 9c playbook).
 3. Danh sách trong Admin: tải qua GAS đọc **GitHub Contents API** (`data/products.json`) — luôn

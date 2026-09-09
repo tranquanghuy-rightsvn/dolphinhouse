@@ -78,37 +78,49 @@ document.addEventListener("DOMContentLoaded", () => {
   function cartTotal(items) {
     return items.reduce((sum, it) => sum + it.price * it.qty, 0);
   }
-  function addToCart({ slug, name, price, image }, qty = 1) {
+  // A product with sizes is a different line per size, so the cart is keyed by
+  // slug + size rather than slug alone. Items stored before sizes existed have
+  // no `size` at all, which reads as "" and keeps working unchanged.
+  function itemKey(it) {
+    return (it.slug || "") + "|" + (it.size || "");
+  }
+  // Cart-wide display name: "Chảo chống dính (size S)".
+  function itemName(it) {
+    return it.size ? `${it.name} (size ${it.size})` : it.name;
+  }
+  function addToCart({ slug, name, price, image, size }, qty = 1) {
     const items = readCart();
-    const existing = items.find((it) => it.slug === slug);
+    const item = { slug, name, size: size || "", price: Number(price) || 0, image: image || "", qty };
+    const existing = items.find((it) => itemKey(it) === itemKey(item));
     if (existing) existing.qty += qty;
-    else items.push({ slug, name, price: Number(price) || 0, image: image || "", qty });
+    else items.push(item);
     writeCart(items);
     renderCart();
   }
-  function removeFromCart(slug) {
-    writeCart(readCart().filter((it) => it.slug !== slug));
+  function removeFromCart(key) {
+    writeCart(readCart().filter((it) => itemKey(it) !== key));
     renderCart();
   }
-  function setQty(slug, qty) {
+  function setQty(key, qty) {
     const items = readCart();
-    const item = items.find((it) => it.slug === slug);
+    const item = items.find((it) => itemKey(it) === key);
     if (!item) return;
-    if (qty <= 0) return removeFromCart(slug);
+    if (qty <= 0) return removeFromCart(key);
     item.qty = qty;
     writeCart(items);
     renderCart();
   }
 
   function cartItemRowHtml(it) {
+    const label = itemName(it);
     return `
       <div class="cart-dropdown-item">
-        <button type="button" class="cart-dropdown-item-remove" data-cart-remove="${it.slug}" aria-label="Xoá ${it.name}">✕</button>
+        <button type="button" class="cart-dropdown-item-remove" data-cart-remove="${itemKey(it)}" aria-label="Xoá ${label}">✕</button>
         <div class="cart-dropdown-item-body">
-          <span class="cart-dropdown-item-name">${it.name}</span>
+          <span class="cart-dropdown-item-name">${label}</span>
           <span class="cart-dropdown-item-qty">${it.qty} × <strong>${formatVndJs(it.price)}</strong></span>
         </div>
-        ${it.image ? `<img class="cart-dropdown-item-thumb" src="${it.image}" alt="${it.name}">` : ""}
+        ${it.image ? `<img class="cart-dropdown-item-thumb" src="${it.image}" alt="${label}">` : ""}
       </div>`;
   }
 
@@ -130,20 +142,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function cartPageRowHtml(it) {
+    const key = itemKey(it);
+    const label = itemName(it);
     return `
-      <div class="cart-page-item" data-cart-row="${it.slug}">
-        <img class="cart-page-item-thumb" src="${it.image || ""}" alt="${it.name}">
+      <div class="cart-page-item" data-cart-row="${key}">
+        <img class="cart-page-item-thumb" src="${it.image || ""}" alt="${label}">
         <div class="cart-page-item-body">
           <a class="cart-page-item-name" href="/san-pham/${it.slug}/">${it.name}</a>
+          ${it.size ? `<div class="cart-page-item-size">Kích cỡ: <strong>${it.size}</strong></div>` : ""}
           <div class="cart-page-item-price">${formatVndJs(it.price)}</div>
         </div>
         <div class="cart-page-item-qty">
-          <button type="button" data-cart-qty-minus="${it.slug}" aria-label="Giảm số lượng">-</button>
+          <button type="button" data-cart-qty-minus="${key}" aria-label="Giảm số lượng">-</button>
           <span>${it.qty}</span>
-          <button type="button" data-cart-qty-plus="${it.slug}" aria-label="Tăng số lượng">+</button>
+          <button type="button" data-cart-qty-plus="${key}" aria-label="Tăng số lượng">+</button>
         </div>
         <div class="cart-page-item-subtotal">${formatVndJs(it.price * it.qty)}</div>
-        <button type="button" class="cart-page-item-remove" data-cart-remove="${it.slug}" aria-label="Xoá ${it.name}">✕</button>
+        <button type="button" class="cart-page-item-remove" data-cart-remove="${key}" aria-label="Xoá ${label}">✕</button>
       </div>`;
   }
 
@@ -172,6 +187,8 @@ document.addEventListener("DOMContentLoaded", () => {
     total: cartTotal,
     count: cartCount,
     formatVnd: formatVndJs,
+    itemName: itemName,
+    itemKey: itemKey,
     add: (item, qty = 1) => addToCart(item, qty),
     clear: () => {
       writeCart([]);
@@ -218,13 +235,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const addBtn = e.target.closest(".dh-cart-add-btn");
     if (addBtn) {
       e.preventDefault();
-      addToCart({
+      // Cards show the first size's price (see scripts/build.mjs), so adding
+      // from a card adds that size — what the visitor is looking at.
+      const added = {
         slug: addBtn.dataset.slug || "",
         name: addBtn.dataset.name || "",
+        size: addBtn.dataset.size || "",
         price: addBtn.dataset.price || 0,
         image: addBtn.dataset.image || "",
-      });
-      window.showAddToCartToast(addBtn.dataset.name || "");
+      };
+      addToCart(added);
+      window.showAddToCartToast(itemName(added));
       return;
     }
 
@@ -237,17 +258,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const qtyMinusBtn = e.target.closest("[data-cart-qty-minus]");
     if (qtyMinusBtn) {
-      const slug = qtyMinusBtn.dataset.cartQtyMinus;
-      const item = readCart().find((it) => it.slug === slug);
-      if (item) setQty(slug, item.qty - 1);
+      const key = qtyMinusBtn.dataset.cartQtyMinus;
+      const item = readCart().find((it) => itemKey(it) === key);
+      if (item) setQty(key, item.qty - 1);
       return;
     }
 
     const qtyPlusBtn = e.target.closest("[data-cart-qty-plus]");
     if (qtyPlusBtn) {
-      const slug = qtyPlusBtn.dataset.cartQtyPlus;
-      const item = readCart().find((it) => it.slug === slug);
-      if (item) setQty(slug, item.qty + 1);
+      const key = qtyPlusBtn.dataset.cartQtyPlus;
+      const item = readCart().find((it) => itemKey(it) === key);
+      if (item) setQty(key, item.qty + 1);
       return;
     }
   });

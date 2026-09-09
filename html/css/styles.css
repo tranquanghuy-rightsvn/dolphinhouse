@@ -725,7 +725,19 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
 .copy-name-btn { border: 1px solid var(--border); border-radius: 4px; padding: 6px 14px; font-size: 12px; color: var(--ink-soft); background: var(--white); margin-bottom: 12px; }
 .summary .price-block { font-size: 26px; font-weight: 700; color: var(--purple); margin-bottom: 14px; }
 .summary .price-block .price-old { font-size: 16px; }
-.summary .short-desc { color: var(--ink); margin-bottom: 18px; line-height: 1.7; }
+.summary /* Size picker on the product page (optional per product). */
+.size-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 0 0 14px; }
+.size-row-label { font-size: 14px; font-weight: 700; color: var(--teal-dark); }
+.size-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.size-option {
+  min-width: 46px; padding: 8px 14px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--white); color: var(--ink); font: inherit; font-weight: 700; cursor: pointer;
+}
+.size-option:hover { border-color: var(--purple); color: var(--purple); }
+.size-option.is-active { background: var(--purple); border-color: var(--purple); color: var(--white); }
+.cart-page-item-size { font-size: 12px; color: var(--ink-soft); margin: 2px 0 4px; }
+
+.short-desc { color: var(--ink); margin-bottom: 18px; line-height: 1.7; }
 .qty-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .qty-input { display: flex; align-items: center; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
 .qty-input button { background: #f4f4f4; border: none; width: 32px; height: 38px; font-size: 16px; }

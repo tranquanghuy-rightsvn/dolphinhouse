@@ -320,7 +320,7 @@ export function productCardHtml(p) {
       <a class="thumb" href="/san-pham/${p.slug}/"><img src="${img}" alt="${p.name}" loading="lazy"></a>
       <h3><a href="/san-pham/${p.slug}/">${p.name}</a></h3>
       <div class="price-row">${priceHtml}</div>
-      <button type="button" class="dh-cart-add-btn" data-slug="${p.slug}" data-name="${safeName}" data-price="${price.price}" data-image="${img}" aria-label="Thêm ${safeName} vào giỏ hàng">
+      <button type="button" class="dh-cart-add-btn" data-slug="${p.slug}" data-name="${safeName}" data-size="${p.sizes && p.sizes.length ? p.sizes[0].name : ""}" data-price="${price.price}" data-image="${img}" aria-label="Thêm ${safeName} vào giỏ hàng">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
       </button>
     </div>

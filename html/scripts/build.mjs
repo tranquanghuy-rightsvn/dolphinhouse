@@ -200,6 +200,7 @@ function buildHome() {
     img: p.images[0] ? p.images[0].src : "",
     price: formatVnd(p.prices.price),
     rawPrice: p.prices.price,
+    size: defaultSizeName(p),
     del: p.on_sale && p.prices.regular_price !== p.prices.price ? formatVnd(p.prices.regular_price) : null,
   });
 
@@ -217,7 +218,7 @@ function buildHome() {
                 <span class="dh-home-category-product-price">${p.price}</span>
               </span>
             </a>
-            <button type="button" class="dh-cart-add-btn" data-slug="${p.slug}" data-name="${safeName}" data-price="${rawPrice}" data-image="${p.img}" aria-label="Thêm ${safeName} vào giỏ hàng">
+            <button type="button" class="dh-cart-add-btn" data-slug="${p.slug}" data-name="${safeName}" data-size="${p.size || ""}" data-price="${rawPrice}" data-image="${p.img}" aria-label="Thêm ${safeName} vào giỏ hàng">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
             </button>
           </div>`;
@@ -467,6 +468,13 @@ function buildListing({ basePath, title, description, banner, activePath, produc
   }
 }
 
+// Sizes are optional per product; the first one is the price shown everywhere
+// outside the product page (see lib/cms-data.mjs), so it is also the size a
+// card's add-to-cart button uses — the visitor gets what the price said.
+function defaultSizeName(p) {
+  return p.sizes && p.sizes.length ? p.sizes[0].name : "";
+}
+
 // Trimmed fields the client-side sort re-render actually needs (keeps the
 // embedded JSON small instead of shipping full WooCommerce payloads).
 function compactProduct(p) {
@@ -480,6 +488,7 @@ function compactProduct(p) {
     on_sale: p.on_sale,
     sku: p.sku,
     brands: p.brand_names || [],
+    size: defaultSizeName(p),
   };
 }
 
@@ -501,7 +510,7 @@ function buildSearchIndex() {
     JSON.stringify(
       PRODUCTS.map((p) => {
         const c = compactProduct(p);
-        return { ...c, name: plainText(c.name), sku: plainText(c.sku), brands: c.brands.map(plainText) };
+        return { ...c, name: plainText(c.name), sku: plainText(c.sku), brands: c.brands.map(plainText), size: plainText(c.size) };
       })
     )
   );
@@ -623,6 +632,23 @@ function buildProducts() {
     const priceHtml = isSale
       ? `<span class="price-old">${formatVnd(product.prices.regular_price)}</span> ${formatVnd(product.prices.price)}`
       : formatVnd(product.prices.price);
+    // Optional sizes, each with its own price. The first is pre-selected, which
+    // is also the price shown on cards and in search, so the product page opens
+    // on exactly the figure that brought the visitor here.
+    const sizes = product.sizes || [];
+    const sizeRowHtml = sizes.length
+      ? `
+        <div class="size-row" id="size-row">
+          <span class="size-row-label">Kích cỡ:</span>
+          <div class="size-options" role="group" aria-label="Chọn kích cỡ">
+            ${sizes
+              .map(
+                (sz, i) => `<button type="button" class="size-option${i === 0 ? " is-active" : ""}" aria-pressed="${i === 0}" data-size="${sz.name}" data-price="${sz.price}" data-regular="${sz.regular_price}">${sz.name}</button>`
+              )
+              .join("")}
+          </div>
+        </div>`
+      : "";
     const images = product.images.length ? product.images : [{ src: "", alt: product.name }];
     const safeName = product.name.replace(/"/g, "&quot;");
 
@@ -648,7 +674,8 @@ function buildProducts() {
       <div class="summary">
         <h1>${product.name}</h1>
         <button class="copy-name-btn" id="copy-name-btn" data-name="${product.name.replace(/"/g, "&quot;")}">Sao chép tên</button>
-        <div class="price-block">${priceHtml}</div>
+        <div class="price-block" id="price-block">${priceHtml}</div>
+        ${sizeRowHtml}
         <div class="short-desc">${product.short_description || ""}</div>
         <div class="qty-row">
           <div class="qty-input">
@@ -656,7 +683,7 @@ function buildProducts() {
             <input type="text" id="qty-value" value="1">
             <button type="button" id="qty-plus">+</button>
           </div>
-          <button class="btn-purple" id="add-to-cart-btn" data-slug="${product.slug}" data-name="${product.name.replace(/"/g, "&quot;")}" data-price="${product.prices.price}" data-image="${images[0].src}">Thêm vào giỏ hàng</button>
+          <button class="btn-purple" id="add-to-cart-btn" data-slug="${product.slug}" data-name="${product.name.replace(/"/g, "&quot;")}" data-size="${defaultSizeName(product)}" data-price="${product.prices.price}" data-image="${images[0].src}">Thêm vào giỏ hàng</button>
           <button type="button" class="btn-gray" id="contact-modal-trigger">Liên hệ</button>
         </div>
         <a class="btn-orange" href="tel:0866393892">
@@ -737,13 +764,27 @@ function buildProducts() {
       description: metaDescription,
       sku: product.sku || undefined,
       brand: product.brand_names.length ? { "@type": "Brand", name: product.brand_names[0] } : undefined,
-      offers: {
-        "@type": "Offer",
-        url: absUrl(path),
-        priceCurrency: "VND",
-        price: product.prices.price,
-        availability: "https://schema.org/InStock",
-      },
+      // More than one size means more than one price: describing it as a single
+      // Offer would advertise a price the visitor may not get, which is exactly
+      // what Google flags as a price mismatch.
+      offers:
+        sizes.length > 1
+          ? {
+              "@type": "AggregateOffer",
+              url: absUrl(path),
+              priceCurrency: "VND",
+              lowPrice: String(Math.min(...sizes.map((sz) => Number(sz.price) || 0))),
+              highPrice: String(Math.max(...sizes.map((sz) => Number(sz.price) || 0))),
+              offerCount: sizes.length,
+              availability: "https://schema.org/InStock",
+            }
+          : {
+              "@type": "Offer",
+              url: absUrl(path),
+              priceCurrency: "VND",
+              price: product.prices.price,
+              availability: "https://schema.org/InStock",
+            },
     };
 
     write(
