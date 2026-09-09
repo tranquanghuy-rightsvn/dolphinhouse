@@ -166,14 +166,25 @@
     "brand_names": [
       "Joseph Joseph"
     ],
-    "categories": [],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
     "prices": {
       "price": "2290000",
       "regular_price": "2290000"
     },
     "on_sale": false,
     "image": "/assets/images/products/joseph-rack-851690-1-2.webp",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "updated_at": "2026-09-09T15:47:31.833Z"
   },
   {
     "id": 2913,
@@ -538,14 +549,25 @@
     "brand_names": [
       "Scanpan"
     ],
-    "categories": [],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 99,
+        "name": "Nồi & xửng hấp",
+        "slug": "xong-noi"
+      }
+    ],
     "prices": {
       "price": "1950000",
       "regular_price": "2650000"
     },
     "on_sale": true,
     "image": "/assets/images/products/scanpan-impact-28cm-gallery-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "updated_at": "2026-09-09T15:47:31.833Z"
   },
   {
     "id": 2740,
@@ -920,14 +942,20 @@
     "brand_names": [
       "2LOCK"
     ],
-    "categories": [],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
     "prices": {
       "price": "950000",
       "regular_price": "950000"
     },
     "on_sale": false,
     "image": "/assets/images/products/2lock-wp24-1111c-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "updated_at": "2026-09-09T15:47:31.833Z"
   },
   {
     "id": 2490,
@@ -1121,14 +1149,25 @@
     "brand_names": [
       "Bear"
     ],
-    "categories": [],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      },
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
     "prices": {
       "price": "690000",
       "regular_price": "690000"
     },
     "on_sale": false,
     "image": "/assets/images/products/bear_lifestyle_compressed-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "updated_at": "2026-09-09T15:47:31.833Z"
   },
   {
     "id": 1854,
@@ -1368,14 +1407,25 @@
     "brand_names": [
       "WMF"
     ],
-    "categories": [],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
     "prices": {
       "price": "450000",
       "regular_price": "690000"
     },
     "on_sale": true,
     "image": "/assets/images/products/cao-ve-sinh-bep-tu-wmf-dung-cu-ve-sinh-A-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "updated_at": "2026-09-09T15:47:31.833Z"
   },
   {
     "id": 1779,
@@ -2601,14 +2651,20 @@
     "brand_names": [
       "Mannesmann"
     ],
-    "categories": [],
+    "categories": [
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
     "prices": {
       "price": "3690000",
       "regular_price": "4000000"
     },
     "on_sale": true,
     "image": "/assets/images/products/p1000-gallery-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "updated_at": "2026-09-09T15:47:31.833Z"
   },
   {
     "id": 998,

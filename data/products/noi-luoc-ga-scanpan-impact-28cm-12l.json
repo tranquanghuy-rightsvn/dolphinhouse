@@ -23,7 +23,18 @@
   "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">2.650.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></del> <span class=\"screen-reader-text\">Giá gốc là: 2.650.000&nbsp;&#8363;.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">1.950.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></ins><span class=\"screen-reader-text\">Giá hiện tại là: 1.950.000&nbsp;&#8363;.</span>",
   "average_rating": "0",
   "review_count": 0,
-  "categories": [],
+  "categories": [
+    {
+      "id": 42,
+      "name": "Bếp thông minh & dụng cụ nấu ăn",
+      "slug": "do-dung-nha-bep"
+    },
+    {
+      "id": 99,
+      "name": "Nồi & xửng hấp",
+      "slug": "xong-noi"
+    }
+  ],
   "images": [
     {
       "src": "/assets/images/products/scanpan-impact-28cm-gallery-1.jpg",
@@ -49,5 +60,5 @@
   "brand_names": [
     "Scanpan"
   ],
-  "updated_at": "2026-09-08T12:04:03.264Z"
+  "updated_at": "2026-09-09T15:47:31.833Z"
 }

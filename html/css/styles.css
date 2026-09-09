@@ -129,7 +129,38 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
 }
 .logo { display: flex; align-items: center; }
 .logo img { height: 52px; width: auto; }
-.search-form { display: flex; flex: 1; max-width: 480px; }
+.search-form { display: flex; flex: 1; max-width: 480px; position: relative; }
+
+/* Suggestion panel under the header search box (js/search-suggest.js). */
+.search-suggest {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 60;
+  background: var(--white); border: 1px solid var(--teal-border); border-top: 0;
+  border-radius: 0 0 10px 10px; box-shadow: 0 12px 24px rgba(16, 24, 40, 0.12);
+  max-height: 60vh; overflow-y: auto;
+}
+.search-suggest-item {
+  display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+  border-bottom: 1px solid var(--teal-tint-50); color: var(--ink);
+}
+.search-suggest-item:last-of-type { border-bottom: 0; }
+.search-suggest-item:hover, .search-suggest-item.is-active { background: var(--teal-tint-50); }
+.search-suggest-item img, .search-suggest-noimg {
+  width: 46px; height: 46px; flex: 0 0 46px; object-fit: contain;
+  background: var(--white); border: 1px solid var(--border);
+}
+.search-suggest-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.search-suggest-name {
+  font-size: 13px; line-height: 1.35; font-weight: 700; color: var(--teal-dark);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.search-suggest-price { font-size: 13px; font-weight: 800; color: var(--price-red); }
+.search-suggest-old { color: var(--ink-faint); font-weight: 400; text-decoration: line-through; margin-right: 4px; }
+.search-suggest-more {
+  display: block; text-align: center; padding: 11px 12px; font-size: 13px; font-weight: 800;
+  color: var(--teal-brand); background: var(--teal-tint-50);
+}
+.search-suggest-more:hover { background: var(--teal-tint-100); }
+.search-suggest-empty { padding: 14px 12px; font-size: 13px; color: var(--ink-soft); }
 .search-form input {
   flex: 1; border: 1px solid #ccc; border-right: none; border-radius: 3px 0 0 3px;
   padding: 10px 14px; font-size: 14px; font-family: inherit; min-width: 0;
@@ -453,15 +484,37 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
 }
 .dh-home-shelf-heading a { color: var(--teal-navy); font-size: 14px; font-weight: 800; padding: 5px 4px; white-space: nowrap; }
 .dh-home-shelf-heading a:hover { text-decoration: underline; }
-.dh-home-shelf-body { display: grid; grid-template-columns: 220px 1fr; gap: 12px; margin-top: 12px; align-items: start; }
-.dh-home-shelf-body--full { grid-template-columns: 1fr; }
-.dh-home-shelf-subcategories { background: var(--white); border: 1px solid #e1e7e5; }
-.dh-home-shelf-subcategories-title { display: block; background: #f4f8f6; color: var(--teal-dark); font-size: 14px; font-weight: 800; padding: 12px 14px; }
-.dh-home-shelf-subcategories-list a { display: block; color: #4c5c5b; font-size: 13px; padding: 9px 13px; }
-.dh-home-shelf-subcategories-list a:hover { color: var(--teal-brand); background: var(--teal-tint-50); }
-.dh-home-shelf-subcategories-list a::before { content: "› "; color: var(--teal-brand); }
+.dh-home-shelf-body { display: grid; gap: 12px; margin-top: 12px; align-items: start; }
+/* minmax(0, …) rather than 1fr: the slider track inside is `width: max-content`,
+   and a bare `1fr` track takes its automatic minimum from that content — the
+   column would stretch to the full 20-card width and the viewport would never
+   clip anything. */
+.dh-home-shelf-body--full { grid-template-columns: minmax(0, 1fr); }
 .dh-home-shelf-products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .dh-home-shelf-products--five { grid-template-columns: repeat(5, 1fr); }
+
+/* Shelf slider: the track holds the product list duplicated once and
+   js/shelf-slider.js steps it one card per click, looping both ways (see that
+   file for the wrap logic). */
+.dh-home-shelf-slider { position: relative; min-width: 0; }
+.dh-home-shelf-viewport { overflow: hidden; width: 100%; min-width: 0; }
+.dh-home-shelf-track { display: flex; gap: 10px; width: max-content; }
+/* Width is a no-JS fallback only — the script sets an inline width so exactly
+   5/4/2/1 cards fill the viewport at each breakpoint. */
+.dh-home-shelf-track .dh-home-category-product { width: 224px; flex-shrink: 0; }
+/* Nav buttons straddle the slider edge — half over the cards, half hanging off
+   — instead of taking their own column and shrinking the viewport. */
+.dh-shelf-nav {
+  position: absolute; top: 50%; width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid var(--teal-navy); background: var(--white); color: var(--teal-navy);
+  box-shadow: var(--shadow-card); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; z-index: 2;
+}
+.dh-shelf-nav:hover { background: var(--teal-navy); color: var(--white); }
+.dh-shelf-prev { left: 0; transform: translate(-50%, -50%); }
+.dh-shelf-next { right: 0; transform: translate(50%, -50%); }
+/* Fewer products than fit on screen: nothing to slide, so hide the controls. */
+.dh-home-shelf-slider.is-static .dh-shelf-nav { display: none; }
 .dh-home-category-product {
   position: relative; display: flex; flex-direction: column; background: var(--white);
   border: 1px solid #e0e6e4; color: var(--ink); overflow: hidden;
@@ -819,7 +872,6 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
   .product-grid, .section_cvp_content ul.products { grid-template-columns: repeat(3, 1fr); }
   .dh-home-retail-top { grid-template-columns: 1fr; }
   .dh-home-brands-grid { grid-template-columns: repeat(3, 1fr); }
-  .dh-home-shelf-body { grid-template-columns: 1fr; }
   .dh-home-shelf-products { grid-template-columns: repeat(3, 1fr); }
   .category-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }

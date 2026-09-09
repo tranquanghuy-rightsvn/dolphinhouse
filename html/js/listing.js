@@ -75,8 +75,12 @@
     const base = container.dataset.base;
     let filtered = all;
     if (query) {
-      const q = query.toLowerCase();
-      filtered = filtered.filter((p) => p.name.toLowerCase().includes(q));
+      // Same matching as the header suggestions: accent-insensitive substring
+      // over name, SKU and brand — a search that suggested a product must not
+      // then fail to list it.
+      const norm = (window.DHText && window.DHText.normalize) || ((v) => String(v || "").toLowerCase());
+      const q = norm(query);
+      filtered = filtered.filter((p) => norm([p.name, p.sku, (p.brands || []).join(" ")].join(" ")).includes(q));
     }
     filtered = sortItems(filtered, sortKey);
 

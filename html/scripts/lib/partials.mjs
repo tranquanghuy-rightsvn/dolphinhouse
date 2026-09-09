@@ -347,7 +347,11 @@ export function page({
   jsonLd = [],
   robots = "index, follow",
 }) {
-  const scripts = extraScripts.map((s) => `<script src="${s}"></script>`).join("\n");
+  // The search box lives in the shared header, so its script belongs on every
+  // page rather than in each caller's extraScripts.
+  const scripts = [...extraScripts, "/js/search-suggest.js"]
+    .map((s) => `<script src="${s}"></script>`)
+    .join("\n");
   const metaDescription = description || DEFAULT_DESCRIPTION;
   const canonical = path ? absUrl(path) : null;
   const ogImage = absUrl(image || DEFAULT_OG_IMAGE);

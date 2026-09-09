@@ -23,7 +23,13 @@
   "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">4.000.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></del> <span class=\"screen-reader-text\">Giá gốc là: 4.000.000&nbsp;&#8363;.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">3.690.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></ins><span class=\"screen-reader-text\">Giá hiện tại là: 3.690.000&nbsp;&#8363;.</span>",
   "average_rating": "0",
   "review_count": 0,
-  "categories": [],
+  "categories": [
+    {
+      "id": 95,
+      "name": "Gia dụng tiện ích",
+      "slug": "gia-dung-tien-ich"
+    }
+  ],
   "images": [
     {
       "src": "/assets/images/products/p1000-gallery-01-600x800-1.jpg",
@@ -74,5 +80,5 @@
   "brand_names": [
     "Mannesmann"
   ],
-  "updated_at": "2026-09-08T12:04:03.264Z"
+  "updated_at": "2026-09-09T15:47:31.833Z"
 }

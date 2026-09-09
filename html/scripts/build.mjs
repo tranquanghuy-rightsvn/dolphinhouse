@@ -80,11 +80,22 @@ function legacyHref(href) {
   return href;
 }
 
+// Recursive: a category page lists everything below it, however deep the tree
+// goes. Only two levels exist today, so a one-level lookup happened to give the
+// same answer — it would silently drop products the day a third level appears.
 function getCategoryDescendantSlugs(slug) {
   const cat = CATEGORIES.find((c) => c.slug === slug);
   if (!cat) return [slug];
-  const children = CATEGORIES.filter((c) => c.parent === cat.id).map((c) => c.slug);
-  return [slug, ...children];
+  const slugs = [slug];
+  const walk = (parentId) => {
+    for (const child of CATEGORIES.filter((c) => c.parent === parentId)) {
+      if (slugs.includes(child.slug)) continue; // guard against a cyclic parent
+      slugs.push(child.slug);
+      walk(child.id);
+    }
+  };
+  walk(cat.id);
+  return slugs;
 }
 
 function productsForCategory(slug) {
@@ -173,44 +184,30 @@ function buildHome() {
   // it crosses into the duplicate, so next/prev both loop forever.
   const newsTrackHtml = latestPosts.map(newsCardHtml).join("") + latestPosts.map(newsCardHtml).join("");
 
-  // Blocks with real subcategories keep the "Danh mục con" sidebar + 4
-  // curated products. The rest previously showed a "Gợi ý trong nhóm" sidebar
-  // duplicating info already visible in the product cards — removed, and the
-  // freed-up column becomes a 5th product pulled live from the category
-  // (real inventory, not the static hand-picked list) instead of empty space.
-  const blocks = HOME_BLOCKS.map((blk) => {
-    const hasSidebar = blk.sideTitle === "Danh mục con";
-    const slugMatch = blk.more.match(/slug=([^&]+)/);
-    const catSlug = slugMatch ? slugMatch[1] : null;
-    const displayItems = hasSidebar
-      ? blk.items
-      : (catSlug ? productsForCategory(catSlug) : []).slice(0, 5).map((p) => ({
-          slug: p.slug,
-          title: p.name,
-          img: p.images[0] ? p.images[0].src : "",
-          price: formatVnd(p.prices.price),
-          rawPrice: p.prices.price,
-          del: p.on_sale && p.prices.regular_price !== p.prices.price ? formatVnd(p.prices.regular_price) : null,
-        }));
+  // Every shelf is full width and pulls live products from its own category —
+  // the "Danh mục con" / "Gợi ý trong nhóm" sidebars were dropped at the
+  // client's request (HOME_BLOCKS still carries `sideTitle`/`links`, now unused,
+  // and the hand-picked `items` are only a fallback for a category with none).
+  // Whether a shelf can actually slide depends on how many cards fit at the
+  // current width, which only the browser knows: 4 products need no sliding at
+  // 5-up on a desktop but do at 1-up on a phone. So any shelf with something to
+  // loop through ships as a slider and js/shelf-slider.js decides per
+  // breakpoint, hiding the controls while everything already fits.
+  const SHELF_SIZE = 10;
+  const shelfItem = (p) => ({
+    slug: p.slug,
+    title: p.name,
+    img: p.images[0] ? p.images[0].src : "",
+    price: formatVnd(p.prices.price),
+    rawPrice: p.prices.price,
+    del: p.on_sale && p.prices.regular_price !== p.prices.price ? formatVnd(p.prices.regular_price) : null,
+  });
+
+  function shelfCardHtml(p) {
+    const safeName = p.title.replace(/"/g, "&quot;");
+    // Hand-curated blocks carry the price as a formatted string, live ones as a number.
+    const rawPrice = p.rawPrice != null ? p.rawPrice : (p.price || "").replace(/[^\d]/g, "");
     return `
-    <section class="dh-home-category-block">
-      <div class="dh-home-shelf-heading">
-        <h2>${blk.title}</h2>
-        <a href="${legacyHref(blk.more)}">Xem thêm →</a>
-      </div>
-      <div class="dh-home-shelf-body${hasSidebar ? "" : " dh-home-shelf-body--full"}">
-        ${hasSidebar ? `
-        <aside class="dh-home-shelf-subcategories">
-          <span class="dh-home-shelf-subcategories-title">${blk.sideTitle}</span>
-          <div class="dh-home-shelf-subcategories-list">
-            ${blk.links.map((l) => `<a href="${legacyHref(l.href)}">${l.t}</a>`).join("")}
-          </div>
-        </aside>` : ""}
-        <div class="dh-home-shelf-products${hasSidebar ? "" : " dh-home-shelf-products--five"}">
-          ${displayItems.map((p) => {
-            const safeName = p.title.replace(/"/g, "&quot;");
-            const rawPrice = p.rawPrice != null ? p.rawPrice : (p.price || "").replace(/[^\d]/g, "");
-            return `
           <div class="dh-home-category-product">
             <a class="dh-home-category-product-link" href="/san-pham/${p.slug}/">
               <img src="${p.img}" alt="${safeName}" loading="lazy">
@@ -224,12 +221,41 @@ function buildHome() {
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
             </button>
           </div>`;
-          }).join("")}
-        </div>
+  }
+
+  const blocks = HOME_BLOCKS.map((blk) => {
+    const slugMatch = blk.more.match(/slug=([^&]+)/);
+    const catSlug = slugMatch ? slugMatch[1] : null;
+    const live = (catSlug ? productsForCategory(catSlug) : []).map(shelfItem);
+    // The scraped catalogue leaves some categories almost empty (products were
+    // never assigned to them), so a shelf with nothing to show falls back to the
+    // hand-picked list in HOME_BLOCKS rather than displaying a single lonely
+    // card. Assigning the categories in the admin makes the live list win again.
+    const displayItems = (live.length > 1 ? live : blk.items.length ? blk.items : live).slice(0, SHELF_SIZE);
+    const isSlider = displayItems.length > 1;
+    // One set of cards only: js/shelf-slider.js clones it to build the loop, so
+    // the page ships 10 cards per shelf rather than 20.
+    const cardsHtml = displayItems.map(shelfCardHtml).join("");
+    return `
+    <section class="dh-home-category-block">
+      <div class="dh-home-shelf-heading">
+        <h2>${blk.title}</h2>
+        <a href="${legacyHref(blk.more)}">Xem thêm →</a>
+      </div>
+      <div class="dh-home-shelf-body dh-home-shelf-body--full">
+        ${isSlider ? `
+        <div class="dh-home-shelf-slider">
+          <button type="button" class="dh-shelf-nav dh-shelf-prev" aria-label="Sản phẩm trước"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <div class="dh-home-shelf-viewport">
+            <div class="dh-home-shelf-track">${cardsHtml}</div>
+          </div>
+          <button type="button" class="dh-shelf-nav dh-shelf-next" aria-label="Sản phẩm tiếp"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+        </div>` : `
+        <div class="dh-home-shelf-products dh-home-shelf-products--five">${cardsHtml}
+        </div>`}
       </div>
     </section>`;
   }).join("");
-
   const bodyMain = `
 <main>
   <div class="container">
@@ -344,7 +370,7 @@ function buildHome() {
       categories: CATEGORIES,
       activePath: "/",
       bodyMain,
-      extraScripts: ["/js/site.js", "/js/news-slider.js"],
+      extraScripts: ["/js/site.js", "/js/news-slider.js", "/js/shelf-slider.js"],
       jsonLd: [orgLd, websiteLd, faqLd(HOME_FAQ)],
     })
   );
@@ -452,7 +478,33 @@ function compactProduct(p) {
     price: p.prices.price,
     regular_price: p.prices.regular_price,
     on_sale: p.on_sale,
+    sku: p.sku,
+    brands: p.brand_names || [],
   };
+}
+
+// Text reaches the generators already HTML-escaped (see lib/cms-data.mjs), which
+// is right for markup but wrong inside a JSON file the client matches against
+// and prints with textContent: a product named `Nồi "A & B"` must be searchable
+// by typing the ampersand, not `&amp;`.
+function plainText(value) {
+  return String(value == null ? "" : value)
+    .replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+}
+
+// Every page carries the header search box, so the suggestion list is fetched
+// from here on demand (once, on the first keystroke) instead of being embedded
+// in all 214 pages.
+function buildSearchIndex() {
+  write(
+    "search-index.json",
+    JSON.stringify(
+      PRODUCTS.map((p) => {
+        const c = compactProduct(p);
+        return { ...c, name: plainText(c.name), sku: plainText(c.sku), brands: c.brands.map(plainText) };
+      })
+    )
+  );
 }
 
 function buildShop() {
@@ -950,6 +1002,7 @@ buildCategories();
 buildBrandsIndex();
 buildBrands();
 buildProducts();
+buildSearchIndex();
 buildBlogListing(write, CATEGORIES);
 buildBlogPosts(write, CATEGORIES);
 buildBlogTaxonomies(write, CATEGORIES);

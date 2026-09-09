@@ -23,7 +23,13 @@
   "price_html": "<span class=\"woocommerce-Price-amount amount\">950.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span>",
   "average_rating": "0",
   "review_count": 0,
-  "categories": [],
+  "categories": [
+    {
+      "id": 11,
+      "name": "Chăm sóc gia đình & phòng ngủ",
+      "slug": "chan-ga-goi-dem"
+    }
+  ],
   "images": [
     {
       "src": "/assets/images/products/2lock-wp24-1111c-01-600x800-1.jpg",
@@ -54,5 +60,5 @@
   "brand_names": [
     "2LOCK"
   ],
-  "updated_at": "2026-09-08T12:04:03.264Z"
+  "updated_at": "2026-09-09T15:47:31.833Z"
 }

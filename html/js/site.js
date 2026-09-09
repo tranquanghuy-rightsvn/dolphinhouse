@@ -1,3 +1,20 @@
+// Accent- and case-insensitive text for searching: "noi com dien" has to find
+// "Nồi Cơm Điện" — most people type Vietnamese without diacritics in a search
+// box. Shared by the header suggestions (js/search-suggest.js) and the shop
+// listing's ?q= filter (js/listing.js) so both match identically.
+window.DHText = {
+  normalize(value) {
+    return String(value == null ? "" : value)
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d")
+      .replace(/Đ/g, "D")
+      .toLowerCase()
+      .replace(/\s+/g, " ")
+      .trim();
+  },
+};
+
 // Site-wide interactive behavior only (content is now baked into static HTML
 // at build time — see scripts/build.mjs — so this file no longer renders
 // header/footer/product markup at runtime).
