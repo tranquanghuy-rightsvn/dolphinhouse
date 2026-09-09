@@ -17,9 +17,12 @@ on:
       - '.github/workflows/build.yml'
   workflow_dispatch:
 
+# Two admin saves seconds apart queue two runs. Superseding the older one is
+# always safe: a later run rebuilds from newer data and produces everything the
+# older one would have.
 concurrency:
   group: build-site
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -33,20 +36,31 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Build static pages
-        working-directory: html
-        run: node scripts/build.mjs
-
-      - name: Commit generated pages
+      # Generated pages are never merged: each attempt throws away local state,
+      # rebuilds from the newest data on the branch, and retries if the remote
+      # moved while it was building. Merging or rebasing them instead (the
+      # previous approach) conflicts as soon as two admin saves land close
+      # together — and a failed publish leaves the page of a deleted record
+      # online, which is exactly what this pipeline exists to prevent.
+      - name: Build and publish generated pages
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add html
-          if git diff --cached --quiet; then
-            echo "No page changes."
-            exit 0
-          fi
-          git commit -m "CI: build html from data"
-          # The admin may have committed while this build ran; rebase keeps both.
-          git pull --rebase origin master
-          git push origin HEAD:master
+          for attempt in 1 2 3 4 5; do
+            git fetch origin master
+            git reset --hard origin/master
+            (cd html && node scripts/build.mjs)
+            git add html
+            if git diff --cached --quiet; then
+              echo "No page changes."
+              exit 0
+            fi
+            git commit -m "CI: build html from data"
+            if git push origin HEAD:master; then
+              echo "Published on attempt $attempt."
+              exit 0
+            fi
+            echo "Remote moved while building — rebuilding (attempt $attempt)."
+          done
+          echo "Could not publish after 5 attempts."
+          exit 1
