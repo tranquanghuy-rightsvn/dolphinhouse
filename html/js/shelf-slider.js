@@ -43,16 +43,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const GAP = 10; // must match .dh-home-shelf-track's CSS gap
     let index = 0;
 
-    // 5 / 4 / 2 / 1 cards per view, widest to narrowest.
+    // Under this width the shelf is not a slider at all — styles.css lays the
+    // track out as a two-column grid with the whole set visible.
+    const GRID_BREAKPOINT = 768;
+    const isGridMode = () => window.innerWidth < GRID_BREAKPOINT;
+
+    // 5 cards per view on desktop, 4 on tablet.
     function visibleCount() {
-      const w = window.innerWidth;
-      if (w < 480) return 1;
-      if (w < 768) return 2;
-      if (w < 1024) return 4;
-      return 5;
+      return window.innerWidth < 1024 ? 4 : 5;
     }
 
     function layout() {
+      if (isGridMode()) {
+        // Grid mode: drop everything this script set, or the inline widths and
+        // transform would fight the grid when the viewport grows back.
+        cards.forEach((c) => (c.style.width = ""));
+        track.style.transition = "none";
+        track.style.transform = "";
+        index = 0;
+        return;
+      }
       const n = Math.min(visibleCount(), setSize);
       const cardWidth = (viewport.clientWidth - GAP * (n - 1)) / n;
       cards.forEach((c) => (c.style.width = `${cardWidth}px`));
@@ -80,12 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     nextBtn.addEventListener("click", () => {
-      if (slider.classList.contains("is-static")) return;
+      if (isGridMode() || slider.classList.contains("is-static")) return;
       goTo(index + 1, true);
     });
 
     prevBtn.addEventListener("click", () => {
-      if (slider.classList.contains("is-static")) return;
+      if (isGridMode() || slider.classList.contains("is-static")) return;
       if (index <= 0) {
         // Jump forward one set without animating, then step back — so going
         // "left" from the first card lands on the last one seamlessly.

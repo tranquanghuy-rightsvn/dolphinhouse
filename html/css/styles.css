@@ -515,6 +515,23 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
 .dh-shelf-next { right: 0; transform: translate(50%, -50%); }
 /* Fewer products than fit on screen: nothing to slide, so hide the controls. */
 .dh-home-shelf-slider.is-static .dh-shelf-nav { display: none; }
+
+/* Below the tablet breakpoint the shelf stops being a slider: swiping tiny
+   arrows to see ten products is worse than simply scrolling past them, so the
+   track becomes a plain two-column grid showing the whole set. Done in CSS
+   rather than JS so it also holds before (or without) the script — the loop
+   clones are hidden here, and `!important` overrides the inline width/transform
+   js/shelf-slider.js applies at wider sizes. */
+@media (max-width: 767px) {
+  .dh-home-shelf-viewport { overflow: visible; }
+  .dh-home-shelf-track {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+    width: 100% !important; transform: none !important; transition: none !important;
+  }
+  .dh-home-shelf-track .dh-home-category-product { width: auto !important; }
+  .dh-home-shelf-track .dh-home-category-product[aria-hidden="true"] { display: none; }
+  .dh-shelf-nav { display: none; }
+}
 .dh-home-category-product {
   position: relative; display: flex; flex-direction: column; background: var(--white);
   border: 1px solid #e0e6e4; color: var(--ink); overflow: hidden;
