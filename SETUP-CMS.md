@@ -102,7 +102,7 @@ Không phải cấu hình gì thêm — tính năng đã nằm sẵn trong web a
 1. `/admin` → tab **Kết nối AI** (chỉ quản trị viên thấy) → **Tạo khoá mới**.
 2. Bấm **Sao chép hướng dẫn cho AI** rồi dán vào công cụ AI đang chạy trên máy khách — đoạn đó
    đã có sẵn địa chỉ `/exec`, khoá, danh sách lệnh và các quy tắc.
-3. Tài liệu đầy đủ: `https://dolphinhouse.vn/admin/api.html` (nút **Mở trang hướng dẫn**).
+3. Tài liệu đầy đủ: `https://dolphinhouse.vn/admin/api` (nút **Mở trang hướng dẫn**).
 
 Khoá mang quyền `editor`: chỉ ghi được nội dung, không đọc được đơn hàng, không sửa được người
 dùng. Mất khoá thì vào chính tab đó bấm **Thu hồi** — khoá chết ngay. Quyết định thiết kế nằm ở

@@ -374,10 +374,12 @@ và bài viết, không cần mở Admin.
    `waitLock` quá hạn rồi hỏng. Kẹt lâu nhất 45s rồi báo bận; TTL 180s tự mở nếu tiến trình chết.
 6. **Giao diện**: tab **Kết nối AI** trong Admin (`admin-only`) — tạo/ẩn-hiện/chép/thu hồi khoá,
    chép sẵn "hướng dẫn cho AI" (đã nhúng địa chỉ + khoá mới nhất), và mở trang
-   `/admin/api.html`. `boot()` trả thêm `apiUrl` (`ScriptApp.getService().getUrl()`).
+   `/admin/api`. `boot()` trả thêm `apiUrl` (`ScriptApp.getService().getUrl()`).
    Clipboard trong khung nhúng có thể bị chặn → luôn có đường lui: modal hiện ô chữ để chép tay
    (và `/admin/` khai `allow="clipboard-write"` cho khung).
-7. **Tài liệu cho khách**: `html/admin/api.html` — trang tĩnh trên domain khách (không generate
+7. **Tài liệu cho khách**: `html/admin/api.html`, phục vụ tại `/admin/api` (Cloudflare Pages bỏ
+   đuôi `.html` và 307 về địa chỉ không đuôi — mọi link trong sản phẩm phải trỏ thẳng `/admin/api`,
+   đừng để người dùng đi qua bước chuyển hướng) — trang tĩnh trên domain khách (không generate
    bằng `build.mjs`, nằm trong `NON_BUILD_DIRS` sẵn có của `admin/`), đọc địa chỉ từ
    `html/js/cms-config.js`, có ô dán khoá để mọi ví dụ tự điền. Trang này **không** chứa khoá.
    Sửa action trong `Code.js` thì sửa luôn bảng action ở trang này.
