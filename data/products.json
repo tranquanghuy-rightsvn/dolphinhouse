@@ -159,13 +159,13 @@
       }
     ],
     "prices": {
-      "price": "3990000",
-      "regular_price": "3990000"
+      "price": "0",
+      "regular_price": "0"
     },
     "on_sale": false,
     "image": "/assets/images/products/may-lam-sach-tham-tineco-icarpet-spot-sc051200id/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T07:45:50.355Z"
+    "updated_at": "2026-09-14T12:12:41.822Z"
   },
   {
     "id": 2921,
