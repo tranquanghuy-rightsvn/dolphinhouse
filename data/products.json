@@ -1,5 +1,29 @@
 [
   {
+    "id": 2924,
+    "name": "Set Nhà Tắm Vân Đá Marble",
+    "slug": "set-nha-tam-van-da-marble",
+    "sku": "MSN790",
+    "brand_names": [
+      "Dolphin House"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "1090000",
+      "regular_price": "1090000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/set-nha-tam-van-da-marble/01.webp",
+    "sizes": [],
+    "updated_at": "2026-09-14T02:03:50.824Z"
+  },
+  {
     "id": 2923,
     "name": "Máy Lọc Không Khí Philips AC2220/10",
     "slug": "may-loc-khong-khi-philips-ac2220-10",
