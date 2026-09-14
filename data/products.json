@@ -135,13 +135,13 @@
       }
     ],
     "prices": {
-      "price": "5400000",
-      "regular_price": "5400000"
+      "price": "0",
+      "regular_price": "0"
     },
     "on_sale": false,
     "image": "/assets/images/products/may-loc-khong-khi-philips-ac2220-10/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T07:47:16.615Z"
+    "updated_at": "2026-09-14T12:12:49.172Z"
   },
   {
     "id": 2922,
