@@ -39,13 +39,13 @@
       }
     ],
     "prices": {
-      "price": "1950000",
-      "regular_price": "1950000"
+      "price": "0",
+      "regular_price": "0"
     },
     "on_sale": false,
     "image": "/assets/images/products/dem-massage-toan-than-medisana-mm825/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T07:38:46.782Z"
+    "updated_at": "2026-09-14T12:13:21.558Z"
   },
   {
     "id": 2926,
