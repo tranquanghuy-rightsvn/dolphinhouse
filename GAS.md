@@ -336,3 +336,51 @@ grep -niE 'sheet|spreadsheet|drive|apps script|github' gas/app.html gas/js.html 
    HTML mà không escape (dữ liệu clone không có ký tự đặc biệt nên không lộ ra). Mở CMS cho
    người dùng tự gõ thì một dấu `"` hay `&` là hỏng thẻ. Vá: escape tập trung tại
    `cms-data.mjs` — xem mục XII-b.
+
+## XIX. API cho AI chạy từ máy khách (khoá kết nối)
+
+Mục đích: chủ website ra lệnh cho một công cụ AI **chạy trên máy của họ** để nó tự đăng sản phẩm
+và bài viết, không cần mở Admin.
+
+1. **Khoá kết nối** (`dhk_` + 64 hex) lưu trong Script Properties, key `apikey_<khoá>`, giá trị JSON
+   `{label, email, role, created_at, last_used_at, calls}`. Tối đa **10 khoá**.
+   - Chỉ `admin` trở lên được tạo/xem/thu hồi (`createApiKey`, `listApiKeys`, `revokeApiKey`).
+   - Khoá luôn mang quyền **`editor`** — nội dung và chỉ nội dung. Vì `listUsers`/`deleteOrder`
+     đòi `admin`, khoá **không bao giờ** chạm tới người dùng và đơn hàng. Không thêm cấp quyền
+     riêng cho khoá.
+   - `whoAmI_()` nhận diện khoá bằng tiền tố `dhk_` **trước** khi tra token phiên → mọi hàm
+     nghiệp vụ hiện có (`saveProduct`, `saveNews`, `uploadImage`…) dùng lại y nguyên, không có
+     nhánh xử lý song song nào cho API.
+   - Thu hồi = xoá property → khoá chết ngay lập tức, không có TTL, không có danh sách đen.
+2. **Cổng vào**: cùng URL `/exec` với đơn hàng.
+   - `doPost`: `action === 'order'` → đơn hàng (đường cũ, không đụng tới); còn lại → `handleApi_`.
+   - `doGet`: có `e.parameter.action` → API (chỉ `API_READ_ACTIONS`); không có → trang Admin.
+   - Phản hồi luôn `{ok:true, action, data}` hoặc `{ok:false, action, error}`. Apps Script không
+     đặt được HTTP status, nên `ok` là tín hiệu duy nhất — tài liệu phải nói rõ điều đó.
+3. **Action** (`API_ACTIONS`, `ping` trả về đúng danh sách này — sửa code là tài liệu tự đúng theo):
+   `ping`; `product.list|get|create|update|delete`; `category.list|create`; `brand.list`;
+   `news.list|get|create|update|delete`; `news-category.list|create`;
+   `video.list|create|update|delete`; `image.upload`.
+   - `create` **từ chối** slug đã tồn tại (kèm lời nhắc dùng `update`), `update` **từ chối** slug
+     chưa tồn tại. Không có upsert ngầm: ghi đè im lặng một sản phẩm là hỏng dữ liệu khó lần ra.
+   - `update` **trộn** với bản ghi cũ: field không gửi thì giữ nguyên. Gửi `images` là thay cả
+     thư viện (ảnh không còn được nhắc tới bị `pruneImages_` dọn — đúng hành vi của Admin).
+   - `categories` nhận slug và **phải tồn tại** — sai thì báo lỗi kèm tên action để tra cứu.
+4. **Ảnh** nhận 3 dạng: URL http(s) (server tự tải về), `{data: base64, filename}`, hoặc đường dẫn
+   `/assets/...` đã có. Trần **5MB/ảnh**. Không resize phía server (Apps Script không có công cụ
+   ảnh rẻ) — tài liệu yêu cầu bên gọi tự nén ~1600px.
+5. **Khoá ghi kiểu advisory** bằng CacheService (`api_write_lock`), **KHÔNG** dùng `LockService`:
+   lock đó dùng chung với `createOrder_`, một loạt upload chậm sẽ làm đơn hàng thật của khách
+   `waitLock` quá hạn rồi hỏng. Kẹt lâu nhất 45s rồi báo bận; TTL 180s tự mở nếu tiến trình chết.
+6. **Giao diện**: tab **Kết nối AI** trong Admin (`admin-only`) — tạo/ẩn-hiện/chép/thu hồi khoá,
+   chép sẵn "hướng dẫn cho AI" (đã nhúng địa chỉ + khoá mới nhất), và mở trang
+   `/admin/api.html`. `boot()` trả thêm `apiUrl` (`ScriptApp.getService().getUrl()`).
+   Clipboard trong khung nhúng có thể bị chặn → luôn có đường lui: modal hiện ô chữ để chép tay
+   (và `/admin/` khai `allow="clipboard-write"` cho khung).
+7. **Tài liệu cho khách**: `html/admin/api.html` — trang tĩnh trên domain khách (không generate
+   bằng `build.mjs`, nằm trong `NON_BUILD_DIRS` sẵn có của `admin/`), đọc địa chỉ từ
+   `html/js/cms-config.js`, có ô dán khoá để mọi ví dụ tự điền. Trang này **không** chứa khoá.
+   Sửa action trong `Code.js` thì sửa luôn bảng action ở trang này.
+8. **Kiểm thử**: `node tools/gas-api-test/test-api.js` chạy `Code.js` trong môi trường giả lập
+   (kho nội dung trong bộ nhớ, không gọi mạng). Sửa `Code.js` xong phải chạy lại trước khi
+   `clasp push`. Thư mục đó nằm NGOÀI `gas/` để clasp không đẩy lên theo.

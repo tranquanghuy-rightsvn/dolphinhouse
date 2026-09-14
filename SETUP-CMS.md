@@ -19,6 +19,7 @@ Admin (dolphinhouse.vn/admin)  →  dịch vụ quản trị (web app)  →  dat
 | `html/scripts/build.mjs` + `html/scripts/lib/cms-data.mjs` | Sinh toàn bộ `html/**` từ `data/`. |
 | `html/scripts/migrate-to-data.mjs` | Script migrate **một lần** (đã chạy). Chỉ chạy lại với `--force` nếu muốn dựng lại `data/` từ đầu — sẽ **mất hết** nội dung khách đã nhập qua CMS. |
 | `html/admin/`, `html/admin-gas/` | 2 trang quản trị trên domain khách. |
+| `html/admin/api.html` | Trang hướng dẫn gọi API để AI chạy trên máy khách tự đăng bài. |
 | `html/js/cms-config.js` | **Nơi duy nhất** khai địa chỉ dịch vụ quản trị. |
 | `html/assets/tinymce/` | Thư viện soạn thảo tự host (Admin nạp lại từ đây). |
 | `html/scripts/make-responsive-images.mjs` | Tạo bản ảnh nhỏ (`-mobile` 900px, `-tablet` 1100px) cho ảnh banner. Chạy tay khi đổi ảnh banner: `cd html && node scripts/make-responsive-images.mjs`; kết quả commit vào repo nên CI không cần công cụ ảnh. |
@@ -94,6 +95,21 @@ mở editor Apps Script chạy thử một hàm bất kỳ để kích hoạt m�
 
 ---
 
+## 6. Cho AI trên máy khách đăng bài (không bắt buộc)
+
+Không phải cấu hình gì thêm — tính năng đã nằm sẵn trong web app:
+
+1. `/admin` → tab **Kết nối AI** (chỉ quản trị viên thấy) → **Tạo khoá mới**.
+2. Bấm **Sao chép hướng dẫn cho AI** rồi dán vào công cụ AI đang chạy trên máy khách — đoạn đó
+   đã có sẵn địa chỉ `/exec`, khoá, danh sách lệnh và các quy tắc.
+3. Tài liệu đầy đủ: `https://dolphinhouse.vn/admin/api.html` (nút **Mở trang hướng dẫn**).
+
+Khoá mang quyền `editor`: chỉ ghi được nội dung, không đọc được đơn hàng, không sửa được người
+dùng. Mất khoá thì vào chính tab đó bấm **Thu hồi** — khoá chết ngay. Quyết định thiết kế nằm ở
+[`GAS.md`](GAS.md) mục XIX.
+
+---
+
 ## Kiểm tra bắt buộc trước khi bàn giao
 
 - [ ] Đăng nhập được `/admin` → **F5 lại không phải nhập OTP lần nữa** (nếu phải nhập lại, trình
@@ -109,6 +125,10 @@ mở editor Apps Script chạy thử một hàm bất kỳ để kích hoạt m�
       này thì ô bẫy bot hiện ra và mọi đơn hàng thật sẽ bị **âm thầm** loại bỏ).
 - [ ] `curl -sI https://dolphinhouse.vn/admin/ | grep -i x-robots-tag` → phải có `noindex`.
 - [ ] `robots.txt` **không** khai `/admin` (cố ý — file đó công khai, khai ra là tự chỉ đường).
+- [ ] Tạo thử 1 khoá kết nối ở tab **Kết nối AI**, chạy
+      `curl -L -X POST "<URL /exec>" -H "Content-Type: application/json" -d '{"key":"<khoá>","action":"ping"}'`
+      → phải trả về `{"ok":true,...}`. Thiếu cờ `-L` sẽ nhận về HTML, không phải JSON.
+- [ ] Thu hồi khoá vừa thử → gọi lại `ping` phải trả `{"ok":false,...}`.
 
 ## Mỗi lần sửa mã trong `gas/`
 
