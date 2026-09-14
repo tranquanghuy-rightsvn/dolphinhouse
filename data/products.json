@@ -1,5 +1,29 @@
 [
   {
+    "id": 2921,
+    "name": "Máy Hút Chân Không GKÖCH VS5216 Serie 6",
+    "slug": "may-hut-chan-khong-gkoch-vs5216-serie-6",
+    "sku": "MHCK1200",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "1500000",
+      "regular_price": "1500000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-hut-chan-khong-gkoch-vs5216-serie-6/01.webp",
+    "sizes": [],
+    "updated_at": "2026-09-14T01:58:25.369Z"
+  },
+  {
     "id": 2920,
     "name": "Loa Marshall Woburn 3",
     "slug": "loa-marshall-woburn-3",
