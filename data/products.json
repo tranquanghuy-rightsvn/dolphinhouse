@@ -1,5 +1,29 @@
 [
   {
+    "id": 2923,
+    "name": "Máy Lọc Không Khí Philips AC2220/10",
+    "slug": "may-loc-khong-khi-philips-ac2220-10",
+    "sku": "MPC4600",
+    "brand_names": [
+      "Philips"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "5400000",
+      "regular_price": "5400000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-loc-khong-khi-philips-ac2220-10/01.webp",
+    "sizes": [],
+    "updated_at": "2026-09-14T02:02:00.108Z"
+  },
+  {
     "id": 2922,
     "name": "Máy Làm Sạch Thảm Tineco iCarpet Spot SC051200ID",
     "slug": "may-lam-sach-tham-tineco-icarpet-spot-sc051200id",
