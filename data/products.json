@@ -1,5 +1,29 @@
 [
   {
+    "id": 2922,
+    "name": "Máy Làm Sạch Thảm Tineco iCarpet Spot SC051200ID",
+    "slug": "may-lam-sach-tham-tineco-icarpet-spot-sc051200id",
+    "sku": "MLS3350",
+    "brand_names": [
+      "Tineco"
+    ],
+    "categories": [
+      {
+        "id": 101,
+        "name": "Vệ sinh nhà cửa thông minh",
+        "slug": "ve-sinh-nha-cua"
+      }
+    ],
+    "prices": {
+      "price": "3990000",
+      "regular_price": "3990000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-lam-sach-tham-tineco-icarpet-spot-sc051200id/01.webp",
+    "sizes": [],
+    "updated_at": "2026-09-14T02:00:20.964Z"
+  },
+  {
     "id": 2921,
     "name": "Máy Hút Chân Không GKÖCH VS5216 Serie 6",
     "slug": "may-hut-chan-khong-gkoch-vs5216-serie-6",
