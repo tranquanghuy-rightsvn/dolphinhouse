@@ -207,13 +207,13 @@
       }
     ],
     "prices": {
-      "price": "8750000",
-      "regular_price": "8750000"
+      "price": "0",
+      "regular_price": "0"
     },
     "on_sale": false,
     "image": "/assets/images/products/loa-marshall-woburn-3/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T07:25:37.088Z"
+    "updated_at": "2026-09-14T12:12:28.116Z"
   },
   {
     "id": 2917,
