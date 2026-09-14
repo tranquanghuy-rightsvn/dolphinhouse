@@ -15,13 +15,13 @@
       }
     ],
     "prices": {
-      "price": "450000",
-      "regular_price": "450000"
+      "price": "0",
+      "regular_price": "0"
     },
     "on_sale": false,
     "image": "/assets/images/products/o-dien-da-nang-lumias-lm-c5614p/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T07:40:14.445Z"
+    "updated_at": "2026-09-14T12:13:29.447Z"
   },
   {
     "id": 2927,
