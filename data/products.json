@@ -1,5 +1,29 @@
 [
   {
+    "id": 2926,
+    "name": "Đèn Bàn Chống Cận Wilit U13AQ",
+    "slug": "den-ban-chong-can-wilit-u13aq",
+    "sku": "MDB750",
+    "brand_names": [
+      "Wilit"
+    ],
+    "categories": [
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "899000",
+      "regular_price": "899000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/den-ban-chong-can-wilit-u13aq/01.webp",
+    "sizes": [],
+    "updated_at": "2026-09-14T02:07:14.684Z"
+  },
+  {
     "id": 2925,
     "name": "Viên Tẩy Lồng Giặt Denkmit Đức",
     "slug": "vien-tay-long-giat-denkmit-duc",
