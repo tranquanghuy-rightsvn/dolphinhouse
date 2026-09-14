@@ -1,5 +1,29 @@
 [
   {
+    "id": 2928,
+    "name": "Ổ Điện Đa Năng Lumias LM-C5614P",
+    "slug": "o-dien-da-nang-lumias-lm-c5614p",
+    "sku": "MOC450",
+    "brand_names": [
+      "Lumias"
+    ],
+    "categories": [
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "450000",
+      "regular_price": "450000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/o-dien-da-nang-lumias-lm-c5614p/01.webp",
+    "sizes": [],
+    "updated_at": "2026-09-14T02:10:40.794Z"
+  },
+  {
     "id": 2927,
     "name": "Đệm Massage Toàn Thân Medisana MM825",
     "slug": "dem-massage-toan-than-medisana-mm825",
