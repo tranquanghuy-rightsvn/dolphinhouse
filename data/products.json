@@ -1,5 +1,29 @@
 [
   {
+    "id": 2925,
+    "name": "Viên Tẩy Lồng Giặt Denkmit Đức",
+    "slug": "vien-tay-long-giat-denkmit-duc",
+    "sku": "MVT179",
+    "brand_names": [
+      "Denkmit"
+    ],
+    "categories": [
+      {
+        "id": 101,
+        "name": "Vệ sinh nhà cửa thông minh",
+        "slug": "ve-sinh-nha-cua"
+      }
+    ],
+    "prices": {
+      "price": "285000",
+      "regular_price": "285000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/vien-tay-long-giat-denkmit-duc/01.webp",
+    "sizes": [],
+    "updated_at": "2026-09-14T02:05:26.788Z"
+  },
+  {
     "id": 2924,
     "name": "Set Nhà Tắm Vân Đá Marble",
     "slug": "set-nha-tam-van-da-marble",
