@@ -1,5 +1,29 @@
 [
   {
+    "id": 2920,
+    "name": "Loa Marshall Woburn 3",
+    "slug": "loa-marshall-woburn-3",
+    "sku": "MMS7850",
+    "brand_names": [
+      "Marshall"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "8750000",
+      "regular_price": "8750000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/loa-marshall-woburn-3/01.webp",
+    "sizes": [],
+    "updated_at": "2026-09-14T01:56:45.948Z"
+  },
+  {
     "id": 2917,
     "name": "Tủ sấy GUME GM-8222 – Sấy khô quần áo gọn gàng",
     "slug": "tu-say-gume-gm-8222-say-kho-quan-ao-gon-gang",
