@@ -87,13 +87,13 @@
       }
     ],
     "prices": {
-      "price": "285000",
-      "regular_price": "285000"
+      "price": "0",
+      "regular_price": "0"
     },
     "on_sale": false,
     "image": "/assets/images/products/vien-tay-long-giat-denkmit-duc/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T07:35:42.988Z"
+    "updated_at": "2026-09-14T12:13:08.688Z"
   },
   {
     "id": 2924,
