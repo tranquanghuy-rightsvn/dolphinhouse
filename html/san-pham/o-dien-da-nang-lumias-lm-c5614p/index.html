@@ -181,7 +181,7 @@
     <section class="description-section">
       <span class="description-tab-head">MÔ TẢ SẢN PHẨM</span>
       <div class="description-body" id="description-body">
-        <style>
+        <style id="dh-no-public-price-style">.price-block,.price-row,.price-current,.price-old,[itemprop="price"]{display:none!important}</style><script id="dh-no-public-price-script">(function(){function clean(){document.querySelectorAll('.price-block,.price-row,.price-current,.price-old,[itemprop="price"]').forEach(function(e){e.remove();});document.querySelectorAll('[data-price]').forEach(function(e){e.removeAttribute('data-price');});document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s){try{var d=JSON.parse(s.textContent);function walk(o){if(!o||typeof o!=='object')return;if(o.offers)delete o.offers;delete o.price;delete o.priceCurrency;delete o.lowPrice;delete o.highPrice;Object.keys(o).forEach(function(k){walk(o[k]);});}walk(d);s.textContent=JSON.stringify(d);}catch(e){}});} if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',clean);} clean(); setTimeout(clean,300); setTimeout(clean,1200);})();</script><style>
 .description-body .dh-inline-lifestyle{width:min(100%,920px);max-width:920px;margin:28px auto;padding:0;box-sizing:border-box;}
 .description-body .dh-inline-lifestyle>img{display:block;width:100%;height:auto;max-width:100%;margin:0 auto;border-radius:0;}
 .description-body .dh-inline-lifestyle>figcaption{display:block;max-width:920px;margin:10px auto 0;padding:0 12px;text-align:center;line-height:1.55;}
