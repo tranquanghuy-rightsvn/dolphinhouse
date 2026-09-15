@@ -2471,12 +2471,13 @@
       }
     ],
     "prices": {
-      "price": "320000",
+      "price": "430000",
       "regular_price": "450000"
     },
     "on_sale": true,
     "image": "/assets/images/products/binh-Aung-thuc-an-giy-nhiet-gume-gm-f11-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "updated_at": "2026-09-15T01:52:35.136Z"
   },
   {
     "id": 1303,
