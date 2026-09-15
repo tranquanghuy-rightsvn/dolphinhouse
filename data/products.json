@@ -2333,12 +2333,13 @@
       }
     ],
     "prices": {
-      "price": "480000",
+      "price": "530000",
       "regular_price": "650000"
     },
     "on_sale": true,
     "image": "/assets/images/products/p1373-gallery-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "updated_at": "2026-09-15T01:52:57.191Z"
   },
   {
     "id": 1362,
