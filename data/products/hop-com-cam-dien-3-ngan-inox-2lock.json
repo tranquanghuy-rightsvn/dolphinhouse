@@ -34,10 +34,36 @@
       "slug": "dien-gia-dung"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/hop-com-cam-dien-3-ngan-inox-2lock/01.jpg",
+      "thumbnail": "/assets/images/products/hop-com-cam-dien-3-ngan-inox-2lock/01.jpg",
+      "alt": "Hộp cơm cắm điện 3 ngăn inox 2LOCK"
+    },
+    {
+      "src": "/assets/images/products/hop-com-cam-dien-3-ngan-inox-2lock/02.jpg",
+      "thumbnail": "/assets/images/products/hop-com-cam-dien-3-ngan-inox-2lock/02.jpg",
+      "alt": "Hộp cơm cắm điện 3 ngăn inox 2LOCK"
+    },
+    {
+      "src": "/assets/images/products/hop-com-cam-dien-3-ngan-inox-2lock/03.jpg",
+      "thumbnail": "/assets/images/products/hop-com-cam-dien-3-ngan-inox-2lock/03.jpg",
+      "alt": "Hộp cơm cắm điện 3 ngăn inox 2LOCK"
+    },
+    {
+      "src": "/assets/images/products/hop-com-cam-dien-3-ngan-inox-2lock/04.jpg",
+      "thumbnail": "/assets/images/products/hop-com-cam-dien-3-ngan-inox-2lock/04.jpg",
+      "alt": "Hộp cơm cắm điện 3 ngăn inox 2LOCK"
+    },
+    {
+      "src": "/assets/images/products/hop-com-cam-dien-3-ngan-inox-2lock/05.jpg",
+      "thumbnail": "/assets/images/products/hop-com-cam-dien-3-ngan-inox-2lock/05.jpg",
+      "alt": "Hộp cơm cắm điện 3 ngăn inox 2LOCK"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "2LOCK"
   ],
-  "updated_at": "2026-09-15T08:53:34.053Z"
+  "updated_at": "2026-09-15T08:57:17.870Z"
 }
