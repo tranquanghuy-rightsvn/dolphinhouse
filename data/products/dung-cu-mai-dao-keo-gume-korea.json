@@ -1,0 +1,38 @@
+{
+  "id": 2930,
+  "name": "Dụng Cụ Mài Dao Kéo GUME Korea",
+  "slug": "dung-cu-mai-dao-keo-gume-korea",
+  "sku": "DS08",
+  "permalink": "san-pham.html?slug=dung-cu-mai-dao-keo-gume-korea",
+  "short_description": "<p>Dụng cụ mài dao kéo GUME Korea nhỏ gọn, an toàn và tiện lợi cho căn bếp gia đình.</p>",
+  "description": "<h2>Đặc điểm nổi bật</h2><ul><li>3–4 rãnh mài chuyên dụng cho dao và kéo.</li><li>Tay cầm chống trượt, sử dụng an toàn.</li><li>Chất liệu nhựa và thép bền bỉ.</li><li>Kích thước 235 × 85 × 55mm, trọng lượng 267g.</li></ul>",
+  "on_sale": false,
+  "prices": {
+    "price": "190000",
+    "regular_price": "190000",
+    "sale_price": "190000",
+    "price_range": null,
+    "currency_code": "VND",
+    "currency_symbol": "₫",
+    "currency_minor_unit": 0,
+    "currency_decimal_separator": ".",
+    "currency_thousand_separator": ".",
+    "currency_prefix": "",
+    "currency_suffix": " ₫"
+  },
+  "average_rating": "0",
+  "review_count": 0,
+  "categories": [
+    {
+      "id": 42,
+      "name": "Bếp thông minh & dụng cụ nấu ăn",
+      "slug": "do-dung-nha-bep"
+    }
+  ],
+  "images": [],
+  "sizes": [],
+  "brand_names": [
+    "GUME"
+  ],
+  "updated_at": "2026-09-15T02:35:55.927Z"
+}
