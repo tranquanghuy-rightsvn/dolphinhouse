@@ -45,30 +45,6 @@
     "updated_at": "2026-09-15T02:51:35.266Z"
   },
   {
-    "id": 2930,
-    "name": "Dụng Cụ Mài Dao Kéo GUME Korea",
-    "slug": "dung-cu-mai-dao-keo-gume-korea",
-    "sku": "DS08",
-    "brand_names": [
-      "GUME"
-    ],
-    "categories": [
-      {
-        "id": 42,
-        "name": "Bếp thông minh & dụng cụ nấu ăn",
-        "slug": "do-dung-nha-bep"
-      }
-    ],
-    "prices": {
-      "price": "190000",
-      "regular_price": "190000"
-    },
-    "on_sale": false,
-    "image": "",
-    "sizes": [],
-    "updated_at": "2026-09-15T02:35:55.927Z"
-  },
-  {
     "id": 2928,
     "name": "Ổ Điện Đa Năng Lumias LM-C5614P",
     "slug": "o-dien-da-nang-lumias-lm-c5614p",
