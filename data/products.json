@@ -2451,12 +2451,13 @@
       }
     ],
     "prices": {
-      "price": "249000",
+      "price": "990000",
       "regular_price": "350000"
     },
-    "on_sale": true,
+    "on_sale": false,
     "image": "/assets/images/products/ro-quay-rau-cao-cap-ultty-rau-gion-sach-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "updated_at": "2026-09-15T01:53:16.787Z"
   },
   {
     "id": 1312,
