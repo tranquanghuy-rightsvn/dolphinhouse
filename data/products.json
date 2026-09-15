@@ -1,5 +1,29 @@
 [
   {
+    "id": 2929,
+    "name": "Thớt Gỗ Đặc Cao Cấp WMF Fortenberg – Chặt & Thái Chuyên Nghiệp",
+    "slug": "thot-go-dac-cao-cap-wmf-fortenberg-chat-thai-chuyen-nghiep",
+    "sku": "TH36",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "999000",
+      "regular_price": "999000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-09-15T02:35:41.837Z"
+  },
+  {
     "id": 2928,
     "name": "Ổ Điện Đa Năng Lumias LM-C5614P",
     "slug": "o-dien-da-nang-lumias-lm-c5614p",
