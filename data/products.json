@@ -2428,12 +2428,13 @@
       }
     ],
     "prices": {
-      "price": "1750000",
+      "price": "1490000",
       "regular_price": "2200000"
     },
     "on_sale": true,
     "image": "/assets/images/products/quat-cay-Aung-toshiba-f-lsa20hvn-em-ai-r-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "updated_at": "2026-09-15T01:53:23.056Z"
   },
   {
     "id": 1319,
