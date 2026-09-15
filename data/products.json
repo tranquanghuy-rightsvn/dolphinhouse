@@ -1,5 +1,34 @@
 [
   {
+    "id": 2932,
+    "name": "Hộp cơm cắm điện 3 ngăn inox 2LOCK",
+    "slug": "hop-com-cam-dien-3-ngan-inox-2lock",
+    "sku": "MHC490",
+    "brand_names": [
+      "2LOCK"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "690000",
+      "regular_price": "690000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-09-15T08:53:34.053Z"
+  },
+  {
     "id": 2931,
     "name": "Chảo Tefal Ultimate – Cao Cấp Made in France",
     "slug": "chao-tefal-ultimate-cao-cap-made-in-france",
