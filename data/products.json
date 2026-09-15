@@ -2640,13 +2640,29 @@
       }
     ],
     "prices": {
-      "price": "890000",
-      "regular_price": "1200000"
+      "price": "680000",
+      "regular_price": "680000"
     },
-    "on_sale": true,
+    "on_sale": false,
     "image": "/assets/images/products/p1223-gallery-01-600x800-1.jpg",
-    "sizes": [],
-    "updated_at": "2026-09-10T11:14:20.661Z"
+    "sizes": [
+      {
+        "name": "20cm",
+        "price": "680000",
+        "regular_price": "680000"
+      },
+      {
+        "name": "24cm",
+        "price": "730000",
+        "regular_price": "730000"
+      },
+      {
+        "name": "28cm",
+        "price": "820000",
+        "regular_price": "820000"
+      }
+    ],
+    "updated_at": "2026-09-15T01:59:30.586Z"
   },
   {
     "id": 1214,
