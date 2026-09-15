@@ -1,5 +1,50 @@
 [
   {
+    "id": 2931,
+    "name": "Chảo Tefal Ultimate – Cao Cấp Made in France",
+    "slug": "chao-tefal-ultimate-cao-cap-made-in-france",
+    "sku": "MT590",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      }
+    ],
+    "prices": {
+      "price": "790000",
+      "regular_price": "790000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [
+      {
+        "name": "20cm (CM110)",
+        "price": "790000",
+        "regular_price": "790000"
+      },
+      {
+        "name": "24cm (CM111)",
+        "price": "890000",
+        "regular_price": "890000"
+      },
+      {
+        "name": "26cm (CM112)",
+        "price": "950000",
+        "regular_price": "950000"
+      },
+      {
+        "name": "28cm (CM113)",
+        "price": "980000",
+        "regular_price": "980000"
+      }
+    ],
+    "updated_at": "2026-09-15T02:36:09.980Z"
+  },
+  {
     "id": 2930,
     "name": "Dụng Cụ Mài Dao Kéo GUME Korea",
     "slug": "dung-cu-mai-dao-keo-gume-korea",
