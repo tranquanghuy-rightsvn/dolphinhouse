@@ -1,0 +1,59 @@
+{
+  "id": 2931,
+  "name": "Chảo Tefal Ultimate – Cao Cấp Made in France",
+  "slug": "chao-tefal-ultimate-cao-cap-made-in-france",
+  "sku": "MT590",
+  "permalink": "san-pham.html?slug=chao-tefal-ultimate-cao-cap-made-in-france",
+  "short_description": "<p>Chảo Tefal Ultimate cao cấp với 3 lớp chống dính Titanium, công nghệ Thermo-Spot và thiết kế đúc nguyên khối.</p>",
+  "description": "<h2>Đặc điểm nổi bật</h2><ul><li>3 lớp chống dính Titanium, không PFOA, chì và Cadmium.</li><li>Công nghệ Thermo-Spot báo nhiệt chính xác.</li><li>Đúc nguyên khối, bền chắc, không cong vênh.</li><li>Dùng được trên mọi loại bếp, kể cả bếp từ.</li></ul>",
+  "on_sale": false,
+  "prices": {
+    "price": "790000",
+    "regular_price": "790000",
+    "sale_price": "790000",
+    "price_range": null,
+    "currency_code": "VND",
+    "currency_symbol": "₫",
+    "currency_minor_unit": 0,
+    "currency_decimal_separator": ".",
+    "currency_thousand_separator": ".",
+    "currency_prefix": "",
+    "currency_suffix": " ₫"
+  },
+  "average_rating": "0",
+  "review_count": 0,
+  "categories": [
+    {
+      "id": 100,
+      "name": "Nồi chảo cao cấp",
+      "slug": "chao"
+    }
+  ],
+  "images": [],
+  "sizes": [
+    {
+      "name": "20cm (CM110)",
+      "price": "790000",
+      "regular_price": "790000"
+    },
+    {
+      "name": "24cm (CM111)",
+      "price": "890000",
+      "regular_price": "890000"
+    },
+    {
+      "name": "26cm (CM112)",
+      "price": "950000",
+      "regular_price": "950000"
+    },
+    {
+      "name": "28cm (CM113)",
+      "price": "980000",
+      "regular_price": "980000"
+    }
+  ],
+  "brand_names": [
+    "Tefal"
+  ],
+  "updated_at": "2026-09-15T02:36:09.980Z"
+}
