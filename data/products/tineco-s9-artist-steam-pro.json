@@ -31,39 +31,34 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/tineco-s9-artist-steam-pro/01.jpg",
-      "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/01.jpg",
-      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 1"
-    },
-    {
       "src": "/assets/images/products/tineco-s9-artist-steam-pro/02.jpg",
       "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/02.jpg",
-      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 2"
+      "alt": "TINECO S9 ARTIST STEAM PRO"
     },
     {
       "src": "/assets/images/products/tineco-s9-artist-steam-pro/03.jpg",
       "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/03.jpg",
-      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 3"
+      "alt": "TINECO S9 ARTIST STEAM PRO"
     },
     {
       "src": "/assets/images/products/tineco-s9-artist-steam-pro/04.jpg",
       "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/04.jpg",
-      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 4"
+      "alt": "TINECO S9 ARTIST STEAM PRO"
     },
     {
       "src": "/assets/images/products/tineco-s9-artist-steam-pro/05.jpg",
       "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/05.jpg",
-      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 5"
+      "alt": "TINECO S9 ARTIST STEAM PRO"
     },
     {
       "src": "/assets/images/products/tineco-s9-artist-steam-pro/06.jpg",
       "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/06.jpg",
-      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 6"
+      "alt": "TINECO S9 ARTIST STEAM PRO"
     }
   ],
   "sizes": [],
   "brand_names": [
     "Tineco"
   ],
-  "updated_at": "2026-09-16T07:11:24.229Z"
+  "updated_at": "2026-09-16T07:13:12.479Z"
 }
