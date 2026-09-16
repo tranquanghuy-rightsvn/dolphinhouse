@@ -29,10 +29,41 @@
       "slug": "san-pham-thong-minh"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/01.jpg",
+      "thumbnail": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/01.jpg",
+      "alt": "ECOVACS WINBOT W3 ảnh 1"
+    },
+    {
+      "src": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/02.jpg",
+      "thumbnail": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/02.jpg",
+      "alt": "ECOVACS WINBOT W3 ảnh 2"
+    },
+    {
+      "src": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/03.jpg",
+      "thumbnail": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/03.jpg",
+      "alt": "ECOVACS WINBOT W3 ảnh 3"
+    },
+    {
+      "src": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/04.jpg",
+      "thumbnail": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/04.jpg",
+      "alt": "ECOVACS WINBOT W3 ảnh 4"
+    },
+    {
+      "src": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/05.jpg",
+      "thumbnail": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/05.jpg",
+      "alt": "ECOVACS WINBOT W3 ảnh 5"
+    },
+    {
+      "src": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/06.jpg",
+      "thumbnail": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/06.jpg",
+      "alt": "ECOVACS WINBOT W3 ảnh 6"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "ECOVACS"
   ],
-  "updated_at": "2026-09-16T07:15:34.200Z"
+  "updated_at": "2026-09-16T07:16:07.757Z"
 }
