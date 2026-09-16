@@ -1,5 +1,34 @@
 [
   {
+    "id": 2937,
+    "name": "Set 2 thố inox GKÖCH",
+    "slug": "set-2-tho-inox-gkoch",
+    "sku": "MTT250",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "390000",
+      "regular_price": "390000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-09-16T07:01:49.118Z"
+  },
+  {
     "id": 2936,
     "name": "Nồi hấp điện WMF 2 tầng cao cấp",
     "slug": "noi-hap-dien-wmf-2-tang-cao-cap",
