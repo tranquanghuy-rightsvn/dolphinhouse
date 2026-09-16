@@ -29,10 +29,41 @@
       "slug": "san-pham-thong-minh"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/tineco-s9-artist-steam-pro/01.jpg",
+      "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/01.jpg",
+      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 1"
+    },
+    {
+      "src": "/assets/images/products/tineco-s9-artist-steam-pro/02.jpg",
+      "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/02.jpg",
+      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 2"
+    },
+    {
+      "src": "/assets/images/products/tineco-s9-artist-steam-pro/03.jpg",
+      "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/03.jpg",
+      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 3"
+    },
+    {
+      "src": "/assets/images/products/tineco-s9-artist-steam-pro/04.jpg",
+      "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/04.jpg",
+      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 4"
+    },
+    {
+      "src": "/assets/images/products/tineco-s9-artist-steam-pro/05.jpg",
+      "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/05.jpg",
+      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 5"
+    },
+    {
+      "src": "/assets/images/products/tineco-s9-artist-steam-pro/06.jpg",
+      "thumbnail": "/assets/images/products/tineco-s9-artist-steam-pro/06.jpg",
+      "alt": "TINECO S9 ARTIST STEAM PRO ảnh 6"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "Tineco"
   ],
-  "updated_at": "2026-09-16T07:10:50.378Z"
+  "updated_at": "2026-09-16T07:11:24.229Z"
 }
