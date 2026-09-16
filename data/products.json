@@ -3130,29 +3130,6 @@
     "updated_at": "2026-09-08T12:04:03.264Z"
   },
   {
-    "id": 983,
-    "name": "Nồi Hấp Điện 3 Tầng Unie UE560",
-    "slug": "noi-hap-dien-3-tangunie-ue560",
-    "sku": "M850",
-    "brand_names": [
-      "Unie"
-    ],
-    "categories": [
-      {
-        "id": 8,
-        "name": "Điện gia dụng",
-        "slug": "dien-gia-dung"
-      }
-    ],
-    "prices": {
-      "price": "850000",
-      "regular_price": "950000"
-    },
-    "on_sale": true,
-    "image": "/assets/images/products/noi-hap-3-tang-UE560-2-optimized.webp",
-    "updated_at": "2026-09-08T12:04:03.264Z"
-  },
-  {
     "id": 977,
     "name": "Thớt Wood Fiber G37",
     "slug": "thot-wood-fiber-g37",
