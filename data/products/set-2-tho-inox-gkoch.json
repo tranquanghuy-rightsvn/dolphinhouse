@@ -36,34 +36,29 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/set-2-tho-inox-gkoch/01.jpg",
-      "thumbnail": "/assets/images/products/set-2-tho-inox-gkoch/01.jpg",
-      "alt": "Set 2 thố inox GKÖCH ảnh 1"
-    },
-    {
       "src": "/assets/images/products/set-2-tho-inox-gkoch/02.jpg",
       "thumbnail": "/assets/images/products/set-2-tho-inox-gkoch/02.jpg",
-      "alt": "Set 2 thố inox GKÖCH ảnh 2"
+      "alt": "Set 2 thố inox GKÖCH"
     },
     {
       "src": "/assets/images/products/set-2-tho-inox-gkoch/03.jpg",
       "thumbnail": "/assets/images/products/set-2-tho-inox-gkoch/03.jpg",
-      "alt": "Set 2 thố inox GKÖCH ảnh 3"
+      "alt": "Set 2 thố inox GKÖCH"
     },
     {
       "src": "/assets/images/products/set-2-tho-inox-gkoch/04.jpg",
       "thumbnail": "/assets/images/products/set-2-tho-inox-gkoch/04.jpg",
-      "alt": "Set 2 thố inox GKÖCH ảnh 4"
+      "alt": "Set 2 thố inox GKÖCH"
     },
     {
       "src": "/assets/images/products/set-2-tho-inox-gkoch/05.jpg",
       "thumbnail": "/assets/images/products/set-2-tho-inox-gkoch/05.jpg",
-      "alt": "Set 2 thố inox GKÖCH ảnh 5"
+      "alt": "Set 2 thố inox GKÖCH"
     }
   ],
   "sizes": [],
   "brand_names": [
     "GKÖCH"
   ],
-  "updated_at": "2026-09-16T07:02:17.778Z"
+  "updated_at": "2026-09-16T07:05:01.159Z"
 }
