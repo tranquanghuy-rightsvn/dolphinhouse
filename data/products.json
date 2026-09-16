@@ -1,5 +1,34 @@
 [
   {
+    "id": 2936,
+    "name": "Nồi hấp điện WMF 2 tầng cao cấp",
+    "slug": "noi-hap-dien-wmf-2-tang-cao-cap",
+    "sku": "MHD3390",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "3700000",
+      "regular_price": "3700000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-09-16T06:59:54.101Z"
+  },
+  {
     "id": 2935,
     "name": "Khay đựng bàn chải và kem đánh răng Joseph Joseph 70599",
     "slug": "khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599",
