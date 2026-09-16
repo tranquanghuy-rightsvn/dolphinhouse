@@ -1,5 +1,29 @@
 [
   {
+    "id": 2940,
+    "name": "Bàn chải điện Philips Sonicare HX3641/41",
+    "slug": "ban-chai-dien-philips-sonicare-hx3641-41",
+    "sku": "MBC950",
+    "brand_names": [
+      "Philips"
+    ],
+    "categories": [
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "1250000",
+      "regular_price": "1250000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-09-16T07:47:52.551Z"
+  },
+  {
     "id": 2939,
     "name": "ECOVACS WINBOT W3 – Robot lau kính thế hệ mới",
     "slug": "ecovacs-winbot-w3-robot-lau-kinh",
