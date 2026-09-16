@@ -29,10 +29,41 @@
       "slug": "gia-dung-tien-ich"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/may-hut-chan-khong-de-muller-duc/02.jpg",
+      "thumbnail": "/assets/images/products/may-hut-chan-khong-de-muller-duc/02.jpg",
+      "alt": "Máy hút chân không De Muller ảnh 1"
+    },
+    {
+      "src": "/assets/images/products/may-hut-chan-khong-de-muller-duc/03.jpg",
+      "thumbnail": "/assets/images/products/may-hut-chan-khong-de-muller-duc/03.jpg",
+      "alt": "Máy hút chân không De Muller ảnh 2"
+    },
+    {
+      "src": "/assets/images/products/may-hut-chan-khong-de-muller-duc/04.jpg",
+      "thumbnail": "/assets/images/products/may-hut-chan-khong-de-muller-duc/04.jpg",
+      "alt": "Máy hút chân không De Muller ảnh 3"
+    },
+    {
+      "src": "/assets/images/products/may-hut-chan-khong-de-muller-duc/05.jpg",
+      "thumbnail": "/assets/images/products/may-hut-chan-khong-de-muller-duc/05.jpg",
+      "alt": "Máy hút chân không De Muller ảnh 4"
+    },
+    {
+      "src": "/assets/images/products/may-hut-chan-khong-de-muller-duc/06.jpg",
+      "thumbnail": "/assets/images/products/may-hut-chan-khong-de-muller-duc/06.jpg",
+      "alt": "Máy hút chân không De Muller ảnh 5"
+    },
+    {
+      "src": "/assets/images/products/may-hut-chan-khong-de-muller-duc/07.jpg",
+      "thumbnail": "/assets/images/products/may-hut-chan-khong-de-muller-duc/07.jpg",
+      "alt": "Máy hút chân không De Muller ảnh 6"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "De Muller"
   ],
-  "updated_at": "2026-09-16T06:39:41.801Z"
+  "updated_at": "2026-09-16T06:42:15.364Z"
 }
