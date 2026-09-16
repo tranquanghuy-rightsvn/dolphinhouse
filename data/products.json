@@ -1,5 +1,29 @@
 [
   {
+    "id": 2933,
+    "name": "Máy tăm nước 2LOCK WP25B-0101W",
+    "slug": "may-tam-nuoc-2lock-wp25b-0101w",
+    "sku": "MTN730",
+    "brand_names": [
+      "2LOCK"
+    ],
+    "categories": [
+      {
+        "id": 11,
+        "name": "Chăm sóc gia đình & phòng ngủ",
+        "slug": "chan-ga-goi-dem"
+      }
+    ],
+    "prices": {
+      "price": "990000",
+      "regular_price": "990000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-tam-nuoc-2lock-wp25b-0101w/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-09-16T02:51:28.018Z"
+  },
+  {
     "id": 2932,
     "name": "Hộp cơm cắm điện 3 ngăn inox 2LOCK",
     "slug": "hop-com-cam-dien-3-ngan-inox-2lock",
