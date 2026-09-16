@@ -34,10 +34,46 @@
       "slug": "gia-dung-chau-au"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/01.jpg",
+      "thumbnail": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/01.jpg",
+      "alt": "Nồi hấp điện WMF 2 tầng ảnh 1"
+    },
+    {
+      "src": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/01.jpg",
+      "thumbnail": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/01.jpg",
+      "alt": "Nồi hấp điện WMF 2 tầng ảnh 2"
+    },
+    {
+      "src": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/02.jpg",
+      "thumbnail": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/02.jpg",
+      "alt": "Nồi hấp điện WMF 2 tầng ảnh 3"
+    },
+    {
+      "src": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/03.jpg",
+      "thumbnail": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/03.jpg",
+      "alt": "Nồi hấp điện WMF 2 tầng ảnh 4"
+    },
+    {
+      "src": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/04.jpg",
+      "thumbnail": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/04.jpg",
+      "alt": "Nồi hấp điện WMF 2 tầng ảnh 5"
+    },
+    {
+      "src": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/05.jpg",
+      "thumbnail": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/05.jpg",
+      "alt": "Nồi hấp điện WMF 2 tầng ảnh 6"
+    },
+    {
+      "src": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/06.jpg",
+      "thumbnail": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/06.jpg",
+      "alt": "Nồi hấp điện WMF 2 tầng ảnh 7"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "WMF"
   ],
-  "updated_at": "2026-09-16T06:59:54.101Z"
+  "updated_at": "2026-09-16T07:00:39.364Z"
 }
