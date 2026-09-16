@@ -29,10 +29,36 @@
       "slug": "gia-dung-tien-ich"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/06.jpg",
+      "thumbnail": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/06.jpg",
+      "alt": "Bàn chải điện Philips Sonicare HX3641/41"
+    },
+    {
+      "src": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/07.jpg",
+      "thumbnail": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/07.jpg",
+      "alt": "Bàn chải điện Philips Sonicare HX3641/41"
+    },
+    {
+      "src": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/08.jpg",
+      "thumbnail": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/08.jpg",
+      "alt": "Bàn chải điện Philips Sonicare HX3641/41"
+    },
+    {
+      "src": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/09.jpg",
+      "thumbnail": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/09.jpg",
+      "alt": "Bàn chải điện Philips Sonicare HX3641/41"
+    },
+    {
+      "src": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/10.jpg",
+      "thumbnail": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/10.jpg",
+      "alt": "Bàn chải điện Philips Sonicare HX3641/41"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "Philips"
   ],
-  "updated_at": "2026-09-16T07:47:52.551Z"
+  "updated_at": "2026-09-16T07:58:28.404Z"
 }
