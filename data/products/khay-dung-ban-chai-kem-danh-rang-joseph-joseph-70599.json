@@ -29,10 +29,36 @@
       "slug": "gia-dung-tien-ich"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599/01.jpg",
+      "thumbnail": "/assets/images/products/khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599/01.jpg",
+      "alt": "Khay đựng bàn chải Joseph Joseph 70599 ảnh 1"
+    },
+    {
+      "src": "/assets/images/products/khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599/02.jpg",
+      "thumbnail": "/assets/images/products/khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599/02.jpg",
+      "alt": "Khay đựng bàn chải Joseph Joseph 70599 ảnh 2"
+    },
+    {
+      "src": "/assets/images/products/khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599/03.jpg",
+      "thumbnail": "/assets/images/products/khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599/03.jpg",
+      "alt": "Khay đựng bàn chải Joseph Joseph 70599 ảnh 3"
+    },
+    {
+      "src": "/assets/images/products/khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599/04.jpg",
+      "thumbnail": "/assets/images/products/khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599/04.jpg",
+      "alt": "Khay đựng bàn chải Joseph Joseph 70599 ảnh 4"
+    },
+    {
+      "src": "/assets/images/products/khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599/05.jpg",
+      "thumbnail": "/assets/images/products/khay-dung-ban-chai-kem-danh-rang-joseph-joseph-70599/05.jpg",
+      "alt": "Khay đựng bàn chải Joseph Joseph 70599 ảnh 5"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "Joseph Joseph"
   ],
-  "updated_at": "2026-09-16T06:52:49.517Z"
+  "updated_at": "2026-09-16T06:54:55.523Z"
 }
