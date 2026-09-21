@@ -1,5 +1,34 @@
 [
   {
+    "id": 2942,
+    "name": "Bộ 4 Cốc Pha Lê Nachtmann Noblesse 98857",
+    "slug": "bo-4-coc-pha-le-nachtmann-noblesse-98857",
+    "sku": "MCPL680",
+    "brand_names": [
+      "Nachtmann"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "890000",
+      "regular_price": "890000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bo-4-coc-pha-le-nachtmann-noblesse-98857/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-09-21T08:05:26.883Z"
+  },
+  {
     "id": 2941,
     "name": "Thớt tre chữ nhật Joseph Joseph Cut & Carve Bamboo 60142",
     "slug": "thot-tre-joseph-joseph-cut-carve-bamboo-60142",
