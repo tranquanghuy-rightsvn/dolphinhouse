@@ -1,5 +1,50 @@
 [
   {
+    "id": 2950,
+    "name": "Ổ cắm điện đa năng JIWON",
+    "slug": "o-cam-dien-da-nang-jiwon",
+    "sku": "MGHK-JIWON",
+    "brand_names": [
+      "JIWON"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "480000",
+      "regular_price": "480000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/o-cam-dien-da-nang-jiwon/01.jpg",
+    "sizes": [
+      {
+        "name": "JWD-T0819 – 12 ổ – 2 Type-C + 2 USB – dây 4m",
+        "price": "480000",
+        "regular_price": "480000"
+      },
+      {
+        "name": "JWD-T0619 – 8 ổ – 2 Type-C + 2 USB – dây 3m",
+        "price": "425000",
+        "regular_price": "425000"
+      },
+      {
+        "name": "JWD-T0419 – 4 ổ – 1 Type-C + 2 USB – dây 2,4m",
+        "price": "315000",
+        "regular_price": "315000"
+      }
+    ],
+    "updated_at": "2026-09-21T08:38:20.863Z"
+  },
+  {
     "id": 2949,
     "name": "Set 18 đôi đũa sợi thuỷ tinh hoàng gia Moos Đức",
     "slug": "set-18-doi-dua-soi-thuy-tinh-hoang-gia-moos-duc",
