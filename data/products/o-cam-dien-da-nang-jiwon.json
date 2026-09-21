@@ -39,6 +39,11 @@
       "src": "/assets/images/products/o-cam-dien-da-nang-jiwon/01.jpg",
       "thumbnail": "/assets/images/products/o-cam-dien-da-nang-jiwon/01.jpg",
       "alt": "Ổ cắm điện đa năng JIWON"
+    },
+    {
+      "src": "/assets/images/products/o-cam-dien-da-nang-jiwon/04.jpg",
+      "thumbnail": "/assets/images/products/o-cam-dien-da-nang-jiwon/04.jpg",
+      "alt": "Ổ cắm điện đa năng JIWON"
     }
   ],
   "sizes": [
@@ -61,5 +66,5 @@
   "brand_names": [
     "JIWON"
   ],
-  "updated_at": "2026-09-21T08:38:20.863Z"
+  "updated_at": "2026-09-21T09:46:22.275Z"
 }
