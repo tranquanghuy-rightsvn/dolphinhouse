@@ -1,5 +1,34 @@
 [
   {
+    "id": 2951,
+    "name": "Set thố và rổ inox GKÖCH 2in1",
+    "slug": "set-tho-va-ro-inox-gkoch-2in1",
+    "sku": "MTIN230",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "350000",
+      "regular_price": "350000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/set-tho-va-ro-inox-gkoch-2in1/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-09-21T08:38:46.025Z"
+  },
+  {
     "id": 2950,
     "name": "Ổ cắm điện đa năng JIWON",
     "slug": "o-cam-dien-da-nang-jiwon",
