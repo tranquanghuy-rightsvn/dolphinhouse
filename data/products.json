@@ -1,5 +1,45 @@
 [
   {
+    "id": 2949,
+    "name": "Set 18 đôi đũa sợi thuỷ tinh hoàng gia Moos Đức",
+    "slug": "set-18-doi-dua-soi-thuy-tinh-hoang-gia-moos-duc",
+    "sku": "MDS440",
+    "brand_names": [
+      "Moos"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "640000",
+      "regular_price": "640000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/set-18-doi-dua-soi-thuy-tinh-hoang-gia-moos-duc/06.jpg",
+    "sizes": [
+      {
+        "name": "Trắng chuôi vàng",
+        "price": "640000",
+        "regular_price": "640000"
+      },
+      {
+        "name": "Đen chuôi bạc",
+        "price": "640000",
+        "regular_price": "640000"
+      }
+    ],
+    "updated_at": "2026-09-21T08:08:45.268Z"
+  },
+  {
     "id": 2948,
     "name": "Kẹp BBQ inox 304 – nhỏ mà có võ",
     "slug": "kep-bbq-inox-304-nho-ma-co-vo",
