@@ -1,5 +1,39 @@
 [
   {
+    "id": 2944,
+    "name": "Bộ nồi WMF Provence Plus 4 món",
+    "slug": "bo-noi-wmf-provence-plus-4-mon",
+    "sku": "MBNW2390",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 99,
+        "name": "Nồi & xửng hấp",
+        "slug": "xong-noi"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "2890000",
+      "regular_price": "2890000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bo-noi-wmf-provence-plus-4-mon/06.jpg",
+    "sizes": [],
+    "updated_at": "2026-09-21T08:06:06.361Z"
+  },
+  {
     "id": 2943,
     "name": "Bộ nồi Michelangelo Essential 5 món",
     "slug": "bo-noi-michelangelo-essential-5-mon",
