@@ -1,5 +1,39 @@
 [
   {
+    "id": 2943,
+    "name": "Bộ nồi Michelangelo Essential 5 món",
+    "slug": "bo-noi-michelangelo-essential-5-mon",
+    "sku": "MBN1800",
+    "brand_names": [
+      "Michelangelo"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 99,
+        "name": "Nồi & xửng hấp",
+        "slug": "xong-noi"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "2200000",
+      "regular_price": "2200000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bo-noi-michelangelo-essential-5-mon/06.jpg",
+    "sizes": [],
+    "updated_at": "2026-09-21T08:05:47.206Z"
+  },
+  {
     "id": 2942,
     "name": "Bộ 4 Cốc Pha Lê Nachtmann Noblesse 98857",
     "slug": "bo-4-coc-pha-le-nachtmann-noblesse-98857",
