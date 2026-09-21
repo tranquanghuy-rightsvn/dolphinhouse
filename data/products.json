@@ -1,5 +1,45 @@
 [
   {
+    "id": 2946,
+    "name": "Cặp lồng ủ cháo đa năng OYATTON O525 1700ml",
+    "slug": "cap-long-u-chao-da-nang-oyatton-o525-1700ml",
+    "sku": "MCL495",
+    "brand_names": [
+      "OYATTON"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "650000",
+      "regular_price": "650000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/cap-long-u-chao-da-nang-oyatton-o525-1700ml/06.jpg",
+    "sizes": [
+      {
+        "name": "Xanh lá",
+        "price": "650000",
+        "regular_price": "650000"
+      },
+      {
+        "name": "Hồng",
+        "price": "650000",
+        "regular_price": "650000"
+      }
+    ],
+    "updated_at": "2026-09-21T08:07:28.636Z"
+  },
+  {
     "id": 2945,
     "name": "Búa dần thịt cao cấp WMF",
     "slug": "bua-dan-thit-cao-cap-wmf",
