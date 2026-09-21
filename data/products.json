@@ -1,5 +1,39 @@
 [
   {
+    "id": 2947,
+    "name": "Chảo inox sâu lòng kèm xửng hấp Scanpan Impact 28cm",
+    "slug": "chao-inox-sau-long-kem-xung-hap-scanpan-impact-28cm",
+    "sku": "MCS1790",
+    "brand_names": [
+      "Scanpan"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      },
+      {
+        "id": 99,
+        "name": "Nồi & xửng hấp",
+        "slug": "xong-noi"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "2200000",
+      "regular_price": "2200000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/chao-inox-sau-long-kem-xung-hap-scanpan-impact-28cm/06.jpg",
+    "sizes": [],
+    "updated_at": "2026-09-21T08:07:55.947Z"
+  },
+  {
     "id": 2946,
     "name": "Cặp lồng ủ cháo đa năng OYATTON O525 1700ml",
     "slug": "cap-long-u-chao-da-nang-oyatton-o525-1700ml",
