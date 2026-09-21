@@ -1,5 +1,32 @@
 [
   {
+    "id": 2948,
+    "name": "Kẹp BBQ inox 304 – nhỏ mà có võ",
+    "slug": "kep-bbq-inox-304-nho-ma-co-vo",
+    "sku": "MKB120",
+    "brand_names": [],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "220000",
+      "regular_price": "220000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/kep-bbq-inox-304-nho-ma-co-vo/06.jpg",
+    "sizes": [],
+    "updated_at": "2026-09-21T08:08:18.584Z"
+  },
+  {
     "id": 2947,
     "name": "Chảo inox sâu lòng kèm xửng hấp Scanpan Impact 28cm",
     "slug": "chao-inox-sau-long-kem-xung-hap-scanpan-impact-28cm",
