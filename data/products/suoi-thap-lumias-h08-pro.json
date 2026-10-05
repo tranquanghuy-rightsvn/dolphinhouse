@@ -29,10 +29,21 @@
       "slug": "gia-dung-tien-ich"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/suoi-thap-lumias-h08-pro/01.jpg",
+      "thumbnail": "/assets/images/products/suoi-thap-lumias-h08-pro/01.jpg",
+      "alt": "Sưởi Tháp Lumias H08 Pro"
+    },
+    {
+      "src": "/assets/images/products/suoi-thap-lumias-h08-pro/02.jpg",
+      "thumbnail": "/assets/images/products/suoi-thap-lumias-h08-pro/02.jpg",
+      "alt": "Sưởi Tháp Lumias H08 Pro"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "Lumias"
   ],
-  "updated_at": "2026-10-05T08:31:36.243Z"
+  "updated_at": "2026-10-05T08:40:04.797Z"
 }
