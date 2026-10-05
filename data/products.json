@@ -1,5 +1,29 @@
 [
   {
+    "id": 2959,
+    "name": "Sưởi Tháp Lumias H08 Pro",
+    "slug": "suoi-thap-lumias-h08-pro",
+    "sku": "QA17",
+    "brand_names": [
+      "Lumias"
+    ],
+    "categories": [
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "999000",
+      "regular_price": "999000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-10-05T08:31:36.243Z"
+  },
+  {
     "id": 2958,
     "name": "Sưởi nhà tắm 2LOCK Korea",
     "slug": "suoi-nha-tam-2lock-korea",
