@@ -29,10 +29,16 @@
       "slug": "gia-dung-tien-ich"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/may-suoi-nha-tam-ceramic-lumias-h08b/01.jpg",
+      "thumbnail": "/assets/images/products/may-suoi-nha-tam-ceramic-lumias-h08b/01.jpg",
+      "alt": "Máy sưởi nhà tắm Ceramic Lumias H08B"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "Lumias"
   ],
-  "updated_at": "2026-10-05T08:30:54.535Z"
+  "updated_at": "2026-10-05T08:37:54.215Z"
 }
