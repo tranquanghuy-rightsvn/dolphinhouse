@@ -1,5 +1,29 @@
 [
   {
+    "id": 2961,
+    "name": "Máy sưởi gốm GUME GM-S2558",
+    "slug": "may-suoi-gom-gume-gm-s2558",
+    "sku": "QA21",
+    "brand_names": [
+      "Gume"
+    ],
+    "categories": [
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "1140000",
+      "regular_price": "1140000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-10-05T08:33:44.608Z"
+  },
+  {
     "id": 2960,
     "name": "Máy cạo râu Philips S1103/02",
     "slug": "may-cao-rau-philips-s1103-02",
