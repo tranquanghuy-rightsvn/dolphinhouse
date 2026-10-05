@@ -29,10 +29,16 @@
       "slug": "gia-dung-tien-ich"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/may-suoi-gom-gume-gm-s2558/01.jpg",
+      "thumbnail": "/assets/images/products/may-suoi-gom-gume-gm-s2558/01.jpg",
+      "alt": "Máy sưởi gốm GUME GM-S2558"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "Gume"
   ],
-  "updated_at": "2026-10-05T08:33:44.608Z"
+  "updated_at": "2026-10-05T08:37:48.379Z"
 }
