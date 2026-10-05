@@ -29,10 +29,16 @@
       "slug": "gia-dung-tien-ich"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/marshall-major-5/01.jpg",
+      "thumbnail": "/assets/images/products/marshall-major-5/01.jpg",
+      "alt": "Marshall Major 5"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "Marshall"
   ],
-  "updated_at": "2026-10-05T08:26:55.935Z"
+  "updated_at": "2026-10-05T08:37:32.850Z"
 }
