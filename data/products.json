@@ -1,5 +1,34 @@
 [
   {
+    "id": 2952,
+    "name": "Cọ Toilet Joseph Joseph 70597 Flex™ 360",
+    "slug": "co-toilet-joseph-joseph-70597-flex-360",
+    "sku": "MGC690",
+    "brand_names": [
+      "Joseph Joseph"
+    ],
+    "categories": [
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      },
+      {
+        "id": 101,
+        "name": "Vệ sinh nhà cửa thông minh",
+        "slug": "ve-sinh-nha-cua"
+      }
+    ],
+    "prices": {
+      "price": "890000",
+      "regular_price": "890000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/co-toilet-joseph-joseph-70597-flex-360/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-05T07:13:05.016Z"
+  },
+  {
     "id": 2951,
     "name": "Set thố và rổ inox GKÖCH 2in1",
     "slug": "set-tho-va-ro-inox-gkoch-2in1",
