@@ -29,10 +29,16 @@
       "slug": "gia-dung-tien-ich"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/loa-marshall-middleton/01.jpg",
+      "thumbnail": "/assets/images/products/loa-marshall-middleton/01.jpg",
+      "alt": "Loa Marshall Middleton"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "Marshall"
   ],
-  "updated_at": "2026-10-05T08:27:41.238Z"
+  "updated_at": "2026-10-05T08:37:21.757Z"
 }
