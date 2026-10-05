@@ -51,11 +51,6 @@
       "alt": "Loa Marshall Middleton"
     },
     {
-      "src": "/assets/images/products/loa-marshall-middleton/05.jpg",
-      "thumbnail": "/assets/images/products/loa-marshall-middleton/05.jpg",
-      "alt": "Loa Marshall Middleton"
-    },
-    {
       "src": "/assets/images/products/loa-marshall-middleton/06.jpg",
       "thumbnail": "/assets/images/products/loa-marshall-middleton/06.jpg",
       "alt": "Loa Marshall Middleton"
@@ -65,5 +60,5 @@
   "brand_names": [
     "Marshall"
   ],
-  "updated_at": "2026-10-05T09:02:29.931Z"
+  "updated_at": "2026-10-05T09:06:12.435Z"
 }
