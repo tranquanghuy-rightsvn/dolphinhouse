@@ -29,10 +29,36 @@
       "slug": "gia-dung-tien-ich"
     }
   ],
-  "images": [],
+  "images": [
+    {
+      "src": "/assets/images/products/am-sieu-toc-tefal-ki871de0/01.jpg",
+      "thumbnail": "/assets/images/products/am-sieu-toc-tefal-ki871de0/01.jpg",
+      "alt": "Ấm Siêu Tốc Tefal KI871DE0"
+    },
+    {
+      "src": "/assets/images/products/am-sieu-toc-tefal-ki871de0/02.jpg",
+      "thumbnail": "/assets/images/products/am-sieu-toc-tefal-ki871de0/02.jpg",
+      "alt": "Ấm Siêu Tốc Tefal KI871DE0"
+    },
+    {
+      "src": "/assets/images/products/am-sieu-toc-tefal-ki871de0/03.jpg",
+      "thumbnail": "/assets/images/products/am-sieu-toc-tefal-ki871de0/03.jpg",
+      "alt": "Ấm Siêu Tốc Tefal KI871DE0"
+    },
+    {
+      "src": "/assets/images/products/am-sieu-toc-tefal-ki871de0/04.jpg",
+      "thumbnail": "/assets/images/products/am-sieu-toc-tefal-ki871de0/04.jpg",
+      "alt": "Ấm Siêu Tốc Tefal KI871DE0"
+    },
+    {
+      "src": "/assets/images/products/am-sieu-toc-tefal-ki871de0/05.jpg",
+      "thumbnail": "/assets/images/products/am-sieu-toc-tefal-ki871de0/05.jpg",
+      "alt": "Ấm Siêu Tốc Tefal KI871DE0"
+    }
+  ],
   "sizes": [],
   "brand_names": [
     "Tefal"
   ],
-  "updated_at": "2026-10-05T08:22:21.764Z"
+  "updated_at": "2026-10-05T08:54:20.197Z"
 }
