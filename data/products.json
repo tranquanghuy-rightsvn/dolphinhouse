@@ -1,5 +1,29 @@
 [
   {
+    "id": 2963,
+    "name": "Đèn bàn không dây Wilit UL-U30C tích hợp đồng hồ",
+    "slug": "den-ban-khong-day-wilit-ul-u30c",
+    "sku": "MDH459",
+    "brand_names": [
+      "Wilit"
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "599000",
+      "regular_price": "599000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-10-06T08:11:04.886Z"
+  },
+  {
     "id": 2962,
     "name": "Hộp đựng thực phẩm Cuitisan Signature Bella",
     "slug": "hop-dung-thuc-pham-cuitisan-signature-bella",
