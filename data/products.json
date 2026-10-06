@@ -1,5 +1,29 @@
 [
   {
+    "id": 2970,
+    "name": "Quạt không cánh lọc không khí ULTTY BB Grey Titanium",
+    "slug": "quat-khong-canh-loc-khong-khi-ultty-bb-grey-titanium",
+    "sku": "MLU5899",
+    "brand_names": [
+      "ULTTY"
+    ],
+    "categories": [
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      }
+    ],
+    "prices": {
+      "price": "6790000",
+      "regular_price": "6790000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-10-06T08:12:48.008Z"
+  },
+  {
     "id": 2969,
     "name": "Bộ nồi inox Steiger Diamond 7 món kèm 5 nắp",
     "slug": "bo-noi-inox-steiger-diamond-7-mon",
