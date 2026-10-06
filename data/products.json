@@ -1,5 +1,35 @@
 [
   {
+    "id": 2962,
+    "name": "Hộp đựng thực phẩm Cuitisan Signature Bella",
+    "slug": "hop-dung-thuc-pham-cuitisan-signature-bella",
+    "sku": "MHD400",
+    "brand_names": [
+      "Cuitisan"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "500000",
+      "regular_price": "500000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/hop-dung-thuc-pham-cuitisan-signature-bella/01.jpg",
+    "sizes": [
+      {
+        "name": "350ml (EC7-TS03)",
+        "price": "500000",
+        "regular_price": "500000"
+      }
+    ],
+    "updated_at": "2026-10-06T06:44:30.865Z"
+  },
+  {
     "id": 2961,
     "name": "Máy sưởi gốm GUME GM-S2558",
     "slug": "may-suoi-gom-gume-gm-s2558",
