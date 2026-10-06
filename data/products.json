@@ -1,5 +1,29 @@
 [
   {
+    "id": 2968,
+    "name": "Set 3 rổ inox tròn GKÖCH 16–20–24cm",
+    "slug": "set-3-ro-inox-tron-gkoch-16-20-24cm",
+    "sku": "MSR270",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "420000",
+      "regular_price": "420000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-10-06T08:12:18.132Z"
+  },
+  {
     "id": 2967,
     "name": "Máy xay sinh tố mini Zwilling Enfinigy 550ml",
     "slug": "may-xay-sinh-to-mini-zwilling-enfinigy-550ml",
