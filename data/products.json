@@ -1,5 +1,29 @@
 [
   {
+    "id": 2964,
+    "name": "Máy hút bụi giường nệm 2Lock SN61 UV và nhiệt 50°C",
+    "slug": "may-hut-bui-giuong-nem-2lock-sn61",
+    "sku": "MHD850",
+    "brand_names": [
+      "2Lock"
+    ],
+    "categories": [
+      {
+        "id": 101,
+        "name": "Vệ sinh nhà cửa thông minh",
+        "slug": "ve-sinh-nha-cua"
+      }
+    ],
+    "prices": {
+      "price": "1150000",
+      "regular_price": "1150000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-10-06T08:11:22.321Z"
+  },
+  {
     "id": 2963,
     "name": "Đèn bàn không dây Wilit UL-U30C tích hợp đồng hồ",
     "slug": "den-ban-khong-day-wilit-ul-u30c",
