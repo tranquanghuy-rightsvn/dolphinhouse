@@ -1,5 +1,29 @@
 [
   {
+    "id": 2966,
+    "name": "Máy xay sinh tố Hurom Blender 900W kèm 3 cốc",
+    "slug": "may-xay-sinh-to-hurom-blender-900w",
+    "sku": "MST1390",
+    "brand_names": [
+      "Hurom"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "1690000",
+      "regular_price": "1690000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [],
+    "updated_at": "2026-10-06T08:11:51.003Z"
+  },
+  {
     "id": 2965,
     "name": "Máy sấy tóc BLDC Tiross TS4323 1500W",
     "slug": "may-say-toc-bldc-tiross-ts4323-1500w",
