@@ -1,5 +1,29 @@
 [
   {
+    "id": 2976,
+    "name": "Set 6 Cốc Pha Lê Mài Bohemia M57 320 ml – Họa Tiết Cắt Sáng Bàn",
+    "slug": "set-6-coc-pha-le-mai-bohemia-m57-320ml",
+    "sku": "MCPL1250",
+    "brand_names": [
+      "Bohemia"
+    ],
+    "categories": [
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "1550000",
+      "regular_price": "1550000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/set-6-coc-pha-le-mai-bohemia-m57-320ml/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-08T03:16:41.285Z"
+  },
+  {
     "id": 2975,
     "name": "Máy Xay Tiêu Cảm Biến GKÖCH – Nghiêng Máy Là Xay",
     "slug": "may-xay-tieu-cam-bien-gkoch-kymq-57a",
