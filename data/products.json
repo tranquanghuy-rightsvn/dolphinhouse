@@ -1,5 +1,29 @@
 [
   {
+    "id": 2973,
+    "name": "Bộ Bát Sứ Keltum 18 Món Quartz Grey – Bàn Ăn Sáu Người",
+    "slug": "bo-bat-su-keltum-18-mon-quartz-grey",
+    "sku": "MBS1770",
+    "brand_names": [
+      "Keltum"
+    ],
+    "categories": [
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "2250000",
+      "regular_price": "2250000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bo-bat-su-keltum-18-mon-quartz-grey/13.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-08T02:56:31.261Z"
+  },
+  {
     "id": 2972,
     "name": "Bộ 18 Cốc Pha Lê Nachtmann Bossa Nova – Ba Dung Tích Cho Bàn Tiệc",
     "slug": "bo-18-coc-pha-le-nachtmann-bossa-nova",
