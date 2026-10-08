@@ -1,5 +1,29 @@
 [
   {
+    "id": 2972,
+    "name": "Bá»™ 18 Cá»‘c Pha LÃª Nachtmann Bossa Nova â€“ Ba Dung TÃ­ch Cho BÃ n Tiá»‡c",
+    "slug": "bo-18-coc-pha-le-nachtmann-bossa-nova",
+    "sku": "MBPL1850",
+    "brand_names": [
+      "Nachtmann"
+    ],
+    "categories": [
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "2190000",
+      "regular_price": "2190000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bo-18-coc-pha-le-nachtmann-bossa-nova/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-08T02:46:44.431Z"
+  },
+  {
     "id": 2971,
     "name": "Vòi lavabo Hansgrohe Talis E 71710000 ComfortZone 110",
     "slug": "voi-lavabo-hansgrohe-talis-e-71710000",
