@@ -844,9 +844,9 @@
   },
   {
     "id": 2942,
-    "name": "Bộ 4 Cốc Pha Lê Nachtmann Noblesse 98857",
+    "name": "Bộ 4 Cốc Pha Lê Nachtmann Noblesse 55ml – Ly Shot Cắt Kim Cương",
     "slug": "bo-4-coc-pha-le-nachtmann-noblesse-98857",
-    "sku": "MCPL680",
+    "sku": "MCPL440",
     "brand_names": [
       "Nachtmann"
     ],
@@ -863,13 +863,13 @@
       }
     ],
     "prices": {
-      "price": "890000",
+      "price": "640000",
       "regular_price": "890000"
     },
-    "on_sale": false,
-    "image": "/assets/images/products/bo-4-coc-pha-le-nachtmann-noblesse-98857/01.jpg",
+    "on_sale": true,
+    "image": "/assets/images/products/bo-4-coc-pha-le-nachtmann-noblesse-98857/08.jpg",
     "sizes": [],
-    "updated_at": "2026-09-21T08:05:26.883Z"
+    "updated_at": "2026-10-08T02:53:50.323Z"
   },
   {
     "id": 2941,
