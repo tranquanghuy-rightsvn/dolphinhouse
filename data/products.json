@@ -1,5 +1,27 @@
 [
   {
+    "id": 2974,
+    "name": "Bộ Ấm Trà Sứ Xương Hoàng Gia UK 21 Món – Ấm Thủy Tinh 550 ml",
+    "slug": "bo-am-tra-su-xuong-hoang-gia-uk-21-mon",
+    "sku": "MAT1200",
+    "brand_names": [],
+    "categories": [
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "1590000",
+      "regular_price": "1590000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bo-am-tra-su-xuong-hoang-gia-uk-21-mon/02.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-08T02:58:37.263Z"
+  },
+  {
     "id": 2973,
     "name": "Bộ Bát Sứ Keltum 18 Món Quartz Grey – Bàn Ăn Sáu Người",
     "slug": "bo-bat-su-keltum-18-mon-quartz-grey",
