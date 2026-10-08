@@ -2976,9 +2976,9 @@
   },
   {
     "id": 1769,
-    "name": "Thố Pha Lê New Haven 12cm – Decor Sang Trọng, Quà Tặng",
+    "name": "Thố Pha Lê New Haven 12 × 13 cm – Điểm Nhấn Cho Bàn Trà",
     "slug": "tho-pha-le-new-haven-sang-trong-tinh-te-mon-qua-hoan-hao",
-    "sku": "M7300",
+    "sku": "MTP6500",
     "brand_names": [
       "Dolphin House"
     ],
@@ -2991,11 +2991,12 @@
     ],
     "prices": {
       "price": "7300000",
-      "regular_price": "9500000"
+      "regular_price": "7300000"
     },
-    "on_sale": true,
-    "image": "/assets/images/products/tho-pha-le-new-haven-sang-trong-tinh-te-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "on_sale": false,
+    "image": "/assets/images/products/tho-pha-le-new-haven-sang-trong-tinh-te-mon-qua-hoan-hao/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-08T03:17:35.119Z"
   },
   {
     "id": 1763,
