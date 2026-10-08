@@ -910,12 +910,12 @@
     ],
     "prices": {
       "price": "640000",
-      "regular_price": "890000"
+      "regular_price": "640000"
     },
-    "on_sale": true,
+    "on_sale": false,
     "image": "/assets/images/products/bo-4-coc-pha-le-nachtmann-noblesse-98857/08.jpg",
     "sizes": [],
-    "updated_at": "2026-10-08T02:53:50.323Z"
+    "updated_at": "2026-10-08T03:04:45.595Z"
   },
   {
     "id": 2941,
