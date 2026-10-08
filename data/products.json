@@ -1,5 +1,29 @@
 [
   {
+    "id": 2975,
+    "name": "Máy Xay Tiêu Cảm Biến GKÖCH – Nghiêng Máy Là Xay",
+    "slug": "may-xay-tieu-cam-bien-gkoch-kymq-57a",
+    "sku": "MXT290",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "420000",
+      "regular_price": "420000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-xay-tieu-cam-bien-gkoch-kymq-57a/03.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-08T03:08:28.650Z"
+  },
+  {
     "id": 2974,
     "name": "Bộ Ấm Trà Sứ Xương Hoàng Gia UK 21 Món – Ấm Thủy Tinh 550 ml",
     "slug": "bo-am-tra-su-xuong-hoang-gia-uk-21-mon",
