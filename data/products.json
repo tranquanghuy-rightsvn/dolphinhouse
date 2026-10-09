@@ -1,5 +1,34 @@
 [
   {
+    "id": 2981,
+    "name": "Máy xay cầm tay WMF Kult X 600W – Xay ngay trong nồi",
+    "slug": "may-xay-cam-tay-wmf-kult-x-600w",
+    "sku": "MXCT1420",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "1750000",
+      "regular_price": "1750000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-xay-cam-tay-wmf-kult-x-600w/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-09T07:25:27.349Z"
+  },
+  {
     "id": 2980,
     "name": "Chảo gang oval GKÖCH FD24C phủ men – Nấu và bày món trên bàn",
     "slug": "chao-gang-oval-gkoch-fd24c-phu-men-su",
