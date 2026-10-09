@@ -1,5 +1,45 @@
 [
   {
+    "id": 2986,
+    "name": "Quạt sạc USB Tiross TS3422 – 100 mức gió, gập để bàn",
+    "slug": "quat-sac-usb-tiross-ts3422",
+    "sku": "MQS295",
+    "brand_names": [
+      "Tiross"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "399000",
+      "regular_price": "399000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/quat-sac-usb-tiross-ts3422/01.jpg",
+    "sizes": [
+      {
+        "name": "Xám",
+        "price": "399000",
+        "regular_price": "399000"
+      },
+      {
+        "name": "Tím",
+        "price": "399000",
+        "regular_price": "399000"
+      }
+    ],
+    "updated_at": "2026-10-09T07:27:47.912Z"
+  },
+  {
     "id": 2985,
     "name": "Nồi gang GKÖCH CR22I 22 cm 3,3 lít – Nấu chậm, giữ nóng",
     "slug": "noi-gang-gkoch-cr22i-22cm-33-lit",
