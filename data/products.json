@@ -1,5 +1,34 @@
 [
   {
+    "id": 2978,
+    "name": "Bình thủy điện STEIGER STG850HC – Chọn nhiệt độ trong một chạm",
+    "slug": "binh-thuy-dien-steiger-stg850hc",
+    "sku": "MBT3990",
+    "brand_names": [
+      "STEIGER"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "4499000",
+      "regular_price": "4499000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-loc-nuoc-nong-lanh-steiger-stg850hc/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-09T07:18:00.200Z"
+  },
+  {
     "id": 2977,
     "name": "Bát pha lê Killarney Crystal 25 cm – Điểm nhấn cho bàn ăn",
     "slug": "bat-pha-le-killarney-crystal-25cm",
