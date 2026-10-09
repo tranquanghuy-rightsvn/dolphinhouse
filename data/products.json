@@ -1,5 +1,50 @@
 [
   {
+    "id": 2985,
+    "name": "Nồi gang GKÖCH CR22I 22 cm 3,3 lít – Nấu chậm, giữ nóng",
+    "slug": "noi-gang-gkoch-cr22i-22cm-33-lit",
+    "sku": "MNg720",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 99,
+        "name": "Nồi & xửng hấp",
+        "slug": "xong-noi"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "950000",
+      "regular_price": "950000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/noi-gang-gkoch-cr22i-22cm-33-lit/01.jpg",
+    "sizes": [
+      {
+        "name": "Đỏ",
+        "price": "950000",
+        "regular_price": "950000"
+      },
+      {
+        "name": "Vàng",
+        "price": "950000",
+        "regular_price": "950000"
+      },
+      {
+        "name": "Xanh lá",
+        "price": "950000",
+        "regular_price": "950000"
+      }
+    ],
+    "updated_at": "2026-10-09T07:27:19.716Z"
+  },
+  {
     "id": 2984,
     "name": "Máy xay đa năng Silvercrest 500W cối thủy tinh 500 ml",
     "slug": "may-xay-da-nang-silvercrest-500w",
