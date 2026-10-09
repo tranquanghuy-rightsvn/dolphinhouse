@@ -1,5 +1,45 @@
 [
   {
+    "id": 2984,
+    "name": "Máy xay đa năng Silvercrest 500W cối thủy tinh 500 ml",
+    "slug": "may-xay-da-nang-silvercrest-500w",
+    "sku": "MXDN850",
+    "brand_names": [
+      "Silvercrest"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "1150000",
+      "regular_price": "1150000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-xay-da-nang-silvercrest-500w/01.jpg",
+    "sizes": [
+      {
+        "name": "Bạc",
+        "price": "1150000",
+        "regular_price": "1150000"
+      },
+      {
+        "name": "Đen",
+        "price": "1150000",
+        "regular_price": "1150000"
+      }
+    ],
+    "updated_at": "2026-10-09T07:26:50.667Z"
+  },
+  {
     "id": 2983,
     "name": "Máy xay cá nhân WMF Mix & Go Touch 500W – Xay rồi mang theo",
     "slug": "may-xay-ca-nhan-wmf-mix-go-touch",
