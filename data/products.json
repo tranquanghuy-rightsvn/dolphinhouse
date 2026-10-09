@@ -1,5 +1,45 @@
 [
   {
+    "id": 2982,
+    "name": "Máy xay sinh tố SMEG BLF03 1,5 lít – Phong cách retro, nhiều chế độ",
+    "slug": "may-xay-sinh-to-smeg-blf03-15-lit",
+    "sku": "MXST5550",
+    "brand_names": [
+      "SMEG"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "6250000",
+      "regular_price": "6250000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-xay-sinh-to-smeg-blf03-15-lit/01.jpg",
+    "sizes": [
+      {
+        "name": "Kem",
+        "price": "6250000",
+        "regular_price": "6250000"
+      },
+      {
+        "name": "Đỏ",
+        "price": "6250000",
+        "regular_price": "6250000"
+      }
+    ],
+    "updated_at": "2026-10-09T07:25:52.591Z"
+  },
+  {
     "id": 2981,
     "name": "Máy xay cầm tay WMF Kult X 600W – Xay ngay trong nồi",
     "slug": "may-xay-cam-tay-wmf-kult-x-600w",
