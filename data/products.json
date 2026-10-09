@@ -1,5 +1,34 @@
 [
   {
+    "id": 2979,
+    "name": "Bộ dao Zwilling Four Star 4 món tự mài – Sơ chế gọn, cất dao đúng chỗ",
+    "slug": "bo-dao-zwilling-four-star-4-mon-tu-mai",
+    "sku": "MBB4100",
+    "brand_names": [
+      "ZWILLING"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "4300000",
+      "regular_price": "4300000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bo-dao-zwilling-four-star-4-mon-tu-mai/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-09T07:19:40.166Z"
+  },
+  {
     "id": 2978,
     "name": "Bình thủy điện STEIGER STG850HC – Chọn nhiệt độ trong một chạm",
     "slug": "binh-thuy-dien-steiger-stg850hc",
