@@ -1,5 +1,55 @@
 [
   {
+    "id": 2983,
+    "name": "Máy xay cá nhân WMF Mix & Go Touch 500W – Xay rồi mang theo",
+    "slug": "may-xay-ca-nhan-wmf-mix-go-touch",
+    "sku": "MXST1770",
+    "brand_names": [
+      "WMF"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      },
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      }
+    ],
+    "prices": {
+      "price": "2190000",
+      "regular_price": "2190000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-xay-ca-nhan-wmf-mix-go-touch/01.jpg",
+    "sizes": [
+      {
+        "name": "Đen",
+        "price": "2190000",
+        "regular_price": "2190000"
+      },
+      {
+        "name": "Trắng",
+        "price": "2190000",
+        "regular_price": "2190000"
+      },
+      {
+        "name": "Xanh nhạt",
+        "price": "2190000",
+        "regular_price": "2190000"
+      },
+      {
+        "name": "Hồng phấn",
+        "price": "2190000",
+        "regular_price": "2190000"
+      }
+    ],
+    "updated_at": "2026-10-09T07:26:14.887Z"
+  },
+  {
     "id": 2982,
     "name": "Máy xay sinh tố SMEG BLF03 1,5 lít – Phong cách retro, nhiều chế độ",
     "slug": "may-xay-sinh-to-smeg-blf03-15-lit",
