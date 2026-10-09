@@ -1,5 +1,34 @@
 [
   {
+    "id": 2977,
+    "name": "Bát pha lê Killarney Crystal 25 cm – Điểm nhấn cho bàn ăn",
+    "slug": "bat-pha-le-killarney-crystal-25cm",
+    "sku": "MB380",
+    "brand_names": [
+      "Killarney Crystal"
+    ],
+    "categories": [
+      {
+        "id": 172,
+        "name": "Gia dụng châu Âu",
+        "slug": "gia-dung-chau-au"
+      },
+      {
+        "id": 41,
+        "name": "Không gian sống & decor tiện ích",
+        "slug": "san-pham-deco"
+      }
+    ],
+    "prices": {
+      "price": "499000",
+      "regular_price": "499000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bat-pha-le-killarney-crystal-25cm/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-09T07:15:39.058Z"
+  },
+  {
     "id": 2976,
     "name": "Set 6 Cốc Pha Lê Mài Bohemia M57 320 ml – Họa Tiết Cắt Sáng Bàn",
     "slug": "set-6-coc-pha-le-mai-bohemia-m57-320ml",
