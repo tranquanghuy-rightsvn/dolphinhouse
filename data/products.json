@@ -1,5 +1,50 @@
 [
   {
+    "id": 2980,
+    "name": "Chảo gang oval GKÖCH FD24C phủ men – Nấu và bày món trên bàn",
+    "slug": "chao-gang-oval-gkoch-fd24c-phu-men-su",
+    "sku": "MNG360",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 100,
+        "name": "Nồi chảo cao cấp",
+        "slug": "chao"
+      },
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "490000",
+      "regular_price": "490000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/chao-gang-oval-gkoch-fd24c-phu-men-su/01.jpg",
+    "sizes": [
+      {
+        "name": "Đỏ",
+        "price": "490000",
+        "regular_price": "490000"
+      },
+      {
+        "name": "Xanh olive",
+        "price": "490000",
+        "regular_price": "490000"
+      },
+      {
+        "name": "Cam",
+        "price": "490000",
+        "regular_price": "490000"
+      }
+    ],
+    "updated_at": "2026-10-09T07:25:03.263Z"
+  },
+  {
     "id": 2979,
     "name": "Bộ dao Zwilling Four Star 4 món tự mài – Sơ chế gọn, cất dao đúng chỗ",
     "slug": "bo-dao-zwilling-four-star-4-mon-tu-mai",
