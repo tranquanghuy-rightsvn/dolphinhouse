@@ -3140,7 +3140,7 @@
   },
   {
     "id": 1842,
-    "name": "Nồi Lẩu Hấp Điện Joyoung JFS-556 – 2in1 Lẩu 4.5L + Hấp 16L",
+    "name": "Nồi lẩu hấp điện Joyoung JFS-556 16L – Lẩu 4,5L, hấp 11,5L",
     "slug": "noi-lau-hap-dien-joyoung-jfs-556-da-nang-tien-loi-nau-gi-cung-ngon",
     "sku": "M1400",
     "brand_names": [
@@ -3159,7 +3159,8 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/noi-lau-hap-Aien-joyoung-jfs-556-Aa-nang-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "updated_at": "2026-10-12T07:12:20.912Z"
   },
   {
     "id": 1833,
