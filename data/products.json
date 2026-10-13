@@ -1,5 +1,40 @@
 [
   {
+    "id": 2987,
+    "name": "Máy sấy tóc Tiross TS4322 1.500W – 3 tốc độ gió, 2 màu",
+    "slug": "may-say-toc-toc-do-cao-tiross-ts4322-1500w",
+    "sku": "MMS480",
+    "brand_names": [
+      "Tiross"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "680000",
+      "regular_price": "680000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [
+      {
+        "name": "Xám (Grey)",
+        "price": "680000",
+        "regular_price": "680000"
+      },
+      {
+        "name": "Tím (Pink)",
+        "price": "680000",
+        "regular_price": "680000"
+      }
+    ],
+    "updated_at": "2026-10-13T08:41:19.419Z"
+  },
+  {
     "id": 2986,
     "name": "Quạt sạc USB Tiross TS3422 – 100 mức gió, gập để bàn",
     "slug": "quat-sac-usb-tiross-ts3422",
