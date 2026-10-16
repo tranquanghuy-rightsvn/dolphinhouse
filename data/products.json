@@ -1,5 +1,29 @@
 [
   {
+    "id": 2990,
+    "name": "Combo bếp từ Lumias LK24-220B và nồi lẩu 28cm LMP-002CM",
+    "slug": "bep-tu-noi-lau-lumias-korea",
+    "sku": "MLD980",
+    "brand_names": [
+      "Lumias"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1350000",
+      "regular_price": "1350000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bep-tu-noi-lau-lumias-korea/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-16T03:17:32.282Z"
+  },
+  {
     "id": 2989,
     "name": "Bàn là hơi nước Tefal Virtuo 30 FV2C51E1 2000W",
     "slug": "ban-la-hoi-nuoc-tefal-virtuo-30-fv2c51e1-2000w",
