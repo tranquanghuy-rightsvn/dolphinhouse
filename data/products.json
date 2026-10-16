@@ -1,5 +1,29 @@
 [
   {
+    "id": 2988,
+    "name": "Ấm siêu tốc Philips HD9395/90 1,7L 2200W",
+    "slug": "am-sieu-toc-philips-hd939590",
+    "sku": "MAS900",
+    "brand_names": [
+      "Philips"
+    ],
+    "categories": [
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "1190000",
+      "regular_price": "1190000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/am-sieu-toc-philips-hd939590/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-16T03:16:23.836Z"
+  },
+  {
     "id": 2987,
     "name": "Máy sấy tóc Tiross TS4322 1.500W – 3 tốc độ gió, 2 màu",
     "slug": "may-say-toc-toc-do-cao-tiross-ts4322-1500w",
