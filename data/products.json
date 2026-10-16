@@ -1,5 +1,29 @@
 [
   {
+    "id": 2989,
+    "name": "Bàn là hơi nước Tefal Virtuo 30 FV2C51E1 2000W",
+    "slug": "ban-la-hoi-nuoc-tefal-virtuo-30-fv2c51e1-2000w",
+    "sku": "MBL560",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "790000",
+      "regular_price": "790000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/ban-la-hoi-nuoc-tefal-virtuo-30-fv2c51e1-2000w/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-16T03:17:18.097Z"
+  },
+  {
     "id": 2988,
     "name": "Ấm siêu tốc Philips HD9395/90 1,7L 2200W",
     "slug": "am-sieu-toc-philips-hd939590",
