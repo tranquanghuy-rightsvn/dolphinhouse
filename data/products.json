@@ -1,5 +1,29 @@
 [
   {
+    "id": 2994,
+    "name": "Nồi cơm điện cao tần Cuckoo CRP-AHBC1000F 1,8L tiếng Việt",
+    "slug": "noi-com-cao-tan-moi-nha-cuckoo-crp-ahbc1000f-1-8l",
+    "sku": "MNC4590",
+    "brand_names": [
+      "Cuckoo"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "5150000",
+      "regular_price": "5150000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/noi-com-cao-tan-moi-nha-cuckoo-crp-ahbc1000f-1-8l/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-16T03:18:28.233Z"
+  },
+  {
     "id": 2993,
     "name": "Máy xay sinh tố cầm tay GKÖCH B32 400ml",
     "slug": "may-xay-sinh-to-cam-tay-gkoch-b32",
