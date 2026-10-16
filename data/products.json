@@ -1,5 +1,29 @@
 [
   {
+    "id": 2995,
+    "name": "Nồi lẩu điện đa năng Joyoung JHP-525 5L 1600W",
+    "slug": "noi-lau-dien-da-nang-joyoung-jhp-525",
+    "sku": "MLD1150",
+    "brand_names": [
+      "Joyoung"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "1450000",
+      "regular_price": "1450000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/noi-lau-dien-da-nang-joyoung-jhp-525/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-16T03:18:42.238Z"
+  },
+  {
     "id": 2994,
     "name": "Nồi cơm điện cao tần Cuckoo CRP-AHBC1000F 1,8L tiếng Việt",
     "slug": "noi-com-cao-tan-moi-nha-cuckoo-crp-ahbc1000f-1-8l",
