@@ -1,5 +1,40 @@
 [
   {
+    "id": 2993,
+    "name": "Máy xay sinh tố cầm tay GKÖCH B32 400ml",
+    "slug": "may-xay-sinh-to-cam-tay-gkoch-b32",
+    "sku": "MX480",
+    "brand_names": [
+      "GKÖCH"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "680000",
+      "regular_price": "680000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-xay-sinh-to-cam-tay-gkoch-b32/01.jpg",
+    "sizes": [
+      {
+        "name": "Kem",
+        "price": "680000",
+        "regular_price": "680000"
+      },
+      {
+        "name": "Ghi xám",
+        "price": "680000",
+        "regular_price": "680000"
+      }
+    ],
+    "updated_at": "2026-10-16T03:18:14.802Z"
+  },
+  {
     "id": 2992,
     "name": "Máy sấy tóc Philips BHD308 1600W gập gọn",
     "slug": "may-say-toc-philips-bhd308-1600w",
