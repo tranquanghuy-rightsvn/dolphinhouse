@@ -1,5 +1,29 @@
 [
   {
+    "id": 2996,
+    "name": "Robot hút bụi lau nhà MEDION X21 SW kèm trạm tự đổ rác",
+    "slug": "robot-hut-bui-medion-x21-sw",
+    "sku": "MHB4950",
+    "brand_names": [
+      "MEDION"
+    ],
+    "categories": [
+      {
+        "id": 101,
+        "name": "Vệ sinh nhà cửa thông minh",
+        "slug": "ve-sinh-nha-cua"
+      }
+    ],
+    "prices": {
+      "price": "5850000",
+      "regular_price": "5850000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/robot-hut-bui-medion-x21-sw/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-16T03:19:17.972Z"
+  },
+  {
     "id": 2995,
     "name": "Nồi lẩu điện đa năng Joyoung JHP-525 5L 1600W",
     "slug": "noi-lau-dien-da-nang-joyoung-jhp-525",
