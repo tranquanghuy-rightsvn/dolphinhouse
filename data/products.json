@@ -1,5 +1,29 @@
 [
   {
+    "id": 2991,
+    "name": "Máy làm sữa hạt Tefal Ultrablend Boost BL985A31 1300W",
+    "slug": "may-lam-sua-hat-tefal-ul-trablend-boost-bl985a31",
+    "sku": "MMS4450",
+    "brand_names": [
+      "Tefal"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "4999000",
+      "regular_price": "4999000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-lam-sua-hat-tefal-ul-trablend-boost-bl985a31/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-16T03:17:44.884Z"
+  },
+  {
     "id": 2990,
     "name": "Combo bếp từ Lumias LK24-220B và nồi lẩu 28cm LMP-002CM",
     "slug": "bep-tu-noi-lau-lumias-korea",
