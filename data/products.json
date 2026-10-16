@@ -1,5 +1,29 @@
 [
   {
+    "id": 2992,
+    "name": "Máy sấy tóc Philips BHD308 1600W gập gọn",
+    "slug": "may-say-toc-philips-bhd308-1600w",
+    "sku": "MSP640",
+    "brand_names": [
+      "Philips"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "940000",
+      "regular_price": "940000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-say-toc-philips-bhd308-1600w/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-16T03:17:57.802Z"
+  },
+  {
     "id": 2991,
     "name": "Máy làm sữa hạt Tefal Ultrablend Boost BL985A31 1300W",
     "slug": "may-lam-sua-hat-tefal-ul-trablend-boost-bl985a31",
