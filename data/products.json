@@ -1,5 +1,29 @@
 [
   {
+    "id": 2997,
+    "name": "Ấm siêu tốc Steiger STG9238/B 2L 1500–1800W",
+    "slug": "steiger-stg9238b-am-sieu-toc-phong-cach-hien-dai",
+    "sku": "MST590",
+    "brand_names": [
+      "Steiger"
+    ],
+    "categories": [
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "890000",
+      "regular_price": "890000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/steiger-stg9238b-am-sieu-toc-phong-cach-hien-dai/01.jpg",
+    "sizes": [],
+    "updated_at": "2026-10-16T03:19:33.209Z"
+  },
+  {
     "id": 2996,
     "name": "Robot hút bụi lau nhà MEDION X21 SW kèm trạm tự đổ rác",
     "slug": "robot-hut-bui-medion-x21-sw",
