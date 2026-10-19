@@ -4105,7 +4105,7 @@
   },
   {
     "id": 1462,
-    "name": "Nồi Gang Tráng Men Hình Cà Chua Moos – Men Đỏ Cao Cấp",
+    "name": "Nồi Gang Tráng Men Tạo Hình Cà Chua Moos",
     "slug": "noi-gang-ca-chua-moos",
     "sku": "M1150",
     "brand_names": [
@@ -4129,7 +4129,8 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/p1462-gallery-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "updated_at": "2026-10-19T07:40:24.533Z"
   },
   {
     "id": 1452,
