@@ -225,7 +225,8 @@
     "on_sale": false,
     "image": "/assets/images/products/ban-la-hoi-nuoc-tefal-virtuo-30-fv2c51e1-2000w/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-16T03:17:18.097Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T01:40:41.757Z"
   },
   {
     "id": 2988,
