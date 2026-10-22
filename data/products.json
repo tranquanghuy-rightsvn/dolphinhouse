@@ -4973,7 +4973,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/p1000-gallery-01-600x800-1.jpg",
-    "updated_at": "2026-09-09T15:47:31.833Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-22T07:04:53.366Z"
   },
   {
     "id": 998,
