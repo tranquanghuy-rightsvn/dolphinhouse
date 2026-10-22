@@ -2117,7 +2117,8 @@
     "on_sale": false,
     "image": "/assets/images/products/may-loc-khong-khi-philips-ac2220-10/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T12:30:56.445Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:31:25.683Z"
   },
   {
     "id": 2922,
