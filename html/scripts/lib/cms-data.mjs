@@ -71,6 +71,8 @@ export function loadCms() {
       sizes: sizes,
       prices: prices,
       on_sale: sizes.length ? Number(prices.price) < Number(prices.regular_price) : !!rec.on_sale,
+      // Absent on records saved before stock existed — those are in stock.
+      in_stock: rec.in_stock !== false,
     };
   });
 

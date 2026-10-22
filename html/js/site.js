@@ -235,6 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const addBtn = e.target.closest(".dh-cart-add-btn");
     if (addBtn) {
       e.preventDefault();
+      if (addBtn.disabled) return; // out of stock
       // Cards show the first size's price (see scripts/build.mjs), so adding
       // from a card adds that size — what the visitor is looking at.
       const added = {

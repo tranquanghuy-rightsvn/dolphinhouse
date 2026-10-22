@@ -198,6 +198,7 @@
           <tr><td><code>price</code></td><td>Giá bán. Thấp hơn giá gốc thì sản phẩm tự hiện nhãn giảm giá.</td></tr>
           <tr><td><code>sizes</code></td><td>Danh sách kích cỡ: <code>[{"name":"28cm","price":790000,"regular_price":890000}]</code>. Có kích cỡ thì hai field giá ở trên bị bỏ qua, và <strong>kích cỡ đầu tiên</strong> là giá hiển thị ở trang chủ, danh mục, tìm kiếm.</td></tr>
           <tr><td><code>categories</code></td><td>Mảng slug danh mục: <code>["do-dung-nha-bep"]</code>. Danh mục phải có sẵn — gọi <code>category.list</code> trước.</td></tr>
+          <tr><td><code>in_stock</code></td><td><code>true</code> = còn hàng (mặc định), <code>false</code> = hết hàng: website hiện nhãn “Hết hàng” và khoá nút thêm vào giỏ.</td></tr>
           <tr><td><code>brand_names</code></td><td>Mảng tên thương hiệu: <code>["Steiger"]</code>. Tên mới sẽ tự xuất hiện ở trang thương hiệu.</td></tr>
           <tr><td><code>short_description</code></td><td>Mô tả ngắn, nhận HTML.</td></tr>
           <tr><td><code>description</code></td><td>Nội dung chi tiết, nhận HTML (<code>&lt;h2&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;table&gt;</code>, ảnh…).</td></tr>

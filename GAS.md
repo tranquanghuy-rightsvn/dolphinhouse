@@ -76,6 +76,12 @@ giờ đẩy lên GitHub** — repo là public.
        đang hiển thị trên thẻ đó.
      - Server chặn: kích cỡ không có giá bán, trùng tên kích cỡ; ký tự `|` trong tên bị bỏ
        (vì giỏ hàng dùng nó làm dấu phân cách khoá dòng).
+   - `in_stock` — ô chọn **Tình trạng** (Còn hàng / Hết hàng) ở khung Xuất bản. Thiếu field
+     (dữ liệu cũ) = còn hàng. Có trong cả `data/products/<slug>.json` lẫn `data/products.json`.
+     Hết hàng thì website: nhãn "Hết hàng" trên thẻ sản phẩm (thay nhãn giảm giá) + ẩn nút
+     giỏ ở thẻ; trang chi tiết hiện "Tình trạng: Hết hàng", nút "Thêm vào giỏ" bị `disabled`;
+     JSON-LD `availability` = `OutOfStock`; gợi ý tìm kiếm ghi "· Hết hàng". Danh sách sản
+     phẩm trong Admin có nhãn Còn hàng/Hết hàng. API: field `in_stock` (true/false).
    - `short_description` — TinyMCE rút gọn (1 đoạn mô tả ngắn).
    - `description` — TinyMCE đầy đủ (nội dung chi tiết, có chèn ảnh).
    - `images` — thư viện ảnh riêng của sản phẩm: upload nhiều ảnh, xoá từng ảnh, ảnh đầu tiên
@@ -230,8 +236,13 @@ bên thứ ba, không cần API key Tiny Cloud).
   TinyMCE tự suy `baseURL` từ chính src đó nên skin/plugin/icon đều tải từ domain khách.
 - `license_key: 'gpl'` (bắt buộc với bản community v7, nếu thiếu editor sẽ báo cảnh báo).
 - URL này lấy từ Script Property `SITE_URL` (không hard-code trong `app.html`).
-- Cấu hình: `plugins: 'lists link image table code paste autolink'`,
-  `toolbar: 'undo redo | blocks | bold italic | bullist numlist | link quickimage table | code'`,
+- Cấu hình: xem `initEditor()` trong `gas/js.html`. Toolbar đầy đủ có: blocks + cỡ chữ, đậm/
+  nghiêng/gạch chân/gạch ngang, **màu chữ + màu nền** (`forecolor backcolor`, bảng màu
+  `color_map` theo màu thương hiệu site + cho chọn màu tuỳ ý), **căn trái/giữa/phải/đều**,
+  thụt lề, danh sách, link, ảnh, bảng, xoá định dạng, fullscreen, code; `toolbar_mode: 'wrap'`.
+  Editor mô tả ngắn có bản rút gọn của các nút trên. Cao 720px (mô tả ngắn 240px), kéo được
+  để cao thêm; cột phải của form thu còn 270px để khung soạn thảo rộng hơn. Căn lề/màu lưu
+  dạng `style=""` inline — site không có CSP chặn nên hiển thị đúng ngoài web.
   `automatic_uploads: false`, `paste_data_images: true`, `relative_urls: false`,
   `content_css` = `https://dolphinhouse.vn/css/styles.css` (soạn thảo thấy đúng style site thật).
 

@@ -102,6 +102,7 @@
           var price = p.on_sale && p.regular_price !== p.price
             ? '<span class="search-suggest-old">' + formatVnd(p.regular_price) + "</span> " + formatVnd(p.price)
             : formatVnd(p.price);
+          if (p.in_stock === false) price += ' <span class="search-suggest-out">· Hết hàng</span>';
           return (
             '<a class="search-suggest-item" role="option" href="/san-pham/' + esc(p.slug) + '/">' +
             (p.img ? '<img src="' + esc(p.img) + '" alt="" loading="lazy">' : '<span class="search-suggest-noimg"></span>') +

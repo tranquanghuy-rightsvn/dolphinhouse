@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (addToCartBtn) {
     addToCartBtn.addEventListener("click", () => {
+      if (addToCartBtn.disabled) return; // out of stock
       const qty = Math.max(1, parseInt((qtyValue && qtyValue.value) || "1", 10));
       const item = {
         slug: addToCartBtn.dataset.slug || "",

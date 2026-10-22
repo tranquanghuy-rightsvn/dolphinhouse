@@ -201,6 +201,7 @@ function buildHome() {
     price: formatVnd(p.prices.price),
     rawPrice: p.prices.price,
     size: defaultSizeName(p),
+    in_stock: p.in_stock !== false,
     del: p.on_sale && p.prices.regular_price !== p.prices.price ? formatVnd(p.prices.regular_price) : null,
   });
 
@@ -209,8 +210,9 @@ function buildHome() {
     // Hand-curated blocks carry the price as a formatted string, live ones as a number.
     const rawPrice = p.rawPrice != null ? p.rawPrice : (p.price || "").replace(/[^\d]/g, "");
     return `
-          <div class="dh-home-category-product">
+          <div class="dh-home-category-product${p.in_stock === false ? " is-out-of-stock" : ""}">
             <a class="dh-home-category-product-link" href="/san-pham/${p.slug}/">
+              ${p.in_stock === false ? '<span class="stock-out-badge">Hết hàng</span>' : ""}
               <img src="${p.img}" alt="${safeName}" loading="lazy">
               <span class="dh-home-category-product-body">
                 <strong>${p.title}</strong>
@@ -218,7 +220,7 @@ function buildHome() {
                 <span class="dh-home-category-product-price">${p.price}</span>
               </span>
             </a>
-            <button type="button" class="dh-cart-add-btn" data-slug="${p.slug}" data-name="${safeName}" data-size="${p.size || ""}" data-price="${rawPrice}" data-image="${p.img}" aria-label="Thêm ${safeName} vào giỏ hàng">
+            <button type="button" class="dh-cart-add-btn"${p.in_stock === false ? " disabled" : ""} data-slug="${p.slug}" data-name="${safeName}" data-size="${p.size || ""}" data-price="${rawPrice}" data-image="${p.img}" aria-label="Thêm ${safeName} vào giỏ hàng">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
             </button>
           </div>`;
@@ -353,6 +355,7 @@ function buildHome() {
   const websiteLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    creator: { "@type": "Organization", "@id": "https://web100.vn/#organization", name: "Web100", url: "https://web100.vn/" },
     name: "Dolphin House",
     url: `${SITE_URL}/`,
     potentialAction: {
@@ -489,6 +492,8 @@ function compactProduct(p) {
     sku: p.sku,
     brands: p.brand_names || [],
     size: defaultSizeName(p),
+    // Only shipped when false, so the embedded/search JSON stays as small as before.
+    ...(p.in_stock === false ? { in_stock: false } : {}),
   };
 }
 
@@ -651,6 +656,7 @@ function buildProducts() {
       : "";
     const images = product.images.length ? product.images : [{ src: "", alt: product.name }];
     const safeName = product.name.replace(/"/g, "&quot;");
+    const inStock = product.in_stock !== false;
 
     const related = PRODUCTS.filter(
       (p) => p.slug !== product.slug && p.categories.some((c) => cat && c.slug === cat.slug)
@@ -665,7 +671,7 @@ function buildProducts() {
   <div id="product-root">
     <div class="product-detail">
       <div>
-        <div class="gallery-main"><img id="gallery-main-img" src="${images[0].src}" alt="${images[0].alt}"></div>
+        <div class="gallery-main${inStock ? "" : " is-out-of-stock"}">${inStock ? "" : '<span class="stock-out-badge">Hết hàng</span>'}<img id="gallery-main-img" src="${images[0].src}" alt="${images[0].alt}"></div>
         <div class="gallery-thumbs" id="gallery-thumbs">
           ${images.map((im, i) => `<img src="${im.thumbnail || im.src}" data-full="${im.src}" alt="${im.alt}" class="${i === 0 ? "active" : ""}">`).join("")}
         </div>
@@ -675,15 +681,16 @@ function buildProducts() {
         <h1>${product.name}</h1>
         <button class="copy-name-btn" id="copy-name-btn" data-name="${product.name.replace(/"/g, "&quot;")}">Sao chép tên</button>
         <div class="price-block" id="price-block">${priceHtml}</div>
+        <div class="stock-status ${inStock ? "in-stock" : "out-of-stock"}">Tình trạng: <strong>${inStock ? "Còn hàng" : "Hết hàng"}</strong></div>
         ${sizeRowHtml}
         <div class="short-desc">${product.short_description || ""}</div>
         <div class="qty-row">
           <div class="qty-input">
-            <button type="button" id="qty-minus">-</button>
-            <input type="text" id="qty-value" value="1">
-            <button type="button" id="qty-plus">+</button>
+            <button type="button" id="qty-minus"${inStock ? "" : " disabled"}>-</button>
+            <input type="text" id="qty-value" value="1"${inStock ? "" : " disabled"}>
+            <button type="button" id="qty-plus"${inStock ? "" : " disabled"}>+</button>
           </div>
-          <button class="btn-purple" id="add-to-cart-btn" data-slug="${product.slug}" data-name="${product.name.replace(/"/g, "&quot;")}" data-size="${defaultSizeName(product)}" data-price="${product.prices.price}" data-image="${images[0].src}">Thêm vào giỏ hàng</button>
+          <button class="btn-purple" id="add-to-cart-btn" data-slug="${product.slug}" data-name="${product.name.replace(/"/g, "&quot;")}" data-size="${defaultSizeName(product)}" data-price="${product.prices.price}" data-image="${images[0].src}"${inStock ? "" : " disabled"}>${inStock ? "Thêm vào giỏ hàng" : "Hết hàng"}</button>
           <button type="button" class="btn-gray" id="contact-modal-trigger">Liên hệ</button>
         </div>
         <a class="btn-orange" href="tel:0866393892">
@@ -776,14 +783,14 @@ function buildProducts() {
               lowPrice: String(Math.min(...sizes.map((sz) => Number(sz.price) || 0))),
               highPrice: String(Math.max(...sizes.map((sz) => Number(sz.price) || 0))),
               offerCount: sizes.length,
-              availability: "https://schema.org/InStock",
+              availability: `https://schema.org/${inStock ? "InStock" : "OutOfStock"}`,
             }
           : {
               "@type": "Offer",
               url: absUrl(path),
               priceCurrency: "VND",
               price: product.prices.price,
-              availability: "https://schema.org/InStock",
+              availability: `https://schema.org/${inStock ? "InStock" : "OutOfStock"}`,
             },
     };
 
