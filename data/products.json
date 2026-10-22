@@ -1486,7 +1486,8 @@
     "on_sale": false,
     "image": "/assets/images/products/chao-inox-sau-long-kem-xung-hap-scanpan-impact-28cm/06.jpg",
     "sizes": [],
-    "updated_at": "2026-09-21T08:07:55.947Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:23:46.483Z"
   },
   {
     "id": 2946,
