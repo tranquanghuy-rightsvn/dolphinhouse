@@ -2165,7 +2165,8 @@
     "on_sale": false,
     "image": "/assets/images/products/may-hut-chan-khong-gkoch-vs5216-serie-6/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T12:30:42.780Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:29:38.625Z"
   },
   {
     "id": 2920,
