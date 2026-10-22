@@ -1355,7 +1355,8 @@
     "on_sale": false,
     "image": "/assets/images/products/set-tho-va-ro-inox-gkoch-2in1/01.jpg",
     "sizes": [],
-    "updated_at": "2026-09-21T09:32:51.668Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:44:01.811Z"
   },
   {
     "id": 2950,
