@@ -1526,7 +1526,8 @@
         "regular_price": "650000"
       }
     ],
-    "updated_at": "2026-09-21T08:07:28.636Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:23:17.205Z"
   },
   {
     "id": 2945,
