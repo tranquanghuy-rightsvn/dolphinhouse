@@ -1703,7 +1703,8 @@
     "on_sale": false,
     "image": "/assets/images/products/thot-tre-joseph-joseph-cut-carve-bamboo-60142/02.jpg",
     "sizes": [],
-    "updated_at": "2026-09-17T02:02:06.617Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:48:01.857Z"
   },
   {
     "id": 2940,
