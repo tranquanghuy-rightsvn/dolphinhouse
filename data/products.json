@@ -663,7 +663,8 @@
     "on_sale": false,
     "image": "/assets/images/products/bat-pha-le-killarney-crystal-25cm/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-09T07:15:39.058Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T01:41:03.680Z"
   },
   {
     "id": 2976,
