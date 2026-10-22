@@ -3134,7 +3134,8 @@
     "on_sale": false,
     "image": "/assets/images/products/2lock-wp24-1111c/10.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T12:30:26.961Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:20:48.974Z"
   },
   {
     "id": 2490,
