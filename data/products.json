@@ -249,7 +249,8 @@
     "on_sale": false,
     "image": "/assets/images/products/am-sieu-toc-philips-hd939590/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-16T03:16:23.836Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T01:39:19.632Z"
   },
   {
     "id": 2987,
