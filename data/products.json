@@ -1454,7 +1454,8 @@
     "on_sale": false,
     "image": "/assets/images/products/kep-bbq-inox-304-nho-ma-co-vo/06.jpg",
     "sizes": [],
-    "updated_at": "2026-09-21T08:08:18.584Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:27:02.055Z"
   },
   {
     "id": 2947,
