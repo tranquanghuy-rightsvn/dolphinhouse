@@ -2108,7 +2108,8 @@
     "on_sale": false,
     "image": "/assets/images/products/set-nha-tam-van-da-marble/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T12:31:03.015Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:43:46.521Z"
   },
   {
     "id": 2923,
