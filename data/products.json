@@ -1589,7 +1589,8 @@
     "on_sale": false,
     "image": "/assets/images/products/bo-noi-wmf-provence-plus-4-mon/06.jpg",
     "sizes": [],
-    "updated_at": "2026-09-21T08:06:06.361Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:22:13.594Z"
   },
   {
     "id": 2943,
