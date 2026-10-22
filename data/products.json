@@ -703,7 +703,8 @@
     "on_sale": false,
     "image": "/assets/images/products/set-6-coc-pha-le-mai-bohemia-m57-320ml/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-08T03:40:20.180Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T01:47:36.710Z"
   },
   {
     "id": 2975,
