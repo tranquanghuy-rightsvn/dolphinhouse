@@ -1778,7 +1778,8 @@
     "on_sale": false,
     "image": "/assets/images/products/tineco-s9-artist-steam-pro/02.jpg",
     "sizes": [],
-    "updated_at": "2026-09-17T02:07:10.038Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:48:45.120Z"
   },
   {
     "id": 2937,
