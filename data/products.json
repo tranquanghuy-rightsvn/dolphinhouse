@@ -1011,7 +1011,8 @@
     "on_sale": false,
     "image": "/assets/images/products/may-hut-bui-giuong-nem-2lock-sn61/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-06T09:42:28.677Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:28:52.931Z"
   },
   {
     "id": 2963,
