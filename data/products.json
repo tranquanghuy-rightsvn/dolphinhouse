@@ -1899,7 +1899,8 @@
     "on_sale": false,
     "image": "/assets/images/products/may-tam-nuoc-2lock-wp25b-0101w/01.jpg",
     "sizes": [],
-    "updated_at": "2026-09-17T01:59:34.796Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:34:59.158Z"
   },
   {
     "id": 2932,
