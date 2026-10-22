@@ -635,7 +635,8 @@
     "on_sale": false,
     "image": "/assets/images/products/may-loc-nuoc-nong-lanh-steiger-stg850hc/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-09T07:18:00.200Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T01:41:47.619Z"
   },
   {
     "id": 2977,
