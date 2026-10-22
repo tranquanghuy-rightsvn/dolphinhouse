@@ -1827,7 +1827,8 @@
     "on_sale": false,
     "image": "/assets/images/products/noi-hap-dien-wmf-2-tang-cao-cap/01.jpg",
     "sizes": [],
-    "updated_at": "2026-09-17T02:06:04.714Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:38:55.956Z"
   },
   {
     "id": 2935,
