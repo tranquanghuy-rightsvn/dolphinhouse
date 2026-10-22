@@ -784,7 +784,8 @@
     "on_sale": false,
     "image": "/assets/images/products/bo-18-coc-pha-le-nachtmann-bossa-nova/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-08T03:37:52.767Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T01:42:22.544Z"
   },
   {
     "id": 2971,
