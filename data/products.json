@@ -1234,7 +1234,8 @@
     "on_sale": false,
     "image": "/assets/images/products/loa-marshall-middleton/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-06T02:10:01.661Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:27:28.971Z"
   },
   {
     "id": 2954,
