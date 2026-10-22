@@ -948,7 +948,8 @@
     "on_sale": false,
     "image": "/assets/images/products/may-xay-sinh-to-hurom-blender-900w/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-06T09:45:09.899Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:37:56.009Z"
   },
   {
     "id": 2965,
