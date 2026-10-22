@@ -606,7 +606,8 @@
     "on_sale": false,
     "image": "/assets/images/products/bo-dao-zwilling-four-star-4-mon-tu-mai/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-09T07:19:40.166Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T01:43:47.916Z"
   },
   {
     "id": 2978,
