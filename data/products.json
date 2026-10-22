@@ -1623,7 +1623,8 @@
     "on_sale": false,
     "image": "/assets/images/products/bo-noi-michelangelo-essential-5-mon/06.jpg",
     "sizes": [],
-    "updated_at": "2026-09-21T08:05:47.206Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:21:45.277Z"
   },
   {
     "id": 2942,
