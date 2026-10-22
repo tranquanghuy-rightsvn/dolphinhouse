@@ -46,7 +46,8 @@
     "on_sale": false,
     "image": "/assets/images/products/robot-hut-bui-medion-x21-sw/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-16T03:19:17.972Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T01:47:20.316Z"
   },
   {
     "id": 2995,
