@@ -2141,7 +2141,8 @@
     "on_sale": false,
     "image": "/assets/images/products/may-lam-sach-tham-tineco-icarpet-spot-sc051200id/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T12:30:50.479Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:31:01.640Z"
   },
   {
     "id": 2921,
