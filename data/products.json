@@ -1555,7 +1555,8 @@
     "on_sale": false,
     "image": "/assets/images/products/bua-dan-thit-cao-cap-wmf/06.jpg",
     "sizes": [],
-    "updated_at": "2026-09-21T08:06:29.687Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:22:27.545Z"
   },
   {
     "id": 2944,
