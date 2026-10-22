@@ -3381,7 +3381,9 @@
     },
     "on_sale": false,
     "image": "/assets/images/products/bear_lifestyle_compressed-1.jpg",
-    "updated_at": "2026-09-09T15:47:31.833Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:38:34.934Z"
   },
   {
     "id": 1854,
