@@ -2089,7 +2089,8 @@
     "on_sale": false,
     "image": "/assets/images/products/vien-tay-long-giat-denkmit-duc/01.webp",
     "sizes": [],
-    "updated_at": "2026-09-14T12:31:08.994Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:48:57.627Z"
   },
   {
     "id": 2924,
