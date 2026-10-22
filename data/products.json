@@ -874,7 +874,8 @@
     "on_sale": false,
     "image": "/assets/images/products/bo-noi-inox-steiger-diamond-7-mon/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-06T09:47:31.744Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:21:32.300Z"
   },
   {
     "id": 2968,
