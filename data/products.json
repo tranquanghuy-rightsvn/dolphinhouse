@@ -1114,7 +1114,8 @@
     "on_sale": false,
     "image": "/assets/images/products/may-cao-rau-philips-s1103-02/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-06T02:10:12.952Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:28:41.884Z"
   },
   {
     "id": 2959,
