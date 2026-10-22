@@ -1280,7 +1280,8 @@
     "on_sale": false,
     "image": "/assets/images/products/am-sieu-toc-tefal-ki871de0/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-06T02:05:53.586Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:21:01.013Z"
   },
   {
     "id": 2952,
