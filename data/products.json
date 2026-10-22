@@ -1311,7 +1311,8 @@
     "on_sale": false,
     "image": "/assets/images/products/co-toilet-joseph-joseph-70597-flex-360/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-05T08:07:53.199Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:24:17.292Z"
   },
   {
     "id": 2951,
