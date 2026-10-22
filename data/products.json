@@ -153,7 +153,8 @@
     "on_sale": false,
     "image": "/assets/images/products/may-say-toc-philips-bhd308-1600w/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-16T03:17:57.802Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T01:44:35.586Z"
   },
   {
     "id": 2991,
