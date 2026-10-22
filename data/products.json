@@ -1147,7 +1147,8 @@
     "on_sale": false,
     "image": "/assets/images/products/suoi-thap-lumias-h08-pro/01.jpg",
     "sizes": [],
-    "updated_at": "2026-10-06T02:07:41.035Z"
+    "in_stock": true,
+    "updated_at": "2026-10-22T02:46:04.174Z"
   },
   {
     "id": 2958,
