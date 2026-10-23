@@ -97,5 +97,14 @@
     "banner": "/assets/images/categories/ve-sinh-nha-cua-hero.webp",
     "description": "",
     "updated_at": "2026-09-08T12:04:03.264Z"
+  },
+  {
+    "id": 173,
+    "name": "Nồi gang tráng men",
+    "slug": "noi-gang-trang-men",
+    "parent": 42,
+    "banner": "",
+    "description": "",
+    "updated_at": "2026-10-23T07:42:15.062Z"
   }
 ]
