@@ -3160,7 +3160,9 @@
     },
     "on_sale": false,
     "image": "/assets/images/products/binh-pha-le-killarney-200ml-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-23T02:17:57.737Z"
   },
   {
     "id": 2497,
