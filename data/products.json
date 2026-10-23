@@ -2920,7 +2920,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/chao-3-trung-2lock-fullframe-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-23T02:18:42.481Z"
   },
   {
     "id": 2643,
