@@ -3564,7 +3564,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/noi-ap-suat-inox-4l-tefal-secure-trendy-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-23T02:19:21.936Z"
   },
   {
     "id": 1827,
