@@ -3369,7 +3369,9 @@
     },
     "on_sale": false,
     "image": "/assets/images/products/bep-tu-on-rommelsbacher-ct-2100-in-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-23T02:17:45.281Z"
   },
   {
     "id": 1930,
