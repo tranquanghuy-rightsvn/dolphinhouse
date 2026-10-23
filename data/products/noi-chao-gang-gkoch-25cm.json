@@ -20,7 +20,6 @@
     "currency_prefix": "",
     "currency_suffix": " ₫"
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\">750.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span>",
   "average_rating": "0",
   "review_count": 0,
   "categories": [
@@ -28,6 +27,11 @@
       "id": 100,
       "name": "Nồi chảo cao cấp",
       "slug": "chao"
+    },
+    {
+      "id": 173,
+      "name": "Nồi gang tráng men",
+      "slug": "noi-gang-trang-men"
     }
   ],
   "images": [
@@ -62,8 +66,10 @@
       "alt": "Nồi Chảo Gang Đúc Tráng Men GKÖCH 25cm – Giữ Nhiệt Đỉnh Cao, Dùng Mọi Loại Bếp Lò Nướng - Hình 6"
     }
   ],
+  "sizes": [],
+  "in_stock": true,
   "brand_names": [
     "GKÖCH"
   ],
-  "updated_at": "2026-09-08T12:04:03.264Z"
+  "updated_at": "2026-10-23T07:45:13.775Z"
 }
