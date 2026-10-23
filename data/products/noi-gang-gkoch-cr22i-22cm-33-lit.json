@@ -32,6 +32,11 @@
       "id": 172,
       "name": "Gia dụng châu Âu",
       "slug": "gia-dung-chau-au"
+    },
+    {
+      "id": 173,
+      "name": "Nồi gang tráng men",
+      "slug": "noi-gang-trang-men"
     }
   ],
   "images": [
@@ -87,5 +92,5 @@
   "brand_names": [
     "GKÖCH"
   ],
-  "updated_at": "2026-10-22T01:46:11.754Z"
+  "updated_at": "2026-10-23T07:42:59.553Z"
 }
