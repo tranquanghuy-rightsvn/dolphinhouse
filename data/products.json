@@ -3926,6 +3926,11 @@
         "id": 100,
         "name": "Nồi chảo cao cấp",
         "slug": "chao"
+      },
+      {
+        "id": 173,
+        "name": "Nồi gang tráng men",
+        "slug": "noi-gang-trang-men"
       }
     ],
     "prices": {
@@ -3934,7 +3939,9 @@
     },
     "on_sale": false,
     "image": "/assets/images/products/noi-chao-gang-Auc-trang-men-gkch-25cm-g-hinh-1-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-23T07:45:13.775Z"
   },
   {
     "id": 1560,
