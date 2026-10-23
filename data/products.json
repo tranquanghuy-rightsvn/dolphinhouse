@@ -569,6 +569,11 @@
         "id": 42,
         "name": "Bếp thông minh & dụng cụ nấu ăn",
         "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 173,
+        "name": "Nồi gang tráng men",
+        "slug": "noi-gang-trang-men"
       }
     ],
     "prices": {
@@ -595,7 +600,7 @@
       }
     ],
     "in_stock": true,
-    "updated_at": "2026-10-22T01:44:10.643Z"
+    "updated_at": "2026-10-23T07:44:12.929Z"
   },
   {
     "id": 2979,
