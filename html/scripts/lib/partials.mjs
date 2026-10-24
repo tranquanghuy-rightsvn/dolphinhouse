@@ -346,6 +346,7 @@ export function page({
   extraScripts = [],
   jsonLd = [],
   robots = "index, follow",
+  extraHead = "",
 }) {
   // The search box lives in the shared header, so its script belongs on every
   // page rather than in each caller's extraScripts.
@@ -390,7 +391,7 @@ ${canonical ? `<meta property="og:url" content="${canonical}">` : ""}
 <meta name="twitter:description" content="${escapeAttr(metaDescription)}">
 <meta name="twitter:image" content="${ogImage}">
 <link rel="stylesheet" href="/css/styles.css">
-${ld}
+${extraHead ? `${extraHead}\n` : ""}${ld}
 </head>
 <body>
 ${renderHeader(categories, activePath)}

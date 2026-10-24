@@ -6,6 +6,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { page, absUrl, stripHtml, truncate, breadcrumbLd, formatVnd, faqLd, faqSectionHtml } from "./partials.mjs";
 import { loadCms } from "./cms-data.mjs";
+import { smartHead } from "./smart.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 // Hand-written page bodies (gioi thieu, policy pages) — not CMS content.
@@ -221,7 +222,8 @@ export function buildBlogPosts(write, categories) {
         categories,
         activePath: "/tin-tuc/",
         bodyMain,
-        extraScripts: ["/js/site.js"],
+        extraScripts: ["/js/site.js"].concat(p.smartCss != null ? ["/js/smart.js"] : []),
+        extraHead: smartHead(p.smartCss),
         jsonLd: [articleLd, breadcrumbLd([{ name: "Trang chủ", url: "/" }, { name: "Tin Tức", url: "/tin-tuc/" }, { name: p.title, url: path }])],
       })
     );

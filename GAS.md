@@ -371,7 +371,7 @@ và bài viết, không cần mở Admin.
 3. **Action** (`API_ACTIONS`, `ping` trả về đúng danh sách này — sửa code là tài liệu tự đúng theo):
    `ping`; `product.list|get|create|update|delete`; `category.list|create`; `brand.list`;
    `news.list|get|create|update|delete`; `news-category.list|create`;
-   `video.list|create|update|delete`; `image.upload`.
+   `video.list|create|update|delete`; `image.upload`; `smart.guide|get|set|revert` (mục XX).
    - `create` **từ chối** slug đã tồn tại (kèm lời nhắc dùng `update`), `update` **từ chối** slug
      chưa tồn tại. Không có upsert ngầm: ghi đè im lặng một sản phẩm là hỏng dữ liệu khó lần ra.
    - `update` **trộn** với bản ghi cũ: field không gửi thì giữ nguyên. Gửi `images` là thay cả
@@ -397,3 +397,55 @@ và bài viết, không cần mở Admin.
 8. **Kiểm thử**: `node tools/gas-api-test/test-api.js` chạy `Code.js` trong môi trường giả lập
    (kho nội dung trong bộ nhớ, không gọi mạng). Sửa `Code.js` xong phải chạy lại trước khi
    `clasp push`. Thư mục đó nằm NGOÀI `gas/` để clasp không đẩy lên theo.
+
+## XX. Smart content + viết bài bằng AI trên máy khách (không có AI phía server)
+
+Port ý tưởng plugin WordPress "Smart Content SEO" (`~/Desktop/smart-content-wp`) và tính năng tương
+tự của adzo.vn, nhưng **không gọi AI nào từ hệ thống**: chủ website dùng Claude trên máy họ, Claude
+gọi API (mục XIX) bằng khoá kết nối. Trang quản trị chỉ chép sẵn lệnh, xem trước và quản lý phiên bản.
+
+1. **Dữ liệu**: field `smart` trong `data/products/<slug>.json` và `data/news/<slug>.json`:
+   `{html, css, primary, accent, versions[{id, time, note, html, css}]}` (giữ **5** phiên bản gần
+   nhất, tổng ≤ ~600KB thì bỏ bớt phiên bản cũ). `description` / `body` **không bị đụng tới** — là
+   bản gốc; bỏ Smart content = xoá field `smart`.
+   - `saveProduct` / `saveNews` (`smartField_`): input CÓ key `smart` thì lưu giá trị đó (null = bỏ),
+     KHÔNG có thì giữ bản cũ → nút Lưu trong Admin và `product.update`/`news.update` không làm mất
+     bản thiết kế.
+   - `cleanSmart_` / `cleanSmartHtml_`: xoá script, iframe, form, `style=""`, `on…=""`, chú thích;
+     đường dẫn ảnh đưa về `/assets/...`.
+   - Ảnh chỉ còn được bản thiết kế (kể cả phiên bản cũ) dùng **không bị** `pruneImages_` dọn
+     (`smartImageRefs_`).
+   - Mọi thay đổi `smart` đi qua `saveProduct`/`saveNews` (`smartWrite_` dựng lại input bằng
+     `productInput_`/`newsInput_`) → index được ghi sau cùng → CI build như lưu thường.
+2. **API** (lên web ngay, không có bước duyệt — theo yêu cầu khách):
+   - `smart.guide` (GET/POST): quy tắc thiết kế + biến màu + hành vi tương tác — nguồn duy nhất,
+     lệnh chép từ Admin chỉ bảo AI đọc nó.
+   - `smart.get {kind: product|news, slug}`: `source_html` (nội dung gốc), `images` (ảnh được phép
+     dùng: ảnh sản phẩm / ảnh đại diện bài + ảnh trong nội dung), `smart` hiện tại (không kèm HTML
+     của các phiên bản).
+   - `smart.set {kind, slug, html, css, note?, primary?, accent?}`: lưu + thêm 1 phiên bản.
+   - `smart.revert {kind, slug}`.
+3. **Admin** (`gas/js.html`, mục "smart content + writing with Claude"): khung dưới ô nội dung của
+   form sản phẩm / bài viết với các nút:
+   - **Lệnh viết mô tả / bài chuẩn SEO**: form tiêu đề, từ khoá chính/phụ, độ dài (sản phẩm 400–1.500,
+     bài 1.000–2.500 chữ), thông tin thực tế, tuỳ chọn "duyệt dàn ý trước" → chép lệnh: đọc dữ liệu,
+     tìm 2–4 link nội bộ, lập dàn ý chia số chữ theo độ quan trọng, chuẩn SEO (từ khoá trong 100 chữ
+     đầu + 2–3 H2 + kết bài, mật độ 0,5–2,5%, không H1, đoạn ngắn, danh sách/bảng, chỉ ảnh có sẵn,
+     không bịa số liệu, excerpt 120–160 ký tự), rồi lưu bằng `product.update` (chỉ `description`) /
+     `news.update` / `news.create`. Viết mô tả sản phẩm cần sản phẩm đã được lưu.
+   - **Lệnh chuyển Smart content / thiết kế lại**: chọn giữ nguyên chữ hay cho viết lại + yêu cầu thêm.
+   - **Xem trước & góp ý**: khung xem trước dùng CSS thật của site (máy tính / máy tính bảng / điện
+     thoại), bấm hoặc bôi đen chỗ cần sửa + ghi góp ý (đánh số trên khung) → chép lệnh sửa (kèm
+     đoạn chữ + HTML của chỗ đã chọn). Cùng cửa sổ: đổi màu chính/nhấn (Lưu màu), khôi phục phiên
+     bản — đều là `smartAction` (server, không AI).
+   - **Tải lại**: đọc lại bản ghi từ hệ thống và mở lại form. BẮT BUỘC sau khi Claude làm xong,
+     nếu không nút Lưu sẽ ghi đè nội dung Claude vừa viết bằng nội dung cũ đang nằm trong form.
+   - **Bỏ Smart content**: `smartAction` revert.
+4. **Build**: `html/scripts/lib/smart.mjs` — có `smart.html` thì `cms-data.mjs` thay
+   `description`/`body` bằng `<div class="smc-root smc-a" style="màu riêng">…</div>`; trang đó nạp
+   `/css/smart.css` (reset + biến `--smc-*` theo màu site) + `<style>` CSS đã gắn phạm vi
+   `.smc-a.smc-a.smc-a` (qua tham số `extraHead` của `page()`) + `/js/smart.js` (slider, tab, phóng to
+   ảnh, video, hiện dần). Hàm gắn phạm vi `html/js/smart-scope.js` dùng chung cho build và khung xem
+   trước của Admin (Admin nạp từ site → sửa file này phải deploy site trước).
+5. **Kiểm thử**: `node tools/gas-api-test/test-api.js` có nhóm "Smart content".
+

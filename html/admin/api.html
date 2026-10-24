@@ -100,7 +100,8 @@
     <a href="#danhmuc">6. Danh mục &amp; thương hiệu</a>
     <a href="#tintuc">7. Tin tức</a>
     <a href="#video">8. Video</a>
-    <a href="#loi">9. Lỗi thường gặp</a>
+    <a href="#smart">9. Smart content</a>
+    <a href="#loi">10. Lỗi thường gặp</a>
     <a href="#prompt">10. Đoạn dán cho AI</a>
   </nav>
 
@@ -182,6 +183,10 @@
           <tr><td><code>video.list</code></td><td>Danh sách video</td><td>GET/POST</td></tr>
           <tr><td><code>video.create</code> / <code>video.update</code> / <code>video.delete</code></td><td>Quản lý video</td><td>POST</td></tr>
           <tr><td><code>image.upload</code></td><td>Tải một ảnh lên website, trả về đường dẫn để chèn vào nội dung</td><td>POST</td></tr>
+          <tr><td><code>smart.guide</code></td><td>Quy tắc thiết kế Smart content (đọc trước khi thiết kế)</td><td>GET/POST</td></tr>
+          <tr><td><code>smart.get</code></td><td>Nội dung gốc, ảnh được dùng và bản Smart content hiện tại — <code>kind</code>, <code>slug</code></td><td>GET/POST</td></tr>
+          <tr><td><code>smart.set</code></td><td>Lưu bản thiết kế (HTML + CSS) lên website</td><td>POST</td></tr>
+          <tr><td><code>smart.revert</code></td><td>Bỏ Smart content, trang quay về nội dung gốc</td><td>POST</td></tr>
         </tbody>
       </table>
     </section>
@@ -320,8 +325,29 @@
   -d '{"key":"__KEY__","action":"video.create","title":"Mở hộp chảo Steiger","youtube":"https://www.youtube.com/watch?v=xxxxxxxxxxx"}'</pre></div>
     </section>
 
+    <section class="card" id="smart">
+      <h2>9. Smart content</h2>
+      <p>Thiết kế lại mô tả sản phẩm hoặc nội dung bài viết thành bố cục riêng (bảng, thẻ, quy trình, slider ảnh, hỏi đáp…). Nội dung gốc vẫn được giữ — <code>smart.revert</code> là quay về. Trong trang quản trị, mở sản phẩm/bài viết để chép sẵn lệnh cho AI, xem trước, góp ý bằng cách bấm vào chỗ cần sửa, khôi phục phiên bản và đổi màu.</p>
+      <table>
+        <thead><tr><th style="width:180px">Field</th><th>Ý nghĩa</th></tr></thead>
+        <tbody>
+          <tr><td><code>kind</code> <span class="req">*</span></td><td><code>product</code> (mô tả sản phẩm) hoặc <code>news</code> (nội dung bài viết).</td></tr>
+          <tr><td><code>slug</code> <span class="req">*</span></td><td>Sản phẩm / bài viết đã có.</td></tr>
+          <tr><td><code>html</code> <span class="req">*</span></td><td>Phần bên trong khung <code>&lt;div class="smc-root"&gt;</code>, theo quy tắc của <code>smart.guide</code>. Script, iframe, form, <code>style=""</code>, <code>on…=""</code> bị xoá.</td></tr>
+          <tr><td><code>css</code></td><td>CSS của bản thiết kế; tự giới hạn phạm vi trong bài, không ảnh hưởng phần khác của website.</td></tr>
+          <tr><td><code>note</code></td><td>1 câu nói đã làm gì — hiện ở danh sách Phiên bản (giữ 5 bản gần nhất).</td></tr>
+          <tr><td><code>primary</code>, <code>accent</code></td><td>Màu chính / màu nhấn riêng của bài (mã hex), tuỳ chọn.</td></tr>
+        </tbody>
+      </table>
+      <div class="block"><pre data-tpl>curl -L "__URL__?action=smart.guide&key=__KEY__"
+curl -L "__URL__?action=smart.get&kind=product&slug=chao-chong-dinh-steiger-28cm&key=__KEY__"
+curl -L -X POST "__URL__" \
+  -H "Content-Type: application/json" \
+  -d '{"key":"__KEY__","action":"smart.set","kind":"product","slug":"chao-chong-dinh-steiger-28cm","html":"&lt;h2 class=\"smc-title\"&gt;…&lt;/h2&gt;","css":".smc-title{color:var(--smc-primary)}","note":"Dàn trang bảng thông số + hỏi đáp"}'</pre></div>
+    </section>
+
     <section class="card" id="loi">
-      <h2>9. Lỗi thường gặp</h2>
+      <h2>10. Lỗi thường gặp</h2>
       <table>
         <thead><tr><th style="width:44%">Thông báo</th><th>Cách xử lý</th></tr></thead>
         <tbody>

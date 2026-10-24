@@ -7,6 +7,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadDataFile } from "./lib/load-data.mjs";
 import { loadCms } from "./lib/cms-data.mjs";
+import { smartHead } from "./lib/smart.mjs";
 import { bannerPicture } from "./lib/responsive-images.mjs";
 import {
   page,
@@ -804,7 +805,8 @@ function buildProducts() {
         type: "product",
         categories: CATEGORIES,
         bodyMain,
-        extraScripts: ["/js/site.js", "/js/product-interactive.js"],
+        extraScripts: ["/js/site.js", "/js/product-interactive.js"].concat(product.smartCss != null ? ["/js/smart.js"] : []),
+        extraHead: smartHead(product.smartCss),
         jsonLd: [productLd, breadcrumbLd(breadcrumbItems)],
       })
     );

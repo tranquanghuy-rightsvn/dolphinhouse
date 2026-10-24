@@ -9,6 +9,7 @@
 import { readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { smartContent } from "./smart.mjs";
 
 const DATA = join(dirname(fileURLToPath(import.meta.url)), "../../../data");
 
@@ -61,8 +62,12 @@ export function loadCms() {
     const prices = sizes.length
       ? { ...rec.prices, price: sizes[0].price, regular_price: sizes[0].regular_price, sale_price: sizes[0].price }
       : rec.prices;
+    const smart = smartContent(rec);
     return {
       ...rec,
+      // Smart content replaces the description on the page; smartCss != null marks the page as needing its assets.
+      description: smart ? smart.html : rec.description,
+      smartCss: smart ? smart.css : null,
       name: escText(rec.name),
       sku: escText(rec.sku),
       brand_names: (rec.brand_names || []).map(escText),
@@ -94,8 +99,11 @@ export function loadCms() {
     .sort(byDateDesc)
     .map((p) => {
       const full = readJson(`news/${p.slug}.json`);
+      const smart = smartContent(full);
       return {
         ...full,
+        body: smart ? smart.html : full.body,
+        smartCss: smart ? smart.css : null,
         title: escText(full.title),
         excerpt: escText(full.excerpt),
         date: displayDate(full.date),

@@ -217,6 +217,61 @@ check('doGet trả JSON khi có action', () => {
   const out = S.doGet({ parameter: { action: 'product.list', key } });
   assert(out.json.ok === true && out.json.data.items.length === 1, JSON.stringify(out.json).slice(0, 200));
 });
+console.log('\n— Smart content —');
+check('ping liệt kê smart.*', () => {
+  const r = S.handleApi_({ key, action: 'ping' }, 'POST');
+  assert(['smart.guide', 'smart.get', 'smart.set', 'smart.revert'].every(a => r.data.actions.includes(a)), JSON.stringify(r.data.actions));
+});
+check('smart.guide đọc được bằng GET', () => {
+  const out = S.doGet({ parameter: { action: 'smart.guide', key } });
+  assert(out.json.ok && out.json.data.rules.length > 5 && out.json.data.tokens['--smc-primary'], JSON.stringify(out.json).slice(0, 200));
+});
+check('smart.get trả nội dung gốc + ảnh được dùng', () => {
+  S.handleApi_({ key, action: 'product.create', name: 'Nồi Smart', description: '<p>Gốc</p><img src="/assets/images/products/x.webp" alt="nồi">', images: ['/assets/images/products/noi.webp'] }, 'POST');
+  const r = S.handleApi_({ key, action: 'smart.get', kind: 'product', slug: 'noi-smart' }, 'POST');
+  assert(r.ok && r.data.source_html.includes('Gốc') && r.data.smart === null, JSON.stringify(r));
+  assert(r.data.images.map(i => i.src).join() === '/assets/images/products/noi.webp,/assets/images/products/x.webp', JSON.stringify(r.data.images));
+});
+check('smart.set lưu bản thiết kế, lọc script, giữ nội dung gốc', () => {
+  const r = S.handleApi_({ key, action: 'smart.set', kind: 'product', slug: 'noi-smart', html: '<h2 onclick="x()" style="a">Đẹp</h2><script>1</script>', css: '.smc-a{}', note: 'Lần 1' }, 'POST');
+  assert(r.ok && r.data.versions === 1, JSON.stringify(r));
+  const rec = S.handleApi_({ key, action: 'product.get', slug: 'noi-smart' }, 'POST').data;
+  assert(rec.smart.html === '<h2>Đẹp</h2>' && rec.description.includes('Gốc') && rec.smart.versions[0].note === 'Lần 1', JSON.stringify(rec.smart));
+});
+check('smart.set lần 2 thêm phiên bản; product.update không làm mất smart', () => {
+  S.handleApi_({ key, action: 'smart.set', kind: 'product', slug: 'noi-smart', html: '<h2>Lần 2</h2>', css: '' }, 'POST');
+  const u = S.handleApi_({ key, action: 'product.update', slug: 'noi-smart', price: 100000 }, 'POST');
+  assert(u.ok && u.data.record.smart && u.data.record.smart.html === '<h2>Lần 2</h2>' && u.data.record.smart.versions.length === 2, JSON.stringify(u.data.record.smart));
+});
+check('smartAction (Admin): đổi màu, khôi phục phiên bản, bỏ Smart content', () => {
+  const v1 = S.handleApi_({ key, action: 'smart.get', kind: 'product', slug: 'noi-smart' }, 'POST').data.smart.versions[0].id;
+  let res = S.smartAction(sessionToken, 'product', 'noi-smart', { action: 'colors', primary: '#ff0000', accent: 'red' });
+  assert(res.record.smart.primary === '#ff0000' && res.record.smart.accent === '', JSON.stringify(res.record.smart));
+  res = S.smartAction(sessionToken, 'product', 'noi-smart', { action: 'restore', id: v1 });
+  assert(res.record.smart.html === '<h2>Đẹp</h2>', res.record.smart.html);
+  res = S.smartAction(sessionToken, 'product', 'noi-smart', { action: 'revert' });
+  assert(res.record.smart === null && res.record.description.includes('Gốc'), JSON.stringify(res.record));
+});
+check('smart.set cho bài viết + smart.revert', () => {
+  let r = S.handleApi_({ key, action: 'smart.set', kind: 'news', slug: '5-meo-giu-chao-ben-lau', html: '<p>Bài đẹp</p>', css: '' }, 'POST');
+  assert(r.ok && r.data.url === 'https://dolphinhouse.vn/5-meo-giu-chao-ben-lau/', JSON.stringify(r));
+  const rec = S.handleApi_({ key, action: 'news.get', slug: '5-meo-giu-chao-ben-lau' }, 'POST').data;
+  assert(rec.smart.html === '<p>Bài đẹp</p>' && rec.tags[0] === 'chao-chong-dinh', JSON.stringify(rec));
+  r = S.handleApi_({ key, action: 'smart.revert', kind: 'news', slug: '5-meo-giu-chao-ben-lau' }, 'POST');
+  assert(r.ok && S.handleApi_({ key, action: 'news.get', slug: '5-meo-giu-chao-ben-lau' }, 'POST').data.smart === null, JSON.stringify(r));
+});
+check('smart.* báo lỗi rõ: kind sai, thiếu html, không có bản ghi, GET không ghi được', () => {
+  assert(/kind/.test(S.handleApi_({ key, action: 'smart.get', kind: 'video', slug: 'a' }, 'POST').error));
+  assert(/html/.test(S.handleApi_({ key, action: 'smart.set', kind: 'product', slug: 'noi-smart' }, 'POST').error));
+  assert(/Không tìm thấy/.test(S.handleApi_({ key, action: 'smart.get', kind: 'product', slug: 'khong-co' }, 'POST').error));
+  assert(/POST/.test(S.doGet({ parameter: { action: 'smart.set', key } }).json.error));
+});
+check('ảnh chỉ còn dùng trong bản thiết kế không bị dọn', () => {
+  S.handleApi_({ key, action: 'product.create', name: 'Ấm Smart', images: ['https://anh.example/a.jpg', 'https://anh.example/b.jpg'] }, 'POST');
+  S.handleApi_({ key, action: 'smart.set', kind: 'product', slug: 'am-smart', html: '<img src="/assets/images/products/am-smart/02.jpg" alt="b">', css: '' }, 'POST');
+  const u = S.handleApi_({ key, action: 'product.update', slug: 'am-smart', images: ['/assets/images/products/am-smart/01.jpg'] }, 'POST');
+  assert(u.ok && repo.has('html/assets/images/products/am-smart/02.jpg'), 'ảnh 02 bị xoá dù bản thiết kế còn dùng');
+});
 check('thu hồi khoá là ngừng dùng được ngay', () => {
   S.revokeApiKey(sessionToken, key);
   const r = S.handleApi_({ key, action: 'ping' }, 'POST');
