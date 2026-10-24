@@ -324,6 +324,9 @@ grep -niE 'sheet|spreadsheet|drive|apps script|github' gas/app.html gas/js.html 
 | `SITE_URL` | ✅ | `https://dolphinhouse.vn` (dùng cho TinyMCE + link xem trước) |
 | `SPREADSHEET_ID` | ❌ | code tự tạo lần đầu và tự lưu lại |
 | `EMAIL_NOTIFY` | ❌ | nhận email báo đơn hàng mới; nhiều địa chỉ ngăn cách bằng dấu phẩy |
+| `GEMINI_API_KEY` | ❌ | AI trong Admin (Smart content, viết bài — mục XX.6). Thiếu thì chỉ dùng được cách chép lệnh cho Claude |
+| `GEMINI_MODEL` | ❌ | mặc định `gemini-3.8-flash` |
+| `GEMINI_THINKING` | ❌ | `low` (mặc định) \| `medium` \| `high` — cao hơn đẹp hơn nhưng lâu hơn |
 
 ## XVII. CI/CD
 
@@ -398,11 +401,13 @@ và bài viết, không cần mở Admin.
    (kho nội dung trong bộ nhớ, không gọi mạng). Sửa `Code.js` xong phải chạy lại trước khi
    `clasp push`. Thư mục đó nằm NGOÀI `gas/` để clasp không đẩy lên theo.
 
-## XX. Smart content + viết bài bằng AI trên máy khách (không có AI phía server)
+## XX. Smart content + viết bài bằng AI
 
 Port ý tưởng plugin WordPress "Smart Content SEO" (`~/Desktop/smart-content-wp`) và tính năng tương
-tự của adzo.vn, nhưng **không gọi AI nào từ hệ thống**: chủ website dùng Claude trên máy họ, Claude
-gọi API (mục XIX) bằng khoá kết nối. Trang quản trị chỉ chép sẵn lệnh, xem trước và quản lý phiên bản.
+tự của adzo.vn. **Hai cách dùng, cùng dữ liệu và cùng quy tắc thiết kế:**
+- **Trong Admin, bằng Gemini** (khoá `GEMINI_API_KEY` của website, mục 6): bấm "Làm ngay bằng AI".
+- **Qua API, bằng Claude trên máy khách** (khoá kết nối mục XIX, không cần Gemini): Admin chép sẵn
+  lệnh, Claude tự gọi `smart.*` / `product.update` / `news.*`.
 
 1. **Dữ liệu**: field `smart` trong `data/products/<slug>.json` và `data/news/<slug>.json`:
    `{html, css, primary, accent, versions[{id, time, note, html, css}]}` (giữ **5** phiên bản gần
@@ -447,5 +452,19 @@ gọi API (mục XIX) bằng khoá kết nối. Trang quản trị chỉ chép s
    `.smc-a.smc-a.smc-a` (qua tham số `extraHead` của `page()`) + `/js/smart.js` (slider, tab, phóng to
    ảnh, video, hiện dần). Hàm gắn phạm vi `html/js/smart-scope.js` dùng chung cho build và khung xem
    trước của Admin (Admin nạp từ site → sửa file này phải deploy site trước).
-5. **Kiểm thử**: `node tools/gas-api-test/test-api.js` có nhóm "Smart content".
+5. **Kiểm thử**: `node tools/gas-api-test/test-api.js` có nhóm "Smart content" và "Gemini trong Admin"
+   (harness giả lập Gemini qua `gemini.replies`).
+6. **Gemini trong Admin** (`Code.js`, khối "Gemini inside the admin screen"): mỗi nút trong khung AI và
+   nút góp ý trong cửa sổ xem trước có thêm lựa chọn **Làm ngay bằng AI**.
+   - `smartAiConvert(token, kind, slug, {mode, instructions})`: Gemini thiết kế từ nội dung **ĐÃ LƯU**
+     (giống Claude), system prompt dựng từ chính `apiSmartGuide_()` → 2 đường luôn cùng quy tắc. Lưu
+     ngay qua `smartWrite_` + 1 phiên bản, Admin tự mở cửa sổ xem trước.
+   - `smartAiRevise(token, kind, slug, comments)`: Gemini trả các chỗ thay find/replace, áp tất cả hoặc
+     không gì, tìm sai thì thử lại 1 lần; lưu + 1 phiên bản.
+   - Viết bài: `writerOutline` (dàn ý: hướng bài, mô tả SEO, mục + số chữ + ảnh) → sửa dàn ý trong
+     Admin → `writerSection` từng mục (mỗi mục 1 lần gọi, không chạm giới hạn thời gian; mục lỗi thì
+     "Viết tiếp") → chèn vào ô soạn thảo, **chưa lưu**; bài viết điền excerpt (nếu trống) + thêm từ khoá
+     chính vào tag. Ảnh chỉ từ ảnh đang có trong ô nội dung + ảnh sản phẩm / ảnh đại diện bài (server
+     tải ảnh ≤1,5MB gửi kèm để AI nhìn). Link nội bộ: tối đa 12 sản phẩm/bài gần chủ đề, ≤1 link/mục.
+   - Thiếu `GEMINI_API_KEY` thì báo ngay (trước mọi việc khác) và gợi ý dùng nút "Chép lệnh cho Claude".
 

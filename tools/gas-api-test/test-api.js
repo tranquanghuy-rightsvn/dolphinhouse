@@ -1,4 +1,4 @@
-const { sandbox, repo, props } = require('./harness.js');
+const { sandbox, repo, props, gemini } = require('./harness.js');
 const S = sandbox;
 
 let failed = 0;
@@ -271,6 +271,65 @@ check('ảnh chỉ còn dùng trong bản thiết kế không bị dọn', () =>
   S.handleApi_({ key, action: 'smart.set', kind: 'product', slug: 'am-smart', html: '<img src="/assets/images/products/am-smart/02.jpg" alt="b">', css: '' }, 'POST');
   const u = S.handleApi_({ key, action: 'product.update', slug: 'am-smart', images: ['/assets/images/products/am-smart/01.jpg'] }, 'POST');
   assert(u.ok && repo.has('html/assets/images/products/am-smart/02.jpg'), 'ảnh 02 bị xoá dù bản thiết kế còn dùng');
+});
+console.log('\n— Gemini trong Admin —');
+const gOk = (o) => ({ body: { candidates: [{ finishReason: 'STOP', content: { parts: [{ text: 'nghĩ', thought: true }, { text: JSON.stringify(o) }] } }] } });
+check('thiếu GEMINI_API_KEY báo rõ, gợi ý dùng Claude', () => {
+  let err = '';
+  try { S.smartAiConvert(sessionToken, 'product', 'am-smart', {}); } catch (e) { err = e.message; }
+  assert(/GEMINI_API_KEY/.test(err) && /Claude/.test(err), err);
+});
+check('smartAiConvert: dùng quy tắc smart.guide, lưu + thêm phiên bản', () => {
+  props.set('GEMINI_API_KEY', 'g');
+  S.handleApi_({ key, action: 'product.create', name: 'Bếp Smart', description: '<h2>Ưu điểm</h2><p>Nấu nhanh</p>' }, 'POST');
+  gemini.replies.push(gOk({ html: '<h2 class="smc-h">Ưu điểm</h2><p>Nấu nhanh</p><script>x</script>', css: '.smc-h{color:var(--smc-primary)}' }));
+  const res = S.smartAiConvert(sessionToken, 'product', 'bep-smart', { mode: 'keep', instructions: 'làm bảng' });
+  const call = gemini.calls[gemini.calls.length - 1];
+  assert(call.url.includes('gemini-3.8-flash:generateContent'), call.url);
+  assert(call.body.systemInstruction.parts[0].text.includes('smc-'), 'thiếu quy tắc');
+  assert(call.body.contents[0].parts[0].text.includes('làm bảng') && call.body.contents[0].parts[0].text.includes('Nấu nhanh'), 'thiếu nội dung/yêu cầu');
+  assert(res.record.smart.html === '<h2 class="smc-h">Ưu điểm</h2><p>Nấu nhanh</p>' && res.record.smart.versions.length === 1, JSON.stringify(res.record.smart));
+  assert(res.record.description.includes('Nấu nhanh'), 'mất nội dung gốc');
+});
+check('smartAiConvert: nội dung trống bị chặn trước khi gọi AI', () => {
+  S.handleApi_({ key, action: 'product.create', name: 'Trống Smart' }, 'POST');
+  const n = gemini.calls.length;
+  let err = '';
+  try { S.smartAiConvert(sessionToken, 'product', 'trong-smart', {}); } catch (e) { err = e.message; }
+  assert(/trống/.test(err) && gemini.calls.length === n, err);
+});
+check('smartAiRevise: find sai thì thử lại 1 lần rồi lưu', () => {
+  gemini.replies.push(gOk({ summary: 'x', edits: [{ target: 'html', find: 'KHÔNG CÓ', replace: 'y' }] }));
+  gemini.replies.push(gOk({ summary: 'Đổi tiêu đề', edits: [{ target: 'html', find: 'Ưu điểm</h2>', replace: 'Ưu điểm nổi bật</h2>' }, { target: 'css', find: '', replace: '.smc-x{}' }] }));
+  const res = S.smartAiRevise(sessionToken, 'product', 'bep-smart', [{ note: 'đổi tiêu đề', quote: 'Ưu điểm', html: '<h2>Ưu điểm</h2>' }]);
+  assert(res.record.smart.html.includes('Ưu điểm nổi bật') && res.record.smart.css.includes('.smc-x{}') && res.summary === 'Đổi tiêu đề', JSON.stringify(res.record.smart));
+  assert(res.record.smart.versions.length === 2, 'phiên bản');
+  assert(gemini.calls[gemini.calls.length - 1].body.contents[0].parts[0].text.includes('previous_attempt_failed'), 'không gửi lại lỗi');
+});
+check('Gemini 429 báo hết lượt', () => {
+  gemini.replies.push({ code: 429, body: { error: { message: 'quota' } } });
+  let err = '';
+  try { S.smartAiConvert(sessionToken, 'product', 'bep-smart', {}); } catch (e) { err = e.message; }
+  assert(/giới hạn/.test(err), err);
+});
+check('writerOutline: chỉ giữ ảnh được đưa, mỗi ảnh 1 lần, gửi kèm ảnh thu nhỏ', () => {
+  gemini.replies.push(gOk({ angle: 'a', description: 'd', sections: [
+    { kind: 'intro', heading: 'Mở bài', words: 80, points: ['x'], subheadings: [], images: [1, 9] },
+    { kind: 'body', heading: 'Chọn bếp', words: '300', points: [], subheadings: [], images: [1, 2] }] }));
+  const o = S.writerOutline(sessionToken, { kind: 'product', title: 'Bếp Smart', keyword: 'bếp từ', words: 700,
+    images: [{ n: 1, src: '/assets/images/products/a.jpg', label: 'A' }, { n: 2, src: '/assets/images/products/b.jpg', label: 'B' }] });
+  assert(JSON.stringify(o.sections.map(s => s.images)) === '[[1],[2]]' && o.sections[1].words === 300, JSON.stringify(o.sections));
+  const parts = gemini.calls[gemini.calls.length - 1].body.contents[0].parts;
+  assert(parts.filter(p => p.inlineData).length === 2 && parts[parts.length - 1].text.includes('bếp từ'), JSON.stringify(parts).slice(0, 300));
+});
+check('writerSection: chỉ viết mục được đánh dấu, H1 thành H2, chỉ nhận link nội bộ', () => {
+  gemini.replies.push(gOk({ html: '<h1>Chọn bếp</h1><p onclick="z">t</p><img data-smc-img="2" alt="b">' }));
+  const r = S.writerSection(sessionToken, { kind: 'news', title: 'Bếp', outline: [{ kind: 'intro', words: 80 }, { kind: 'body', heading: 'Chọn bếp', words: 200 }], index: 1, prev: 'abc',
+    images: [{ n: 2, src: '/assets/images/blog/b.jpg', label: 'B' }], links: [{ title: 'Bếp từ', url: '/san-pham/bep-tu/' }, { title: 'Lạ', url: 'http://evil/' }] });
+  assert(r.html === '<h2>Chọn bếp</h2><p>t</p><img data-smc-img="2" alt="b">', r.html);
+  const sys = gemini.calls[gemini.calls.length - 1].body.systemInstruction.parts[0].text;
+  assert(sys.includes('/san-pham/bep-tu/') && !sys.includes('evil'), 'link');
+  assert(gemini.calls[gemini.calls.length - 1].body.contents[0].parts.slice(-1)[0].text.includes('<-- WRITE THIS ONE'), 'đánh dấu mục');
 });
 check('thu hồi khoá là ngừng dùng được ngay', () => {
   S.revokeApiKey(sessionToken, key);

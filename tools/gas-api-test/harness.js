@@ -42,9 +42,21 @@ function ghResponse(code, body, contentType) {
   };
 }
 
+// Gemini answers are queued by the test: push {code?, body} objects; requests are recorded.
+const gemini = { replies: [], calls: [] };
+
 const UrlFetchApp = {
+  fetchAll(requests) {
+    return requests.map((r) => UrlFetchApp.fetch(r.url, r));
+  },
   fetch(url, params) {
     params = params || {};
+    if (url.startsWith('https://generativelanguage.googleapis.com/')) {
+      gemini.calls.push({ url, body: JSON.parse(params.payload) });
+      const r = gemini.replies.shift();
+      if (!r) throw new Error('no queued Gemini reply');
+      return ghResponse(r.code || 200, JSON.stringify(r.body));
+    }
     const method = (params.method || 'get').toLowerCase();
     const m = url.match(/^https:\/\/api\.github\.com\/repos\/[^/]+\/[^/]+\/contents\/([^?]*)/);
     if (m) {
@@ -116,4 +128,4 @@ vm.createContext(sandbox);
 const codePath = process.env.CODE_PATH || require('path').join(__dirname, '..', '..', 'gas', 'Code.js');
 vm.runInContext(fs.readFileSync(codePath, 'utf8'), sandbox, { filename: 'Code.js' });
 
-module.exports = { sandbox, repo, props, cache, OWNER, Utilities };
+module.exports = { sandbox, repo, props, cache, OWNER, Utilities, gemini };
