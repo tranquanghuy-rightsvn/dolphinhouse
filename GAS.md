@@ -432,8 +432,11 @@ tự của adzo.vn. **Hai cách dùng, cùng dữ liệu và cùng quy tắc thi
      của các phiên bản).
    - `smart.set {kind, slug, html, css, note?, primary?, accent?}`: lưu + thêm 1 phiên bản.
    - `smart.revert {kind, slug}`.
-3. **Admin** (`gas/js.html`, mục "smart content + AI writing"): khung dưới ô nội dung của form
-   sản phẩm / bài viết: **Viết mô tả / bài chuẩn SEO**, **Chuyển Smart content / Thiết kế lại**, **Xem
+3. **Admin** (`gas/js.html`, mục "smart content + AI writing"):
+   - **Viết bài bằng AI: CHỈ bài viết** (sản phẩm không có AI tự sinh nội dung — yêu cầu khách). Nút +
+     chọn độ dài nằm ở đầu form (`#news-aiw-bar`), lấy luôn dữ liệu đã nhập: tiêu đề, tag đầu = từ
+     khoá chính, các tag sau = từ khoá phụ, mô tả ngắn = thông tin thêm → mở thẳng bước dàn ý.
+   - Khung dưới ô nội dung của form sản phẩm / bài viết: **Chuyển Smart content / Thiết kế lại**, **Xem
    trước & góp ý** (máy tính / máy tính bảng / điện thoại; bấm hoặc bôi đen chỗ cần sửa + ghi góp ý →
    **Nhờ AI sửa**; đổi màu; khôi phục phiên bản; nút **Hoàn thành**), **Tải lại**, **Bỏ Smart content**.
    AI là Gemini (mục 6); khôi phục / đổi màu / bỏ dùng `smartAction` (không AI).
@@ -454,7 +457,7 @@ tự của adzo.vn. **Hai cách dùng, cùng dữ liệu và cùng quy tắc thi
      ngay qua `smartWrite_` + 1 phiên bản, Admin tự mở cửa sổ xem trước.
    - `smartAiRevise(token, kind, slug, comments)`: Gemini trả các chỗ thay find/replace, áp tất cả hoặc
      không gì, tìm sai thì thử lại 1 lần; lưu + 1 phiên bản.
-   - Viết bài: `writerOutline` (dàn ý: hướng bài, mô tả SEO, mục + số chữ + ảnh) → sửa dàn ý trong
+   - Viết bài (chỉ bài viết): `writerOutline` (dàn ý: hướng bài, mô tả SEO, mục + số chữ + ảnh) → sửa dàn ý trong
      Admin → `writerSection` từng mục (mỗi mục 1 lần gọi, không chạm giới hạn thời gian; mục lỗi thì
      "Viết tiếp") → chèn vào ô soạn thảo, **chưa lưu**; bài viết điền excerpt (nếu trống) + thêm từ khoá
      chính vào tag. Ảnh chỉ từ ảnh đang có trong ô nội dung + ảnh sản phẩm / ảnh đại diện bài (server
