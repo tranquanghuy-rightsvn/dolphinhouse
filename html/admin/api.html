@@ -328,6 +328,17 @@
     <section class="card" id="smart">
       <h2>9. Smart content</h2>
       <p>Thiết kế lại mô tả sản phẩm hoặc nội dung bài viết thành bố cục riêng (bảng, thẻ, quy trình, slider ảnh, hỏi đáp…). Nội dung gốc vẫn được giữ — <code>smart.revert</code> là quay về. Trong trang quản trị, mở sản phẩm/bài viết để chép sẵn lệnh cho AI, xem trước, góp ý bằng cách bấm vào chỗ cần sửa, khôi phục phiên bản và đổi màu.</p>
+      <h3>Quy trình cho AI</h3>
+      <ol>
+        <li>Tìm <code>slug</code>: <code>product.list</code> / <code>news.list</code> với <code>q</code> là tên sản phẩm, bài viết.</li>
+        <li><code>smart.guide</code> — đọc quy tắc thiết kế (bắt buộc tuân theo).</li>
+        <li><code>smart.get</code> — lấy <code>source_html</code> (nội dung gốc), <code>images</code> (ảnh được dùng) và <code>smart</code> (bản hiện tại, <code>null</code> nếu chưa có).</li>
+        <li><strong>Thiết kế mới</strong>: dựng từ <code>source_html</code>. <strong>Sửa theo yêu cầu</strong> (“đổi phần thông số thành bảng”, “thêm hỏi đáp”…): sửa trên <code>smart.html</code> / <code>smart.css</code> hiện tại, chỉ đổi đúng phần được yêu cầu, giữ nguyên phần còn lại.</li>
+        <li><code>smart.set</code> — lưu, lên website sau 1–2 phút. Mỗi lần lưu là 1 phiên bản, khôi phục được trong trang quản trị.</li>
+        <li>Bỏ Smart content: <code>smart.revert</code>.</li>
+      </ol>
+      <p class="muted">Sửa chữ gốc bằng <code>product.update</code> / <code>news.update</code> không làm đổi bản Smart content đang hiển thị — muốn trang hiện nội dung mới thì thiết kế lại.</p>
+      <p>Ví dụ câu bạn có thể nói với AI: <em>“Sửa Smart content của sản phẩm Nồi chiên GKÖCH 5L: đổi phần thông số thành bảng, thêm hỏi đáp về cách vệ sinh.”</em></p>
       <table>
         <thead><tr><th style="width:180px">Field</th><th>Ý nghĩa</th></tr></thead>
         <tbody>
