@@ -405,9 +405,11 @@ và bài viết, không cần mở Admin.
 
 Port ý tưởng plugin WordPress "Smart Content SEO" (`~/Desktop/smart-content-wp`) và tính năng tương
 tự của adzo.vn. **Hai cách dùng, cùng dữ liệu và cùng quy tắc thiết kế:**
-- **Trong Admin, bằng Gemini** (khoá `GEMINI_API_KEY` của website, mục 6): bấm "Làm ngay bằng AI".
-- **Qua API, bằng Claude trên máy khách** (khoá kết nối mục XIX, không cần Gemini): Admin chép sẵn
-  lệnh, Claude tự gọi `smart.*` / `product.update` / `news.*`.
+- **Trong Admin: CHỈ Gemini** (khoá `GEMINI_API_KEY` của website, mục 6) — bấm là chạy, Admin
+  không có nút chép lệnh cho Claude (theo yêu cầu khách).
+- **Qua API: Claude trên máy khách tự làm** (khoá kết nối mục XIX, không cần Gemini) — theo "Hướng
+  dẫn cho AI" (mục Kết nối AI) + `smart.guide` + trang `/admin/api` mục 9. Admin chỉ cần nút
+  **Tải lại** để lấy về thứ Claude vừa lưu.
 
 1. **Dữ liệu**: field `smart` trong `data/products/<slug>.json` và `data/news/<slug>.json`:
    `{html, css, primary, accent, versions[{id, time, note, html, css}]}` (giữ **5** phiên bản gần
@@ -430,22 +432,13 @@ tự của adzo.vn. **Hai cách dùng, cùng dữ liệu và cùng quy tắc thi
      của các phiên bản).
    - `smart.set {kind, slug, html, css, note?, primary?, accent?}`: lưu + thêm 1 phiên bản.
    - `smart.revert {kind, slug}`.
-3. **Admin** (`gas/js.html`, mục "smart content + writing with Claude"): khung dưới ô nội dung của
-   form sản phẩm / bài viết với các nút:
-   - **Lệnh viết mô tả / bài chuẩn SEO**: form tiêu đề, từ khoá chính/phụ, độ dài (sản phẩm 400–1.500,
-     bài 1.000–2.500 chữ), thông tin thực tế, tuỳ chọn "duyệt dàn ý trước" → chép lệnh: đọc dữ liệu,
-     tìm 2–4 link nội bộ, lập dàn ý chia số chữ theo độ quan trọng, chuẩn SEO (từ khoá trong 100 chữ
-     đầu + 2–3 H2 + kết bài, mật độ 0,5–2,5%, không H1, đoạn ngắn, danh sách/bảng, chỉ ảnh có sẵn,
-     không bịa số liệu, excerpt 120–160 ký tự), rồi lưu bằng `product.update` (chỉ `description`) /
-     `news.update` / `news.create`. Viết mô tả sản phẩm cần sản phẩm đã được lưu.
-   - **Lệnh chuyển Smart content / thiết kế lại**: chọn giữ nguyên chữ hay cho viết lại + yêu cầu thêm.
-   - **Xem trước & góp ý**: khung xem trước dùng CSS thật của site (máy tính / máy tính bảng / điện
-     thoại), bấm hoặc bôi đen chỗ cần sửa + ghi góp ý (đánh số trên khung) → chép lệnh sửa (kèm
-     đoạn chữ + HTML của chỗ đã chọn). Cùng cửa sổ: đổi màu chính/nhấn (Lưu màu), khôi phục phiên
-     bản — đều là `smartAction` (server, không AI).
-   - **Tải lại**: đọc lại bản ghi từ hệ thống và mở lại form. BẮT BUỘC sau khi Claude làm xong,
-     nếu không nút Lưu sẽ ghi đè nội dung Claude vừa viết bằng nội dung cũ đang nằm trong form.
-   - **Bỏ Smart content**: `smartAction` revert.
+3. **Admin** (`gas/js.html`, mục "smart content + AI writing"): khung dưới ô nội dung của form
+   sản phẩm / bài viết: **Viết mô tả / bài chuẩn SEO**, **Chuyển Smart content / Thiết kế lại**, **Xem
+   trước & góp ý** (máy tính / máy tính bảng / điện thoại; bấm hoặc bôi đen chỗ cần sửa + ghi góp ý →
+   **Nhờ AI sửa**; đổi màu; khôi phục phiên bản; nút **Hoàn thành**), **Tải lại**, **Bỏ Smart content**.
+   AI là Gemini (mục 6); khôi phục / đổi màu / bỏ dùng `smartAction` (không AI).
+   - **Tải lại**: đọc lại bản ghi và mở lại form. BẮT BUỘC sau khi Claude (qua API) sửa bản ghi đang
+     mở, nếu không nút Lưu sẽ ghi đè nội dung Claude vừa viết bằng nội dung cũ trong form.
 4. **Build**: `html/scripts/lib/smart.mjs` — có `smart.html` thì `cms-data.mjs` thay
    `description`/`body` bằng `<div class="smc-root smc-a" style="màu riêng">…</div>`; trang đó nạp
    `/css/smart.css` (reset + biến `--smc-*` theo màu site) + `<style>` CSS đã gắn phạm vi
