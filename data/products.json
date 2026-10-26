@@ -1,5 +1,30 @@
 [
   {
+    "id": 2998,
+    "name": "Loa Bluetooth JBL Charge 6 – Mang âm nhạc theo mọi cuộc vui",
+    "slug": "loa-bluetooth-jbl-charge-6",
+    "sku": "ML4050",
+    "brand_names": [
+      "JBL"
+    ],
+    "categories": [
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "4490000",
+      "regular_price": "4490000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/loa-bluetooth-jbl-charge-6/01.jpg",
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-26T01:36:45.533Z"
+  },
+  {
     "id": 2997,
     "name": "Ấm siêu tốc Steiger STG9238/B 2L 1500–1800W",
     "slug": "steiger-stg9238b-am-sieu-toc-phong-cach-hien-dai",
