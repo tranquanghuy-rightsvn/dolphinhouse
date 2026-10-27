@@ -4317,7 +4317,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/vo-chan-dau-inox-304-gkch-luoi-sieu-khi-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:40:32.393Z"
   },
   {
     "id": 1480,
