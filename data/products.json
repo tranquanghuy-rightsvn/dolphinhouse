@@ -3112,7 +3112,9 @@
     },
     "on_sale": false,
     "image": "/assets/images/products/gallery-01-6.webp",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:34:07.489Z"
   },
   {
     "id": 2585,
