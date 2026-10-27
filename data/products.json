@@ -4670,7 +4670,8 @@
     "on_sale": true,
     "image": "/assets/images/products/quat-cay-Aung-toshiba-f-lsa20hvn-em-ai-r-hinh-1.jpg",
     "sizes": [],
-    "updated_at": "2026-09-15T01:53:46.570Z"
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:37:43.469Z"
   },
   {
     "id": 1319,
