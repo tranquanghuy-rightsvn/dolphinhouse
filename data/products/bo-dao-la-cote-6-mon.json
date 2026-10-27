@@ -47,9 +47,10 @@
     }
   ],
   "sizes": [],
-  "in_stock": true,
+  "in_stock": false,
   "brand_names": [
     "La CÔTE"
   ],
-  "updated_at": "2026-10-23T02:18:07.994Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:27:46.175Z"
 }
