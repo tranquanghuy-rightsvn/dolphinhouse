@@ -102,8 +102,10 @@
     }
   ],
   "sizes": [],
+  "in_stock": true,
   "brand_names": [
     "Tewa"
   ],
-  "updated_at": "2026-09-15T01:54:02.956Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:43:55.329Z"
 }
