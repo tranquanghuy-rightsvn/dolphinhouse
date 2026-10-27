@@ -48,8 +48,10 @@
       "regular_price": "500000"
     }
   ],
+  "in_stock": true,
   "brand_names": [
     "Cuitisan"
   ],
-  "updated_at": "2026-10-06T07:39:20.438Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:33:27.983Z"
 }
