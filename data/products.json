@@ -5173,7 +5173,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/thot-go-teak-Kaiyo2-optimized.webp",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:31:29.052Z"
   },
   {
     "id": 977,
