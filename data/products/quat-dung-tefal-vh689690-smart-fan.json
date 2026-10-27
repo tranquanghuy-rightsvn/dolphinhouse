@@ -20,7 +20,6 @@
     "currency_prefix": "",
     "currency_suffix": " ₫"
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">2.500.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></del> <span class=\"screen-reader-text\">Giá gốc là: 2.500.000&nbsp;&#8363;.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">1.990.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></ins><span class=\"screen-reader-text\">Giá hiện tại là: 1.990.000&nbsp;&#8363;.</span>",
   "average_rating": "0",
   "review_count": 0,
   "categories": [
@@ -52,8 +51,11 @@
       "alt": "Quạt Đứng Tefal VH689690 – Smart Fan Pháp, Remote, Dual Cooling - Hình 4"
     }
   ],
+  "sizes": [],
+  "in_stock": false,
   "brand_names": [
     "Tefal"
   ],
-  "updated_at": "2026-09-08T12:04:03.264Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:37:57.872Z"
 }
