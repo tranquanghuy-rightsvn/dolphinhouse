@@ -3631,7 +3631,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/noi-chien-ngap-dau-silvercrest-sef3-4l-3-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:36:31.171Z"
   },
   {
     "id": 1842,
