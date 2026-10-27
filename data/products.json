@@ -4918,7 +4918,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/p1234-gallery-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:44:34.778Z"
   },
   {
     "id": 1223,
