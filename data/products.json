@@ -2405,7 +2405,8 @@
     "on_sale": false,
     "image": "/assets/images/products/lg-alpha-pet-as10gdby0-1.webp",
     "sizes": [],
-    "updated_at": "2026-09-10T09:38:01.941Z"
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:34:46.322Z"
   },
   {
     "id": 2912,
