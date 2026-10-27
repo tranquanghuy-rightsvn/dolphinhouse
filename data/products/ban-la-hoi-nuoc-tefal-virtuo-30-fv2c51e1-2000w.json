@@ -72,9 +72,10 @@
     }
   ],
   "sizes": [],
-  "in_stock": true,
+  "in_stock": false,
   "brand_names": [
     "Tefal"
   ],
-  "updated_at": "2026-10-22T01:40:41.757Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:29:19.948Z"
 }
