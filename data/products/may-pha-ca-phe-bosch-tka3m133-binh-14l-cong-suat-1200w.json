@@ -72,8 +72,10 @@
     }
   ],
   "sizes": [],
+  "in_stock": true,
   "brand_names": [
     "Bosch"
   ],
-  "updated_at": "2026-09-10T06:30:17.015Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:35:02.602Z"
 }
