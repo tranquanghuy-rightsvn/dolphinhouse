@@ -3982,7 +3982,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/thung-rac-inox-cao-cap-cham-khac-hoa-van-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:40:08.092Z"
   },
   {
     "id": 1599,
