@@ -3754,7 +3754,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/khay-pha-le-3-tang-godinger-dublin-Aeng-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:33:43.543Z"
   },
   {
     "id": 1792,
