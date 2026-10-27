@@ -5061,7 +5061,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/p1061-gallery-01-600x800-2.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:46:53.641Z"
   },
   {
     "id": 1048,
