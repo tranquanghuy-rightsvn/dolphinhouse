@@ -20,7 +20,6 @@
     "currency_prefix": "",
     "currency_suffix": " ₫"
   },
-  "price_html": "<span class=\"woocommerce-Price-amount amount\">1.650.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span>",
   "average_rating": "0",
   "review_count": 0,
   "categories": [
@@ -72,8 +71,11 @@
       "alt": "Bàn là hơi nước cầm tay Philips Series 5000 STH5030 – ảnh sản phẩm 8"
     }
   ],
+  "sizes": [],
+  "in_stock": true,
   "brand_names": [
     "Philips"
   ],
-  "updated_at": "2026-09-08T12:04:03.264Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:30:09.351Z"
 }
