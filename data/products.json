@@ -4590,7 +4590,8 @@
     "on_sale": false,
     "image": "/assets/images/products/p1381-gallery-01-600x800-1.jpg",
     "sizes": [],
-    "updated_at": "2026-09-15T01:53:08.294Z"
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:48:22.527Z"
   },
   {
     "id": 1373,
