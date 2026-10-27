@@ -4847,7 +4847,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/p1277-gallery-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:46:45.560Z"
   },
   {
     "id": 1276,
