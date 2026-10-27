@@ -3957,7 +3957,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/thung-rac-ban-Aap-joseph-joseph-30152-10-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:39:59.651Z"
   },
   {
     "id": 1604,
