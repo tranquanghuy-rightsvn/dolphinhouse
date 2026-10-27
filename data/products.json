@@ -3972,7 +3972,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/ban-ui-hoi-nuoc-Aung-philips-perfectcare-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:21:20.444Z"
   },
   {
     "id": 1575,
