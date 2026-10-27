@@ -4414,8 +4414,8 @@
     "on_sale": true,
     "image": "/assets/images/products/p1426-gallery-01-600x800-1.jpg",
     "sizes": [],
-    "in_stock": true,
-    "updated_at": "2026-10-23T06:01:31.829Z"
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:32:04.500Z"
   },
   {
     "id": 1416,
