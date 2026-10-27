@@ -20,7 +20,6 @@
     "currency_prefix": "",
     "currency_suffix": " ₫"
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">3.800.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></del> <span class=\"screen-reader-text\">Giá gốc là: 3.800.000&nbsp;&#8363;.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">2.990.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></ins><span class=\"screen-reader-text\">Giá hiện tại là: 2.990.000&nbsp;&#8363;.</span>",
   "average_rating": "0",
   "review_count": 0,
   "categories": [
@@ -67,8 +66,11 @@
       "alt": "Máy Xay Đa Năng Bosch MCM3100W – 800W, Đa Chức Năng – hình 7"
     }
   ],
+  "sizes": [],
+  "in_stock": false,
   "brand_names": [
     "Bosch"
   ],
-  "updated_at": "2026-09-08T12:04:03.264Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:35:40.107Z"
 }
