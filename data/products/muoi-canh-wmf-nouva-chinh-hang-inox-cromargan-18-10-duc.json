@@ -83,8 +83,10 @@
       "regular_price": "320000"
     }
   ],
+  "in_stock": true,
   "brand_names": [
     "WMF"
   ],
-  "updated_at": "2026-09-15T01:59:46.881Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:44:19.131Z"
 }
