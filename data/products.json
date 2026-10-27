@@ -4701,7 +4701,8 @@
     "on_sale": false,
     "image": "/assets/images/products/ro-quay-rau-cao-cap-ultty-rau-gion-sach-hinh-1.jpg",
     "sizes": [],
-    "updated_at": "2026-09-15T01:54:37.175Z"
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:38:16.406Z"
   },
   {
     "id": 1312,
