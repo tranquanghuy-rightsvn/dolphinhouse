@@ -67,8 +67,10 @@
     }
   ],
   "sizes": [],
+  "in_stock": true,
   "brand_names": [
     "Gume"
   ],
-  "updated_at": "2026-09-15T01:52:35.136Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:30:49.285Z"
 }
