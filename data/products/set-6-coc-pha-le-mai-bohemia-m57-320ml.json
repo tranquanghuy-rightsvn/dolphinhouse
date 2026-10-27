@@ -52,9 +52,10 @@
     }
   ],
   "sizes": [],
-  "in_stock": true,
+  "in_stock": false,
   "brand_names": [
     "Bohemia"
   ],
-  "updated_at": "2026-10-22T01:47:36.710Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:39:20.254Z"
 }
