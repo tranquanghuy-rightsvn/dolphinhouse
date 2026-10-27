@@ -2429,7 +2429,8 @@
     "on_sale": false,
     "image": "/assets/images/products/lumias-d6s-30l-1-1.webp",
     "sizes": [],
-    "updated_at": "2026-09-10T06:30:01.373Z"
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:34:15.098Z"
   },
   {
     "id": 2918,
