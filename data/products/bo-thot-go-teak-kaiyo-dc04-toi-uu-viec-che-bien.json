@@ -20,7 +20,6 @@
     "currency_prefix": "",
     "currency_suffix": " ₫"
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">489.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></del> <span class=\"screen-reader-text\">Giá gốc là: 489.000&nbsp;&#8363;.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">381.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></ins><span class=\"screen-reader-text\">Giá hiện tại là: 381.000&nbsp;&#8363;.</span>",
   "average_rating": "0",
   "review_count": 0,
   "categories": [
@@ -57,8 +56,11 @@
       "alt": "Bộ thớt gỗ teak Kaiyo DC01 Đẹp & Bền cho gian bếp"
     }
   ],
+  "sizes": [],
+  "in_stock": true,
   "brand_names": [
     "Kaiyo"
   ],
-  "updated_at": "2026-09-08T12:04:03.264Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:31:46.140Z"
 }
