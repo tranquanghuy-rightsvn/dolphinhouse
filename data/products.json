@@ -2811,7 +2811,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/unold-super-air-smart-360-gallery-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:38:05.808Z"
   },
   {
     "id": 2765,
