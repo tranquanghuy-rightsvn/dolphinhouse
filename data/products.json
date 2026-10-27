@@ -3727,7 +3727,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/philips-na230-00-hero-gallery-v4.2.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:36:23.510Z"
   },
   {
     "id": 1809,
