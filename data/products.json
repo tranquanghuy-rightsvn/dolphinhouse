@@ -4637,7 +4637,8 @@
     "on_sale": true,
     "image": "/assets/images/products/p1362-gallery-01-600x800-3.jpg",
     "sizes": [],
-    "updated_at": "2026-09-15T01:54:19.562Z"
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:44:03.574Z"
   },
   {
     "id": 1353,
