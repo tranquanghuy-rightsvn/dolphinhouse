@@ -4089,7 +4089,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/may-pha-ca-phe-nho-giot-bosch-tka3m133-d-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:34:53.473Z"
   },
   {
     "id": 1545,
