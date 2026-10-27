@@ -3797,7 +3797,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/cao-ve-sinh-bep-tu-wmf-dung-cu-ve-sinh-A-hinh-1.jpg",
-    "updated_at": "2026-09-09T15:47:31.833Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:31:55.222Z"
   },
   {
     "id": 1779,
