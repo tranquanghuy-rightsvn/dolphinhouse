@@ -4645,7 +4645,8 @@
     "on_sale": true,
     "image": "/assets/images/products/binh-Aung-thuc-an-giy-nhiet-gume-gm-f11-hinh-1.jpg",
     "sizes": [],
-    "updated_at": "2026-09-15T01:52:35.136Z"
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:30:49.285Z"
   },
   {
     "id": 1303,
