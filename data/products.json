@@ -5156,7 +5156,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/robot-hut-bui-MEDION-S05-SW-1-optimized.webp",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:38:34.444Z"
   },
   {
     "id": 1000,
