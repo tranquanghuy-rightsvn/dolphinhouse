@@ -4821,7 +4821,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/p1266-gallery-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:35:40.107Z"
   },
   {
     "id": 1234,
