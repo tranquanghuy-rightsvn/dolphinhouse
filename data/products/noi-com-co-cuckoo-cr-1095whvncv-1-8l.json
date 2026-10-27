@@ -20,7 +20,6 @@
     "currency_prefix": "",
     "currency_suffix": " ₫"
   },
-  "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">1.650.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></del> <span class=\"screen-reader-text\">Giá gốc là: 1.650.000&nbsp;&#8363;.</span><ins aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\">1.250.000&nbsp;<span class=\"woocommerce-Price-currencySymbol\">&#8363;</span></span></ins><span class=\"screen-reader-text\">Giá hiện tại là: 1.250.000&nbsp;&#8363;.</span>",
   "average_rating": "0",
   "review_count": 0,
   "categories": [
@@ -72,8 +71,11 @@
       "alt": "Nồi cơm Cuckoo 1.8L nấu cơm ngon dẻo cho cả gia đình"
     }
   ],
+  "sizes": [],
+  "in_stock": true,
   "brand_names": [
     "Cuckoo"
   ],
-  "updated_at": "2026-09-08T12:04:03.264Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:36:57.949Z"
 }
