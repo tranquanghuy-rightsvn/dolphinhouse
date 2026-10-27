@@ -57,9 +57,10 @@
     }
   ],
   "sizes": [],
-  "in_stock": true,
+  "in_stock": false,
   "brand_names": [
     "Dreame"
   ],
-  "updated_at": "2026-10-23T02:18:55.343Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:32:31.792Z"
 }
