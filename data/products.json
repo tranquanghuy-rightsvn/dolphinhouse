@@ -1,5 +1,41 @@
 [
   {
+    "id": 2999,
+    "name": "Hộp Đựng Bàn Chải Tự Khô Joseph Joseph EasyStore",
+    "slug": "hop-dung-ban-chai-tu-kho-joseph-joseph-easystore",
+    "sku": "MDR1480 / MDR2480",
+    "brand_names": [
+      "Joseph Joseph"
+    ],
+    "categories": [
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "680000",
+      "regular_price": "680000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/hop-dung-ban-chai-tu-kho-joseph-joseph-easystore/01.jpg",
+    "sizes": [
+      {
+        "name": "Xám nhạt (70575)",
+        "price": "680000",
+        "regular_price": "680000"
+      },
+      {
+        "name": "Trắng (70510)",
+        "price": "680000",
+        "regular_price": "680000"
+      }
+    ],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:13:25.435Z"
+  },
+  {
     "id": 2998,
     "name": "Loa Bluetooth JBL Charge 6 – Mang âm nhạc theo mọi cuộc vui",
     "slug": "loa-bluetooth-jbl-charge-6",
