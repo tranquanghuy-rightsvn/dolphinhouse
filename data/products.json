@@ -4130,7 +4130,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/may-hut-bui-cam-tay-khong-day-gkch-a-08-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:34:23.158Z"
   },
   {
     "id": 1528,
