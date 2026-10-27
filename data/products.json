@@ -2359,7 +2359,8 @@
     "on_sale": false,
     "image": "/assets/images/products/cuckoo-crp-hwf1000f-1.webp",
     "sizes": [],
-    "updated_at": "2026-09-10T06:29:45.841Z"
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:37:05.176Z"
   },
   {
     "id": 2914,
