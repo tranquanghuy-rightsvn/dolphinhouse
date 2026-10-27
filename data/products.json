@@ -4125,7 +4125,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/may-xay-thit-rau-cu-tefal-dpa130-cong-su-hinh-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:36:08.524Z"
   },
   {
     "id": 1537,
