@@ -2719,7 +2719,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/bo-dung-cu-nha-bep-7-mon-joseph-joseph-101188-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-10-27T08:31:21.564Z"
   },
   {
     "id": 2786,
