@@ -2529,7 +2529,8 @@
     "on_sale": false,
     "image": "/assets/images/products/philips-ste3160-1.webp",
     "sizes": [],
-    "updated_at": "2026-09-10T06:30:38.421Z"
+    "in_stock": false,
+    "updated_at": "2026-10-27T08:29:02.166Z"
   },
   {
     "id": 2834,
