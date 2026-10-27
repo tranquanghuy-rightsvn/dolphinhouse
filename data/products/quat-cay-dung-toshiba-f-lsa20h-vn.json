@@ -57,8 +57,10 @@
     }
   ],
   "sizes": [],
+  "in_stock": false,
   "brand_names": [
     "Toshiba"
   ],
-  "updated_at": "2026-09-15T01:53:46.570Z"
+  "smart": null,
+  "updated_at": "2026-10-27T08:37:43.469Z"
 }
