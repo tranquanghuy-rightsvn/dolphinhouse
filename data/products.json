@@ -942,14 +942,14 @@
       }
     ],
     "prices": {
-      "price": "3400000",
+      "price": "2890000",
       "regular_price": "3400000"
     },
-    "on_sale": false,
+    "on_sale": true,
     "image": "/assets/images/products/bo-noi-inox-steiger-diamond-7-mon/01.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:21:32.300Z"
+    "updated_at": "2026-11-05T09:28:35.890Z"
   },
   {
     "id": 2968,
