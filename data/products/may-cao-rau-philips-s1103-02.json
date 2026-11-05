@@ -62,9 +62,10 @@
     }
   ],
   "sizes": [],
-  "in_stock": true,
+  "in_stock": false,
   "brand_names": [
     "Philips"
   ],
-  "updated_at": "2026-10-22T02:28:41.884Z"
+  "smart": null,
+  "updated_at": "2026-11-05T09:13:08.431Z"
 }
