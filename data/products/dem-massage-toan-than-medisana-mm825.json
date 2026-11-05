@@ -62,9 +62,10 @@
     }
   ],
   "sizes": [],
-  "in_stock": true,
+  "in_stock": false,
   "brand_names": [
     "Medisana"
   ],
-  "updated_at": "2026-10-22T02:24:34.977Z"
+  "smart": null,
+  "updated_at": "2026-11-05T09:13:48.274Z"
 }
