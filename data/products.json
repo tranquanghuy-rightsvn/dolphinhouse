@@ -1454,7 +1454,7 @@
       }
     ],
     "prices": {
-      "price": "480000",
+      "price": "490000",
       "regular_price": "480000"
     },
     "on_sale": false,
@@ -1462,7 +1462,7 @@
     "sizes": [
       {
         "name": "JWD-T0819 – 12 ổ – 2 Type-C + 2 USB – dây 4m",
-        "price": "480000",
+        "price": "490000",
         "regular_price": "480000"
       },
       {
@@ -1477,7 +1477,7 @@
       }
     ],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:39:44.724Z"
+    "updated_at": "2026-11-05T09:28:43.347Z"
   },
   {
     "id": 2949,
