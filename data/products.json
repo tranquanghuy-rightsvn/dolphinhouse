@@ -5249,14 +5249,14 @@
       }
     ],
     "prices": {
-      "price": "381000",
+      "price": "590000",
       "regular_price": "489000"
     },
-    "on_sale": true,
+    "on_sale": false,
     "image": "/assets/images/products/thot-go-teak-Kaiyo1-optimized.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-27T08:31:46.140Z"
+    "updated_at": "2026-11-05T09:30:35.787Z"
   },
   {
     "id": 997,
