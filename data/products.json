@@ -1845,14 +1845,14 @@
       }
     ],
     "prices": {
-      "price": "14850000",
+      "price": "14500000",
       "regular_price": "14850000"
     },
-    "on_sale": false,
+    "on_sale": true,
     "image": "/assets/images/products/tineco-s9-artist-steam-pro/02.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:48:45.120Z"
+    "updated_at": "2026-11-05T09:13:25.108Z"
   },
   {
     "id": 2937,
