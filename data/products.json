@@ -337,7 +337,7 @@
       }
     ],
     "prices": {
-      "price": "680000",
+      "price": "690000",
       "regular_price": "680000"
     },
     "on_sale": false,
@@ -345,17 +345,17 @@
     "sizes": [
       {
         "name": "Xám (Grey)",
-        "price": "680000",
+        "price": "690000",
         "regular_price": "680000"
       },
       {
         "name": "Tím (Pink)",
-        "price": "680000",
+        "price": "690000",
         "regular_price": "680000"
       }
     ],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:31:59.399Z"
+    "updated_at": "2026-11-05T09:12:51.529Z"
   },
   {
     "id": 2986,
