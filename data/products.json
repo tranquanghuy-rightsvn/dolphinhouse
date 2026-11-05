@@ -3804,14 +3804,14 @@
       }
     ],
     "prices": {
-      "price": "1490000",
+      "price": "3900000",
       "regular_price": "1990000"
     },
-    "on_sale": true,
+    "on_sale": false,
     "image": "/assets/images/products/khay-pha-le-3-tang-godinger-dublin-Aeng-hinh-1.jpg",
     "sizes": [],
     "in_stock": false,
-    "updated_at": "2026-10-27T08:33:43.543Z"
+    "updated_at": "2026-11-05T09:30:18.914Z"
   },
   {
     "id": 1792,
