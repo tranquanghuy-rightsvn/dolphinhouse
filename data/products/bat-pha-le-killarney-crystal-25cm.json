@@ -57,9 +57,10 @@
     }
   ],
   "sizes": [],
-  "in_stock": true,
+  "in_stock": false,
   "brand_names": [
     "Killarney Crystal"
   ],
-  "updated_at": "2026-10-22T01:41:03.680Z"
+  "smart": null,
+  "updated_at": "2026-11-05T09:31:08.373Z"
 }
