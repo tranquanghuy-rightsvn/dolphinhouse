@@ -57,9 +57,10 @@
     }
   ],
   "sizes": [],
-  "in_stock": true,
+  "in_stock": false,
   "brand_names": [
     "Braun"
   ],
-  "updated_at": "2026-10-23T02:18:31.086Z"
+  "smart": null,
+  "updated_at": "2026-11-05T09:15:03.741Z"
 }
