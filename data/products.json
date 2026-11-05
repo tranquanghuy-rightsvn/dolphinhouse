@@ -2035,7 +2035,7 @@
       }
     ],
     "prices": {
-      "price": "790000",
+      "price": "850000",
       "regular_price": "790000"
     },
     "on_sale": false,
@@ -2043,7 +2043,7 @@
     "sizes": [
       {
         "name": "20cm (CM110)",
-        "price": "790000",
+        "price": "850000",
         "regular_price": "790000"
       },
       {
@@ -2063,7 +2063,7 @@
       }
     ],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:24:02.439Z"
+    "updated_at": "2026-11-05T09:13:37.182Z"
   },
   {
     "id": 2928,
