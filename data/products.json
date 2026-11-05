@@ -3093,14 +3093,14 @@
       }
     ],
     "prices": {
-      "price": "8400000",
+      "price": "7700000",
       "regular_price": "8400000"
     },
-    "on_sale": false,
+    "on_sale": true,
     "image": "/assets/images/products/gallery-01-8.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-27T08:34:30.370Z"
+    "updated_at": "2026-11-05T09:14:21.743Z"
   },
   {
     "id": 2606,
