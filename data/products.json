@@ -3449,8 +3449,8 @@
     "on_sale": false,
     "image": "/assets/images/products/braun-hm2110-01-600x800-1.jpg",
     "sizes": [],
-    "in_stock": true,
-    "updated_at": "2026-10-23T02:18:31.086Z"
+    "in_stock": false,
+    "updated_at": "2026-11-05T09:15:03.741Z"
   },
   {
     "id": 2455,
