@@ -31,9 +31,9 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/gallery-01-2.webp",
-      "thumbnail": "/assets/images/products/gallery-01-2.webp",
-      "alt": "Bếp nướng WMF LONO Master-Grill – ảnh sản phẩm 1"
+      "src": "/assets/images/products/bep-nuong-wmf-lono/01.jpg",
+      "thumbnail": "/assets/images/products/bep-nuong-wmf-lono/01.jpg",
+      "alt": "Bếp nướng WMF LONO Master-Grill – ảnh sản phẩm 1 chính hãng tại Dolphin House"
     },
     {
       "src": "/assets/images/products/gallery-02-2.webp",
@@ -57,5 +57,5 @@
     "WMF"
   ],
   "smart": null,
-  "updated_at": "2026-11-06T06:43:34.728Z"
+  "updated_at": "2026-11-06T07:11:18.908Z"
 }
