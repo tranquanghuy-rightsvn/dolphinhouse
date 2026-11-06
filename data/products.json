@@ -325,7 +325,7 @@
     "id": 2987,
     "name": "Máy sấy tóc Tiross TS4322 1.500W – 3 tốc độ gió, 2 màu",
     "slug": "may-say-toc-toc-do-cao-tiross-ts4322-1500w",
-    "sku": "MMS480",
+    "sku": "TS4322",
     "brand_names": [
       "Tiross"
     ],
@@ -355,7 +355,7 @@
       }
     ],
     "in_stock": true,
-    "updated_at": "2026-11-05T09:12:51.529Z"
+    "updated_at": "2026-11-06T03:05:21.489Z"
   },
   {
     "id": 2986,
