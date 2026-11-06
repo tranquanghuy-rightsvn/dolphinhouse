@@ -5118,7 +5118,7 @@
     "id": 1034,
     "name": "Ghế ô tô trẻ em Babyro I-SPINSAFE PRO G412IS0",
     "slug": "ghe-o-to-tre-em-babyro-i-spinsafe-pro-g412is0",
-    "sku": "M6190",
+    "sku": "G412IS0",
     "brand_names": [
       "Babyro"
     ],
@@ -5135,7 +5135,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/p1034-gallery-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-11-06T02:07:44.914Z"
   },
   {
     "id": 1027,
