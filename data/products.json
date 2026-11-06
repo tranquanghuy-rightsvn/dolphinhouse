@@ -1302,7 +1302,7 @@
     "id": 2955,
     "name": "Loa Marshall Middleton",
     "slug": "loa-marshall-middleton",
-    "sku": "LD23",
+    "sku": "Middleton",
     "brand_names": [
       "Marshall"
     ],
@@ -1321,7 +1321,7 @@
     "image": "/assets/images/products/loa-marshall-middleton/01.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:27:28.971Z"
+    "updated_at": "2026-11-06T03:04:18.184Z"
   },
   {
     "id": 2954,
