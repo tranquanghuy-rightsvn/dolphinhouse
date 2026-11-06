@@ -2144,7 +2144,7 @@
     "id": 2925,
     "name": "Viên Tẩy Lồng Giặt Denkmit Đức",
     "slug": "vien-tay-long-giat-denkmit-duc",
-    "sku": "MVT179",
+    "sku": "DENKMIT-TAYLONG",
     "brand_names": [
       "Denkmit"
     ],
@@ -2163,7 +2163,7 @@
     "image": "/assets/images/products/vien-tay-long-giat-denkmit-duc/01.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:48:57.627Z"
+    "updated_at": "2026-11-06T02:14:58.662Z"
   },
   {
     "id": 2924,
