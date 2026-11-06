@@ -31,9 +31,9 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/ban-la-cay-hoi-nuoc-tefal-ixeo-all-in-on-hinh-1-1.jpg",
-      "thumbnail": "/assets/images/products/ban-la-cay-hoi-nuoc-tefal-ixeo-all-in-on-hinh-1-1.jpg",
-      "alt": "Bàn Là Cây Hơi Nước Tefal Ixeo All In One QT1510 – Cầu Ủi 3 Tư Thế, Công Suất 2980W - Hình 1"
+      "src": "/assets/images/products/ban-la-cay-tefal-ixeo-all-in-one-qt1510/01.jpg",
+      "thumbnail": "/assets/images/products/ban-la-cay-tefal-ixeo-all-in-one-qt1510/01.jpg",
+      "alt": "Bàn Là Cây Hơi Nước Tefal Ixeo All In One QT1510 – Cầu Ủi 3 Tư Thế, Công Suất 2980W - Hình 1 chính hãng tại Dolphin House"
     },
     {
       "src": "/assets/images/products/ban-la-cay-hoi-nuoc-tefal-ixeo-all-in-on-hinh-2-1.jpg",
@@ -67,5 +67,5 @@
     "Tefal"
   ],
   "smart": null,
-  "updated_at": "2026-11-06T02:40:57.273Z"
+  "updated_at": "2026-11-06T07:10:22.796Z"
 }
