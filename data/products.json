@@ -5146,7 +5146,7 @@
     "id": 1027,
     "name": "Thùng rác đạp chân Letek LP",
     "slug": "thung-rac-dap-chan-letek-lp",
-    "sku": "ML690",
+    "sku": "Letek LP",
     "brand_names": [
       "Letek"
     ],
@@ -5163,7 +5163,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/thung-rac-dap-chan-Letek-LP-3.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-11-06T06:51:25.541Z"
   },
   {
     "id": 1021,
