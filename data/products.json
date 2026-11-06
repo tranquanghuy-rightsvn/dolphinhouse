@@ -5341,7 +5341,7 @@
     "id": 974,
     "name": "Chảo Inox 316 Vân Lục Giác Letek Golf 26cm – Chống Dính Tự Nhiên",
     "slug": "chao-van-luc-giac-letek-golf-size-26cm",
-    "sku": "ML950",
+    "sku": "Golf 26cm",
     "brand_names": [
       "Letek"
     ],
@@ -5358,7 +5358,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/p974-gallery-01-600x800-2.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-11-06T06:46:42.896Z"
   },
   {
     "id": 973,
