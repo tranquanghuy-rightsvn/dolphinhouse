@@ -1071,7 +1071,7 @@
     "id": 2964,
     "name": "Máy hút bụi giường nệm 2Lock SN61 UV và nhiệt 50°C",
     "slug": "may-hut-bui-giuong-nem-2lock-sn61",
-    "sku": "MHD850",
+    "sku": "SN61",
     "brand_names": [
       "2Lock"
     ],
@@ -1090,7 +1090,7 @@
     "image": "/assets/images/products/may-hut-bui-giuong-nem-2lock-sn61/01.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:28:52.931Z"
+    "updated_at": "2026-11-06T03:04:42.883Z"
   },
   {
     "id": 2963,
