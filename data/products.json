@@ -2269,7 +2269,7 @@
     "id": 2920,
     "name": "Loa Marshall Woburn 3",
     "slug": "loa-marshall-woburn-3",
-    "sku": "MMS7850",
+    "sku": "WOBURN-III",
     "brand_names": [
       "Marshall"
     ],
@@ -2288,7 +2288,7 @@
     "image": "/assets/images/products/loa-marshall-woburn-3/01.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:27:43.318Z"
+    "updated_at": "2026-11-06T02:08:37.940Z"
   },
   {
     "id": 2917,
