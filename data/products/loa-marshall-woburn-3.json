@@ -31,9 +31,9 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/loa-marshall-woburn-3/01.webp",
-      "thumbnail": "/assets/images/products/loa-marshall-woburn-3/01.webp",
-      "alt": "Loa Marshall Woburn 3 - ảnh tổng thể sản phẩm"
+      "src": "/assets/images/products/loa-marshall-woburn-3/16.jpg",
+      "thumbnail": "/assets/images/products/loa-marshall-woburn-3/16.jpg",
+      "alt": "Loa Marshall Woburn 3 - ảnh tổng thể sản phẩm chính hãng tại Dolphin House"
     },
     {
       "src": "/assets/images/products/loa-marshall-woburn-3/02.webp",
@@ -92,5 +92,5 @@
     "Marshall"
   ],
   "smart": null,
-  "updated_at": "2026-11-06T02:08:37.940Z"
+  "updated_at": "2026-11-06T07:14:05.902Z"
 }
