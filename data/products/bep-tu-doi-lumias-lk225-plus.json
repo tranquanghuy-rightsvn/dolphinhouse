@@ -31,9 +31,9 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/p1416-gallery-01-600x800-1.jpg",
-      "thumbnail": "/assets/images/products/p1416-gallery-01-600x800-1.jpg",
-      "alt": "Bếp Từ Đôi Lumias LK225 Plus – 3500W, 10 Mức Nhiệt – hình 1"
+      "src": "/assets/images/products/bep-tu-doi-lumias-lk225-plus/01.jpg",
+      "thumbnail": "/assets/images/products/bep-tu-doi-lumias-lk225-plus/01.jpg",
+      "alt": "Bếp Từ Đôi Lumias LK225 Plus – 3500W, 10 Mức Nhiệt – hình 1 chính hãng tại Dolphin House"
     },
     {
       "src": "/assets/images/products/p1416-gallery-02-600x800-1.jpg",
@@ -62,5 +62,5 @@
     "Lumias"
   ],
   "smart": null,
-  "updated_at": "2026-11-06T02:04:34.849Z"
+  "updated_at": "2026-11-06T07:11:33.190Z"
 }
