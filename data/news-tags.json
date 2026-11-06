@@ -10,5 +10,21 @@
   {
     "name": "nhà thông minh",
     "slug": "nha-thong-minh"
+  },
+  {
+    "name": "tefal",
+    "slug": "tefal"
+  },
+  {
+    "name": "do-gia-dung-phap",
+    "slug": "do-gia-dung-phap"
+  },
+  {
+    "name": "chao-chong-dinh",
+    "slug": "chao-chong-dinh"
+  },
+  {
+    "name": "ban-la-hoi-nuoc",
+    "slug": "ban-la-hoi-nuoc"
   }
 ]
