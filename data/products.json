@@ -2442,7 +2442,7 @@
     "id": 2918,
     "name": "Robot lọc không khí ECOVACS AIRBOT ANDY PRO – Lọc khí tự di chuyển",
     "slug": "robot-loc-khong-khi-ecovacs-airbot-andy-pro-loc-khi-tu-di-chuyen",
-    "sku": "MEC7350",
+    "sku": "AIRBOT ANDY PRO",
     "brand_names": [
       "ECOVACS"
     ],
@@ -2461,7 +2461,7 @@
     "image": "/assets/images/products/ecovacs-airbot-andy-pro-1.webp",
     "sizes": [],
     "in_stock": false,
-    "updated_at": "2026-10-27T08:38:48.893Z"
+    "updated_at": "2026-11-06T06:50:45.954Z"
   },
   {
     "id": 2911,
