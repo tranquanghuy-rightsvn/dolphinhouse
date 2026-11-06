@@ -31,9 +31,9 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/01.jpg",
-      "thumbnail": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/01.jpg",
-      "alt": "ECOVACS WINBOT W3 – Robot lau kính thế hệ mới"
+      "src": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/09.jpg",
+      "thumbnail": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/09.jpg",
+      "alt": "ECOVACS WINBOT W3 – Robot lau kính thế hệ mới chính hãng tại Dolphin House"
     },
     {
       "src": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/02.jpg",
@@ -62,5 +62,5 @@
     "ECOVACS"
   ],
   "smart": null,
-  "updated_at": "2026-11-06T03:23:31.411Z"
+  "updated_at": "2026-11-06T07:13:26.368Z"
 }
