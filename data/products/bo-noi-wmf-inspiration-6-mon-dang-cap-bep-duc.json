@@ -31,9 +31,9 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/p1214-gallery-01-600x800-1.jpg",
-      "thumbnail": "/assets/images/products/p1214-gallery-01-600x800-1.jpg",
-      "alt": "Bộ Nồi WMF Inspiration 6 Món – Đẳng Cấp Bếp Đức – hình 1"
+      "src": "/assets/images/products/bo-noi-wmf-inspiration-6-mon-dang-cap-bep-duc/01.jpg",
+      "thumbnail": "/assets/images/products/bo-noi-wmf-inspiration-6-mon-dang-cap-bep-duc/01.jpg",
+      "alt": "Bộ Nồi WMF Inspiration 6 Món – Đẳng Cấp Bếp Đức – hình 1 chính hãng tại Dolphin House"
     },
     {
       "src": "/assets/images/products/p1214-gallery-02-600x800-1.jpg",
@@ -62,5 +62,5 @@
     "WMF"
   ],
   "smart": null,
-  "updated_at": "2026-11-06T02:05:35.093Z"
+  "updated_at": "2026-11-06T07:12:48.627Z"
 }
