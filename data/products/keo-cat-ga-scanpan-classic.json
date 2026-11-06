@@ -31,9 +31,9 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/keo-cat-ga-scanpan-classic-1.jpg",
-      "thumbnail": "/assets/images/products/keo-cat-ga-scanpan-classic-1.jpg",
-      "alt": "Kéo Cắt Gà Scanpan Classic – Thép Đức Đúc Liền Khối Đan Mạch"
+      "src": "/assets/images/products/keo-cat-ga-scanpan-classic/01.jpg",
+      "thumbnail": "/assets/images/products/keo-cat-ga-scanpan-classic/01.jpg",
+      "alt": "Kéo Cắt Gà Scanpan Classic – Thép Đức Đúc Liền Khối Đan Mạch chính hãng tại Dolphin House"
     },
     {
       "src": "/assets/images/products/keo-cat-ga-scanpan-classic-2.jpg",
@@ -57,5 +57,5 @@
     "Scanpan"
   ],
   "smart": null,
-  "updated_at": "2026-11-06T02:08:01.482Z"
+  "updated_at": "2026-11-06T07:13:39.931Z"
 }
