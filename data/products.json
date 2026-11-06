@@ -3256,7 +3256,7 @@
     "id": 2536,
     "name": "Bàn là hơi nước Philips Series 5000 STH5030",
     "slug": "ban-la-philips-sth5030",
-    "sku": "MPL1300",
+    "sku": "STH5030",
     "brand_names": [
       "Philips"
     ],
@@ -3275,7 +3275,7 @@
     "image": "/assets/images/products/gallery-01.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-06T03:20:53.083Z"
+    "updated_at": "2026-11-06T06:43:25.780Z"
   },
   {
     "id": 2504,
