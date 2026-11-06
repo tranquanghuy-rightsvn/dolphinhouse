@@ -361,7 +361,7 @@
     "id": 2986,
     "name": "Quạt sạc USB Tiross TS3422 – 100 mức gió, gập để bàn",
     "slug": "quat-sac-usb-tiross-ts3422",
-    "sku": "MQS295",
+    "sku": "TS3422",
     "brand_names": [
       "Tiross"
     ],
@@ -396,7 +396,7 @@
       }
     ],
     "in_stock": true,
-    "updated_at": "2026-10-22T01:47:04.918Z"
+    "updated_at": "2026-11-06T03:08:02.032Z"
   },
   {
     "id": 2985,
