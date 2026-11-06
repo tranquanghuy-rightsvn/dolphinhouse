@@ -31,9 +31,9 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/loa-marshall-middleton/01.jpg",
-      "thumbnail": "/assets/images/products/loa-marshall-middleton/01.jpg",
-      "alt": "Loa Marshall Middleton"
+      "src": "/assets/images/products/loa-marshall-middleton/09.jpg",
+      "thumbnail": "/assets/images/products/loa-marshall-middleton/09.jpg",
+      "alt": "Loa Marshall Middleton chính hãng tại Dolphin House"
     },
     {
       "src": "/assets/images/products/loa-marshall-middleton/02.jpg",
@@ -62,5 +62,5 @@
     "Marshall"
   ],
   "smart": null,
-  "updated_at": "2026-11-06T03:24:03.807Z"
+  "updated_at": "2026-11-06T07:13:51.687Z"
 }
