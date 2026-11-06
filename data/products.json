@@ -200,7 +200,7 @@
     "id": 2992,
     "name": "Máy sấy tóc Philips BHD308 1600W gập gọn",
     "slug": "may-say-toc-philips-bhd308-1600w",
-    "sku": "MSP640",
+    "sku": "BHD308/10",
     "brand_names": [
       "Philips"
     ],
@@ -219,7 +219,7 @@
     "image": "/assets/images/products/may-say-toc-philips-bhd308-1600w/01.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-22T01:44:35.586Z"
+    "updated_at": "2026-11-06T03:05:13.817Z"
   },
   {
     "id": 2991,
