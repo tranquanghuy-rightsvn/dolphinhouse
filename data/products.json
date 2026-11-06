@@ -5093,7 +5093,7 @@
     "id": 1043,
     "name": "Ghế ô tô I-SPINSAFE (0–12 tuổi) &#8211; G412I0T",
     "slug": "ghe-o-to-i-spinsafe-0-12-tuoi-g412i0t",
-    "sku": "M4950",
+    "sku": "G412I0T",
     "brand_names": [
       "Dolphin House"
     ],
@@ -5110,7 +5110,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/ghe-ngoi-o-to-SPINSAFE-0%E2%80%9312-tuoi%E2%80%93Ma-G412I0T-3.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-11-06T02:07:36.746Z"
   },
   {
     "id": 1034,
