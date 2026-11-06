@@ -31,9 +31,9 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/gallery-01-7.webp",
-      "thumbnail": "/assets/images/products/gallery-01-7.webp",
-      "alt": "Tineco FLOOR ONE S7 Stretch Steam – ảnh sản phẩm 1"
+      "src": "/assets/images/products/may-lau-san-tineco-s7/01.jpg",
+      "thumbnail": "/assets/images/products/may-lau-san-tineco-s7/01.jpg",
+      "alt": "Tineco FLOOR ONE S7 Stretch Steam – ảnh sản phẩm 1 chính hãng tại Dolphin House"
     },
     {
       "src": "/assets/images/products/gallery-02-7.webp",
@@ -77,5 +77,5 @@
     "Tineco"
   ],
   "smart": null,
-  "updated_at": "2026-11-06T03:25:12.917Z"
+  "updated_at": "2026-11-06T07:15:49.204Z"
 }
