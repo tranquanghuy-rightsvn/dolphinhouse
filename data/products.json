@@ -2344,7 +2344,7 @@
     "id": 2915,
     "name": "Nồi cơm điện cao tần áp suất Cuckoo CRP-HWF1000F – 1,8L",
     "slug": "noi-com-dien-cao-tan-ap-suat-cuckoo-crp-hwf1000f-18l",
-    "sku": "MNC4650",
+    "sku": "CRP-HWF1000F",
     "brand_names": [
       "Cuckoo"
     ],
@@ -2363,7 +2363,7 @@
     "image": "/assets/images/products/cuckoo-crp-hwf1000f-1.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-27T08:37:05.176Z"
+    "updated_at": "2026-11-06T06:50:13.384Z"
   },
   {
     "id": 2914,
