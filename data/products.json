@@ -2369,7 +2369,7 @@
     "id": 2914,
     "name": "Máy vắt cam CASO CP 330 PRO – Công suất 160W",
     "slug": "may-vat-cam-caso-cp-330-pro-cong-suat-160w",
-    "sku": "MVC1099",
+    "sku": "CP 330 PRO",
     "brand_names": [
       "CASO"
     ],
@@ -2387,7 +2387,8 @@
     "on_sale": false,
     "image": "/assets/images/products/caso-cp330-pro-1-2.webp",
     "sizes": [],
-    "updated_at": "2026-09-10T06:29:28.051Z"
+    "in_stock": true,
+    "updated_at": "2026-11-06T06:48:51.073Z"
   },
   {
     "id": 2919,
