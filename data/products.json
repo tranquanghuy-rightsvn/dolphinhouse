@@ -300,7 +300,7 @@
     "id": 2988,
     "name": "Ấm siêu tốc Philips HD9395/90 1,7L 2200W",
     "slug": "am-sieu-toc-philips-hd939590",
-    "sku": "MAS900",
+    "sku": "HD9395/90",
     "brand_names": [
       "Philips"
     ],
@@ -319,7 +319,7 @@
     "image": "/assets/images/products/am-sieu-toc-philips-hd939590/01.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-22T01:39:19.632Z"
+    "updated_at": "2026-11-06T03:00:19.915Z"
   },
   {
     "id": 2987,
