@@ -2651,7 +2651,7 @@
     "id": 2810,
     "name": "Máy Bắt Muỗi Sinh Học GKÖCH YG-M006 – Tia UV 360° Không Tiếng Ồn",
     "slug": "may-bat-muoi-sinh-hoc-gkoch-yg-m006",
-    "sku": "MBM240",
+    "sku": "YG-M006",
     "brand_names": [
       "GKÖCH"
     ],
@@ -2670,7 +2670,7 @@
     "image": "/assets/images/products/may-bat-muoi-sinh-hoc-gkoch-yg-m006-1.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-27T08:33:51.980Z"
+    "updated_at": "2026-11-06T02:08:45.640Z"
   },
   {
     "id": 2803,
