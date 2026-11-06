@@ -4772,7 +4772,7 @@
     "id": 1303,
     "name": "Máy Xay Thịt Mini Bosch MMRP1000 – Nhỏ Gọn, Lưỡi Bén Đức",
     "slug": "may-xay-thit-mini-bosch-mmrp1000-nho-gon-ben-luoi-duc-de-ve-sinh",
-    "sku": "M105",
+    "sku": "MMRP1000",
     "brand_names": [
       "Bosch"
     ],
@@ -4789,7 +4789,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/p1303-gallery-01-600x800-2.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-11-06T02:10:40.928Z"
   },
   {
     "id": 1280,
