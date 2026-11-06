@@ -2936,7 +2936,7 @@
     "id": 2728,
     "name": "Máy Sấy Hoa Quả Thực Phẩm CASO DH 450 Chuẩn Đức – 5 Khay Sấy Hẹn Giờ 48H",
     "slug": "may-say-hoa-qua-thuc-pham-caso-dh-450",
-    "sku": "MSH2750",
+    "sku": "DH-450",
     "brand_names": [
       "CASO"
     ],
@@ -2955,7 +2955,7 @@
     "image": "/assets/images/products/caso-dh450-gallery-1.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-27T08:35:21.086Z"
+    "updated_at": "2026-11-06T02:09:59.717Z"
   },
   {
     "id": 2722,
