@@ -164,7 +164,7 @@
     "id": 2993,
     "name": "Máy xay sinh tố cầm tay GKÖCH B32 400ml",
     "slug": "may-xay-sinh-to-cam-tay-gkoch-b32",
-    "sku": "MX480",
+    "sku": "B32",
     "brand_names": [
       "GKÖCH"
     ],
@@ -194,7 +194,7 @@
       }
     ],
     "in_stock": true,
-    "updated_at": "2026-10-22T01:45:11.093Z"
+    "updated_at": "2026-11-06T03:06:20.497Z"
   },
   {
     "id": 2992,
