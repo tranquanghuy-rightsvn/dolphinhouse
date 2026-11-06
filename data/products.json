@@ -2496,7 +2496,7 @@
     "id": 2913,
     "name": "Máy pha cà phê Bosch TKA3M133 – Bình 1,4L, công suất 1200W",
     "slug": "may-pha-ca-phe-bosch-tka3m133-binh-14l-cong-suat-1200w",
-    "sku": "MPC1830",
+    "sku": "TKA3M133",
     "brand_names": [
       "Bosch"
     ],
@@ -2515,7 +2515,7 @@
     "image": "/assets/images/products/bosch-tka3m133-1.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-27T08:35:02.602Z"
+    "updated_at": "2026-11-06T06:48:35.023Z"
   },
   {
     "id": 2902,
