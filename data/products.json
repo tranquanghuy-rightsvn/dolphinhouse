@@ -2194,7 +2194,7 @@
     "id": 2923,
     "name": "Máy Lọc Không Khí Philips AC2220/10",
     "slug": "may-loc-khong-khi-philips-ac2220-10",
-    "sku": "MPC4600",
+    "sku": "AC2220/10",
     "brand_names": [
       "Philips"
     ],
@@ -2213,7 +2213,7 @@
     "image": "/assets/images/products/may-loc-khong-khi-philips-ac2220-10/01.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:31:25.683Z"
+    "updated_at": "2026-11-06T02:09:38.782Z"
   },
   {
     "id": 2922,
