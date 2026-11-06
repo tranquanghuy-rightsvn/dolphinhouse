@@ -2416,7 +2416,7 @@
     "id": 2912,
     "name": "Máy hút ẩm Lumias D6S-30L – Hút ẩm 30L mỗi ngày",
     "slug": "may-hut-am-lumias-d6s-30l-hut-am-30l-moi-ngay",
-    "sku": "MMHA5300",
+    "sku": "D6S-30L",
     "brand_names": [
       "Lumias"
     ],
@@ -2435,7 +2435,7 @@
     "image": "/assets/images/products/lumias-d6s-30l-1-1.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-27T08:34:15.098Z"
+    "updated_at": "2026-11-06T06:48:08.064Z"
   },
   {
     "id": 2918,
