@@ -545,7 +545,7 @@
     "id": 2982,
     "name": "Máy xay sinh tố SMEG BLF03 1,5 lít – Phong cách retro, nhiều chế độ",
     "slug": "may-xay-sinh-to-smeg-blf03-15-lit",
-    "sku": "MXST5550",
+    "sku": "BLF03",
     "brand_names": [
       "SMEG"
     ],
@@ -580,7 +580,7 @@
       }
     ],
     "in_stock": true,
-    "updated_at": "2026-10-22T01:45:21.344Z"
+    "updated_at": "2026-11-06T03:06:42.800Z"
   },
   {
     "id": 2981,
