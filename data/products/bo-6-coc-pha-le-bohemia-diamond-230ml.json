@@ -31,9 +31,9 @@
   ],
   "images": [
     {
-      "src": "/assets/images/products/bo-6-coc-pha-le-bohemia-diamond-230ml-ti-hinh-1.jpg",
-      "thumbnail": "/assets/images/products/bo-6-coc-pha-le-bohemia-diamond-230ml-ti-hinh-1.jpg",
-      "alt": "Bộ 6 Cốc Pha Lê Bohemia Diamond 230ml Tiệp Khắc – Vân Kim Cương Khúc Xạ Ánh Sáng Sang Trọng - Hình 1"
+      "src": "/assets/images/products/bo-6-coc-pha-le-bohemia-diamond-230ml/01.jpg",
+      "thumbnail": "/assets/images/products/bo-6-coc-pha-le-bohemia-diamond-230ml/01.jpg",
+      "alt": "Bộ 6 Cốc Pha Lê Bohemia Diamond 230ml Tiệp Khắc – Vân Kim Cương Khúc Xạ Ánh Sáng Sang Trọng - Hình 1 chính hãng tại Dolphin House"
     },
     {
       "src": "/assets/images/products/bo-6-coc-pha-le-bohemia-diamond-230ml-ti-hinh-2.jpg",
@@ -62,5 +62,5 @@
     "Bohemia"
   ],
   "smart": null,
-  "updated_at": "2026-11-06T02:04:49.519Z"
+  "updated_at": "2026-11-06T07:12:17.267Z"
 }
