@@ -3743,7 +3743,7 @@
     "id": 1820,
     "name": "Nồi chiên không dầu Philips NA230/00 6,2 lít",
     "slug": "noi-chien-khong-dau-philips-na230-00",
-    "sku": "MK1950",
+    "sku": "NA230/00",
     "brand_names": [
       "Philips"
     ],
@@ -3762,7 +3762,7 @@
     "image": "/assets/images/products/philips-na230-00-hero-gallery-v4.2.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-06T03:32:12.747Z"
+    "updated_at": "2026-11-06T06:50:03.681Z"
   },
   {
     "id": 1809,
