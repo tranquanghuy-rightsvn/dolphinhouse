@@ -5419,7 +5419,7 @@
     "id": 950,
     "name": "Thùng Rác Thông Minh Treo Tủ Letek LC05 – 5 Lít, Inox",
     "slug": "thung-rac-thong-minh-letek-lc05",
-    "sku": "ML660",
+    "sku": "LC05",
     "brand_names": [
       "Letek"
     ],
@@ -5438,6 +5438,6 @@
     "image": "/assets/images/products/Letek-LC05.3.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-06T02:14:41.376Z"
+    "updated_at": "2026-11-06T06:51:37.363Z"
   }
 ]
