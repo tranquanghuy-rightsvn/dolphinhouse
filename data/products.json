@@ -1943,7 +1943,7 @@
     "id": 2934,
     "name": "Máy hút chân không De Muller Đức",
     "slug": "may-hut-chan-khong-de-muller-duc",
-    "sku": "MH710",
+    "sku": "DM-VS30",
     "brand_names": [
       "De Muller"
     ],
@@ -1962,7 +1962,7 @@
     "image": "/assets/images/products/may-hut-chan-khong-de-muller-duc/02.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-06T06:48:15.319Z"
+    "updated_at": "2026-11-06T06:52:26.141Z"
   },
   {
     "id": 2933,
