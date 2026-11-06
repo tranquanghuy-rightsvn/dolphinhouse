@@ -1783,7 +1783,7 @@
     "id": 2940,
     "name": "Bàn chải điện Philips Sonicare HX3641/41",
     "slug": "ban-chai-dien-philips-sonicare-hx3641-41",
-    "sku": "MBC950",
+    "sku": "HX3641/41",
     "brand_names": [
       "Philips"
     ],
@@ -1802,7 +1802,7 @@
     "image": "/assets/images/products/ban-chai-dien-philips-sonicare-hx3641-41/06.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-22T02:21:10.374Z"
+    "updated_at": "2026-11-06T03:00:36.858Z"
   },
   {
     "id": 2939,
