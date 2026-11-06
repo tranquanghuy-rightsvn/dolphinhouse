@@ -3207,7 +3207,7 @@
     "id": 2563,
     "name": "Máy xay cầm tay SMEG HBF03",
     "slug": "may-xay-smeg-hbf03",
-    "sku": "MSM3350",
+    "sku": "HBF03",
     "brand_names": [
       "SMEG"
     ],
@@ -3226,7 +3226,7 @@
     "image": "/assets/images/products/gallery-01-3.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-10-27T08:35:58.671Z"
+    "updated_at": "2026-11-06T06:49:33.141Z"
   },
   {
     "id": 2553,
