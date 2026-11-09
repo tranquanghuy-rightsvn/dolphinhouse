@@ -58,5 +58,17 @@
   {
     "name": "cham soc em be",
     "slug": "cham-soc-em-be"
+  },
+  {
+    "name": "cach dat may bat muoi",
+    "slug": "cach-dat-may-bat-muoi"
+  },
+  {
+    "name": "huong dan su dung",
+    "slug": "huong-dan-su-dung"
+  },
+  {
+    "name": "kinh nghiem hay",
+    "slug": "kinh-nghiem-hay"
   }
 ]
