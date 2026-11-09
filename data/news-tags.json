@@ -26,5 +26,25 @@
   {
     "name": "ban-la-hoi-nuoc",
     "slug": "ban-la-hoi-nuoc"
+  },
+  {
+    "name": "may bat muoi thong minh",
+    "slug": "may-bat-muoi-thong-minh"
+  },
+  {
+    "name": "may bat muoi sinh hoc",
+    "slug": "may-bat-muoi-sinh-hoc"
+  },
+  {
+    "name": "den bat muoi",
+    "slug": "den-bat-muoi"
+  },
+  {
+    "name": "gkoch",
+    "slug": "gkoch"
+  },
+  {
+    "name": "diet muoi an toan",
+    "slug": "diet-muoi-an-toan"
   }
 ]
