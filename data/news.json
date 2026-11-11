@@ -103,8 +103,13 @@
     "categories": [
       "kinh-nghiem-chon-do-gia-dung"
     ],
-    "tags": [],
-    "updated_at": "2026-10-30T07:22:29.376Z"
+    "tags": [
+      "noi-gang",
+      "noi-gang-trang-men",
+      "kinh-nghiem-dung-noi-gang",
+      "nha-bep-cao-cap"
+    ],
+    "updated_at": "2026-11-11T07:15:31.527Z"
   },
   {
     "slug": "noi-gang-nau-mon-gi-ngon",
