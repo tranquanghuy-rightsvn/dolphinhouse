@@ -114,5 +114,9 @@
   {
     "name": "kinh-nghiem-dung-noi-gang",
     "slug": "kinh-nghiem-dung-noi-gang"
+  },
+  {
+    "name": "mon-ngon-tu-noi-gang",
+    "slug": "mon-ngon-tu-noi-gang"
   }
 ]
