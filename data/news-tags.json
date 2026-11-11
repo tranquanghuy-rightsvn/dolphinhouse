@@ -102,5 +102,17 @@
   {
     "name": "dung-cu-nha-bep-thong-minh",
     "slug": "dung-cu-nha-bep-thong-minh"
+  },
+  {
+    "name": "noi-gang",
+    "slug": "noi-gang"
+  },
+  {
+    "name": "noi-gang-dung-bep-tu",
+    "slug": "noi-gang-dung-bep-tu"
+  },
+  {
+    "name": "kinh-nghiem-dung-noi-gang",
+    "slug": "kinh-nghiem-dung-noi-gang"
   }
 ]
