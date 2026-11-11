@@ -142,8 +142,13 @@
     "categories": [
       "kinh-nghiem-chon-do-gia-dung"
     ],
-    "tags": [],
-    "updated_at": "2026-10-30T08:46:17.054Z"
+    "tags": [
+      "noi-gang",
+      "noi-gang-dung-bep-tu",
+      "noi-gang-trang-men",
+      "kinh-nghiem-dung-noi-gang"
+    ],
+    "updated_at": "2026-11-11T07:14:53.714Z"
   },
   {
     "slug": "hang-moos",
