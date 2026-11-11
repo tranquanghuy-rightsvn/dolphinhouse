@@ -149,8 +149,13 @@
     "categories": [
       "review-san-pham-cao-cap"
     ],
-    "tags": [],
-    "updated_at": "2026-11-04T08:50:27.646Z"
+    "tags": [
+      "hang-moos",
+      "noi-gang-moos",
+      "do-gia-dung-moos",
+      "noi-gang-trang-men"
+    ],
+    "updated_at": "2026-11-11T07:14:32.732Z"
   },
   {
     "slug": "so-sanh-inox-bep",
