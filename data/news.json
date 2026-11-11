@@ -116,8 +116,12 @@
     "categories": [
       "kinh-nghiem-chon-do-gia-dung"
     ],
-    "tags": [],
-    "updated_at": "2026-10-30T08:05:50.423Z"
+    "tags": [
+      "noi-gang",
+      "mon-ngon-tu-noi-gang",
+      "kinh-nghiem-dung-noi-gang"
+    ],
+    "updated_at": "2026-11-11T07:15:07.616Z"
   },
   {
     "slug": "tai-sao-noi-gang-lai-nang",
