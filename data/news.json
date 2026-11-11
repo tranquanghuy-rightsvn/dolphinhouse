@@ -133,8 +133,12 @@
     "categories": [
       "kinh-nghiem-chon-do-gia-dung"
     ],
-    "tags": [],
-    "updated_at": "2026-10-30T08:46:34.643Z"
+    "tags": [
+      "noi-gang",
+      "noi-gang-trang-men",
+      "kinh-nghiem-dung-noi-gang"
+    ],
+    "updated_at": "2026-11-11T07:15:21.115Z"
   },
   {
     "slug": "noi-gang-la-gi-noi-gang-co-dung-duoc-cho-bep-tu",
