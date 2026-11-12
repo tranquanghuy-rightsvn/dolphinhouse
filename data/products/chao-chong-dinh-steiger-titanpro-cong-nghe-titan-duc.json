@@ -24,9 +24,9 @@
   "review_count": 0,
   "categories": [
     {
-      "id": 42,
-      "name": "Bếp thông minh & dụng cụ nấu ăn",
-      "slug": "do-dung-nha-bep"
+      "id": 100,
+      "name": "Nồi chảo cao cấp",
+      "slug": "chao"
     }
   ],
   "images": [
@@ -88,5 +88,5 @@
     "Steiger"
   ],
   "smart": null,
-  "updated_at": "2026-11-12T07:47:06.906Z"
+  "updated_at": "2026-11-12T07:48:51.084Z"
 }
