@@ -5211,6 +5211,11 @@
         "id": 51,
         "name": "Thiết bị gia dụng thông minh",
         "slug": "san-pham-thong-minh"
+      },
+      {
+        "id": 101,
+        "name": "Vệ sinh nhà cửa thông minh",
+        "slug": "ve-sinh-nha-cua"
       }
     ],
     "prices": {
@@ -5221,7 +5226,7 @@
     "image": "/assets/images/products/robot-hut-bui-MEDION-S05-SW-1-optimized.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-12T07:11:16.715Z"
+    "updated_at": "2026-11-12T07:49:13.262Z"
   },
   {
     "id": 1000,
