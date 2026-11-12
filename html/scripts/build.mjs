@@ -9,6 +9,7 @@ import { loadDataFile } from "./lib/load-data.mjs";
 import { loadCms } from "./lib/cms-data.mjs";
 import { smartHead } from "./lib/smart.mjs";
 import { bannerPicture } from "./lib/responsive-images.mjs";
+import { sizeAttrs, addImageSizes, missingImages } from "./lib/image-size.mjs";
 import {
   page,
   productCardHtml,
@@ -198,7 +199,7 @@ function buildHome() {
   const latestPosts = BLOG_POSTS.slice(0, 8);
   const newsCardHtml = (p) => `
     <article class="dh-home-news-card">
-      <a class="blog-card-thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}" loading="lazy"></a>
+      <a class="blog-card-thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}"${sizeAttrs(p.heroImg)} loading="lazy" decoding="async"></a>
       <div class="blog-card-body">
         <a class="blog-card-title" href="/${p.slug}/">${p.title}</a>
         <div class="blog-card-date">Ngày cập nhật <strong>${p.date}</strong></div>
@@ -239,7 +240,7 @@ function buildHome() {
           <div class="dh-home-category-product${p.in_stock === false ? " is-out-of-stock" : ""}">
             <a class="dh-home-category-product-link" href="/san-pham/${p.slug}/">
               ${p.in_stock === false ? '<span class="stock-out-badge">Hết hàng</span>' : ""}
-              <img src="${p.img}" alt="${safeName}" loading="lazy">
+              <img src="${p.img}" alt="${safeName}"${sizeAttrs(p.img)} loading="lazy" decoding="async">
               <span class="dh-home-category-product-body">
                 <strong>${p.title}</strong>
                 ${p.del ? `<del>${p.del}</del>` : ""}
@@ -423,15 +424,15 @@ function buildHome() {
 function paginationHtml(basePath, totalPages, currentPage) {
   if (totalPages <= 1) return "";
   const pageHref = (p) => (p === 1 ? basePath : `${basePath}page/${p}/`);
+  // Every page number is linked (audit L2): with "1 … 4" the products on the
+  // skipped pages were several clicks deep and rarely crawled. The largest
+  // listing has ~13 pages, so the full row stays short.
   let html = "";
+  if (currentPage > 1) html += `<a href="${pageHref(currentPage - 1)}" rel="prev" aria-label="Trang trước">←</a>`;
   for (let p = 1; p <= totalPages; p++) {
-    if (p === 1 || p === totalPages || Math.abs(p - currentPage) <= 1) {
-      html += p === currentPage ? `<span class="current">${p}</span>` : `<a href="${pageHref(p)}">${p}</a>`;
-    } else if (html.slice(-10).indexOf("…") === -1) {
-      html += `<span>…</span>`;
-    }
+    html += p === currentPage ? `<span class="current" aria-current="page">${p}</span>` : `<a href="${pageHref(p)}">${p}</a>`;
   }
-  if (currentPage < totalPages) html += `<a href="${pageHref(currentPage + 1)}">→</a>`;
+  if (currentPage < totalPages) html += `<a href="${pageHref(currentPage + 1)}" rel="next" aria-label="Trang sau">→</a>`;
   return html;
 }
 
@@ -466,7 +467,7 @@ function buildListing({ basePath, title, description, banner, activePath, produc
     const bodyMain = `
 <main class="container listing-page">
   <nav class="breadcrumb">${breadcrumb}</nav>
-  ${banner ? `<div class="listing-banner"><img src="${banner}" alt="Banner danh mục ${title}" loading="eager"></div>` : ""}
+  ${banner ? `<div class="listing-banner"><img src="${banner}" alt="Banner danh mục ${title}"${sizeAttrs(banner)} loading="eager"></div>` : ""}
   <div class="listing-main">
     <h1 class="listing-title">${title}</h1>
     ${description ? `<div class="listing-description">${description}</div>` : ""}
@@ -705,6 +706,99 @@ function trustListHtml() {
   </aside>`;
 }
 
+// "Sản phẩm tương tự" (audit L3). Candidates in order of closeness: same
+// subcategory → same parent category → same brand → other shared category. Within a tier, in-stock
+// first, then the products that have been linked the fewest times so far in
+// this build — so links spread across the whole catalogue instead of always
+// pointing at the first few products of a category. Deterministic: same data,
+// same HTML.
+const RELATED_COUNT = 8;
+const SAME_BRAND_COUNT = 4;
+const inlinks = new Map();
+function stableHash(str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 16777619);
+  return h >>> 0;
+}
+// Some top-level categories cut across the others ("Gia dụng châu Âu" holds
+// cast-iron pots and bathroom taps alike), so sharing one says little. The
+// categories that matter most are a product's subcategories, then the parents
+// of those subcategories; its other top-level categories come last.
+function categoryRanks(p) {
+  const child = new Set();
+  const primaryTop = new Set();
+  const tops = [];
+  for (const { slug } of p.categories) {
+    const c = CATEGORIES.find((x) => x.slug === slug);
+    if (!c) continue;
+    if (c.parent) {
+      child.add(slug);
+      const parent = CATEGORIES.find((x) => x.id === c.parent);
+      if (parent) primaryTop.add(parent.slug);
+    } else tops.push(slug);
+  }
+  if (!child.size) tops.forEach((t) => primaryTop.add(t));
+  const otherTop = new Set(tops.filter((t) => !primaryTop.has(t)));
+  return { child, primaryTop, otherTop };
+}
+function familyOf(p) {
+  const fam = new Set();
+  for (const { slug } of p.categories) {
+    fam.add(slug);
+    const c = CATEGORIES.find((x) => x.slug === slug);
+    const parent = c && c.parent ? CATEGORIES.find((x) => x.id === c.parent) : null;
+    if (parent) fam.add(parent.slug);
+  }
+  return fam;
+}
+function rankAndTake(product, candidates, tierOf, count) {
+  const picked = candidates
+    .map((p) => ({ p, tier: tierOf(p) }))
+    .filter((x) => x.tier < 9)
+    .sort(
+      (a, b) =>
+        a.tier - b.tier ||
+        (a.p.in_stock === false) - (b.p.in_stock === false) ||
+        (inlinks.get(a.p.slug) || 0) - (inlinks.get(b.p.slug) || 0) ||
+        stableHash(product.slug + a.p.slug) - stableHash(product.slug + b.p.slug)
+    )
+    .slice(0, count)
+    .map((x) => x.p);
+  for (const p of picked) inlinks.set(p.slug, (inlinks.get(p.slug) || 0) + 1);
+  return picked;
+}
+function pickRelated(product) {
+  const mine = categoryRanks(product);
+  const brand = product.brand_names[0];
+  const others = PRODUCTS.filter((p) => p.slug !== product.slug);
+  const close = rankAndTake(
+    product,
+    others,
+    (p) => {
+      const fam = familyOf(p);
+      if ([...mine.child].some((s) => fam.has(s))) return 0;
+      if ([...mine.primaryTop].some((s) => fam.has(s))) return 1;
+      if (brand && p.brand_names.includes(brand)) return 2;
+      if ([...mine.otherTop].some((s) => fam.has(s))) return 3;
+      return 9;
+    },
+    RELATED_COUNT
+  );
+  // A product alone in its category and brand still gets a few cards.
+  return close.length ? close : rankAndTake(product, others, () => 0, 4);
+}
+// "Sản phẩm khác của <thương hiệu>" (audit L4): the same brand, minus what is
+// already in the block above.
+function pickSameBrand(product, brandName, exclude) {
+  const skip = new Set([product.slug, ...exclude.map((p) => p.slug)]);
+  return rankAndTake(
+    product,
+    PRODUCTS.filter((p) => !skip.has(p.slug) && p.brand_names.includes(brandName)),
+    () => 0,
+    SAME_BRAND_COUNT
+  );
+}
+
 function buildProducts() {
   for (const product of PRODUCTS) {
     const cat = product.categories[0];
@@ -736,10 +830,9 @@ function buildProducts() {
     const safeName = product.name.replace(/"/g, "&quot;");
     const inStock = product.in_stock !== false;
 
-    const related = PRODUCTS.filter(
-      (p) => p.slug !== product.slug && p.categories.some((c) => cat && c.slug === cat.slug)
-    ).slice(0, 4);
-    const fallback = related.length ? related : PRODUCTS.filter((p) => p.slug !== product.slug).slice(0, 4);
+    const related = pickRelated(product);
+    const brandName = product.brand_names[0];
+    const sameBrand = brandName ? pickSameBrand(product, brandName, related) : [];
 
     const bodyMain = `
 <main class="container">
@@ -749,9 +842,9 @@ function buildProducts() {
   <div id="product-root">
     <div class="product-detail">
       <div>
-        <div class="gallery-main${inStock ? "" : " is-out-of-stock"}">${inStock ? "" : '<span class="stock-out-badge">Hết hàng</span>'}<img id="gallery-main-img" src="${images[0].src}" alt="${images[0].alt}"></div>
+        <div class="gallery-main${inStock ? "" : " is-out-of-stock"}">${inStock ? "" : '<span class="stock-out-badge">Hết hàng</span>'}<img id="gallery-main-img" src="${images[0].src}" alt="${images[0].alt}"${sizeAttrs(images[0].src)} fetchpriority="high"></div>
         <div class="gallery-thumbs" id="gallery-thumbs">
-          ${images.map((im, i) => `<img src="${im.thumbnail || im.src}" data-full="${im.src}" alt="${im.alt}" class="${i === 0 ? "active" : ""}">`).join("")}
+          ${images.map((im, i) => `<img src="${im.thumbnail || im.src}" data-full="${im.src}" alt="${im.alt}"${sizeAttrs(im.thumbnail || im.src)} loading="lazy" decoding="async" class="${i === 0 ? "active" : ""}">`).join("")}
         </div>
       </div>
 
@@ -789,7 +882,7 @@ function buildProducts() {
     <section class="description-section">
       <span class="description-tab-head">MÔ TẢ SẢN PHẨM</span>
       <div class="description-body" id="description-body">
-        ${stripEmojiInHeadings(product.description) || "<p>Đang cập nhật mô tả sản phẩm.</p>"}
+        ${addImageSizes(stripEmojiInHeadings(product.description)) || "<p>Đang cập nhật mô tả sản phẩm.</p>"}
         <div class="description-fade"></div>
       </div>
       <button class="expand-toggle" id="expand-toggle">Xem thêm ▼</button>
@@ -797,8 +890,15 @@ function buildProducts() {
 
     <section class="section related-section">
       <h2>Sản phẩm tương tự</h2>
-      <div class="product-grid" id="related-grid">${fallback.map(productCardHtml).join("")}</div>
+      <div class="product-grid" id="related-grid">${related.map(productCardHtml).join("")}</div>
+      ${catHref ? `<p class="related-more"><a class="link-arrow" href="${catHref}">Xem tất cả ${cat.name} →</a></p>` : ""}
     </section>
+    ${sameBrand.length ? `
+    <section class="section related-section">
+      <h2>Sản phẩm khác của ${brandName}</h2>
+      <div class="product-grid">${sameBrand.map(productCardHtml).join("")}</div>
+      <p class="related-more"><a class="link-arrow" href="${brandUrl(brandName)}">Xem tất cả sản phẩm ${brandName} →</a></p>
+    </section>` : ""}
   </div>
 
   <div class="dh-modal-overlay" id="contact-modal-overlay" hidden>
@@ -808,7 +908,7 @@ function buildProducts() {
       <p class="dh-modal-hotline">Hotline: <strong>086 6393 892</strong></p>
 
       <div class="dh-modal-product">
-        <img src="${images[0].src}" alt="${safeName}">
+        <img src="${images[0].src}" alt="${safeName}"${sizeAttrs(images[0].src)} loading="lazy">
         <div class="dh-modal-product-body">
           <strong>${product.name}</strong>
           <span>${formatVnd(product.prices.price)}</span>
@@ -1089,6 +1189,90 @@ function pruneOrphanPostDirs() {
 // empty by default) — marked noindex in their own page() call, kept out of
 // the sitemap here too so we don't ask Google to index a page we told it not to.
 const NOINDEX_PATHS = ["/gio-hang/", "/thanh-toan/"];
+// /feed.xml (RSS 2.0, 20 newest posts) and /llms.txt (a plain Markdown map of
+// the site for AI assistants) — audit G8. Both are rebuilt from the same data
+// as the pages, so they can never list something the site does not have.
+function xmlEsc(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function buildFeedAndLlms() {
+  const plain = (s) => String(s || "").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+  const rfc822 = (iso) => new Date(`${iso}T08:00:00+07:00`).toUTCString();
+  const posts = BLOG_POSTS.slice(0, 20);
+  const items = posts
+    .map((p) => {
+      const url = absUrl(`/${p.slug}/`);
+      return `    <item>
+      <title>${xmlEsc(plain(p.title))}</title>
+      <link>${url}</link>
+      <guid isPermaLink="true">${url}</guid>
+      <pubDate>${rfc822(p.dateIso)}</pubDate>
+      <description>${xmlEsc(metaDescription(p.excerpt || p.body, 300))}</description>
+    </item>`;
+    })
+    .join("\n");
+  writeFileSync(
+    join(ROOT, "feed.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tin tức Dolphin House</title>
+    <link>${SITE_URL}/tin-tuc/</link>
+    <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Kinh nghiệm chọn đồ gia dụng, mẹo dùng và bảo quản thiết bị nhà bếp từ Dolphin House.</description>
+    <language>vi</language>
+${posts.length ? `    <lastBuildDate>${rfc822(latestDate(posts))}</lastBuildDate>\n` : ""}${items}
+  </channel>
+</rss>
+`
+  );
+
+  const roots = CATEGORIES.filter((c) => c.parent === 0);
+  const catLines = roots
+    .map((r) => {
+      const kids = CATEGORIES.filter((c) => c.parent === r.id);
+      const head = `- [${plain(r.name)}](${absUrl(categoryUrl(r, CATEGORIES))}): ${productsForCategory(r.slug).length} sản phẩm`;
+      return [head, ...kids.map((k) => `  - [${plain(k.name)}](${absUrl(categoryUrl(k, CATEGORIES))})`)].join("\n");
+    })
+    .join("\n");
+  const postLines = BLOG_POSTS.map((p) => `- [${plain(p.title)}](${absUrl(`/${p.slug}/`)})${p.excerpt ? `: ${metaDescription(p.excerpt, 200)}` : ""}`).join("\n");
+  const policies = [
+    ["Chính sách bảo hành & đổi trả", "/chinh-sach-bao-hanh-doi-tra/"],
+    ["Chính sách vận chuyển", "/hinh-thuc-van-chuyen/"],
+    ["Hình thức thanh toán", "/hinh-thuc-thanh-toan/"],
+    ["Cam kết chất lượng", "/cam-ket-chat-luong/"],
+    ["Chính sách bảo mật", "/chinh-sach-bao-mat/"],
+    ["Điều khoản sử dụng", "/dieu-khoan-su-dung/"],
+  ]
+    .map(([t, u]) => `- [${t}](${absUrl(u)})`)
+    .join("\n");
+  writeFileSync(
+    join(ROOT, "llms.txt"),
+    `# Dolphin House
+
+> Dolphin House (dolphinhouse.vn) bán đồ gia dụng thông minh, thiết bị nhà bếp và điện gia dụng, giao hàng toàn quốc.
+
+- Địa chỉ: S219 Đại Dương 8, Vinhomes Ocean Park, Gia Lâm, Hà Nội
+- Hotline: 086 639 3892
+- Email: dolphinhouse.vn@gmail.com
+- Cửa hàng: ${absUrl("/cua-hang/")} (${PRODUCTS.length} sản phẩm)
+- Thương hiệu: ${absUrl("/thuong-hieu/")}
+
+## Danh mục sản phẩm
+
+${catLines}
+
+## Bài viết
+
+${postLines}
+
+## Chính sách
+
+${policies}
+`
+  );
+}
+
 function buildRobotsAndSitemap() {
   const urls = generatedPaths
     .filter((p) => !p.includes("/page/") && !NOINDEX_PATHS.includes(p))
@@ -1321,7 +1505,16 @@ buildSimplePage(write, CATEGORIES, {
 buildCartPage();
 buildCheckoutPage();
 buildRobotsAndSitemap();
+buildFeedAndLlms();
 build404();
+
+// Images referenced by pages but missing from html/assets (audit T6): a build
+// warning, not a failure — the page still publishes, but the list shows what
+// to fix in the CMS.
+if (missingImages.size) {
+  console.warn(`WARNING: ${missingImages.size} image(s) referenced but not found:`);
+  for (const src of [...missingImages].sort()) console.warn(`  ${src}`);
+}
 
 const BRAND_COUNT = getBrands().length;
 console.log(

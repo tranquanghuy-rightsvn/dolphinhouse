@@ -1,6 +1,7 @@
 // Shared HTML partials: header/footer/nav (previously built at runtime by js/common.js
 // renderHeader()/renderFooter()) and the product-card markup, now emitted at build time.
 import { CATEGORY_ICONS, hexToRgba } from "./mega-menu-icons.mjs";
+import { sizeAttrs } from "./image-size.mjs";
 
 // Real production domain (confirmed by the site owner) — used to emit
 // absolute canonical/OG URLs and the sitemap.xml, since this static build
@@ -410,7 +411,7 @@ export function productCardHtml(p) {
   return `
     <div class="product-card${p.in_stock === false ? " is-out-of-stock" : ""}">
       ${p.in_stock === false ? '<span class="stock-out-badge">Hết hàng</span>' : isSale ? '<span class="onsale">Giảm giá!</span>' : ""}
-      <a class="thumb" href="/san-pham/${p.slug}/"><img src="${img}" alt="${p.name}" loading="lazy"></a>
+      <a class="thumb" href="/san-pham/${p.slug}/"><img src="${img}" alt="${p.name}"${sizeAttrs(img)} loading="lazy" decoding="async"></a>
       <h3><a href="/san-pham/${p.slug}/">${p.name}</a></h3>
       <div class="price-row">${priceHtml}</div>
       <button type="button" class="dh-cart-add-btn"${p.in_stock === false ? " disabled" : ""} data-slug="${p.slug}" data-name="${safeName}" data-size="${p.sizes && p.sizes.length ? p.sizes[0].name : ""}" data-price="${price.price}" data-image="${img}" aria-label="Thêm ${safeName} vào giỏ hàng">
@@ -483,6 +484,7 @@ ${canonical ? `<meta property="og:url" content="${canonical}">` : ""}
 <meta name="twitter:title" content="${escapeAttr(title)}">
 <meta name="twitter:description" content="${escapeAttr(metaDescription)}">
 <meta name="twitter:image" content="${ogImage}">
+<link rel="alternate" type="application/rss+xml" title="Tin tức Dolphin House" href="/feed.xml">
 <link rel="stylesheet" href="/css/styles.css">
 ${extraHead ? `${extraHead}\n` : ""}${ld}
 </head>

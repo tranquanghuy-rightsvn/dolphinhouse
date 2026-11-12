@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 import { page, absUrl, stripHtml, truncate, breadcrumbLd, formatVnd, faqLd, faqSectionHtml, metaDescription, seoTitle, stripEmojiInHeadings } from "./partials.mjs";
 import { loadCms } from "./cms-data.mjs";
 import { smartHead } from "./smart.mjs";
+import { sizeAttrs, addImageSizes } from "./image-size.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 // Hand-written page bodies (gioi thieu, policy pages) — not CMS content.
@@ -40,7 +41,7 @@ function productListWidgetHtml(items, title) {
   const rows = items
     .map(
       (p) => `
-    <li><a class="link_recent_thumb" href="/san-pham/${p.slug}/"><img src="${p.images[0] ? p.images[0].src : ""}" alt="${p.name}"></a>
+    <li><a class="link_recent_thumb" href="/san-pham/${p.slug}/"><img src="${p.images[0] ? p.images[0].src : ""}" alt="${p.name}"${sizeAttrs(p.images[0] && p.images[0].src)} loading="lazy" decoding="async"></a>
       <div><a href="/san-pham/${p.slug}/">${p.name}</a><span class="bestseller-price">${formatVnd(p.prices.price)}</span></div>
     </li>`
     )
@@ -77,7 +78,7 @@ function sidebarCategoriesTags() {
 function sidebarRecentPosts({ withFeatured = false } = {}) {
   const items = BLOG_POSTS.map(
     (p) => `
-    <li><a class="link_recent_thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}"></a>
+    <li><a class="link_recent_thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}"${sizeAttrs(p.heroImg)} loading="lazy" decoding="async"></a>
       <div><a href="/${p.slug}/">${p.title}</a><small>${p.date}</small></div>
     </li>`
   ).join("");
@@ -94,7 +95,7 @@ function sidebarRecentPosts({ withFeatured = false } = {}) {
 function postCardHtml(p) {
   return `
   <article class="blog-card">
-    <a class="blog-card-thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}" loading="lazy"></a>
+    <a class="blog-card-thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}"${sizeAttrs(p.heroImg)} loading="lazy" decoding="async"></a>
     <div class="blog-card-body">
       <a class="blog-card-title" href="/${p.slug}/">${p.title}</a>
       <div class="blog-card-date">Ngày đăng <strong>${p.date}</strong></div>
@@ -125,7 +126,7 @@ function relatedPostsHtml(currentSlug) {
     <div class="related-grid">
       ${related.map((p) => `
       <a class="related-item" href="/${p.slug}/">
-        <img src="${p.heroImg}" alt="${p.title}" loading="lazy">
+        <img src="${p.heroImg}" alt="${p.title}"${sizeAttrs(p.heroImg)} loading="lazy" decoding="async">
         <span>${p.title}</span>
         <small>${p.date}</small>
       </a>`).join("")}
@@ -201,7 +202,7 @@ export function buildBlogPosts(write, categories) {
         <div class="post-info"><span>Đăng ngày ${p.date}</span>${p.modifiedIso ? `<span>Cập nhật ngày ${displayIso(p.modifiedIso)}</span>` : ""}${p.views ? `<span>${p.views}</span>` : ""}</div>
         ${taxonomyBadgesHtml(p)}
       </header>
-      <div class="tinymce">${stripEmojiInHeadings(p.body)}</div>
+      <div class="tinymce">${addImageSizes(stripEmojiInHeadings(p.body))}</div>
       <nav class="post-navigation">
         ${prev ? `<a class="nav-prev" href="/${prev.slug}/"><small>Bài trước</small>${prev.title}</a>` : "<span></span>"}
         ${next ? `<a class="nav-next" href="/${next.slug}/"><small>Bài tiếp</small>${next.title}</a>` : ""}
