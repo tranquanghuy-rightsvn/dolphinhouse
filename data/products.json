@@ -2395,7 +2395,9 @@
     "name": "Máy lọc không khí LG ALPHA PET 2 tầng AS10GDBY0 – Lọc bụi và mùi thú cưng",
     "slug": "may-loc-khong-khi-lg-alpha-pet-2-tang-as10gdby0-loc-bui-va-mui-thu-cung",
     "sku": "AS10GDBY0",
-    "brand_names": [],
+    "brand_names": [
+      "LG"
+    ],
     "categories": [
       {
         "id": 8,
@@ -2411,7 +2413,7 @@
     "image": "/assets/images/products/lg-alpha-pet-as10gdby0-1.webp",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-06T06:48:26.453Z"
+    "updated_at": "2026-11-12T07:40:12.790Z"
   },
   {
     "id": 2912,
