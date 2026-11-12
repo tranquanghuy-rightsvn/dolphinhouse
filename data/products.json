@@ -5090,7 +5090,9 @@
     },
     "on_sale": true,
     "image": "/assets/images/products/p1048-gallery-01-600x800-1.jpg",
-    "updated_at": "2026-09-08T12:04:03.264Z"
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-11-12T07:02:43.433Z"
   },
   {
     "id": 1043,
