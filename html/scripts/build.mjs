@@ -1017,7 +1017,10 @@ function buildRobotsAndSitemap() {
     .map((p) => `  <url><loc>${absUrl(p)}</loc><lastmod>${BUILD_DATE}</lastmod></url>`)
     .join("\n");
   writeFileSync(join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
-  writeFileSync(join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  // Cloudflare's managed robots.txt prepends its own `User-agent: *` group, so
+  // repeating one here produced two groups for the same agent (audit T8).
+  // A file with no group at all already means "everything allowed".
+  writeFileSync(join(ROOT, "robots.txt"), `Sitemap: ${SITE_URL}/sitemap.xml\n`);
 }
 
 // Static hosts (Cloudflare Pages/Netlify/Vercel) serve this file automatically
