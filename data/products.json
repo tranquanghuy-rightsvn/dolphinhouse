@@ -1817,6 +1817,11 @@
         "id": 51,
         "name": "Thiết bị gia dụng thông minh",
         "slug": "san-pham-thong-minh"
+      },
+      {
+        "id": 101,
+        "name": "Vệ sinh nhà cửa thông minh",
+        "slug": "ve-sinh-nha-cua"
       }
     ],
     "prices": {
@@ -1827,7 +1832,7 @@
     "image": "/assets/images/products/ecovacs-winbot-w3-robot-lau-kinh/09.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-12T07:39:13.864Z"
+    "updated_at": "2026-11-12T07:49:25.094Z"
   },
   {
     "id": 2938,
