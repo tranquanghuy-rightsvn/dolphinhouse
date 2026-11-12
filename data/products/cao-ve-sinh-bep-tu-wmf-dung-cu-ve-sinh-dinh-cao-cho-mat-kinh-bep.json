@@ -32,6 +32,11 @@
       "id": 95,
       "name": "Gia dụng tiện ích",
       "slug": "gia-dung-tien-ich"
+    },
+    {
+      "id": 101,
+      "name": "Vệ sinh nhà cửa thông minh",
+      "slug": "ve-sinh-nha-cua"
     }
   ],
   "images": [
@@ -62,5 +67,5 @@
     "WMF"
   ],
   "smart": null,
-  "updated_at": "2026-11-12T07:44:43.895Z"
+  "updated_at": "2026-11-12T07:49:37.706Z"
 }
