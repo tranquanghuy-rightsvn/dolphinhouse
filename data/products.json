@@ -4186,9 +4186,9 @@
     ],
     "categories": [
       {
-        "id": 11,
-        "name": "Chăm sóc gia đình & phòng ngủ",
-        "slug": "chan-ga-goi-dem"
+        "id": 101,
+        "name": "Vệ sinh nhà cửa thông minh",
+        "slug": "ve-sinh-nha-cua"
       }
     ],
     "prices": {
@@ -4199,7 +4199,7 @@
     "image": "/assets/images/products/may-hut-bui-cam-tay-khong-day-gkch-a-08-hinh-1.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-12T07:05:03.344Z"
+    "updated_at": "2026-11-12T07:49:02.824Z"
   },
   {
     "id": 1528,
