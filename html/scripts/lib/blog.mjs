@@ -4,7 +4,7 @@
 import { readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { page, absUrl, stripHtml, truncate, breadcrumbLd, formatVnd, faqLd, faqSectionHtml } from "./partials.mjs";
+import { page, absUrl, stripHtml, truncate, breadcrumbLd, formatVnd, faqLd, faqSectionHtml, metaDescription, seoTitle, stripEmojiInHeadings } from "./partials.mjs";
 import { loadCms } from "./cms-data.mjs";
 import { smartHead } from "./smart.mjs";
 
@@ -190,7 +190,7 @@ export function buildBlogPosts(write, categories) {
     const prev = BLOG_POSTS[i + 1];
     const next = BLOG_POSTS[i - 1];
     const path = `/${p.slug}/`;
-    const description = truncate(p.excerpt || stripHtml(p.body), 160);
+    const description = metaDescription(p.excerpt) || metaDescription(p.body);
     const bodyMain = `
 <main class="container blog-page">
   <nav class="breadcrumb"><a href="/">Trang chủ</a> / <a href="/tin-tuc/">Tin Tức</a> / ${p.title}</nav>
@@ -201,7 +201,7 @@ export function buildBlogPosts(write, categories) {
         <div class="post-info"><span>Đăng ngày ${p.date}</span>${p.modifiedIso ? `<span>Cập nhật ngày ${displayIso(p.modifiedIso)}</span>` : ""}${p.views ? `<span>${p.views}</span>` : ""}</div>
         ${taxonomyBadgesHtml(p)}
       </header>
-      <div class="tinymce">${p.body}</div>
+      <div class="tinymce">${stripEmojiInHeadings(p.body)}</div>
       <nav class="post-navigation">
         ${prev ? `<a class="nav-prev" href="/${prev.slug}/"><small>Bài trước</small>${prev.title}</a>` : "<span></span>"}
         ${next ? `<a class="nav-next" href="/${next.slug}/"><small>Bài tiếp</small>${next.title}</a>` : ""}
@@ -227,7 +227,7 @@ export function buildBlogPosts(write, categories) {
     write(
       `${p.slug}/index.html`,
       page({
-        title: `${p.title} | Dolphin House`,
+        title: seoTitle(p.title),
         description,
         path,
         image: p.heroImg,
@@ -355,7 +355,7 @@ export function buildGioiThieu(write, categories) {
     "gioi-thieu/index.html",
     page({
       title: "Về Dolphin House | Câu Chuyện Thương Hiệu Gia Dụng Thông Minh",
-      description: truncate(stripHtml(readBody("gioithieu.body.html")), 160),
+      description: metaDescription(readBody("gioithieu.body.html")),
       path: "/gioi-thieu/",
       categories,
       activePath: "/gioi-thieu/",
@@ -419,7 +419,7 @@ export function buildLienHe(write, categories) {
 export function buildSimplePage(write, categories, { slug, title, bodyFile, faq }) {
   const pageName = title.split(" | ")[0];
   const path = `/${slug}/`;
-  const description = truncate(stripHtml(readBody(bodyFile)), 160);
+  const description = metaDescription(readBody(bodyFile));
   const bodyMain = `
 <main class="container blog-page">
   <nav class="breadcrumb"><a href="/">Trang chủ</a> / ${pageName}</nav>
@@ -488,7 +488,7 @@ export function buildVideos(write, categories) {
     const other = VIDEOS[(i + 1) % VIDEOS.length];
     const path = `/videos/${v.slug}/`;
     // The CMS description doubles as the page/meta description when present.
-    const description = v.description ? truncate(stripHtml(v.description), 160) : `${v.title} — video Dolphin House.`;
+    const description = v.description ? metaDescription(v.description) : `${v.title} — video Dolphin House.`;
     const videoLd = {
       "@context": "https://schema.org",
       "@type": "VideoObject",

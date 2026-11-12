@@ -23,6 +23,11 @@ import {
   breadcrumbLd,
   faqLd,
   faqSectionHtml,
+  metaDescription,
+  seoTitle,
+  stripEmojiInHeadings,
+  ORG_ID,
+  socialUrls,
 } from "./lib/partials.mjs";
 import { buildBlogListing, buildBlogPosts, buildBlogTaxonomies, buildGioiThieu, buildLienHe, buildVideos, buildSimplePage } from "./lib/blog.mjs";
 
@@ -353,12 +358,22 @@ function buildHome() {
   </div>
 </main>`;
 
+  // Audit G1. `sameAs` lists only real profiles (partials SOCIAL_LINKS) and is
+  // omitted while there are none. legalName/taxID go here once the business
+  // registration exists (audit G3).
+  const sameAs = socialUrls();
   const orgLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORG_ID,
     name: "Dolphin House",
+    alternateName: "dolphinhouse.vn",
     url: `${SITE_URL}/`,
     logo: absUrl("/assets/images/site/dolphin-house-logo-320x100-1.webp"),
+    description: "Dolphin House bán đồ gia dụng thông minh, thiết bị nhà bếp và điện gia dụng, giao hàng toàn quốc.",
+    email: "dolphinhouse.vn@gmail.com",
+    telephone: "+84-86-639-3892",
+    ...(sameAs.length ? { sameAs } : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: "S219 Đại Dương 8, Vinhomes Ocean Park",
@@ -371,6 +386,7 @@ function buildHome() {
       telephone: "+84-86-639-3892",
       contactType: "customer service",
       areaServed: "VN",
+      availableLanguage: "vi",
     },
   };
   const websiteLd = {
@@ -379,6 +395,7 @@ function buildHome() {
     creator: { "@type": "Organization", "@id": "https://web100.vn/#organization", name: "Web100", url: "https://web100.vn/" },
     name: "Dolphin House",
     url: `${SITE_URL}/`,
+    publisher: { "@id": ORG_ID },
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/cua-hang/?q={search_term_string}`,
@@ -428,7 +445,7 @@ function buildListing({ basePath, title, description, banner, activePath, produc
   // when there is one, otherwise a generated one from the title — never
   // left blank, unlike the visible on-page description block above it.
   const metaDescriptionBase = description
-    ? truncate(stripHtml(description), 160)
+    ? metaDescription(description)
     : `${title} chính hãng tại Dolphin House — giao hàng toàn quốc, tư vấn tận tâm, đổi trả theo chính sách.`;
   const listingImage = banner || (products[0] && products[0].images[0] && products[0].images[0].src) || undefined;
   const totalPages = Math.max(1, Math.ceil(products.length / PER_PAGE));
@@ -495,6 +512,26 @@ function buildListing({ basePath, title, description, banner, activePath, produc
       lastmod
     );
   }
+}
+
+// Some products use the size picker for colours ("Đỏ", "Vàng", "Xanh lá"), and
+// the page labelled them "Kích cỡ" (audit O6). Until the CMS has a variant-type
+// field, a picker whose every option is a colour name is labelled "Màu sắc".
+// Every word of an option (codes in brackets ignored) must be a colour word or
+// a colour modifier: "Xám nhạt (70575)", "Trắng chuôi vàng", "Tím (Pink)".
+const COLOR_VOCAB = new Set(
+  ("màu đỏ vàng xanh lá dương ngọc rêu navy mint olive lam đen trắng xám ghi hồng phấn tím cam nâu be kem bạc đồng " +
+    "gold silver black white red blue green grey gray pink cream nhạt đậm sữa pastel bóng nhám ánh kim chuôi viền nắp và")
+    .split(" ")
+);
+function isColorName(name) {
+  const words = name.replace(/\([^)]*\)/g, " ").replace(/[\/,+&-]/g, " ").trim().split(/\s+/).filter(Boolean);
+  return words.length > 0 && words.every((w) => COLOR_VOCAB.has(w));
+}
+function variantKind(sizes) {
+  if (!sizes.length) return "";
+  const names = sizes.map((sz) => String(sz.name).replace(/&amp;/g, "&").trim().toLowerCase());
+  return names.every(isColorName) ? "color" : "size";
 }
 
 // Sizes are optional per product; the first one is the price shown everywhere
@@ -681,11 +718,12 @@ function buildProducts() {
     // is also the price shown on cards and in search, so the product page opens
     // on exactly the figure that brought the visitor here.
     const sizes = product.sizes || [];
+    const variantLabel = variantKind(sizes) === "color" ? "Màu sắc" : "Kích cỡ";
     const sizeRowHtml = sizes.length
       ? `
         <div class="size-row" id="size-row">
-          <span class="size-row-label">Kích cỡ:</span>
-          <div class="size-options" role="group" aria-label="Chọn kích cỡ">
+          <span class="size-row-label">${variantLabel}:</span>
+          <div class="size-options" role="group" aria-label="Chọn ${variantLabel.toLowerCase()}">
             ${sizes
               .map(
                 (sz, i) => `<button type="button" class="size-option${i === 0 ? " is-active" : ""}" aria-pressed="${i === 0}" data-size="${sz.name}" data-price="${sz.price}" data-regular="${sz.regular_price}">${sz.name}</button>`
@@ -751,7 +789,7 @@ function buildProducts() {
     <section class="description-section">
       <span class="description-tab-head">MÔ TẢ SẢN PHẨM</span>
       <div class="description-body" id="description-body">
-        ${product.description || "<p>Đang cập nhật mô tả sản phẩm.</p>"}
+        ${stripEmojiInHeadings(product.description) || "<p>Đang cập nhật mô tả sản phẩm.</p>"}
         <div class="description-fade"></div>
       </div>
       <button class="expand-toggle" id="expand-toggle">Xem thêm ▼</button>
@@ -794,10 +832,8 @@ function buildProducts() {
 </main>`;
 
     const path = `/san-pham/${product.slug}/`;
-    const metaDescription = truncate(
-      stripHtml(product.short_description) || stripHtml(product.description) || `${product.name} chính hãng tại Dolphin House.`,
-      160
-    );
+    const metaDesc =
+      metaDescription(product.short_description) || metaDescription(product.description) || `${product.name} tại Dolphin House.`;
     const breadcrumbItems = [
       { name: "Trang chủ", url: "/" },
       ...(catHref ? [{ name: cat.name, url: catHref }] : []),
@@ -808,7 +844,8 @@ function buildProducts() {
       "@type": "Product",
       name: product.name,
       image: images.filter((im) => im.src).map((im) => absUrl(im.src)),
-      description: metaDescription,
+      "@id": `${absUrl(path)}#product`,
+      description: metaDesc,
       sku: product.sku || undefined,
       brand: product.brand_names.length ? { "@type": "Brand", name: product.brand_names[0] } : undefined,
       // More than one size means more than one price: describing it as a single
@@ -824,6 +861,8 @@ function buildProducts() {
               highPrice: String(Math.max(...sizes.map((sz) => Number(sz.price) || 0))),
               offerCount: sizes.length,
               availability: `https://schema.org/${inStock ? "InStock" : "OutOfStock"}`,
+              itemCondition: "https://schema.org/NewCondition",
+              seller: { "@type": "Organization", "@id": ORG_ID, name: "Dolphin House" },
             }
           : {
               "@type": "Offer",
@@ -831,14 +870,16 @@ function buildProducts() {
               priceCurrency: "VND",
               price: product.prices.price,
               availability: `https://schema.org/${inStock ? "InStock" : "OutOfStock"}`,
+              itemCondition: "https://schema.org/NewCondition",
+              seller: { "@type": "Organization", "@id": ORG_ID, name: "Dolphin House" },
             },
     };
 
     write(
       `san-pham/${product.slug}/index.html`,
       page({
-        title: `${product.name} | Dolphin House`,
-        description: metaDescription,
+        title: seoTitle(product.name),
+        description: metaDesc,
         path,
         image: images[0] && images[0].src,
         type: "product",

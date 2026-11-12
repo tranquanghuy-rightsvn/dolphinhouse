@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <img class="cart-page-item-thumb" src="${it.image || ""}" alt="${label}">
         <div class="cart-page-item-body">
           <a class="cart-page-item-name" href="/san-pham/${it.slug}/">${it.name}</a>
-          ${it.size ? `<div class="cart-page-item-size">Kích cỡ: <strong>${it.size}</strong></div>` : ""}
+          ${it.size ? `<div class="cart-page-item-size">Phân loại: <strong>${it.size}</strong></div>` : ""}
           <div class="cart-page-item-price">${formatVndJs(it.price)}</div>
         </div>
         <div class="cart-page-item-qty">
