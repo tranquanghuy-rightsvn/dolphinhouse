@@ -24,9 +24,9 @@
   "review_count": 0,
   "categories": [
     {
-      "id": 100,
-      "name": "Nồi chảo cao cấp",
-      "slug": "chao"
+      "id": 99,
+      "name": "Nồi & xửng hấp",
+      "slug": "xong-noi"
     }
   ],
   "images": [
@@ -57,5 +57,5 @@
     "Tefal"
   ],
   "smart": null,
-  "updated_at": "2026-11-12T07:44:33.580Z"
+  "updated_at": "2026-11-12T07:48:17.500Z"
 }
