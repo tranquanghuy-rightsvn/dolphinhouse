@@ -24,9 +24,9 @@
   "review_count": 0,
   "categories": [
     {
-      "id": 100,
-      "name": "Nồi chảo cao cấp",
-      "slug": "chao"
+      "id": 99,
+      "name": "Nồi & xửng hấp",
+      "slug": "xong-noi"
     }
   ],
   "images": [
@@ -87,5 +87,5 @@
     "GKÖCH"
   ],
   "smart": null,
-  "updated_at": "2026-11-12T06:58:54.124Z"
+  "updated_at": "2026-11-12T07:48:29.784Z"
 }
