@@ -97,7 +97,7 @@ function postCardHtml(p) {
     <a class="blog-card-thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}" loading="lazy"></a>
     <div class="blog-card-body">
       <a class="blog-card-title" href="/${p.slug}/">${p.title}</a>
-      <div class="blog-card-date">Ngày cập nhật <strong>${p.date}</strong></div>
+      <div class="blog-card-date">Ngày đăng <strong>${p.date}</strong></div>
       ${p.excerpt ? `<p class="blog-card-excerpt">${p.excerpt}</p>` : ""}
     </div>
   </article>`;
@@ -162,8 +162,20 @@ export function buildBlogListing(write, categories) {
       bodyMain,
       extraScripts: ["/js/site.js"],
       jsonLd: [breadcrumbLd([{ name: "Trang chủ", url: "/" }, { name: "Tin tức & Kinh nghiệm gia dụng", url: "/tin-tuc/" }])],
-    })
+    }),
+    latestPostDate(BLOG_POSTS)
   );
+}
+
+function displayIso(iso) {
+  const [y, m, d] = String(iso).split("-");
+  return `${d}/${m}/${y}`;
+}
+function latestPostDate(posts) {
+  return posts.reduce((best, p) => {
+    const d = p.modifiedIso || p.dateIso || "";
+    return d > best ? d : best;
+  }, "");
 }
 
 // dd/mm/yyyy (as stored for display) -> yyyy-mm-dd (ISO, required by schema.org datePublished).
@@ -186,7 +198,7 @@ export function buildBlogPosts(write, categories) {
     <article class="blog-main blog-post">
       <header class="blog-post-header">
         <h1>${p.title}</h1>
-        <div class="post-info"><span>${p.date}</span><span>${p.views}</span></div>
+        <div class="post-info"><span>Đăng ngày ${p.date}</span>${p.modifiedIso ? `<span>Cập nhật ngày ${displayIso(p.modifiedIso)}</span>` : ""}${p.views ? `<span>${p.views}</span>` : ""}</div>
         ${taxonomyBadgesHtml(p)}
       </header>
       <div class="tinymce">${p.body}</div>
@@ -205,7 +217,8 @@ export function buildBlogPosts(write, categories) {
       headline: p.title,
       image: [absUrl(p.heroImg)],
       datePublished: isoDate(p.date),
-      dateModified: isoDate(p.date),
+      // Real edit date from the CMS record (audit A4); same as published when never edited.
+      dateModified: p.modifiedIso || isoDate(p.date),
       author: { "@type": "Organization", name: "Dolphin House" },
       publisher: { "@type": "Organization", name: "Dolphin House", logo: { "@type": "ImageObject", url: absUrl("/assets/images/site/dolphin-house-logo-320x100-1.webp") } },
       mainEntityOfPage: absUrl(path),
@@ -225,7 +238,8 @@ export function buildBlogPosts(write, categories) {
         extraScripts: ["/js/site.js"].concat(p.smartCss != null ? ["/js/smart.js"] : []),
         extraHead: smartHead(p.smartCss),
         jsonLd: [articleLd, breadcrumbLd([{ name: "Trang chủ", url: "/" }, { name: "Tin Tức", url: "/tin-tuc/" }, { name: p.title, url: path }])],
-      })
+      }),
+      p.modifiedIso || p.dateIso
     );
   }
 }
@@ -234,7 +248,7 @@ export function buildBlogPosts(write, categories) {
 // categories at /category/<slug>/ — renamed here to /danh-muc-tin-tuc/<slug>/
 // to keep it unambiguous next to the product taxonomy at /danh-muc/<slug>/.
 // Tag archives keep the live /tag/<slug>/ path unchanged.
-function taxonomyArchive(write, categories, { basePath, kicker, name, breadcrumbLabel, description, posts }) {
+function taxonomyArchive(write, categories, { basePath, kicker, name, breadcrumbLabel, description, posts, robots }) {
   const cards = posts.map(postCardHtml).join("");
   const path = `/${basePath}`;
   const bodyMain = `
@@ -259,9 +273,16 @@ function taxonomyArchive(write, categories, { basePath, kicker, name, breadcrumb
       bodyMain,
       extraScripts: ["/js/site.js"],
       jsonLd: [breadcrumbLd([{ name: "Trang chủ", url: "/" }, { name: "Tin Tức", url: "/tin-tuc/" }, { name, url: path }])],
-    })
+      robots,
+    }),
+    latestPostDate(posts)
   );
 }
+
+// A tag with one or two posts is a near-duplicate of those posts and competes
+// with them for the same query, so it stays crawlable but unindexed — and out
+// of the sitemap (audit T2). Decided per build from the live post count.
+const TAG_MIN_POSTS = 3;
 
 export function buildBlogTaxonomies(write, categories) {
   for (const cat of BLOG_CATEGORIES_WIDGET) {
@@ -282,8 +303,9 @@ export function buildBlogTaxonomies(write, categories) {
       kicker: "TỪ KHÓA",
       name: tag.name,
       breadcrumbLabel: `Từ khóa: ${tag.name}`,
-      description: `${tag.count} bài viết gắn thẻ "${tag.name}" trong Tin tức Dolphin House.`,
+      description: `Tổng hợp ${tag.count} bài viết về ${tag.name.toLowerCase()} trên blog Dolphin House.`,
       posts,
+      robots: posts.length >= TAG_MIN_POSTS ? undefined : "noindex, follow",
     });
   }
 }
@@ -493,7 +515,7 @@ export function buildVideos(write, categories) {
     <article class="blog-main blog-post">
       <header class="blog-post-header">
         <h1>${v.title}</h1>
-        <div class="post-info"><span>${v.date}</span><span>${v.views}</span></div>
+        <div class="post-info"><span>${v.date}</span>${v.views ? `<span>${v.views}</span>` : ""}</div>
       </header>
       <div class="tinymce"><div class="video-embed"><iframe src="https://www.youtube.com/embed/${v.youtube}" title="${v.title}" frameborder="0" allowfullscreen></iframe></div>${v.description ? `<p>${v.description}</p>` : ""}</div>
       <nav class="post-navigation">

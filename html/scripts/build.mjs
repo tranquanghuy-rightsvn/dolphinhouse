@@ -58,14 +58,34 @@ const PER_PAGE = 16;
 
 // Every `index.html` written through here is a real crawlable route — its
 // URL path is recorded for sitemap.xml generation at the end of the build.
+// `lastmod` (YYYY-MM-DD) is the date the page's content last changed — never the
+// build date, which made every URL look new on every build (audit T1). Pages
+// with no reliable date simply carry no <lastmod>. A page that tells robots
+// `noindex` is never listed in the sitemap: that would ask Google to index a
+// page we told it not to.
 const generatedPaths = [];
-function write(relPath, html) {
+const lastmodByPath = new Map();
+function write(relPath, html, lastmod) {
   const full = join(ROOT, relPath);
   mkdirSync(dirname(full), { recursive: true });
   writeFileSync(full, html);
   if (relPath.endsWith("index.html")) {
-    generatedPaths.push("/" + relPath.slice(0, -"index.html".length));
+    const urlPath = "/" + relPath.slice(0, -"index.html".length);
+    if (/<meta name="robots" content="noindex/.test(html)) return;
+    generatedPaths.push(urlPath);
+    if (lastmod) lastmodByPath.set(urlPath, lastmod);
   }
+}
+
+// Latest real edit date among a set of records (products → `modified`, posts →
+// `modifiedIso`/`dateIso`), "" when none of them has one.
+function latestDate(records) {
+  let best = "";
+  for (const r of records) {
+    const d = r.modified || r.modifiedIso || r.dateIso || "";
+    if (d > best) best = d;
+  }
+  return best;
 }
 
 function legacyHref(href) {
@@ -377,7 +397,8 @@ function buildHome() {
       bodyMain,
       extraScripts: ["/js/site.js", "/js/news-slider.js", "/js/shelf-slider.js"],
       jsonLd: [orgLd, websiteLd, faqLd(HOME_FAQ)],
-    })
+    }),
+    latestDate([...PRODUCTS, ...BLOG_POSTS])
   );
 }
 
@@ -401,7 +422,8 @@ function paginationHtml(basePath, totalPages, currentPage) {
 // `banner`/`description` are real per-category content — most categories have
 // neither on the live site (only heading + product grid), which is faithfully
 // reproduced here rather than filled in with invented copy.
-function buildListing({ basePath, title, description, banner, activePath, products, breadcrumbCurrent, breadcrumbHref, breadcrumbHrefLabel, embedJsonId }) {
+function buildListing({ basePath, title, description, banner, activePath, products, breadcrumbCurrent, breadcrumbHref, breadcrumbHrefLabel, embedJsonId, robots, introHtml = "" }) {
+  const lastmod = latestDate(products);
   // Every listing page gets a real meta description: the term description
   // when there is one, otherwise a generated one from the title — never
   // left blank, unlike the visible on-page description block above it.
@@ -431,6 +453,7 @@ function buildListing({ basePath, title, description, banner, activePath, produc
   <div class="listing-main">
     <h1 class="listing-title">${title}</h1>
     ${description ? `<div class="listing-description">${description}</div>` : ""}
+    ${introHtml}
     <div class="shop-toolbar">
       <p id="result-count">Hiển thị ${from}–${to} của ${products.length} sản phẩm</p>
       <select id="sort-select">
@@ -467,7 +490,9 @@ function buildListing({ basePath, title, description, banner, activePath, produc
         bodyMain,
         extraScripts: ["/js/site.js", "/js/listing.js"],
         jsonLd: [breadcrumbLd(breadcrumbItems)],
-      })
+        robots,
+      }),
+      lastmod
     );
   }
 }
@@ -560,13 +585,27 @@ function buildCategories() {
 // nests under a new /thuong-hieu/ directory page (see buildBrandsIndex) so
 // all 54 brand pages are reachable from a real internal link, not just the
 // homepage's 10 featured cards + sitemap.xml.
+// A brand page with only one or two products is a thin, near-empty grid, so
+// it stays crawlable (links followed) but out of the index and the sitemap
+// (audit T3). Exception: a brand we wrote a guide about (post slug
+// `hang-<brand>`) is worth indexing regardless — and links to that guide.
+const BRAND_MIN_PRODUCTS = 3;
+function brandGuidePost(brand) {
+  return BLOG_POSTS.find((p) => p.slug === `hang-${brand.slug}`) || null;
+}
+
 function buildBrands() {
   for (const brand of getBrands()) {
+    const products = productsForBrand(brand.name);
+    const guide = brandGuidePost(brand);
+    const indexable = products.length >= BRAND_MIN_PRODUCTS || !!guide;
     buildListing({
+      robots: indexable ? undefined : "noindex, follow",
+      introHtml: guide ? `<p class="listing-guide-link"><a class="link-arrow" href="/${guide.slug}/">Tìm hiểu về hãng ${brand.name} →</a></p>` : "",
       basePath: `/thuong-hieu/${brand.slug}/`,
       title: brand.name,
       activePath: "/thuong-hieu/",
-      products: productsForBrand(brand.name),
+      products,
       breadcrumbCurrent: brand.name,
       breadcrumbHref: "/thuong-hieu/",
       breadcrumbHrefLabel: "Thương hiệu",
@@ -808,7 +847,8 @@ function buildProducts() {
         extraScripts: ["/js/site.js", "/js/product-interactive.js"].concat(product.smartCss != null ? ["/js/smart.js"] : []),
         extraHead: smartHead(product.smartCss),
         jsonLd: [productLd, breadcrumbLd(breadcrumbItems)],
-      })
+      }),
+      product.modified
     );
   }
 }
@@ -1008,13 +1048,14 @@ function pruneOrphanPostDirs() {
 // empty by default) — marked noindex in their own page() call, kept out of
 // the sitemap here too so we don't ask Google to index a page we told it not to.
 const NOINDEX_PATHS = ["/gio-hang/", "/thanh-toan/"];
-const BUILD_DATE = new Date().toISOString().slice(0, 10);
-
 function buildRobotsAndSitemap() {
   const urls = generatedPaths
     .filter((p) => !p.includes("/page/") && !NOINDEX_PATHS.includes(p))
     .sort()
-    .map((p) => `  <url><loc>${absUrl(p)}</loc><lastmod>${BUILD_DATE}</lastmod></url>`)
+    .map((p) => {
+      const lm = lastmodByPath.get(p);
+      return `  <url><loc>${absUrl(p)}</loc>${lm ? `<lastmod>${lm}</lastmod>` : ""}</url>`;
+    })
     .join("\n");
   writeFileSync(join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
   // Cloudflare's managed robots.txt prepends its own `User-agent: *` group, so
