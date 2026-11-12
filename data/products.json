@@ -4983,9 +4983,9 @@
     ],
     "categories": [
       {
-        "id": 100,
-        "name": "Nồi chảo cao cấp",
-        "slug": "chao"
+        "id": 99,
+        "name": "Nồi & xửng hấp",
+        "slug": "xong-noi"
       }
     ],
     "prices": {
@@ -4996,7 +4996,7 @@
     "image": "/assets/images/products/bo-noi-wmf-inspiration-6-mon-dang-cap-bep-duc/01.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-12T07:47:17.450Z"
+    "updated_at": "2026-11-12T07:48:40.115Z"
   },
   {
     "id": 1199,
