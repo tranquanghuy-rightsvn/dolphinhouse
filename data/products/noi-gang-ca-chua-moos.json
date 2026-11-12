@@ -24,14 +24,14 @@
   "review_count": 0,
   "categories": [
     {
+      "id": 173,
+      "name": "Nồi gang tráng men",
+      "slug": "noi-gang-trang-men"
+    },
+    {
       "id": 172,
       "name": "Gia dụng châu Âu",
       "slug": "gia-dung-chau-au"
-    },
-    {
-      "id": 100,
-      "name": "Nồi chảo cao cấp",
-      "slug": "chao"
     }
   ],
   "images": [
@@ -124,5 +124,5 @@
       }
     ]
   },
-  "updated_at": "2026-11-12T07:46:21.376Z"
+  "updated_at": "2026-11-12T07:48:05.667Z"
 }
