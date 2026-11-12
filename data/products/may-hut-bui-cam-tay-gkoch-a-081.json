@@ -24,9 +24,9 @@
   "review_count": 0,
   "categories": [
     {
-      "id": 11,
-      "name": "Chăm sóc gia đình & phòng ngủ",
-      "slug": "chan-ga-goi-dem"
+      "id": 101,
+      "name": "Vệ sinh nhà cửa thông minh",
+      "slug": "ve-sinh-nha-cua"
     }
   ],
   "images": [
@@ -72,5 +72,5 @@
     "GKÖCH"
   ],
   "smart": null,
-  "updated_at": "2026-11-12T07:05:03.344Z"
+  "updated_at": "2026-11-12T07:49:02.824Z"
 }
