@@ -27,6 +27,11 @@
       "id": 51,
       "name": "Thiết bị gia dụng thông minh",
       "slug": "san-pham-thong-minh"
+    },
+    {
+      "id": 101,
+      "name": "Vệ sinh nhà cửa thông minh",
+      "slug": "ve-sinh-nha-cua"
     }
   ],
   "images": [
@@ -62,5 +67,5 @@
     "ECOVACS"
   ],
   "smart": null,
-  "updated_at": "2026-11-12T07:39:13.864Z"
+  "updated_at": "2026-11-12T07:49:25.094Z"
 }
