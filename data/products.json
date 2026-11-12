@@ -3701,9 +3701,9 @@
     ],
     "categories": [
       {
-        "id": 100,
-        "name": "Nồi chảo cao cấp",
-        "slug": "chao"
+        "id": 99,
+        "name": "Nồi & xửng hấp",
+        "slug": "xong-noi"
       }
     ],
     "prices": {
@@ -3714,7 +3714,7 @@
     "image": "/assets/images/products/noi-ap-suat-inox-4l-tefal-secure-trendy-hinh-1.jpg",
     "sizes": [],
     "in_stock": false,
-    "updated_at": "2026-11-12T07:44:33.580Z"
+    "updated_at": "2026-11-12T07:48:17.500Z"
   },
   {
     "id": 1827,
