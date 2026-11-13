@@ -23,6 +23,8 @@ import {
   breadcrumbLd,
   faqLd,
   faqSectionHtml,
+  socialLinksHtml,
+  SOCIAL_LINKS,
 } from "./lib/partials.mjs";
 import { buildBlogListing, buildBlogPosts, buildBlogTaxonomies, buildGioiThieu, buildLienHe, buildVideos, buildSimplePage } from "./lib/blog.mjs";
 
@@ -608,26 +610,36 @@ function buildBrandsIndex() {
 }
 
 // ---------- Product detail ----------
-const TRUST_LIST_ITEMS = [
-  { icon: 1, html: "Giao hàng trên toàn quốc" },
-  { icon: 2, html: "Đổi trả trong 15 ngày nếu lỗi kỹ thuật" },
-  { icon: 3, html: "Thanh toán tại nhà hoặc qua thẻ" },
-  { icon: 4, html: "Tổng CSKH 8h30 - 18h00<br><strong>086 639 3892</strong>" },
-  { icon: 4, html: "Kinh doanh<br><strong>086 639 3892<br>0378 840 450</strong>" },
-  { icon: 4, html: "Kỹ thuật<br><strong>086 639 3892</strong>" },
-  { icon: 5, html: "Lắp đặt tại các thành phố lớn" },
+// "Mua sắm an tâm" box in the product page's right column. Desktop: a short
+// list plus one hotline. Tablet/mobile: three compact tiles so the description
+// starts right after the buy area (see .trust-box rules in styles.css).
+// `short` is the tile label used on narrow screens.
+const TRUST_ITEMS = [
+  { icon: "✓", text: "Giao hàng toàn quốc", short: "Giao toàn quốc" },
+  { icon: "✓", text: "Bảo hành chính hãng", short: "Bảo hành chính hãng" },
+  { icon: "₫", text: "Thanh toán tại nhà hoặc qua thẻ", short: "Thanh toán khi nhận" },
 ];
+const HOTLINE = { tel: "0866393892", label: "086 639 3892" };
 
 function trustListHtml() {
   return `
-  <aside class="chinh-sach-cua-shop">
-    <ul>
-      ${TRUST_LIST_ITEMS.map(
-        (it) => `<li class="has-icon"><div class="chinhsach-icon"><img src="/assets/images/site/policy-icons/icon-policy-${it.icon}.png" alt="" width="42" height="42"></div><div class="chinhsach-content">${it.html}</div></li>`
+  <aside class="trust-box" aria-label="Mua sắm an tâm">
+    <p class="trust-box-title">Mua sắm an tâm</p>
+    <ul class="trust-box-list">
+      ${TRUST_ITEMS.map(
+        (it) => `<li><span class="trust-box-icon" aria-hidden="true">${it.icon}</span><span class="trust-box-text">${it.text}</span><span class="trust-box-short">${it.short}</span></li>`
       ).join("")}
     </ul>
+    <p class="trust-box-hotline"><span class="trust-box-ask">Cần tư vấn<span class="trust-box-ask-long"> trước khi đặt hàng</span>?</span> <a href="tel:${HOTLINE.tel}">${HOTLINE.label}</a></p>
+    <div class="trust-box-social">
+      <span>Theo dõi Dolphin House</span>
+      <div class="trust-box-social-links">
+              ${socialLinksHtml(18)}
+      </div>
+    </div>
   </aside>`;
 }
+const FACEBOOK_URL = SOCIAL_LINKS.find((s) => s.name === "Facebook").href;
 
 function buildProducts() {
   for (const product of PRODUCTS) {
@@ -703,7 +715,7 @@ function buildProducts() {
           ${catHref ? `<div>Danh mục: <a href="${catHref}">${cat.name}</a></div>` : ""}
           ${product.brand_names.length ? `<div>Thương hiệu: ${product.brand_names.map((b) => `<a href="${brandUrl(b)}">${b}</a>`).join(", ")}</div>` : ""}
         </div>
-        <button class="chat-fb-btn" type="button">💬 Chat Facebook tư vấn — phản hồi nhanh</button>
+        <a class="chat-fb-btn" href="${FACEBOOK_URL}" target="_blank" rel="noopener noreferrer">💬 Chat Facebook tư vấn — phản hồi nhanh</a>
       </div>
 
       ${trustListHtml()}
