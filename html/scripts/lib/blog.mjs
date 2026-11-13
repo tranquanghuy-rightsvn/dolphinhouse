@@ -4,9 +4,10 @@
 import { readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { page, absUrl, stripHtml, truncate, breadcrumbLd, formatVnd, faqLd, faqSectionHtml } from "./partials.mjs";
+import { page, absUrl, stripHtml, truncate, breadcrumbLd, formatVnd, faqLd, faqSectionHtml, metaDescription, seoTitle, stripEmojiInHeadings } from "./partials.mjs";
 import { loadCms } from "./cms-data.mjs";
 import { smartHead } from "./smart.mjs";
+import { sizeAttrs, addImageSizes } from "./image-size.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 // Hand-written page bodies (gioi thieu, policy pages) — not CMS content.
@@ -40,7 +41,7 @@ function productListWidgetHtml(items, title) {
   const rows = items
     .map(
       (p) => `
-    <li><a class="link_recent_thumb" href="/san-pham/${p.slug}/"><img src="${p.images[0] ? p.images[0].src : ""}" alt="${p.name}"></a>
+    <li><a class="link_recent_thumb" href="/san-pham/${p.slug}/"><img src="${p.images[0] ? p.images[0].src : ""}" alt="${p.name}"${sizeAttrs(p.images[0] && p.images[0].src)} loading="lazy" decoding="async"></a>
       <div><a href="/san-pham/${p.slug}/">${p.name}</a><span class="bestseller-price">${formatVnd(p.prices.price)}</span></div>
     </li>`
     )
@@ -77,7 +78,7 @@ function sidebarCategoriesTags() {
 function sidebarRecentPosts({ withFeatured = false } = {}) {
   const items = BLOG_POSTS.map(
     (p) => `
-    <li><a class="link_recent_thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}"></a>
+    <li><a class="link_recent_thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}"${sizeAttrs(p.heroImg)} loading="lazy" decoding="async"></a>
       <div><a href="/${p.slug}/">${p.title}</a><small>${p.date}</small></div>
     </li>`
   ).join("");
@@ -94,10 +95,10 @@ function sidebarRecentPosts({ withFeatured = false } = {}) {
 function postCardHtml(p) {
   return `
   <article class="blog-card">
-    <a class="blog-card-thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}" loading="lazy"></a>
+    <a class="blog-card-thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}"${sizeAttrs(p.heroImg)} loading="lazy" decoding="async"></a>
     <div class="blog-card-body">
       <a class="blog-card-title" href="/${p.slug}/">${p.title}</a>
-      <div class="blog-card-date">Ngày cập nhật <strong>${p.date}</strong></div>
+      <div class="blog-card-date">Ngày đăng <strong>${p.date}</strong></div>
       ${p.excerpt ? `<p class="blog-card-excerpt">${p.excerpt}</p>` : ""}
     </div>
   </article>`;
@@ -125,7 +126,7 @@ function relatedPostsHtml(currentSlug) {
     <div class="related-grid">
       ${related.map((p) => `
       <a class="related-item" href="/${p.slug}/">
-        <img src="${p.heroImg}" alt="${p.title}" loading="lazy">
+        <img src="${p.heroImg}" alt="${p.title}"${sizeAttrs(p.heroImg)} loading="lazy" decoding="async">
         <span>${p.title}</span>
         <small>${p.date}</small>
       </a>`).join("")}
@@ -162,8 +163,20 @@ export function buildBlogListing(write, categories) {
       bodyMain,
       extraScripts: ["/js/site.js"],
       jsonLd: [breadcrumbLd([{ name: "Trang chủ", url: "/" }, { name: "Tin tức & Kinh nghiệm gia dụng", url: "/tin-tuc/" }])],
-    })
+    }),
+    latestPostDate(BLOG_POSTS)
   );
+}
+
+function displayIso(iso) {
+  const [y, m, d] = String(iso).split("-");
+  return `${d}/${m}/${y}`;
+}
+function latestPostDate(posts) {
+  return posts.reduce((best, p) => {
+    const d = p.modifiedIso || p.dateIso || "";
+    return d > best ? d : best;
+  }, "");
 }
 
 // dd/mm/yyyy (as stored for display) -> yyyy-mm-dd (ISO, required by schema.org datePublished).
@@ -178,7 +191,7 @@ export function buildBlogPosts(write, categories) {
     const prev = BLOG_POSTS[i + 1];
     const next = BLOG_POSTS[i - 1];
     const path = `/${p.slug}/`;
-    const description = truncate(p.excerpt || stripHtml(p.body), 160);
+    const description = metaDescription(p.excerpt) || metaDescription(p.body);
     const bodyMain = `
 <main class="container blog-page">
   <nav class="breadcrumb"><a href="/">Trang chủ</a> / <a href="/tin-tuc/">Tin Tức</a> / ${p.title}</nav>
@@ -186,10 +199,10 @@ export function buildBlogPosts(write, categories) {
     <article class="blog-main blog-post">
       <header class="blog-post-header">
         <h1>${p.title}</h1>
-        <div class="post-info"><span>${p.date}</span><span>${p.views}</span></div>
+        <div class="post-info"><span>Đăng ngày ${p.date}</span>${p.modifiedIso ? `<span>Cập nhật ngày ${displayIso(p.modifiedIso)}</span>` : ""}${p.views ? `<span>${p.views}</span>` : ""}</div>
         ${taxonomyBadgesHtml(p)}
       </header>
-      <div class="tinymce">${p.body}</div>
+      <div class="tinymce">${addImageSizes(stripEmojiInHeadings(p.body))}</div>
       <nav class="post-navigation">
         ${prev ? `<a class="nav-prev" href="/${prev.slug}/"><small>Bài trước</small>${prev.title}</a>` : "<span></span>"}
         ${next ? `<a class="nav-next" href="/${next.slug}/"><small>Bài tiếp</small>${next.title}</a>` : ""}
@@ -205,7 +218,8 @@ export function buildBlogPosts(write, categories) {
       headline: p.title,
       image: [absUrl(p.heroImg)],
       datePublished: isoDate(p.date),
-      dateModified: isoDate(p.date),
+      // Real edit date from the CMS record (audit A4); same as published when never edited.
+      dateModified: p.modifiedIso || isoDate(p.date),
       author: { "@type": "Organization", name: "Dolphin House" },
       publisher: { "@type": "Organization", name: "Dolphin House", logo: { "@type": "ImageObject", url: absUrl("/assets/images/site/dolphin-house-logo-320x100-1.webp") } },
       mainEntityOfPage: absUrl(path),
@@ -214,7 +228,7 @@ export function buildBlogPosts(write, categories) {
     write(
       `${p.slug}/index.html`,
       page({
-        title: `${p.title} | Dolphin House`,
+        title: seoTitle(p.title),
         description,
         path,
         image: p.heroImg,
@@ -225,7 +239,8 @@ export function buildBlogPosts(write, categories) {
         extraScripts: ["/js/site.js"].concat(p.smartCss != null ? ["/js/smart.js"] : []),
         extraHead: smartHead(p.smartCss),
         jsonLd: [articleLd, breadcrumbLd([{ name: "Trang chủ", url: "/" }, { name: "Tin Tức", url: "/tin-tuc/" }, { name: p.title, url: path }])],
-      })
+      }),
+      p.modifiedIso || p.dateIso
     );
   }
 }
@@ -234,7 +249,7 @@ export function buildBlogPosts(write, categories) {
 // categories at /category/<slug>/ — renamed here to /danh-muc-tin-tuc/<slug>/
 // to keep it unambiguous next to the product taxonomy at /danh-muc/<slug>/.
 // Tag archives keep the live /tag/<slug>/ path unchanged.
-function taxonomyArchive(write, categories, { basePath, kicker, name, breadcrumbLabel, description, posts }) {
+function taxonomyArchive(write, categories, { basePath, kicker, name, breadcrumbLabel, description, posts, robots }) {
   const cards = posts.map(postCardHtml).join("");
   const path = `/${basePath}`;
   const bodyMain = `
@@ -259,9 +274,16 @@ function taxonomyArchive(write, categories, { basePath, kicker, name, breadcrumb
       bodyMain,
       extraScripts: ["/js/site.js"],
       jsonLd: [breadcrumbLd([{ name: "Trang chủ", url: "/" }, { name: "Tin Tức", url: "/tin-tuc/" }, { name, url: path }])],
-    })
+      robots,
+    }),
+    latestPostDate(posts)
   );
 }
+
+// A tag with one or two posts is a near-duplicate of those posts and competes
+// with them for the same query, so it stays crawlable but unindexed — and out
+// of the sitemap (audit T2). Decided per build from the live post count.
+const TAG_MIN_POSTS = 3;
 
 export function buildBlogTaxonomies(write, categories) {
   for (const cat of BLOG_CATEGORIES_WIDGET) {
@@ -282,8 +304,9 @@ export function buildBlogTaxonomies(write, categories) {
       kicker: "TỪ KHÓA",
       name: tag.name,
       breadcrumbLabel: `Từ khóa: ${tag.name}`,
-      description: `${tag.count} bài viết gắn thẻ "${tag.name}" trong Tin tức Dolphin House.`,
+      description: `Tổng hợp ${tag.count} bài viết về ${tag.name.toLowerCase()} trên blog Dolphin House.`,
       posts,
+      robots: posts.length >= TAG_MIN_POSTS ? undefined : "noindex, follow",
     });
   }
 }
@@ -333,7 +356,7 @@ export function buildGioiThieu(write, categories) {
     "gioi-thieu/index.html",
     page({
       title: "Về Dolphin House | Câu Chuyện Thương Hiệu Gia Dụng Thông Minh",
-      description: truncate(stripHtml(readBody("gioithieu.body.html")), 160),
+      description: metaDescription(readBody("gioithieu.body.html")),
       path: "/gioi-thieu/",
       categories,
       activePath: "/gioi-thieu/",
@@ -397,7 +420,7 @@ export function buildLienHe(write, categories) {
 export function buildSimplePage(write, categories, { slug, title, bodyFile, faq }) {
   const pageName = title.split(" | ")[0];
   const path = `/${slug}/`;
-  const description = truncate(stripHtml(readBody(bodyFile)), 160);
+  const description = metaDescription(readBody(bodyFile));
   const bodyMain = `
 <main class="container blog-page">
   <nav class="breadcrumb"><a href="/">Trang chủ</a> / ${pageName}</nav>
@@ -466,7 +489,7 @@ export function buildVideos(write, categories) {
     const other = VIDEOS[(i + 1) % VIDEOS.length];
     const path = `/videos/${v.slug}/`;
     // The CMS description doubles as the page/meta description when present.
-    const description = v.description ? truncate(stripHtml(v.description), 160) : `${v.title} — video Dolphin House.`;
+    const description = v.description ? metaDescription(v.description) : `${v.title} — video Dolphin House.`;
     const videoLd = {
       "@context": "https://schema.org",
       "@type": "VideoObject",
@@ -493,7 +516,7 @@ export function buildVideos(write, categories) {
     <article class="blog-main blog-post">
       <header class="blog-post-header">
         <h1>${v.title}</h1>
-        <div class="post-info"><span>${v.date}</span><span>${v.views}</span></div>
+        <div class="post-info"><span>${v.date}</span>${v.views ? `<span>${v.views}</span>` : ""}</div>
       </header>
       <div class="tinymce"><div class="video-embed"><iframe src="https://www.youtube.com/embed/${v.youtube}" title="${v.title}" frameborder="0" allowfullscreen></iframe></div>${v.description ? `<p>${v.description}</p>` : ""}</div>
       <nav class="post-navigation">

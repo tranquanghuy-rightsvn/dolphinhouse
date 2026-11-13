@@ -1,0 +1,4 @@
+# 301 redirects (audit O8), Cloudflare Pages syntax: /old-path/ /new-path/ 301
+# One line per redirect, added in batches when the site owner sends the list
+# (discontinued products, merged posts, duplicate brands). Keep the old path
+# out of sitemap.xml once its page is gone.

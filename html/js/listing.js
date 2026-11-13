@@ -43,15 +43,13 @@
       const qs = sp.toString();
       return base + (qs ? "?" + qs : "");
     };
+    // Same markup as the static pages (scripts/build.mjs): every page number.
     let html = "";
+    if (currentPage > 1) html += `<a href="${hrefFor(currentPage - 1)}" rel="prev" aria-label="Trang trước">←</a>`;
     for (let p = 1; p <= totalPages; p++) {
-      if (p === 1 || p === totalPages || Math.abs(p - currentPage) <= 1) {
-        html += p === currentPage ? `<span class="current">${p}</span>` : `<a href="${hrefFor(p)}">${p}</a>`;
-      } else if (html.slice(-10).indexOf("…") === -1) {
-        html += `<span>…</span>`;
-      }
+      html += p === currentPage ? `<span class="current" aria-current="page">${p}</span>` : `<a href="${hrefFor(p)}">${p}</a>`;
     }
-    if (currentPage < totalPages) html += `<a href="${hrefFor(currentPage + 1)}">→</a>`;
+    if (currentPage < totalPages) html += `<a href="${hrefFor(currentPage + 1)}" rel="next" aria-label="Trang sau">→</a>`;
     return html;
   }
 

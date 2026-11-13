@@ -1,3 +1,15 @@
+# Security headers for every response (audit T9b / T12).
+# CSP ships as Report-Only first: watch the browser console for a week (cart ->
+# Apps Script checkout, admin iframe, YouTube/Vimeo embeds, GA4) before
+# renaming the header to Content-Security-Policy.
+/*
+  Strict-Transport-Security: max-age=15768000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://cloudflareinsights.com https://script.google.com https://script.googleusercontent.com; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://www.google.com https://script.google.com https://*.googleusercontent.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://script.google.com; object-src 'none'
+
 # Admin entry points must never surface in search results. This header is the
 # strong layer (it does not depend on a crawler parsing the HTML) and covers
 # every file under both paths. robots.txt deliberately says nothing about them:
@@ -14,3 +26,34 @@
 /assets/tinymce/*
   Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *
+
+# Static asset caching (audit T9). Rules must not overlap for Cache-Control:
+# Cloudflare Pages joins duplicate header values with a comma.
+# Product/blog images are written by the CMS as <slug>/NN.jpg and NN is never
+# reused (a replaced image gets the next number), so they are safe to mark
+# immutable. Category banners, video thumbnails and site images can be
+# overwritten under the same name, so they get a shorter lifetime.
+/assets/images/products/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/images/blog/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/images/site/*
+  Cache-Control: public, max-age=604800
+/assets/images/categories/*
+  Cache-Control: public, max-age=86400
+/assets/images/videos/*
+  Cache-Control: public, max-age=86400
+/assets/favicon/*
+  Cache-Control: public, max-age=604800
+/assets/area/*
+  Cache-Control: public, max-age=604800
+/css/*
+  Cache-Control: public, max-age=86400
+/js/*
+  Cache-Control: public, max-age=86400
+/favicon.ico
+  Cache-Control: public, max-age=604800
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+/feed.xml
+  Cache-Control: public, max-age=3600

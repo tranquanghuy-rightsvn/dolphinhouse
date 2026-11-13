@@ -9,6 +9,7 @@ import { loadDataFile } from "./lib/load-data.mjs";
 import { loadCms } from "./lib/cms-data.mjs";
 import { smartHead } from "./lib/smart.mjs";
 import { bannerPicture } from "./lib/responsive-images.mjs";
+import { sizeAttrs, addImageSizes, missingImages } from "./lib/image-size.mjs";
 import {
   page,
   productCardHtml,
@@ -25,6 +26,11 @@ import {
   faqSectionHtml,
   socialLinksHtml,
   SOCIAL_LINKS,
+  metaDescription,
+  seoTitle,
+  stripEmojiInHeadings,
+  ORG_ID,
+  socialUrls,
 } from "./lib/partials.mjs";
 import { buildBlogListing, buildBlogPosts, buildBlogTaxonomies, buildGioiThieu, buildLienHe, buildVideos, buildSimplePage } from "./lib/blog.mjs";
 
@@ -60,14 +66,34 @@ const PER_PAGE = 16;
 
 // Every `index.html` written through here is a real crawlable route — its
 // URL path is recorded for sitemap.xml generation at the end of the build.
+// `lastmod` (YYYY-MM-DD) is the date the page's content last changed — never the
+// build date, which made every URL look new on every build (audit T1). Pages
+// with no reliable date simply carry no <lastmod>. A page that tells robots
+// `noindex` is never listed in the sitemap: that would ask Google to index a
+// page we told it not to.
 const generatedPaths = [];
-function write(relPath, html) {
+const lastmodByPath = new Map();
+function write(relPath, html, lastmod) {
   const full = join(ROOT, relPath);
   mkdirSync(dirname(full), { recursive: true });
   writeFileSync(full, html);
   if (relPath.endsWith("index.html")) {
-    generatedPaths.push("/" + relPath.slice(0, -"index.html".length));
+    const urlPath = "/" + relPath.slice(0, -"index.html".length);
+    if (/<meta name="robots" content="noindex/.test(html)) return;
+    generatedPaths.push(urlPath);
+    if (lastmod) lastmodByPath.set(urlPath, lastmod);
   }
+}
+
+// Latest real edit date among a set of records (products → `modified`, posts →
+// `modifiedIso`/`dateIso`), "" when none of them has one.
+function latestDate(records) {
+  let best = "";
+  for (const r of records) {
+    const d = r.modified || r.modifiedIso || r.dateIso || "";
+    if (d > best) best = d;
+  }
+  return best;
 }
 
 function legacyHref(href) {
@@ -175,7 +201,7 @@ function buildHome() {
   const latestPosts = BLOG_POSTS.slice(0, 8);
   const newsCardHtml = (p) => `
     <article class="dh-home-news-card">
-      <a class="blog-card-thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}" loading="lazy"></a>
+      <a class="blog-card-thumb" href="/${p.slug}/"><img src="${p.heroImg}" alt="${p.title}"${sizeAttrs(p.heroImg)} loading="lazy" decoding="async"></a>
       <div class="blog-card-body">
         <a class="blog-card-title" href="/${p.slug}/">${p.title}</a>
         <div class="blog-card-date">Ngày cập nhật <strong>${p.date}</strong></div>
@@ -216,7 +242,7 @@ function buildHome() {
           <div class="dh-home-category-product${p.in_stock === false ? " is-out-of-stock" : ""}">
             <a class="dh-home-category-product-link" href="/san-pham/${p.slug}/">
               ${p.in_stock === false ? '<span class="stock-out-badge">Hết hàng</span>' : ""}
-              <img src="${p.img}" alt="${safeName}" loading="lazy">
+              <img src="${p.img}" alt="${safeName}"${sizeAttrs(p.img)} loading="lazy" decoding="async">
               <span class="dh-home-category-product-body">
                 <strong>${p.title}</strong>
                 ${p.del ? `<del>${p.del}</del>` : ""}
@@ -335,12 +361,22 @@ function buildHome() {
   </div>
 </main>`;
 
+  // Audit G1. `sameAs` lists only real profiles (partials SOCIAL_LINKS) and is
+  // omitted while there are none. legalName/taxID go here once the business
+  // registration exists (audit G3).
+  const sameAs = socialUrls();
   const orgLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORG_ID,
     name: "Dolphin House",
+    alternateName: "dolphinhouse.vn",
     url: `${SITE_URL}/`,
     logo: absUrl("/assets/images/site/dolphin-house-logo-320x100-1.webp"),
+    description: "Dolphin House bán đồ gia dụng thông minh, thiết bị nhà bếp và điện gia dụng, giao hàng toàn quốc.",
+    email: "dolphinhouse.vn@gmail.com",
+    telephone: "+84-86-639-3892",
+    ...(sameAs.length ? { sameAs } : {}),
     address: {
       "@type": "PostalAddress",
       streetAddress: "S219 Đại Dương 8, Vinhomes Ocean Park",
@@ -353,6 +389,7 @@ function buildHome() {
       telephone: "+84-86-639-3892",
       contactType: "customer service",
       areaServed: "VN",
+      availableLanguage: "vi",
     },
   };
   const websiteLd = {
@@ -361,6 +398,7 @@ function buildHome() {
     creator: { "@type": "Organization", "@id": "https://web100.vn/#organization", name: "Web100", url: "https://web100.vn/" },
     name: "Dolphin House",
     url: `${SITE_URL}/`,
+    publisher: { "@id": ORG_ID },
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/cua-hang/?q={search_term_string}`,
@@ -379,7 +417,8 @@ function buildHome() {
       bodyMain,
       extraScripts: ["/js/site.js", "/js/news-slider.js", "/js/shelf-slider.js"],
       jsonLd: [orgLd, websiteLd, faqLd(HOME_FAQ)],
-    })
+    }),
+    latestDate([...PRODUCTS, ...BLOG_POSTS])
   );
 }
 
@@ -387,15 +426,15 @@ function buildHome() {
 function paginationHtml(basePath, totalPages, currentPage) {
   if (totalPages <= 1) return "";
   const pageHref = (p) => (p === 1 ? basePath : `${basePath}page/${p}/`);
+  // Every page number is linked (audit L2): with "1 … 4" the products on the
+  // skipped pages were several clicks deep and rarely crawled. The largest
+  // listing has ~13 pages, so the full row stays short.
   let html = "";
+  if (currentPage > 1) html += `<a href="${pageHref(currentPage - 1)}" rel="prev" aria-label="Trang trước">←</a>`;
   for (let p = 1; p <= totalPages; p++) {
-    if (p === 1 || p === totalPages || Math.abs(p - currentPage) <= 1) {
-      html += p === currentPage ? `<span class="current">${p}</span>` : `<a href="${pageHref(p)}">${p}</a>`;
-    } else if (html.slice(-10).indexOf("…") === -1) {
-      html += `<span>…</span>`;
-    }
+    html += p === currentPage ? `<span class="current" aria-current="page">${p}</span>` : `<a href="${pageHref(p)}">${p}</a>`;
   }
-  if (currentPage < totalPages) html += `<a href="${pageHref(currentPage + 1)}">→</a>`;
+  if (currentPage < totalPages) html += `<a href="${pageHref(currentPage + 1)}" rel="next" aria-label="Trang sau">→</a>`;
   return html;
 }
 
@@ -403,12 +442,13 @@ function paginationHtml(basePath, totalPages, currentPage) {
 // `banner`/`description` are real per-category content — most categories have
 // neither on the live site (only heading + product grid), which is faithfully
 // reproduced here rather than filled in with invented copy.
-function buildListing({ basePath, title, description, banner, activePath, products, breadcrumbCurrent, breadcrumbHref, breadcrumbHrefLabel, embedJsonId }) {
+function buildListing({ basePath, title, description, banner, activePath, products, breadcrumbCurrent, breadcrumbHref, breadcrumbHrefLabel, embedJsonId, robots, introHtml = "" }) {
+  const lastmod = latestDate(products);
   // Every listing page gets a real meta description: the term description
   // when there is one, otherwise a generated one from the title — never
   // left blank, unlike the visible on-page description block above it.
   const metaDescriptionBase = description
-    ? truncate(stripHtml(description), 160)
+    ? metaDescription(description)
     : `${title} chính hãng tại Dolphin House — giao hàng toàn quốc, tư vấn tận tâm, đổi trả theo chính sách.`;
   const listingImage = banner || (products[0] && products[0].images[0] && products[0].images[0].src) || undefined;
   const totalPages = Math.max(1, Math.ceil(products.length / PER_PAGE));
@@ -429,10 +469,11 @@ function buildListing({ basePath, title, description, banner, activePath, produc
     const bodyMain = `
 <main class="container listing-page">
   <nav class="breadcrumb">${breadcrumb}</nav>
-  ${banner ? `<div class="listing-banner"><img src="${banner}" alt="Banner danh mục ${title}" loading="eager"></div>` : ""}
+  ${banner ? `<div class="listing-banner"><img src="${banner}" alt="Banner danh mục ${title}"${sizeAttrs(banner)} loading="eager"></div>` : ""}
   <div class="listing-main">
     <h1 class="listing-title">${title}</h1>
     ${description ? `<div class="listing-description">${description}</div>` : ""}
+    ${introHtml}
     <div class="shop-toolbar">
       <p id="result-count">Hiển thị ${from}–${to} của ${products.length} sản phẩm</p>
       <select id="sort-select">
@@ -469,9 +510,31 @@ function buildListing({ basePath, title, description, banner, activePath, produc
         bodyMain,
         extraScripts: ["/js/site.js", "/js/listing.js"],
         jsonLd: [breadcrumbLd(breadcrumbItems)],
-      })
+        robots,
+      }),
+      lastmod
     );
   }
+}
+
+// Some products use the size picker for colours ("Đỏ", "Vàng", "Xanh lá"), and
+// the page labelled them "Kích cỡ" (audit O6). Until the CMS has a variant-type
+// field, a picker whose every option is a colour name is labelled "Màu sắc".
+// Every word of an option (codes in brackets ignored) must be a colour word or
+// a colour modifier: "Xám nhạt (70575)", "Trắng chuôi vàng", "Tím (Pink)".
+const COLOR_VOCAB = new Set(
+  ("màu đỏ vàng xanh lá dương ngọc rêu navy mint olive lam đen trắng xám ghi hồng phấn tím cam nâu be kem bạc đồng " +
+    "gold silver black white red blue green grey gray pink cream nhạt đậm sữa pastel bóng nhám ánh kim chuôi viền nắp và")
+    .split(" ")
+);
+function isColorName(name) {
+  const words = name.replace(/\([^)]*\)/g, " ").replace(/[\/,+&-]/g, " ").trim().split(/\s+/).filter(Boolean);
+  return words.length > 0 && words.every((w) => COLOR_VOCAB.has(w));
+}
+function variantKind(sizes) {
+  if (!sizes.length) return "";
+  const names = sizes.map((sz) => String(sz.name).replace(/&amp;/g, "&").trim().toLowerCase());
+  return names.every(isColorName) ? "color" : "size";
 }
 
 // Sizes are optional per product; the first one is the price shown everywhere
@@ -562,13 +625,27 @@ function buildCategories() {
 // nests under a new /thuong-hieu/ directory page (see buildBrandsIndex) so
 // all 54 brand pages are reachable from a real internal link, not just the
 // homepage's 10 featured cards + sitemap.xml.
+// A brand page with only one or two products is a thin, near-empty grid, so
+// it stays crawlable (links followed) but out of the index and the sitemap
+// (audit T3). Exception: a brand we wrote a guide about (post slug
+// `hang-<brand>`) is worth indexing regardless — and links to that guide.
+const BRAND_MIN_PRODUCTS = 3;
+function brandGuidePost(brand) {
+  return BLOG_POSTS.find((p) => p.slug === `hang-${brand.slug}`) || null;
+}
+
 function buildBrands() {
   for (const brand of getBrands()) {
+    const products = productsForBrand(brand.name);
+    const guide = brandGuidePost(brand);
+    const indexable = products.length >= BRAND_MIN_PRODUCTS || !!guide;
     buildListing({
+      robots: indexable ? undefined : "noindex, follow",
+      introHtml: guide ? `<p class="listing-guide-link"><a class="link-arrow" href="/${guide.slug}/">Tìm hiểu về hãng ${brand.name} →</a></p>` : "",
       basePath: `/thuong-hieu/${brand.slug}/`,
       title: brand.name,
       activePath: "/thuong-hieu/",
-      products: productsForBrand(brand.name),
+      products,
       breadcrumbCurrent: brand.name,
       breadcrumbHref: "/thuong-hieu/",
       breadcrumbHrefLabel: "Thương hiệu",
@@ -641,6 +718,99 @@ function trustListHtml() {
 }
 const FACEBOOK_URL = SOCIAL_LINKS.find((s) => s.name === "Facebook").href;
 
+// "Sản phẩm tương tự" (audit L3). Candidates in order of closeness: same
+// subcategory → same parent category → same brand → other shared category. Within a tier, in-stock
+// first, then the products that have been linked the fewest times so far in
+// this build — so links spread across the whole catalogue instead of always
+// pointing at the first few products of a category. Deterministic: same data,
+// same HTML.
+const RELATED_COUNT = 8;
+const SAME_BRAND_COUNT = 4;
+const inlinks = new Map();
+function stableHash(str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 16777619);
+  return h >>> 0;
+}
+// Some top-level categories cut across the others ("Gia dụng châu Âu" holds
+// cast-iron pots and bathroom taps alike), so sharing one says little. The
+// categories that matter most are a product's subcategories, then the parents
+// of those subcategories; its other top-level categories come last.
+function categoryRanks(p) {
+  const child = new Set();
+  const primaryTop = new Set();
+  const tops = [];
+  for (const { slug } of p.categories) {
+    const c = CATEGORIES.find((x) => x.slug === slug);
+    if (!c) continue;
+    if (c.parent) {
+      child.add(slug);
+      const parent = CATEGORIES.find((x) => x.id === c.parent);
+      if (parent) primaryTop.add(parent.slug);
+    } else tops.push(slug);
+  }
+  if (!child.size) tops.forEach((t) => primaryTop.add(t));
+  const otherTop = new Set(tops.filter((t) => !primaryTop.has(t)));
+  return { child, primaryTop, otherTop };
+}
+function familyOf(p) {
+  const fam = new Set();
+  for (const { slug } of p.categories) {
+    fam.add(slug);
+    const c = CATEGORIES.find((x) => x.slug === slug);
+    const parent = c && c.parent ? CATEGORIES.find((x) => x.id === c.parent) : null;
+    if (parent) fam.add(parent.slug);
+  }
+  return fam;
+}
+function rankAndTake(product, candidates, tierOf, count) {
+  const picked = candidates
+    .map((p) => ({ p, tier: tierOf(p) }))
+    .filter((x) => x.tier < 9)
+    .sort(
+      (a, b) =>
+        a.tier - b.tier ||
+        (a.p.in_stock === false) - (b.p.in_stock === false) ||
+        (inlinks.get(a.p.slug) || 0) - (inlinks.get(b.p.slug) || 0) ||
+        stableHash(product.slug + a.p.slug) - stableHash(product.slug + b.p.slug)
+    )
+    .slice(0, count)
+    .map((x) => x.p);
+  for (const p of picked) inlinks.set(p.slug, (inlinks.get(p.slug) || 0) + 1);
+  return picked;
+}
+function pickRelated(product) {
+  const mine = categoryRanks(product);
+  const brand = product.brand_names[0];
+  const others = PRODUCTS.filter((p) => p.slug !== product.slug);
+  const close = rankAndTake(
+    product,
+    others,
+    (p) => {
+      const fam = familyOf(p);
+      if ([...mine.child].some((s) => fam.has(s))) return 0;
+      if ([...mine.primaryTop].some((s) => fam.has(s))) return 1;
+      if (brand && p.brand_names.includes(brand)) return 2;
+      if ([...mine.otherTop].some((s) => fam.has(s))) return 3;
+      return 9;
+    },
+    RELATED_COUNT
+  );
+  // A product alone in its category and brand still gets a few cards.
+  return close.length ? close : rankAndTake(product, others, () => 0, 4);
+}
+// "Sản phẩm khác của <thương hiệu>" (audit L4): the same brand, minus what is
+// already in the block above.
+function pickSameBrand(product, brandName, exclude) {
+  const skip = new Set([product.slug, ...exclude.map((p) => p.slug)]);
+  return rankAndTake(
+    product,
+    PRODUCTS.filter((p) => !skip.has(p.slug) && p.brand_names.includes(brandName)),
+    () => 0,
+    SAME_BRAND_COUNT
+  );
+}
+
 function buildProducts() {
   for (const product of PRODUCTS) {
     const cat = product.categories[0];
@@ -654,11 +824,12 @@ function buildProducts() {
     // is also the price shown on cards and in search, so the product page opens
     // on exactly the figure that brought the visitor here.
     const sizes = product.sizes || [];
+    const variantLabel = variantKind(sizes) === "color" ? "Màu sắc" : "Kích cỡ";
     const sizeRowHtml = sizes.length
       ? `
         <div class="size-row" id="size-row">
-          <span class="size-row-label">Kích cỡ:</span>
-          <div class="size-options" role="group" aria-label="Chọn kích cỡ">
+          <span class="size-row-label">${variantLabel}:</span>
+          <div class="size-options" role="group" aria-label="Chọn ${variantLabel.toLowerCase()}">
             ${sizes
               .map(
                 (sz, i) => `<button type="button" class="size-option${i === 0 ? " is-active" : ""}" aria-pressed="${i === 0}" data-size="${sz.name}" data-price="${sz.price}" data-regular="${sz.regular_price}">${sz.name}</button>`
@@ -671,10 +842,9 @@ function buildProducts() {
     const safeName = product.name.replace(/"/g, "&quot;");
     const inStock = product.in_stock !== false;
 
-    const related = PRODUCTS.filter(
-      (p) => p.slug !== product.slug && p.categories.some((c) => cat && c.slug === cat.slug)
-    ).slice(0, 4);
-    const fallback = related.length ? related : PRODUCTS.filter((p) => p.slug !== product.slug).slice(0, 4);
+    const related = pickRelated(product);
+    const brandName = product.brand_names[0];
+    const sameBrand = brandName ? pickSameBrand(product, brandName, related) : [];
 
     const bodyMain = `
 <main class="container">
@@ -684,9 +854,9 @@ function buildProducts() {
   <div id="product-root">
     <div class="product-detail">
       <div>
-        <div class="gallery-main${inStock ? "" : " is-out-of-stock"}">${inStock ? "" : '<span class="stock-out-badge">Hết hàng</span>'}<img id="gallery-main-img" src="${images[0].src}" alt="${images[0].alt}"></div>
+        <div class="gallery-main${inStock ? "" : " is-out-of-stock"}">${inStock ? "" : '<span class="stock-out-badge">Hết hàng</span>'}<img id="gallery-main-img" src="${images[0].src}" alt="${images[0].alt}"${sizeAttrs(images[0].src)} fetchpriority="high"></div>
         <div class="gallery-thumbs" id="gallery-thumbs">
-          ${images.map((im, i) => `<img src="${im.thumbnail || im.src}" data-full="${im.src}" alt="${im.alt}" class="${i === 0 ? "active" : ""}">`).join("")}
+          ${images.map((im, i) => `<img src="${im.thumbnail || im.src}" data-full="${im.src}" alt="${im.alt}"${sizeAttrs(im.thumbnail || im.src)} loading="lazy" decoding="async" class="${i === 0 ? "active" : ""}">`).join("")}
         </div>
       </div>
 
@@ -724,7 +894,7 @@ function buildProducts() {
     <section class="description-section">
       <span class="description-tab-head">MÔ TẢ SẢN PHẨM</span>
       <div class="description-body" id="description-body">
-        ${product.description || "<p>Đang cập nhật mô tả sản phẩm.</p>"}
+        ${addImageSizes(stripEmojiInHeadings(product.description)) || "<p>Đang cập nhật mô tả sản phẩm.</p>"}
         <div class="description-fade"></div>
       </div>
       <button class="expand-toggle" id="expand-toggle">Xem thêm ▼</button>
@@ -732,8 +902,15 @@ function buildProducts() {
 
     <section class="section related-section">
       <h2>Sản phẩm tương tự</h2>
-      <div class="product-grid" id="related-grid">${fallback.map(productCardHtml).join("")}</div>
+      <div class="product-grid" id="related-grid">${related.map(productCardHtml).join("")}</div>
+      ${catHref ? `<p class="related-more"><a class="link-arrow" href="${catHref}">Xem tất cả ${cat.name} →</a></p>` : ""}
     </section>
+    ${sameBrand.length ? `
+    <section class="section related-section">
+      <h2>Sản phẩm khác của ${brandName}</h2>
+      <div class="product-grid">${sameBrand.map(productCardHtml).join("")}</div>
+      <p class="related-more"><a class="link-arrow" href="${brandUrl(brandName)}">Xem tất cả sản phẩm ${brandName} →</a></p>
+    </section>` : ""}
   </div>
 
   <div class="dh-modal-overlay" id="contact-modal-overlay" hidden>
@@ -743,7 +920,7 @@ function buildProducts() {
       <p class="dh-modal-hotline">Hotline: <strong>086 6393 892</strong></p>
 
       <div class="dh-modal-product">
-        <img src="${images[0].src}" alt="${safeName}">
+        <img src="${images[0].src}" alt="${safeName}"${sizeAttrs(images[0].src)} loading="lazy">
         <div class="dh-modal-product-body">
           <strong>${product.name}</strong>
           <span>${formatVnd(product.prices.price)}</span>
@@ -767,10 +944,8 @@ function buildProducts() {
 </main>`;
 
     const path = `/san-pham/${product.slug}/`;
-    const metaDescription = truncate(
-      stripHtml(product.short_description) || stripHtml(product.description) || `${product.name} chính hãng tại Dolphin House.`,
-      160
-    );
+    const metaDesc =
+      metaDescription(product.short_description) || metaDescription(product.description) || `${product.name} tại Dolphin House.`;
     const breadcrumbItems = [
       { name: "Trang chủ", url: "/" },
       ...(catHref ? [{ name: cat.name, url: catHref }] : []),
@@ -781,7 +956,8 @@ function buildProducts() {
       "@type": "Product",
       name: product.name,
       image: images.filter((im) => im.src).map((im) => absUrl(im.src)),
-      description: metaDescription,
+      "@id": `${absUrl(path)}#product`,
+      description: metaDesc,
       sku: product.sku || undefined,
       brand: product.brand_names.length ? { "@type": "Brand", name: product.brand_names[0] } : undefined,
       // More than one size means more than one price: describing it as a single
@@ -797,6 +973,8 @@ function buildProducts() {
               highPrice: String(Math.max(...sizes.map((sz) => Number(sz.price) || 0))),
               offerCount: sizes.length,
               availability: `https://schema.org/${inStock ? "InStock" : "OutOfStock"}`,
+              itemCondition: "https://schema.org/NewCondition",
+              seller: { "@type": "Organization", "@id": ORG_ID, name: "Dolphin House" },
             }
           : {
               "@type": "Offer",
@@ -804,14 +982,16 @@ function buildProducts() {
               priceCurrency: "VND",
               price: product.prices.price,
               availability: `https://schema.org/${inStock ? "InStock" : "OutOfStock"}`,
+              itemCondition: "https://schema.org/NewCondition",
+              seller: { "@type": "Organization", "@id": ORG_ID, name: "Dolphin House" },
             },
     };
 
     write(
       `san-pham/${product.slug}/index.html`,
       page({
-        title: `${product.name} | Dolphin House`,
-        description: metaDescription,
+        title: seoTitle(product.name),
+        description: metaDesc,
         path,
         image: images[0] && images[0].src,
         type: "product",
@@ -820,7 +1000,8 @@ function buildProducts() {
         extraScripts: ["/js/site.js", "/js/product-interactive.js"].concat(product.smartCss != null ? ["/js/smart.js"] : []),
         extraHead: smartHead(product.smartCss),
         jsonLd: [productLd, breadcrumbLd(breadcrumbItems)],
-      })
+      }),
+      product.modified
     );
   }
 }
@@ -1020,16 +1201,104 @@ function pruneOrphanPostDirs() {
 // empty by default) — marked noindex in their own page() call, kept out of
 // the sitemap here too so we don't ask Google to index a page we told it not to.
 const NOINDEX_PATHS = ["/gio-hang/", "/thanh-toan/"];
-const BUILD_DATE = new Date().toISOString().slice(0, 10);
+// /feed.xml (RSS 2.0, 20 newest posts) and /llms.txt (a plain Markdown map of
+// the site for AI assistants) — audit G8. Both are rebuilt from the same data
+// as the pages, so they can never list something the site does not have.
+function xmlEsc(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function buildFeedAndLlms() {
+  const plain = (s) => String(s || "").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
+  const rfc822 = (iso) => new Date(`${iso}T08:00:00+07:00`).toUTCString();
+  const posts = BLOG_POSTS.slice(0, 20);
+  const items = posts
+    .map((p) => {
+      const url = absUrl(`/${p.slug}/`);
+      return `    <item>
+      <title>${xmlEsc(plain(p.title))}</title>
+      <link>${url}</link>
+      <guid isPermaLink="true">${url}</guid>
+      <pubDate>${rfc822(p.dateIso)}</pubDate>
+      <description>${xmlEsc(metaDescription(p.excerpt || p.body, 300))}</description>
+    </item>`;
+    })
+    .join("\n");
+  writeFileSync(
+    join(ROOT, "feed.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tin tức Dolphin House</title>
+    <link>${SITE_URL}/tin-tuc/</link>
+    <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Kinh nghiệm chọn đồ gia dụng, mẹo dùng và bảo quản thiết bị nhà bếp từ Dolphin House.</description>
+    <language>vi</language>
+${posts.length ? `    <lastBuildDate>${rfc822(latestDate(posts))}</lastBuildDate>\n` : ""}${items}
+  </channel>
+</rss>
+`
+  );
+
+  const roots = CATEGORIES.filter((c) => c.parent === 0);
+  const catLines = roots
+    .map((r) => {
+      const kids = CATEGORIES.filter((c) => c.parent === r.id);
+      const head = `- [${plain(r.name)}](${absUrl(categoryUrl(r, CATEGORIES))}): ${productsForCategory(r.slug).length} sản phẩm`;
+      return [head, ...kids.map((k) => `  - [${plain(k.name)}](${absUrl(categoryUrl(k, CATEGORIES))})`)].join("\n");
+    })
+    .join("\n");
+  const postLines = BLOG_POSTS.map((p) => `- [${plain(p.title)}](${absUrl(`/${p.slug}/`)})${p.excerpt ? `: ${metaDescription(p.excerpt, 200)}` : ""}`).join("\n");
+  const policies = [
+    ["Chính sách bảo hành & đổi trả", "/chinh-sach-bao-hanh-doi-tra/"],
+    ["Chính sách vận chuyển", "/hinh-thuc-van-chuyen/"],
+    ["Hình thức thanh toán", "/hinh-thuc-thanh-toan/"],
+    ["Cam kết chất lượng", "/cam-ket-chat-luong/"],
+    ["Chính sách bảo mật", "/chinh-sach-bao-mat/"],
+    ["Điều khoản sử dụng", "/dieu-khoan-su-dung/"],
+  ]
+    .map(([t, u]) => `- [${t}](${absUrl(u)})`)
+    .join("\n");
+  writeFileSync(
+    join(ROOT, "llms.txt"),
+    `# Dolphin House
+
+> Dolphin House (dolphinhouse.vn) bán đồ gia dụng thông minh, thiết bị nhà bếp và điện gia dụng, giao hàng toàn quốc.
+
+- Địa chỉ: S219 Đại Dương 8, Vinhomes Ocean Park, Gia Lâm, Hà Nội
+- Hotline: 086 639 3892
+- Email: dolphinhouse.vn@gmail.com
+- Cửa hàng: ${absUrl("/cua-hang/")} (${PRODUCTS.length} sản phẩm)
+- Thương hiệu: ${absUrl("/thuong-hieu/")}
+
+## Danh mục sản phẩm
+
+${catLines}
+
+## Bài viết
+
+${postLines}
+
+## Chính sách
+
+${policies}
+`
+  );
+}
 
 function buildRobotsAndSitemap() {
   const urls = generatedPaths
     .filter((p) => !p.includes("/page/") && !NOINDEX_PATHS.includes(p))
     .sort()
-    .map((p) => `  <url><loc>${absUrl(p)}</loc><lastmod>${BUILD_DATE}</lastmod></url>`)
+    .map((p) => {
+      const lm = lastmodByPath.get(p);
+      return `  <url><loc>${absUrl(p)}</loc>${lm ? `<lastmod>${lm}</lastmod>` : ""}</url>`;
+    })
     .join("\n");
   writeFileSync(join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
-  writeFileSync(join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+  // Cloudflare's managed robots.txt prepends its own `User-agent: *` group, so
+  // repeating one here produced two groups for the same agent (audit T8).
+  // A file with no group at all already means "everything allowed".
+  writeFileSync(join(ROOT, "robots.txt"), `Sitemap: ${SITE_URL}/sitemap.xml\n`);
 }
 
 // Static hosts (Cloudflare Pages/Netlify/Vercel) serve this file automatically
@@ -1248,7 +1517,16 @@ buildSimplePage(write, CATEGORIES, {
 buildCartPage();
 buildCheckoutPage();
 buildRobotsAndSitemap();
+buildFeedAndLlms();
 build404();
+
+// Images referenced by pages but missing from html/assets (audit T6): a build
+// warning, not a failure — the page still publishes, but the list shows what
+// to fix in the CMS.
+if (missingImages.size) {
+  console.warn(`WARNING: ${missingImages.size} image(s) referenced but not found:`);
+  for (const src of [...missingImages].sort()) console.warn(`  ${src}`);
+}
 
 const BRAND_COUNT = getBrands().length;
 console.log(

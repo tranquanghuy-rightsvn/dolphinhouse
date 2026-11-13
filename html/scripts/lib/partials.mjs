@@ -1,11 +1,14 @@
 // Shared HTML partials: header/footer/nav (previously built at runtime by js/common.js
 // renderHeader()/renderFooter()) and the product-card markup, now emitted at build time.
 import { CATEGORY_ICONS, hexToRgba } from "./mega-menu-icons.mjs";
+import { sizeAttrs } from "./image-size.mjs";
 
 // Real production domain (confirmed by the site owner) — used to emit
 // absolute canonical/OG URLs and the sitemap.xml, since this static build
 // replaces the live dolphinhouse.vn WordPress site on the same domain.
 export const SITE_URL = "https://dolphinhouse.vn";
+export const ORG_ID = `${SITE_URL}/#organization`;
+
 const DEFAULT_DESCRIPTION =
   "Dolphin House – gia dụng thông minh, thiết bị bếp và tiện ích cao cấp cho gia đình hiện đại. Giao hàng toàn quốc, tư vấn tận tâm.";
 const DEFAULT_OG_IMAGE = "/assets/images/site/dolphin-house-logo-320x100-1.webp";
@@ -32,14 +35,96 @@ export function truncate(str, max = 160) {
   return (lastSpace > 40 ? cut.slice(0, lastSpace) : cut) + "…";
 }
 
+// Pictographic emoji plus the joiners/selectors that glue them together.
+// ™ and ® are Extended_Pictographic too but are legitimate in product names.
+const EMOJI_RE = /(?![\u2122\u00AE])[\p{Extended_Pictographic}\u{FE0F}\u{200D}\u{20E3}]/gu;
+export function stripEmoji(str) {
+  return String(str || "").replace(EMOJI_RE, "").replace(/[ \t]{2,}/g, " ");
+}
+
+function decodeEntities(str) {
+  return String(str)
+    .replace(/&nbsp;/g, " ")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&");
+}
+function encodeText(str) {
+  return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+// Meta description from (rich) text (audit O2): list items, paragraphs and
+// line breaks become sentences, emoji and tags go, and the text is cut at the
+// last full sentence that fits — never mid-word with a trailing "…".
+export function metaDescription(html, max = 155) {
+  let text = String(html || "")
+    .replace(/<\/(li|p|h[1-6]|div|tr)>|<br\s*\/?>/gi, " ¶ ")
+    .replace(/<[^>]+>/g, " ");
+  text = stripEmoji(decodeEntities(text))
+    .split("¶")
+    .map((part) => part.replace(/\s+/g, " ").trim())
+    .filter(Boolean)
+    .map((part) => (/[.!?…:;]$/.test(part) ? part : part + "."))
+    .join(" ")
+    .replace(/\s+([.,!?;:])/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (text.length <= max) return text;
+  const window = text.slice(0, max + 1);
+  const lastStop = Math.max(window.lastIndexOf(". "), window.lastIndexOf("! "), window.lastIndexOf("? "));
+  if (lastStop >= 60) return text.slice(0, lastStop + 1);
+  const cut = window.slice(0, window.lastIndexOf(" "));
+  return cut.replace(/[,;:\-–]+$/, "").trim();
+}
+
+// <title> for records with long names (audit O1): "Name | Dolphin House" when
+// it fits in ~60 characters, otherwise the name alone; a very long name is
+// shortened at its first " – " / " - " separator when what is left is still a
+// descriptive name. Never cut mid-phrase. `name` arrives HTML-escaped.
+export function seoTitle(name, { suffix = " | Dolphin House", max = 60 } = {}) {
+  const plain = stripEmoji(decodeEntities(name)).replace(/\s+/g, " ").trim();
+  let out;
+  if (plain.length + suffix.length <= max) out = plain + suffix;
+  else if (plain.length <= max) out = plain;
+  else {
+    const m = plain.match(/^(.{25,}?)\s+[–-]\s+/);
+    out = m && m[1].length <= max ? m[1] : plain;
+  }
+  return encodeText(out);
+}
+
+// Emoji in H1–H3 of CMS rich text (audit O4) — a guard so they never reach a heading again.
+export function stripEmojiInHeadings(html) {
+  return String(html || "").replace(/(<h[1-3]\b[^>]*>)([\s\S]*?)(<\/h[1-3]>)/gi, (_, open, inner, close) => {
+    const cleaned = inner.replace(/(^|>)([^<]*)/g, (m, gt, txt) => gt + stripEmoji(txt));
+    return open + cleaned.replace(/^\s+/, "") + close;
+  });
+}
+
 function escapeAttr(str) {
   return String(str || "").replace(/"/g, "&quot;");
 }
 
+// Text reaches the templates HTML-escaped (lib/cms-data.mjs), which is right
+// for markup but wrong inside JSON-LD: `Nồi &amp; xửng hấp` was published as a
+// literal "&amp;" (audit O7). Strings are decoded back to plain text here, and
+// "<" is written as \u003c so no value can close the <script> element.
+function plainJson(value) {
+  if (typeof value === "string") return decodeEntities(value);
+  if (Array.isArray(value)) return value.map(plainJson);
+  if (value && typeof value === "object") {
+    const out = {};
+    for (const [k, v] of Object.entries(value)) if (v !== undefined) out[k] = plainJson(v);
+    return out;
+  }
+  return value;
+}
 export function jsonLdScripts(items) {
   return (items || [])
     .filter(Boolean)
-    .map((obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`)
+    .map((obj) => `<script type="application/ld+json">${JSON.stringify(plainJson(obj)).replace(/</g, "\\u003c")}</script>`)
     .join("\n");
 }
 
@@ -265,6 +350,11 @@ export const SOCIAL_LINKS = [
   },
 ];
 
+// Feeds Organization.sameAs (audit G1) from the same list as the footer icons.
+export function socialUrls() {
+  return SOCIAL_LINKS.map((l) => l.href).filter(Boolean);
+}
+
 export function socialLinksHtml(size = 16) {
   return SOCIAL_LINKS.map(
     (s) => `<a href="${s.href}" target="_blank" rel="noopener noreferrer" aria-label="${s.name} Dolphin House" title="${s.name}"><svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="currentColor" aria-hidden="true"><path d="${s.path}"/></svg></a>`
@@ -347,7 +437,7 @@ export function productCardHtml(p) {
   return `
     <div class="product-card${p.in_stock === false ? " is-out-of-stock" : ""}">
       ${p.in_stock === false ? '<span class="stock-out-badge">Hết hàng</span>' : isSale ? '<span class="onsale">Giảm giá!</span>' : ""}
-      <a class="thumb" href="/san-pham/${p.slug}/"><img src="${img}" alt="${p.name}" loading="lazy"></a>
+      <a class="thumb" href="/san-pham/${p.slug}/"><img src="${img}" alt="${p.name}"${sizeAttrs(img)} loading="lazy" decoding="async"></a>
       <h3><a href="/san-pham/${p.slug}/">${p.name}</a></h3>
       <div class="price-row">${priceHtml}</div>
       <button type="button" class="dh-cart-add-btn"${p.in_stock === false ? " disabled" : ""} data-slug="${p.slug}" data-name="${safeName}" data-size="${p.sizes && p.sizes.length ? p.sizes[0].name : ""}" data-price="${price.price}" data-image="${img}" aria-label="Thêm ${safeName} vào giỏ hàng">
@@ -420,6 +510,7 @@ ${canonical ? `<meta property="og:url" content="${canonical}">` : ""}
 <meta name="twitter:title" content="${escapeAttr(title)}">
 <meta name="twitter:description" content="${escapeAttr(metaDescription)}">
 <meta name="twitter:image" content="${ogImage}">
+<link rel="alternate" type="application/rss+xml" title="Tin tức Dolphin House" href="/feed.xml">
 <link rel="stylesheet" href="/css/styles.css">
 ${extraHead ? `${extraHead}\n` : ""}${ld}
 </head>

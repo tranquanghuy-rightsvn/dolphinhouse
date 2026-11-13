@@ -714,7 +714,7 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
 .shop-toolbar select {
   border: 1px solid #767676; background: #efefef; padding: 8px 10px; font-size: 14px; font-family: inherit;
 }
-.pagination { display: flex; justify-content: center; gap: 8px; padding: 30px 0; }
+.pagination { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 30px 0; }
 .pagination a, .pagination span {
   min-width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
   border-radius: 4px; border: 1px solid var(--border); font-size: 14px; font-weight: 600;
@@ -832,6 +832,7 @@ a.chat-fb-btn:hover { background: #166fe0; color: var(--white); }
 .expand-toggle { display: block; margin: 16px auto 0; border: 1px solid var(--teal-dark); color: var(--teal-dark); background: var(--white); border-radius: var(--radius-pill); padding: 8px 24px; font-weight: 600; }
 
 .related-section h2 { font-size: 20px; text-transform: uppercase; margin-bottom: 20px; }
+.related-more { margin: 12px 0 0; text-align: right; }
 
 /* ---------- Contact modal (product page "Liên hệ" button) ---------- */
 .dh-modal-overlay {
