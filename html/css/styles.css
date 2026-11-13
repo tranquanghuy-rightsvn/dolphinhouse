@@ -781,15 +781,34 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
 .summary-meta a { color: var(--teal-brand); }
 .chat-fb-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #1877f2; color: var(--white); border: none; border-radius: 4px; padding: 12px; font-weight: 700; font-size: 14px; margin-top: 16px; }
 
-/* Right-column trust/policy list on the product page — verified against
-   dolphinhouse.vn's .chinh_sach_cua_shop widget. */
-.chinh-sach-cua-shop { border: 1px solid #ccc; padding: 20px 10px 0; min-width: 0; }
-.chinh-sach-cua-shop ul { list-style: none; }
-.chinh-sach-cua-shop li.has-icon { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; }
-.chinhsach-icon { flex: 0 0 auto; }
-.chinhsach-icon img { width: 42px; height: 42px; display: block; }
-.chinhsach-content { min-width: 0; flex: 1 1 auto; font-size: 14px; font-weight: 400; color: #333; line-height: 1.5; word-wrap: break-word; }
-.chinhsach-content strong { color: #ff3333; font-weight: 700; }
+a.chat-fb-btn:hover { background: #166fe0; color: var(--white); }
+
+/* "Mua sắm an tâm" box, right column of the product page. Desktop shows a
+   short list + one hotline; ≤1024px it turns into three compact tiles. */
+.trust-box {
+  background: #f5f7f7; border: 1px solid var(--border); border-radius: var(--radius-md);
+  padding: 18px 16px; min-width: 0;
+}
+.trust-box-title { font-size: 16px; font-weight: 700; color: var(--teal-dark); margin: 0 0 10px; }
+.trust-box-list { list-style: none; margin: 0; padding: 0; }
+.trust-box-list li {
+  display: flex; align-items: flex-start; gap: 10px; padding: 10px 0;
+  border-bottom: 1px solid var(--border); font-size: 14px; color: var(--ink); line-height: 1.45;
+}
+.trust-box-icon { flex: 0 0 16px; color: var(--orange); font-weight: 700; text-align: center; }
+.trust-box-short { display: none; }
+.trust-box-hotline { margin: 14px 0 0; font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+.trust-box-hotline a { display: block; margin-top: 2px; font-size: 18px; font-weight: 700; color: var(--red); }
+.trust-box-hotline a:hover { color: var(--purple); }
+.trust-box-social { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 13px; color: var(--ink-soft); }
+.trust-box-social-links { display: flex; gap: 8px; margin-top: 8px; }
+.trust-box-social-links a {
+  width: 34px; height: 34px; border-radius: 50%; background: var(--white); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center; color: var(--teal-brand);
+}
+.trust-box-social-links a:hover { background: var(--teal-brand); border-color: var(--teal-brand); color: var(--white); }
+.footer-social a svg { display: block; }
+.footer-social a:hover { background: var(--teal-brand); color: var(--white); }
 .news-widget { border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px; }
 .news-widget h5 { text-transform: uppercase; font-size: 13px; margin-bottom: 14px; color: var(--teal-dark); }
 .news-item { display: flex; gap: 10px; margin-bottom: 14px; }
@@ -923,7 +942,21 @@ h1, h2, h3, h4 { color: var(--teal-dark); font-weight: 500; margin: 0; }
   .category-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .product-detail { grid-template-columns: 1fr 1fr; }
-  .chinh-sach-cua-shop { grid-column: 1 / -1; }
+  .trust-box { grid-column: 1 / -1; background: none; border: 0; padding: 0; }
+  .trust-box-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .trust-box-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .trust-box-list li {
+    flex-direction: column; align-items: center; gap: 4px; padding: 10px 6px; border: 1px solid var(--border);
+    border-radius: var(--radius-md); background: #f5f7f7; text-align: center; font-size: 12px; line-height: 1.35;
+  }
+  .trust-box-icon { flex: 0 0 auto; font-size: 16px; }
+  .trust-box-text { display: none; }
+  .trust-box-short { display: block; }
+  .trust-box-hotline { margin-top: 10px; text-align: center; }
+  .trust-box-ask-long { display: none; }
+  .trust-box-hotline a { display: inline; margin: 0 0 0 4px; font-size: 14px; color: var(--ink); }
+  .trust-box-social { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; padding-top: 0; border-top: 0; }
+  .trust-box-social-links { margin-top: 0; }
   .advisory { grid-template-columns: 1fr; }
   .advisory-cards { grid-template-columns: repeat(3, 1fr); }
 }
