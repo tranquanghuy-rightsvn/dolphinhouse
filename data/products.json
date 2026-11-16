@@ -2096,31 +2096,6 @@
     "updated_at": "2026-11-13T07:45:41.454Z"
   },
   {
-    "id": 2927,
-    "name": "Đệm Massage Toàn Thân Medisana MM825",
-    "slug": "dem-massage-toan-than-medisana-mm825",
-    "sku": "MM 825",
-    "brand_names": [
-      "Medisana"
-    ],
-    "categories": [
-      {
-        "id": 11,
-        "name": "Chăm sóc gia đình & phòng ngủ",
-        "slug": "chan-ga-goi-dem"
-      }
-    ],
-    "prices": {
-      "price": "1950000",
-      "regular_price": "1950000"
-    },
-    "on_sale": false,
-    "image": "/assets/images/products/dem-massage-toan-than-medisana-mm825/01.webp",
-    "sizes": [],
-    "in_stock": false,
-    "updated_at": "2026-11-13T07:46:14.738Z"
-  },
-  {
     "id": 2926,
     "name": "Đèn Bàn Chống Cận Wilit U13AQ",
     "slug": "den-ban-chong-can-wilit-u13aq",
