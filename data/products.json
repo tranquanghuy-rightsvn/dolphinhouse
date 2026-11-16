@@ -5109,31 +5109,6 @@
     "updated_at": "2026-11-13T09:41:08.042Z"
   },
   {
-    "id": 1043,
-    "name": "Ghế ô tô I-SPINSAFE (0–12 tuổi) &#8211; G412I0T",
-    "slug": "ghe-o-to-i-spinsafe-0-12-tuoi-g412i0t",
-    "sku": "G412I0T",
-    "brand_names": [
-      "Dolphin House"
-    ],
-    "categories": [
-      {
-        "id": 171,
-        "name": "Ghế ô tô trẻ em",
-        "slug": "ghe-o-to-tre-em"
-      }
-    ],
-    "prices": {
-      "price": "4950000",
-      "regular_price": "5250000"
-    },
-    "on_sale": true,
-    "image": "/assets/images/products/ghe-ngoi-o-to-SPINSAFE-0%E2%80%9312-tuoi%E2%80%93Ma-G412I0T-3.jpg",
-    "sizes": [],
-    "in_stock": true,
-    "updated_at": "2026-11-13T08:27:18.293Z"
-  },
-  {
     "id": 1034,
     "name": "Ghế ô tô trẻ em Babyro I-SPINSAFE PRO G412IS0",
     "slug": "ghe-o-to-tre-em-babyro-i-spinsafe-pro-g412is0",
