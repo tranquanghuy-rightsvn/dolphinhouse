@@ -3511,36 +3511,6 @@
     "updated_at": "2026-11-16T03:55:40.643Z"
   },
   {
-    "id": 1930,
-    "name": "Nồi Hầm Dưỡng Sinh Bear DDG-D20N5 2.0L – Lòng Gốm Sứ, 175W",
-    "slug": "noi-ham-duong-sinh-bear-ddg-d20n5-2l-long-gom-su",
-    "sku": "MBEAR-D20N5",
-    "brand_names": [
-      "Bear"
-    ],
-    "categories": [
-      {
-        "id": 8,
-        "name": "Điện gia dụng",
-        "slug": "dien-gia-dung"
-      },
-      {
-        "id": 42,
-        "name": "Bếp thông minh & dụng cụ nấu ăn",
-        "slug": "do-dung-nha-bep"
-      }
-    ],
-    "prices": {
-      "price": "690000",
-      "regular_price": "690000"
-    },
-    "on_sale": false,
-    "image": "/assets/images/products/bear_lifestyle_compressed-1.jpg",
-    "sizes": [],
-    "in_stock": true,
-    "updated_at": "2026-11-16T03:55:27.845Z"
-  },
-  {
     "id": 1854,
     "name": "Chiếu Mây Ngải Cứu Nicolas – Đế 5D Chống Trượt, Kháng Khuẩn",
     "slug": "chieu-may-ngai-cuu-nicolas-sieu-cap",
