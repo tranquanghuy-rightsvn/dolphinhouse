@@ -320,7 +320,7 @@ const GIOI_THIEU_FAQ = [
   {
     question: "Sản phẩm tại Dolphin House có chính hãng không?",
     answer:
-      "Có. Toàn bộ sản phẩm được nhập và phân phối chính hãng, có đầy đủ thông tin xuất xứ, thông số kỹ thuật và chế độ bảo hành theo từng ngành hàng.",
+      "Có. Dolphin House bán hàng chính hãng; thương hiệu, thông số và chế độ bảo hành được ghi trên từng trang sản phẩm. Nếu cần xem giấy tờ nguồn gốc hoặc phiếu bảo hành của một sản phẩm cụ thể, bạn có thể gọi hotline 086 639 3892 trước khi đặt hàng.",
   },
   {
     question: "Dolphin House có cửa hàng để xem trực tiếp sản phẩm không?",
