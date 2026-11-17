@@ -1059,6 +1059,11 @@ a.chat-fb-btn:hover { background: #166fe0; color: var(--white); }
 .tinymce figure { margin: 20px 0; }
 .tinymce img { max-width: 100%; border-radius: var(--radius-md); display: block; }
 .tinymce figcaption { font-size: 12px; color: var(--ink-faint); text-align: center; margin-top: 6px; }
+.tinymce blockquote {
+  margin: 20px 0; padding: 14px 18px; border-left: 4px solid var(--orange);
+  background: #fdf6ec; border-radius: 0 var(--radius-md) var(--radius-md) 0; color: var(--teal-dark);
+}
+.tinymce blockquote p:last-child { margin-bottom: 0; }
 .tinymce table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
 .tinymce th, .tinymce td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
 .tinymce th { background: var(--teal-tint-50); }
