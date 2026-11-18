@@ -1,5 +1,38 @@
 [
   {
+    "id": 3003,
+    "name": "Máy hút bụi lau nhà cầm tay Roborock F25 Gen 2 (20.000Pa)",
+    "slug": "may-hut-bui-lau-nha-cam-tay-roborock-f25-gen-2",
+    "sku": "SN02",
+    "brand_names": [],
+    "categories": [
+      {
+        "id": 101,
+        "name": "Vệ sinh nhà cửa thông minh",
+        "slug": "ve-sinh-nha-cua"
+      },
+      {
+        "id": 51,
+        "name": "Thiết bị gia dụng thông minh",
+        "slug": "san-pham-thong-minh"
+      },
+      {
+        "id": 8,
+        "name": "Điện gia dụng",
+        "slug": "dien-gia-dung"
+      }
+    ],
+    "prices": {
+      "price": "6990000",
+      "regular_price": "6990000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/may-hut-bui-lau-nha-cam-tay-roborock-f25-gen-2/01.jpg",
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-11-18T08:08:06.930Z"
+  },
+  {
     "id": 3002,
     "name": "Cặp lồng giữ nhiệt Kaiyo 1000ml inox 304 kèm thìa gấp gọn",
     "slug": "cap-long-giu-nhiet-kaiyo-1000ml",
