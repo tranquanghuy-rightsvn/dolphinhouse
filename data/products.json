@@ -1,5 +1,49 @@
 [
   {
+    "id": 3001,
+    "name": "Set hũ gia vị thủy tinh CCKO 400ml kèm khay (Set 3 và 4 hũ)",
+    "slug": "set-hu-gia-vi-thuy-tinh-ccko",
+    "sku": "HD41 / HD42",
+    "brand_names": [],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "490000",
+      "regular_price": "490000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/set-hu-gia-vi-thuy-tinh-ccko/01.jpg",
+    "sizes": [
+      {
+        "name": "Set 3 hũ màu đen (HD41)",
+        "price": "490000",
+        "regular_price": "490000"
+      },
+      {
+        "name": "Set 4 hũ màu đen (HD42)",
+        "price": "570000",
+        "regular_price": "570000"
+      },
+      {
+        "name": "Set 4 hũ màu vàng (HD42)",
+        "price": "570000",
+        "regular_price": "570000"
+      }
+    ],
+    "in_stock": true,
+    "updated_at": "2026-11-18T08:07:09.263Z"
+  },
+  {
     "id": 3000,
     "name": "Bộ đựng gia vị kèm bình dầu giấm CCKO HD44 (4 món và khay)",
     "slug": "bo-dung-gia-vi-cao-cap-ccko",
