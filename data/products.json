@@ -105,7 +105,9 @@
     "name": "Set hũ gia vị thủy tinh CCKO 400ml kèm khay (Set 3 và 4 hũ)",
     "slug": "set-hu-gia-vi-thuy-tinh-ccko",
     "sku": "HD41 / HD42",
-    "brand_names": [],
+    "brand_names": [
+      "CCKO"
+    ],
     "categories": [
       {
         "id": 42,
@@ -142,7 +144,7 @@
       }
     ],
     "in_stock": true,
-    "updated_at": "2026-11-18T08:07:09.263Z"
+    "updated_at": "2026-11-18T08:45:17.961Z"
   },
   {
     "id": 3000,
