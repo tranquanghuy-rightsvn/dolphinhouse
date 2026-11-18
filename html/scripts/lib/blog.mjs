@@ -320,7 +320,7 @@ const GIOI_THIEU_FAQ = [
   {
     question: "Sản phẩm tại Dolphin House có chính hãng không?",
     answer:
-      "Có. Toàn bộ sản phẩm được nhập và phân phối chính hãng, có đầy đủ thông tin xuất xứ, thông số kỹ thuật và chế độ bảo hành theo từng ngành hàng.",
+      "Có. Dolphin House bán hàng chính hãng; thương hiệu, thông số và chế độ bảo hành được ghi trên từng trang sản phẩm. Nếu cần xem giấy tờ nguồn gốc hoặc phiếu bảo hành của một sản phẩm cụ thể, bạn có thể gọi hotline 086 639 3892 trước khi đặt hàng.",
   },
   {
     question: "Dolphin House có cửa hàng để xem trực tiếp sản phẩm không?",
@@ -356,7 +356,9 @@ export function buildGioiThieu(write, categories) {
     "gioi-thieu/index.html",
     page({
       title: "Về Dolphin House | Câu Chuyện Thương Hiệu Gia Dụng Thông Minh",
-      description: metaDescription(readBody("gioithieu.body.html")),
+      // Hand-written: the page's opening sentence is too long for a clean cut.
+      description:
+        "Dolphin House – Gia Dụng Nhà Cá Heo chọn lọc đồ gia dụng thông minh, tiện ích cho gia đình Việt. Câu chuyện, sứ mệnh, tầm nhìn và 3 cam kết đồng hành.",
       path: "/gioi-thieu/",
       categories,
       activePath: "/gioi-thieu/",
