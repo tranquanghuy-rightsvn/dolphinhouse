@@ -1,5 +1,35 @@
 [
   {
+    "id": 3002,
+    "name": "Cặp lồng giữ nhiệt Kaiyo 1000ml inox 304 kèm thìa gấp gọn",
+    "slug": "cap-long-giu-nhiet-kaiyo-1000ml",
+    "sku": "HD04",
+    "brand_names": [
+      "Kaiyo"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "395000",
+      "regular_price": "395000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/cap-long-giu-nhiet-kaiyo-1000ml/01.jpg",
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-11-18T08:07:29.149Z"
+  },
+  {
     "id": 3001,
     "name": "Set hũ gia vị thủy tinh CCKO 400ml kèm khay (Set 3 và 4 hũ)",
     "slug": "set-hu-gia-vi-thuy-tinh-ccko",
