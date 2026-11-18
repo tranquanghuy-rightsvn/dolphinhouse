@@ -79,7 +79,9 @@
     }
   ],
   "in_stock": true,
-  "brand_names": [],
+  "brand_names": [
+    "CCKO"
+  ],
   "smart": null,
-  "updated_at": "2026-11-18T08:07:09.263Z"
+  "updated_at": "2026-11-18T08:45:17.961Z"
 }
