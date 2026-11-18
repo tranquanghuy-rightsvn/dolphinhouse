@@ -149,7 +149,9 @@
     "name": "Bộ đựng gia vị kèm bình dầu giấm CCKO HD44 (4 món và khay)",
     "slug": "bo-dung-gia-vi-cao-cap-ccko",
     "sku": "HD44",
-    "brand_names": [],
+    "brand_names": [
+      "CCKO"
+    ],
     "categories": [
       {
         "id": 42,
@@ -170,7 +172,7 @@
     "image": "/assets/images/products/bo-dung-gia-vi-cao-cap-ccko/01.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-18T08:05:52.976Z"
+    "updated_at": "2026-11-18T08:45:07.329Z"
   },
   {
     "id": 2999,
