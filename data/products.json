@@ -1,5 +1,33 @@
 [
   {
+    "id": 3000,
+    "name": "Bộ đựng gia vị kèm bình dầu giấm CCKO HD44 (4 món và khay)",
+    "slug": "bo-dung-gia-vi-cao-cap-ccko",
+    "sku": "HD44",
+    "brand_names": [],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 95,
+        "name": "Gia dụng tiện ích",
+        "slug": "gia-dung-tien-ich"
+      }
+    ],
+    "prices": {
+      "price": "890000",
+      "regular_price": "890000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/bo-dung-gia-vi-cao-cap-ccko/01.jpg",
+    "sizes": [],
+    "in_stock": true,
+    "updated_at": "2026-11-18T08:05:52.976Z"
+  },
+  {
     "id": 2999,
     "name": "Hộp Đựng Bàn Chải Tự Khô Joseph Joseph EasyStore",
     "slug": "hop-dung-ban-chai-tu-kho-joseph-joseph-easystore",
