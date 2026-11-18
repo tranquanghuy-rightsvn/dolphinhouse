@@ -1,5 +1,41 @@
 [
   {
+    "id": 3004,
+    "name": "Bộ 10 đôi đũa inox 316 Gume GM-D1882 chống trơn",
+    "slug": "bo-10-doi-dua-inox-316-gume-gm-d1882",
+    "sku": "GM-D1882",
+    "brand_names": [
+      "Gume"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      }
+    ],
+    "prices": {
+      "price": "359000",
+      "regular_price": "359000"
+    },
+    "on_sale": false,
+    "image": "",
+    "sizes": [
+      {
+        "name": "Gold (DD178)",
+        "price": "359000",
+        "regular_price": "359000"
+      },
+      {
+        "name": "Silver (DD179)",
+        "price": "289000",
+        "regular_price": "289000"
+      }
+    ],
+    "in_stock": true,
+    "updated_at": "2026-11-18T08:44:46.284Z"
+  },
+  {
     "id": 3003,
     "name": "Máy hút bụi lau nhà cầm tay Roborock F25 Gen 2 (20.000Pa)",
     "slug": "may-hut-bui-lau-nha-cam-tay-roborock-f25-gen-2",
