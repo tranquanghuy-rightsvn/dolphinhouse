@@ -157,7 +157,7 @@ const HOME_FAQ = [
   {
     question: "Dolphin House có những sản phẩm gia dụng nào?",
     answer:
-      "Dolphin House chọn lọc đồ gia dụng thông minh, thiết bị nhà bếp, điện gia dụng, ghế ô tô trẻ em và tiện ích không gian sống — phù hợp cho căn bếp, phòng ngủ và các khu vực sinh hoạt trong gia đình hiện đại.",
+      "Dolphin House bán đồ gia dụng chính hãng, đa dạng dụng cụ nhà bếp, điện gia dụng và thiết bị thông minh từ hơn 60 thương hiệu. Chế độ bảo hành áp dụng theo từng sản phẩm, và Dolphin House tư vấn theo đúng nhu cầu của từng gia đình.",
   },
   {
     question: "Đặt hàng tại Dolphin House như thế nào?",
@@ -409,8 +409,8 @@ function buildHome() {
   write(
     "index.html",
     page({
-      title: "Dolphin House | Gia Dụng Thông Minh Cao Cấp Cho Gia Đình Hiện Đại",
-      description: "Dolphin House chọn lọc đồ gia dụng thông minh, thiết bị bếp, điện gia dụng và tiện ích nhà cửa cho gia đình hiện đại.",
+      title: "Dolphin House – Gia dụng chính hãng, nâng tầm không gian sống",
+      description: "Gia dụng chính hãng, bảo hành theo từng sản phẩm, tư vấn đúng nhu cầu từng nhà: đa dạng đồ bếp, điện gia dụng và thiết bị thông minh tại Dolphin House.",
       path: "/",
       categories: CATEGORIES,
       activePath: "/",
