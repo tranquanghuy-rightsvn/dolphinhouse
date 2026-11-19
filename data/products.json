@@ -37,7 +37,7 @@
   },
   {
     "id": 3003,
-    "name": "Máy hút bụi lau nhà cầm tay Roborock F25 Gen 2 (20.000Pa)",
+    "name": "Máy hút bụi lau nhà cầm tay Roborock F25 Gen 2",
     "slug": "may-hut-bui-lau-nha-cam-tay-roborock-f25-gen-2",
     "sku": "SN02",
     "brand_names": [
@@ -65,10 +65,10 @@
       "regular_price": "6990000"
     },
     "on_sale": false,
-    "image": "/assets/images/products/may-hut-bui-lau-nha-cam-tay-roborock-f25-gen-2/01.jpg",
+    "image": "/assets/images/products/may-hut-bui-lau-nha-cam-tay-roborock-f25-gen-2/03.jpg",
     "sizes": [],
     "in_stock": true,
-    "updated_at": "2026-11-18T09:40:56.959Z"
+    "updated_at": "2026-11-19T07:19:47.436Z"
   },
   {
     "id": 3002,
