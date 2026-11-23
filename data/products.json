@@ -56,25 +56,25 @@
       }
     ],
     "prices": {
-      "price": "359000",
-      "regular_price": "359000"
+      "price": "350000",
+      "regular_price": "350000"
     },
     "on_sale": false,
     "image": "/assets/images/products/bo-10-doi-dua-inox-316-gume-gm-d1882/08.jpg",
     "sizes": [
       {
         "name": "Gold (DD178)",
-        "price": "359000",
-        "regular_price": "359000"
+        "price": "350000",
+        "regular_price": "350000"
       },
       {
         "name": "Silver (DD179)",
-        "price": "289000",
-        "regular_price": "289000"
+        "price": "250000",
+        "regular_price": "250000"
       }
     ],
     "in_stock": true,
-    "updated_at": "2026-11-23T03:37:58.904Z"
+    "updated_at": "2026-11-23T04:19:17.662Z"
   },
   {
     "id": 3003,
