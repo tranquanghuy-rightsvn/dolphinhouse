@@ -1,5 +1,46 @@
 [
   {
+    "id": 3005,
+    "name": "Nồi gang tráng men búp atiso Moos 16cm 2 màu núm đồng",
+    "slug": "noi-gang-atiso-mini-moos-by-fine-16cm",
+    "sku": "ND60",
+    "brand_names": [
+      "Moos"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 173,
+        "name": "Nồi gang tráng men",
+        "slug": "noi-gang-trang-men"
+      }
+    ],
+    "prices": {
+      "price": "950000",
+      "regular_price": "950000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/noi-gang-atiso-mini-moos-by-fine-16cm/01.jpg",
+    "sizes": [
+      {
+        "name": "Đỏ mận",
+        "price": "950000",
+        "regular_price": "950000"
+      },
+      {
+        "name": "Xanh lá",
+        "price": "950000",
+        "regular_price": "950000"
+      }
+    ],
+    "in_stock": true,
+    "updated_at": "2026-11-23T03:36:51.420Z"
+  },
+  {
     "id": 3004,
     "name": "Bộ đũa inox 316 Gume GM-D1882 10 đôi kiểu Hàn",
     "slug": "bo-10-doi-dua-inox-316-gume-gm-d1882",
