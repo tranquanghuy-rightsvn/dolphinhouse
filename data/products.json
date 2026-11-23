@@ -1,5 +1,56 @@
 [
   {
+    "id": 3006,
+    "name": "Nồi gang hình quả bí Moos CIPP-16 dung tích 1 lít",
+    "slug": "noi-gang-bi-moos-mini-16cm",
+    "sku": "CIPP-16",
+    "brand_names": [
+      "Moos"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 173,
+        "name": "Nồi gang tráng men",
+        "slug": "noi-gang-trang-men"
+      }
+    ],
+    "prices": {
+      "price": "950000",
+      "regular_price": "950000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/noi-gang-bi-moos-mini-16cm/01.jpg",
+    "sizes": [
+      {
+        "name": "Đỏ mận",
+        "price": "950000",
+        "regular_price": "950000"
+      },
+      {
+        "name": "Đỏ tươi",
+        "price": "950000",
+        "regular_price": "950000"
+      },
+      {
+        "name": "Xanh lá",
+        "price": "950000",
+        "regular_price": "950000"
+      },
+      {
+        "name": "Trắng",
+        "price": "950000",
+        "regular_price": "950000"
+      }
+    ],
+    "in_stock": true,
+    "updated_at": "2026-11-23T06:59:46.962Z"
+  },
+  {
     "id": 3005,
     "name": "Nồi gang tráng men búp Atiso Moos 16cm 2 màu núm đồng",
     "slug": "noi-gang-atiso-mini-moos-by-fine-16cm",
