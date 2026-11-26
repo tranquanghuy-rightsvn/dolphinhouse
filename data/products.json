@@ -1,5 +1,56 @@
 [
   {
+    "id": 3007,
+    "name": "Nồi gang đúc Moos ND142 24cm 3,7 lít 4 màu",
+    "slug": "noi-gang-moos-nd142-24cm-limited",
+    "sku": "ND142",
+    "brand_names": [
+      "Moos"
+    ],
+    "categories": [
+      {
+        "id": 42,
+        "name": "Bếp thông minh & dụng cụ nấu ăn",
+        "slug": "do-dung-nha-bep"
+      },
+      {
+        "id": 173,
+        "name": "Nồi gang tráng men",
+        "slug": "noi-gang-trang-men"
+      }
+    ],
+    "prices": {
+      "price": "1290000",
+      "regular_price": "1290000"
+    },
+    "on_sale": false,
+    "image": "/assets/images/products/noi-gang-moos-nd142-24cm-limited/01.jpg",
+    "sizes": [
+      {
+        "name": "Đỏ đô",
+        "price": "1290000",
+        "regular_price": "1290000"
+      },
+      {
+        "name": "Màu mận",
+        "price": "1290000",
+        "regular_price": "1290000"
+      },
+      {
+        "name": "Hồng baby",
+        "price": "1290000",
+        "regular_price": "1290000"
+      },
+      {
+        "name": "Trắng kem",
+        "price": "1290000",
+        "regular_price": "1290000"
+      }
+    ],
+    "in_stock": true,
+    "updated_at": "2026-11-26T01:44:14.945Z"
+  },
+  {
     "id": 3006,
     "name": "Nồi gang hình quả bí Moos CIPP-16 dung tích 1 lít",
     "slug": "noi-gang-bi-moos-mini-16cm",
